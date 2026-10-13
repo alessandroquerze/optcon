@@ -44,6 +44,14 @@
     "web/ui/controls.ts": "b4dd2b43c54fc82b9e06fcdbb495cc2409eb7726ce38ac96434cfd10fc2f7aec",
     "web/ui/plot.ts": "24b635329df73cc7986eb5a0a8937d4d097f4fcabfd979220883dfda10abd5f0",
     "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
-    "web/ui/styles.css": "d0cc7e1413911e38b17035115d526b829cea0bd38cc0e020e1f27d22e54bc80e"
-  }
+    "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
+  },
+  "postCheckAdjustments": [
+    {
+      "path": "web/ui/styles.css",
+      "change": "CRLF to LF only; CSS rules unchanged. Git attributes now preserve text line endings.",
+      "previousSha256": "d0cc7e1413911e38b17035115d526b829cea0bd38cc0e020e1f27d22e54bc80e",
+      "sha256": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
+    }
+  ]
 }

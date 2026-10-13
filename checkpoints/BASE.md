@@ -2,7 +2,7 @@
 
 Sessione iniziata il 13 ottobre 2026 alle 18:13 (Europe/Rome). Il tempo del lavoro attivo è registrato in `manifest.json`.
 
-**Conclusa alle 18:46, in circa 33 minuti.** Il manifest indica BASE completata e tutti gli altri blocchi ancora da avviare. La versione locale ripristinabile è identificata dal tag Git `base-v1`.
+**Conclusa alle 18:46, in circa 33 minuti.** Il manifest indica BASE completata e tutti gli altri blocchi ancora da avviare. La versione locale ripristinabile è identificata dal tag Git `base-v1.1`.
 
 ## Perimetro e consegna
 
@@ -22,6 +22,8 @@ Vite 7 + TypeScript, KaTeX e Plotly.js, dipendenze fissate nel lockfile. Il bund
 I parametri sono separati dal rendering: `computeQuadratic` non usa il DOM; `createPlot` serializza gli aggiornamenti ed elimina le risorse; i controlli sincronizzano slider e input numerici. Coordinate e costi dell'esempio sono adimensionali. La rotazione è un'estensione didattica della distanza pesata delle slide.
 
 I PDF restano originali; la generazione del sito prepara copie locali non versionate. Lo schema si trova in `web/content/schema.ts`; gli hash dei contratti congelati sono registrati nel manifest e nel rapporto di verifica.
+
+Gli attributi Git fissano LF per i file testuali, così un ripristino su Windows conserva gli hash dei contratti. Dopo le verifiche sono stati normalizzati soltanto i terminatori del CSS, senza modificare regole o comportamento; il rapporto registra l'adeguamento degli hash.
 
 ## Verifiche
 
