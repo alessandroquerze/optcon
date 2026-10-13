@@ -42,7 +42,7 @@ function hero(item: CourseSource): string {
     <div class="hero-meta"><span>${icon('book')} ${item.pageCount} pagine originali</span><span class="meta-dot"></span><span>${item.concepts.filter(c=>c.kind==='theory').length} concetti nel percorso</span></div></div>
     <div class="hero-illustration">${illustration(item.id)}<p>${html(copy.idea)}</p></div></header>
     <div class="learning-outcomes">${copy.outcomes.map((text) => `<span><i aria-hidden="true">✓</i>${html(text)}</span>`).join('')}</div>
-    <nav class="page-nav" aria-label="In questa pagina">${item.id === 'ottimizzazione' ? '<a href="#laboratorio" class="active">Laboratorio <span class="tiny-dot"></span></a>' : ''}<a href="#percorso">Percorso del capitolo</a><a href="#fonti">Slide originali</a></nav>`;
+    <nav class="page-nav" aria-label="In questa pagina">${item.id === 'ottimizzazione' ? '<a href="#laboratorio" class="active">Laboratorio <span class="tiny-dot"></span></a>' : ''}${lessons[item.id]?.length ? `<a href="#${html(lessons[item.id]![0].id)}">Appunti disponibili</a>`:''}<a href="#percorso">Percorso del capitolo</a><a href="#fonti">Slide originali</a></nav>`;
 }
 
 function laboratory(): string {
@@ -60,11 +60,12 @@ const moduleNames: Partial<Record<SessionId, string>> = {
   K1: 'Traiettorie e spazio tangente', K2: 'Lagrangiana e condizioni KKT',
 };
 function lessonMarkup(lesson: LessonSection): string {
-  return `<article class="lesson" id="${html(lesson.id)}"><h3>${html(lesson.title)}</h3><p>${html(lesson.intuition)}</p>
+  return `<article class="lesson" id="${html(lesson.id)}">${lesson.conceptIds.map(id=>`<span id="${html(id)}" class="lesson-anchor"></span>`).join('')}<h3>${html(lesson.title)}</h3><p>${html(lesson.intuition)}</p>
     ${lesson.formulas.map(f => `<div class="lesson-formula">${formula(f.latex, true)}<p>${html(f.explanation)}</p></div>`).join('')}
-    <ul>${lesson.assumptions.map(a=>`<li>${html(a)}</li>`).join('')}</ul><p>${html(lesson.example)}</p>
+    <h4 class="lesson-label">Ipotesi e limiti</h4><ul>${lesson.assumptions.map(a=>`<li>${html(a)}</li>`).join('')}</ul><h4 class="lesson-label">Un esempio concreto</h4><p>${html(lesson.example)}</p>
     ${lesson.demoIds.map(id=>`<div class="laboratory" data-demo="${html(id)}"></div>`).join('')}
-    <ul>${lesson.observe.map(a=>`<li>${html(a)}</li>`).join('')}</ul></article>`;
+    <h4 class="lesson-label">Cosa osservare</h4><ul>${lesson.observe.map(a=>`<li>${html(a)}</li>`).join('')}</ul>
+    <div class="lesson-sources">${lesson.sources.map(ref=>`<a href="${pdfUrl(getSource(ref.sourceId),ref.pages[0])}" target="_blank" rel="noopener">Slide originali · pp. ${ref.pages[0]}${ref.pages.length>1?'–'+ref.pages.at(-1):''} ↗</a>`).join('')}</div></article>`;
 }
 
 function outline(item: CourseSource): string {
@@ -75,11 +76,13 @@ function outline(item: CourseSource): string {
     <div class="key-idea"><span>IDEA CHIAVE</span><div>${formula(courseCopy[item.id].formula)}</div><p>${html(courseCopy[item.id].formulaCaption)}</p></div>
     ${blocks.map((block, index) => {
       const entries = concepts.filter(c=>c.block === block);
+      const sections = [...new Map(entries.flatMap(c=>{const section=lessons[item.id]?.find(s=>s.conceptIds.includes(c.id));return section?[[section.id,section] as const]:[];})).values()];
+      const renderedSections = new Set<string>();
       const min = Math.min(...entries.flatMap(c=>c.pages)), max = Math.max(...entries.flatMap(c=>c.pages));
       return `<details class="course-module" ${index === 0 ? 'open' : ''}><summary><span class="module-number">0${index+1}</span><span class="module-title">${html(moduleNames[block] ?? block)}<small>${entries.length} concetti · PDF pp. ${min}–${max}</small></span><span class="module-expand" aria-hidden="true">+</span></summary>
-      <div class="module-content">${entries.map((concept) => {
+      <div class="module-content">${sections.length?`<nav class="lesson-toc" aria-label="Sezioni disponibili di ${html(moduleNames[block]??block)}">${sections.map(s=>`<a href="#${html(s.id)}">${html(s.title)}</a>`).join('')}</nav>`:''}${entries.map((concept) => {
         const section = lessons[item.id]?.find(lesson=>lesson.conceptIds.includes(concept.id));
-        if (section) return lessonMarkup(section);
+        if (section) { if(renderedSections.has(section.id))return '';renderedSections.add(section.id);return lessonMarkup(section); }
         const ready = concept.visualizations.find(v=>v.status==='ready');
         return `<article class="concept" id="${html(concept.id)}"><div class="concept-heading"><h3>${html(concept.title)}</h3><a href="${pdfUrl(item, concept.pages[0])}" target="_blank" rel="noopener" class="page-reference" aria-label="Apri le slide, pagina ${concept.pages[0]}">p. ${concept.pages[0]}${concept.pages.length>1 ? '–'+concept.pages.at(-1) : ''} ${arrow}</a></div>
           <p>${html(concept.summary)}</p><div class="concept-footer"><span class="visualization-label">${concept.visualizations.flatMap(v=>v.dimensions).filter((v,i,a)=>a.indexOf(v)===i).map(v=>v.toUpperCase()).join(' / ')} · ${ready ? 'Esempio disponibile' : 'Laboratorio in preparazione'}</span>
@@ -91,7 +94,7 @@ function outline(item: CourseSource): string {
 function sourceSection(item: CourseSource): string {
   return `<section class="sources-section" id="fonti" aria-labelledby="source-title"><div class="section-heading"><div><span class="eyebrow">TORNA ALLA FONTE</span><h2 id="source-title">Dalle slide al quaderno</h2></div></div>
     <a href="${pdfUrl(item)}" target="_blank" rel="noopener" class="source-card"><span class="pdf-icon">PDF</span><span><strong>${html(item.title)}</strong><small>G. Notarstefano · Università di Bologna · ${item.pageCount} pagine</small></span>${arrow}</a>
-    <p class="source-caption">I rimandi usano il numero effettivo della pagina PDF, includendo la copertina. Può differire dal numero stampato sulla slide. Gli appunti completi sono in preparazione; il laboratorio del costo quadratico è già disponibile.</p></section>`;
+    <p class="source-caption">I rimandi usano il numero effettivo della pagina PDF, includendo la copertina. Può differire dal numero stampato sulla slide. ${lessons[item.id]?.length?`Sono disponibili ${lessons[item.id]!.length} sezioni complete; gli altri argomenti sono in preparazione.`:'Gli appunti completi sono in preparazione; il laboratorio del costo quadratico è già disponibile.'}</p></section>`;
 }
 
 function home(): string {
@@ -101,7 +104,7 @@ function home(): string {
     <section class="home-path" aria-labelledby="home-path-title"><div class="section-heading"><div><span class="eyebrow">SCEGLI DA DOVE PARTIRE</span><h2 id="home-path-title">Tre capitoli, un percorso</h2></div></div>
     ${sources.map(item => { const copy=courseCopy[item.id]; return `<a class="course-row" href="./${item.id}.html"><span class="row-number">${copy.number}</span><span class="row-icon">${icon(item.id==='introduzione'?'book':item.id==='ottimizzazione'?'curve':'layers')}</span><span class="row-copy"><h3>${html(item.title)}</h3><p>${html(copy.outcomes.join(' · '))}</p></span><span class="row-meta">${item.pageCount} pagine<span aria-hidden="true">→</span></span></a>`; }).join('')}</section>
     <aside class="home-callout"><span class="availability"><i></i>Già esplorabile</span><h2>Quanto pesa una distanza?</h2><p>Il laboratorio del costo quadratico ti permette di cambiare pesi, rotazione e obiettivo, confrontando curve di livello e superficie 3D.</p><a class="text-link" href="./ottimizzazione.html#laboratorio">Apri il laboratorio <span aria-hidden="true">→</span></a></aside>
-    <p class="source-caption">Edizione in costruzione: trovi già la mappa dei tre PDF e un primo laboratorio completo. Gli altri approfondimenti sono indicati come in preparazione.</p>`;
+    <p class="source-caption">Edizione in costruzione: trovi la mappa dei tre PDF, il laboratorio del costo quadratico e ${lessons.ottimizzazione?.length??0} sezioni complete sui fondamenti dell’ottimizzazione. Gli altri approfondimenti sono indicati come in preparazione.</p>`;
 }
 
 const nextCourse = source ? sources[(sources.indexOf(source)+1)%sources.length] : sources[0];

@@ -2,6 +2,8 @@
 
 Base locale degli appunti associati ai tre PDF originali. Il passaggio 1 comprende la mappa completa delle fonti, tre pagine distinte e il laboratorio del costo quadratico. Gli approfondimenti successivi sono esplicitamente indicati come in preparazione.
 
+Il passaggio 2, **O1**, aggiunge nove sezioni complete sulle pp. 2–25 di Ottimizzazione (p. 1: frontespizio), coprendo i 12 concetti assegnati. Sono disponibili laboratori per minimi/argmin, derivate, punti stazionari, insiemi e funzioni convesse, vincoli, limiti quadratici e QP anche singolari o indefiniti. Aprire `ottimizzazione.html#o1-minimi` oppure scegliere “Appunti disponibili”. Gli altri blocchi restano in preparazione.
+
 Per avviare il sito da PowerShell:
 
 ```powershell

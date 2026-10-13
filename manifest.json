@@ -100,8 +100,8 @@
       "dependencies": [
         "BASE"
       ],
-      "status": "pending",
-      "objective": "Appunti e laboratori per minimi, derivate, convessit?, limiti quadratici e QP liberi.",
+      "status": "completed",
+      "objective": "Appunti e laboratori per minimi, derivate, convessità, limiti quadratici e QP liberi.",
       "allowedPaths": [
         "web/content/blocks/O1.ts",
         "web/demos/O1/**",
@@ -111,17 +111,41 @@
         "web/demos/registry.ts (registration only)",
         "sources/inventory.json (assigned concepts only)",
         "manifest.json (current status only)",
-        "checkpoints/O1*"
+        "checkpoints/O1*",
+        "web/main.ts (lesson deduplication, references and navigation)",
+        "web/playwright.config.ts (test discovery)",
+        "web/tests/browser/base.spec.ts (scope existing demo selectors)",
+        "README.md (current content availability)",
+        "web/scripts/session.mjs (dependency checkpoints in prompts)"
       ],
       "requiredArtifacts": [
-        "checkpoints/O1.md"
+        "checkpoints/O1.md",
+        "web/content/blocks/O1.ts",
+        "web/math/O1/foundations.ts",
+        "web/demos/O1/index.ts",
+        "web/demos/O1/plots.ts",
+        "web/demos/O1/styles.css",
+        "web/tests/O1/foundations.test.ts",
+        "web/tests/O1/browser/O1.spec.ts"
       ],
       "acceptance": [
         "All assigned concepts covered, or explicit metadata-only rationale",
         "Figures recompute from parameters and agree with formulas",
         "No type errors; relevant analytic and browser checks pass",
         "Checkpoint records outcomes and remaining work"
-      ]
+      ],
+      "startedAt": "2026-10-13T16:55:50.477Z",
+      "completedAt": "2026-10-13T17:31:18.943Z",
+      "validationReport": "checkpoints/O1-validation.json",
+      "artifactHashes": {
+        "web/content/blocks/O1.ts": "8bec0da209058a32bd5f87fa24d084a3b783ceb2cf52c284184f9086c6b73c85",
+        "web/math/O1/foundations.ts": "f234e33a63c046d7ab3237b7040fba16c37046c422723aec08231ededf797391",
+        "web/demos/O1/index.ts": "19602788e5076fa3adf0bfa30fcba67381958be0c51a3770e30a6f99e2c64738",
+        "web/demos/O1/plots.ts": "7577c606187ea693c87de4849feb681453d795e01cd0cbaa2b2400b2e00e654a",
+        "web/demos/O1/styles.css": "b12dba6406be40fdfff712113923b63b1b263f19fce667b1570ddacd39ee58ae",
+        "web/tests/O1/foundations.test.ts": "9fef836e716ad4f741dc9ec81f13f5275f4e0d81f6c9f8dba52c9bf7e4e87470",
+        "web/tests/O1/browser/O1.spec.ts": "6d8e20ca966da41ce7e2429905e81436c7c5d77dff75b8bbc97a25ebef9fcb61"
+      }
     },
     {
       "id": "O2",
@@ -515,5 +539,5 @@
     "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
     "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
   },
-  "updatedAt": "2026-10-13T16:46:45.225Z"
+  "updatedAt": "2026-10-13T17:31:18.943Z"
 }

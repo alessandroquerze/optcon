@@ -23,7 +23,7 @@ test('the laboratory recalculates data, presets, target and both 2D/3D views', a
   const errors: string[] = [];
   page.on('pageerror', error=>errors.push(error.message));
   await page.goto('/ottimizzazione.html#laboratorio');
-  await expect(page.locator('[data-demo]')).toHaveAttribute('data-ready', 'true');
+  await expect(page.locator('[data-demo="weighted-cost"]')).toHaveAttribute('data-ready', 'true');
   const metric = page.locator('[data-metric=cost]');
   const initial = await metric.innerText();
   const firstWeight = page.getByRole('spinbutton', { name: 'Peso w₁, valore numerico' });
@@ -55,7 +55,7 @@ test('the laboratory recalculates data, presets, target and both 2D/3D views', a
 
 test('numeric limits and keyboard control keep range and number inputs synchronized', async ({ page }) => {
   await page.goto('/ottimizzazione.html#laboratorio');
-  await expect(page.locator('[data-demo]')).toHaveAttribute('data-ready', 'true');
+  await expect(page.locator('[data-demo="weighted-cost"]')).toHaveAttribute('data-ready', 'true');
   const value = page.getByRole('spinbutton', { name: 'Peso w₁, valore numerico' });
   await value.fill('999');
   await expect(value).toHaveValue('5');
@@ -76,7 +76,7 @@ test('all chapters and the lab fit a narrow screen', async ({ page }) => {
     expect(await page.evaluate(()=>document.documentElement.scrollWidth <= window.innerWidth+1)).toBe(true);
   }
   await page.goto('/ottimizzazione.html#laboratorio');
-  await expect(page.locator('[data-demo]')).toHaveAttribute('data-ready', 'true');
+  await expect(page.locator('[data-demo="weighted-cost"]')).toHaveAttribute('data-ready', 'true');
   await page.getByRole('button', { name: 'Valle stretta', exact: true }).click();
   await expect(page.locator('[data-metric=condition]')).toHaveText('16,67');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth <= window.innerWidth+1)).toBe(true);

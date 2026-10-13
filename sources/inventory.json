@@ -715,15 +715,14 @@
               "id": "local-global-minima",
               "label": "Minimi locali, globali e stretti",
               "dimensions": [
-                "2d",
-                "3d"
+                "2d"
               ],
               "parameters": [
-                "coefficienti",
-                "punto",
-                "raggio dell'intorno"
+                "tilt",
+                "point",
+                "epsilon"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -744,10 +743,11 @@
                 "2d"
               ],
               "parameters": [
-                "funzione",
-                "decisione"
+                "tilt",
+                "point",
+                "epsilon"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -770,11 +770,14 @@
                 "3d"
               ],
               "parameters": [
-                "punto",
-                "funzione",
-                "direzione"
+                "x",
+                "y",
+                "cross",
+                "quartic",
+                "direction",
+                "step"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -797,11 +800,12 @@
                 "3d"
               ],
               "parameters": [
-                "autovalori",
-                "punto",
-                "funzione"
+                "a",
+                "b",
+                "quarticX",
+                "quarticY"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -822,11 +826,13 @@
                 "2d"
               ],
               "parameters": [
-                "estremi del segmento",
-                "theta",
-                "forma dell'insieme"
+                "kind",
+                "radius",
+                "angleA",
+                "angleB",
+                "theta"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -847,11 +853,14 @@
                 "2d"
               ],
               "parameters": [
-                "estremi",
-                "theta",
-                "curvatura"
+                "kind",
+                "a",
+                "b",
+                "A",
+                "B",
+                "theta"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -870,15 +879,14 @@
               "id": "constraint-convexity",
               "label": "Convessità e vincoli",
               "dimensions": [
-                "2d",
-                "3d"
+                "2d"
               ],
               "parameters": [
-                "tipo di vincolo",
-                "coefficienti",
-                "livello"
+                "kind",
+                "level",
+                "theta"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -901,11 +909,14 @@
                 "2d"
               ],
               "parameters": [
-                "punti di confronto",
+                "a",
+                "b",
+                "base",
+                "target",
                 "mu",
-                "curvatura"
+                "L"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -927,11 +938,14 @@
                 "2d"
               ],
               "parameters": [
-                "L",
+                "a",
+                "b",
+                "base",
+                "target",
                 "mu",
-                "punti di confronto"
+                "L"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -953,12 +967,14 @@
                 "2d"
               ],
               "parameters": [
-                "punto base",
+                "a",
+                "b",
+                "base",
+                "target",
                 "mu",
-                "L",
-                "curvatura"
+                "L"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -980,11 +996,14 @@
                 "2d"
               ],
               "parameters": [
-                "funzione",
-                "punto",
-                "corda"
+                "kind",
+                "a",
+                "b",
+                "A",
+                "B",
+                "theta"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1015,6 +1034,22 @@
                 "centerY",
                 "pointX",
                 "pointY"
+              ],
+              "status": "ready"
+            },
+            {
+              "id": "quadratic-program",
+              "label": "QP definiti, semidefiniti e indefiniti",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "lambda1",
+                "lambda2",
+                "angle",
+                "qx",
+                "qy"
               ],
               "status": "ready"
             }
@@ -1950,8 +1985,9 @@
         12,
         13
       ],
-      "status": "to-review",
-      "note": "Verificare le equivalenze generali tra convessità dell'insieme e forma del vincolo; un singolo sottolivello convesso non implica quasi-convessità globale."
+      "status": "corrected-in-O1",
+      "note": "Verificare le equivalenze generali tra convessità dell'insieme e forma del vincolo; un singolo sottolivello convesso non implica quasi-convessità globale.",
+      "verification": "Esplicitato negli appunti; controesempi e costanti analitiche nei test O1."
     },
     {
       "sourceId": "ottimizzazione",
@@ -1959,8 +1995,9 @@
         16,
         19
       ],
-      "status": "to-review",
-      "note": "Uniformare fattore 1/2 e disuguaglianze nella definizione di forte convessità."
+      "status": "corrected-in-O1",
+      "note": "Uniformare fattore 1/2 e disuguaglianze nella definizione di forte convessità.",
+      "verification": "Esplicitato negli appunti; controesempi e costanti analitiche nei test O1."
     },
     {
       "sourceId": "ottimizzazione",

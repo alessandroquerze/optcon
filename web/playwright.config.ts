@@ -8,7 +8,7 @@ const chrome = process.env.OPTCON_BROWSER_PATH ?? [
 ].find(path=>existsSync(path));
 
 export default defineConfig({
-  testDir: './tests/browser', workers: 1, timeout: 45000,
+  testDir: './tests', testMatch:'**/*.spec.ts', workers: 1, timeout: 45000,
   expect: { timeout: 12000 },
   reporter: [['list'], ['json', { outputFile: 'test-results/browser-report.json' }]],
   use: {

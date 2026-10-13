@@ -1,0 +1,41 @@
+.lesson { border-top:1px solid #e1e8db; padding:30px 0 35px; font-size:15px; color:#52634b; line-height:1.85; }
+.page-nav { flex-wrap:wrap; }
+.lesson-anchor { display:block; }
+.lesson>h3 { font-family:Georgia,serif; font-size:25px; font-weight:400; color:#2e4c34; line-height:1.35; margin:0 0 16px; }
+.lesson h4.lesson-label { font-size:11px; letter-spacing:1px; text-transform:uppercase; color:#657c58; margin:22px 0 10px; }
+.lesson>p { max-width:900px; white-space:pre-line; }
+.lesson-formula { background:#f3f7ee; border-left:2px solid #a9c39c; border-radius:0 5px 5px 0; margin:16px 0; padding:14px 18px; max-width:100%; overflow-x:auto; }
+.lesson-formula .katex-display { margin:6px 0 12px; text-align:left; }
+.lesson-formula p { font-size:13px; color:#5c7150; margin:0; max-width:900px; white-space:pre-line; }
+.lesson ul { margin:10px 0 20px; padding-left:23px; max-width:900px; }
+.lesson li { margin:6px 0; }
+.lesson-sources { display:flex; gap:14px; flex-wrap:wrap; margin:20px 0 0; font-size:12px; color:#5b7650; }
+.lesson-sources a { text-decoration:underline; text-underline-offset:3px; }
+.lesson-toc { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px 20px; padding:18px 0 23px; border-top:1px solid #e1e8db; font-size:13px; }
+.lesson-toc a { color:#55704c; }
+.lesson-toc a:hover { text-decoration:underline; }
+.lesson-complete { font-size:10px; font-weight:500; color:#466e3d; background:#eaf2e4; border-radius:15px; padding:4px 8px; margin-left:10px; white-space:nowrap; }
+.o1-lab-header { display:flex; gap:12px; align-items:center; justify-content:space-between; padding:19px 21px 9px; }
+.o1-lab-header h4 { font-size:15px; color:#405d36; font-weight:550; margin:5px 0 0; line-height:1.5; }
+.o1-formula { padding:10px 21px; overflow-x:auto; font-size:14px; color:#48663e; }
+.o1-presets { display:flex; gap:7px; flex-wrap:wrap; padding:10px 21px 17px; border-bottom:1px solid #e5ecdf; }
+.o1-presets button { color:#56734c; font-size:11px; border:1px solid #dce7d3; border-radius:4px; background:#fff; padding:6px 9px; }
+.o1-presets button:hover { background:#edf4e7; }
+.o1-presets [data-o1-reset] { margin-left:auto; }
+.o1-lab-body { display:grid; grid-template-columns:minmax(0,1fr) 240px; }
+.o1-plot { min-width:0; height:435px; padding:8px; }
+.o1-controls { border-left:1px solid #e2eadb; background:#fbfcf9; padding:20px; }
+.o1-select { display:block; font-size:12px; color:#526a49; margin-bottom:20px; }
+.o1-select select { display:block; width:100%; margin-top:7px; padding:7px 6px; font:inherit; border:1px solid #d4dfcc; border-radius:4px; color:#465f3d; background:#fff; }
+.o1-controls .number-control { margin-bottom:18px; }
+.o1-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; padding:20px; border-top:1px solid #e2eadb; background:#f9fbf6; }
+.o1-metrics span { display:block; color:#697c5d; font-size:11px; }
+.o1-metrics strong { display:block; color:#3b5b31; font-weight:500; font-size:16px; line-height:1.5; margin-top:4px; overflow-wrap:anywhere; }
+.o1-message { padding:15px 20px; margin:0; background:#eef5e9; color:#47643c; font-size:13px; line-height:1.8; }
+.o1-message.is-warning { background:#fff4e8; color:#875230; }
+.o1-detail { padding:10px 20px; font-size:12px; color:#607552; overflow-x:auto; }
+.o1-detail p { margin:8px 0; }
+.o1-matrix-row { display:flex; gap:25px; flex-wrap:wrap; margin:10px 0; align-items:center; }
+.o1-error { color:#8d3f31; background:#fff0e8; padding:15px 20px; margin:0; font-size:13px; }
+@media(max-width:1050px) { .o1-lab-body { grid-template-columns:minmax(0,1fr) 210px; } .o1-controls { padding:17px 14px; } .o1-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:650px) { .lesson>h3 { font-size:22px; } .lesson { font-size:14px; } .lesson-toc { grid-template-columns:1fr; } .lesson-formula { padding:12px; font-size:13px; } .o1-lab-header { padding:16px 13px 8px; } .o1-lab-header h4 { font-size:13px; } .o1-formula { padding:10px 13px; font-size:12px; } .o1-presets { padding:10px 13px 16px; } .o1-lab-body { grid-template-columns:1fr; } .o1-controls { border-left:none; border-top:1px solid #e2eadb; padding:20px; } .o1-metrics { padding:17px 14px; gap:16px; } .o1-metrics strong { font-size:14px; } .o1-message { padding:13px 15px; } .o1-detail { padding:10px 15px; } .lesson .katex { font-size:1.05em; } }

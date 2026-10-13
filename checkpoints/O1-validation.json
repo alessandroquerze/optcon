@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "O1",
+  "startedAt": "2026-10-13T17:30:15.811Z",
+  "passed": true,
+  "checks": [
+    {
+      "script": "check:inventory",
+      "startedAt": "2026-10-13T17:30:15.812Z",
+      "finishedAt": "2026-10-13T17:30:16.201Z",
+      "exitCode": 0
+    },
+    {
+      "script": "typecheck",
+      "startedAt": "2026-10-13T17:30:16.202Z",
+      "finishedAt": "2026-10-13T17:30:18.459Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test",
+      "startedAt": "2026-10-13T17:30:18.460Z",
+      "finishedAt": "2026-10-13T17:30:20.150Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test:browser",
+      "startedAt": "2026-10-13T17:30:20.152Z",
+      "finishedAt": "2026-10-13T17:30:56.124Z",
+      "exitCode": 0
+    },
+    {
+      "script": "build",
+      "startedAt": "2026-10-13T17:30:56.125Z",
+      "finishedAt": "2026-10-13T17:31:18.937Z",
+      "exitCode": 0
+    }
+  ],
+  "finishedAt": "2026-10-13T17:31:18.939Z",
+  "contractHashes": {
+    "web/content/schema.ts": "56e0447dbde546f5b9aea164197d656ad766fc2fdbe39b84f659a9b0cc5fb1b3",
+    "web/math/quadratic.ts": "07825a9ee139a5cc4d754acc22f1aeb2535ac02f24d327c827d32ab69300df59",
+    "web/ui/dom.ts": "a58b0e95cac0901f6964225f58616e72f84855bf2f442750416ec2eca02191e9",
+    "web/ui/formula.ts": "8587fabdeafd216092379b0ffa976d667955f6f83134eb6b2424bb470ecc5936",
+    "web/ui/controls.ts": "b4dd2b43c54fc82b9e06fcdbb495cc2409eb7726ce38ac96434cfd10fc2f7aec",
+    "web/ui/plot.ts": "24b635329df73cc7986eb5a0a8937d4d097f4fcabfd979220883dfda10abd5f0",
+    "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
+    "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
+  },
+  "artifactHashes": {
+    "web/content/blocks/O1.ts": "8bec0da209058a32bd5f87fa24d084a3b783ceb2cf52c284184f9086c6b73c85",
+    "web/math/O1/foundations.ts": "f234e33a63c046d7ab3237b7040fba16c37046c422723aec08231ededf797391",
+    "web/demos/O1/index.ts": "19602788e5076fa3adf0bfa30fcba67381958be0c51a3770e30a6f99e2c64738",
+    "web/demos/O1/plots.ts": "7577c606187ea693c87de4849feb681453d795e01cd0cbaa2b2400b2e00e654a",
+    "web/demos/O1/styles.css": "b12dba6406be40fdfff712113923b63b1b263f19fce667b1570ddacd39ee58ae",
+    "web/tests/O1/foundations.test.ts": "9fef836e716ad4f741dc9ec81f13f5275f4e0d81f6c9f8dba52c9bf7e4e87470",
+    "web/tests/O1/browser/O1.spec.ts": "6d8e20ca966da41ce7e2429905e81436c7c5d77dff75b8bbc97a25ebef9fcb61"
+  },
+  "handoffCheck": {
+    "dependencyCheckpointIncluded": "checkpoints/O1.md",
+    "nextSession": "O2",
+    "nextSessionStarted": false,
+    "runnerSyntaxCheck": "passed"
+  }
+}

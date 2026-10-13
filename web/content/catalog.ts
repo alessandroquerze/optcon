@@ -1,5 +1,6 @@
 import inventoryData from '../../sources/inventory.json';
 import type { CourseId, CourseSource, LessonSection } from './schema';
+import { O1Lessons } from './blocks/O1';
 
 export const sources = inventoryData.sources as CourseSource[];
 export const getSource = (id: CourseId): CourseSource => {
@@ -10,7 +11,7 @@ export const getSource = (id: CourseId): CourseSource => {
 
 // Future sessions add complete LessonSection arrays in content/blocks/<ID>.ts
 // and register them here; the renderer and existing modules remain reusable.
-export const lessons: Partial<Record<CourseId, LessonSection[]>> = {};
+export const lessons: Partial<Record<CourseId, LessonSection[]>> = { ottimizzazione: O1Lessons };
 
 export const courseCopy: Record<CourseId, {
   number: string; title: string; lead: string; eyebrow: string; idea: string;

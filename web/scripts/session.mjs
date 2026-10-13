@@ -28,9 +28,10 @@ function prompt(item) {
   const pageText = source ? JSON.parse(readFileSync(resolve(root,source.extractedPath),'utf8')).pages
     .filter(p=>item.pages.includes(p.pdfPage)).map(p=>`### PDF p. ${p.pdfPage}\n${p.text}`).join('\n\n') : '';
   const errata = inventory.errata.filter(e=>e.sourceId===item.sourceId && e.pages.some(page=>item.pages.includes(page)));
+  const checkpoints = ['checkpoints/BASE.md', ...item.dependencies.filter(id=>id!=='BASE').map(id=>`checkpoints/${id}.md`)];
   return `# Sessione ${item.id} — ${item.title}\n\n` +
     `Esegui soltanto questa sessione. Un blocco equivale a una sessione di ragionamento; il tetto è ${manifest.timeboxMinutes} minuti, con checkpoint entro il minuto ${manifest.checkpointMinutes}.\n\n` +
-    `Leggi PIANO_APPUNTI_INTERATTIVI.md, README.md, manifest.json e checkpoints/BASE.md.\n` +
+    `Leggi PIANO_APPUNTI_INTERATTIVI.md, README.md, manifest.json e ${checkpoints.join(', ')}.\n` +
     `Obiettivo: ${item.objective}\n\n` +
     `Dipendenze concluse: ${item.dependencies.join(', ') || 'nessuna'}.\n` +
     `File consentiti: ${item.allowedPaths.join(', ')}.\n\n` +
