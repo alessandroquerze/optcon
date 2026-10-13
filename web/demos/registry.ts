@@ -35,6 +35,16 @@ const loaders: Record<string, () => Promise<{ mount(container: HTMLElement): Pro
   'merit-line-search': () => import('./O3').then(module=>module.meritDemo),
   'barrier-equalities': () => import('./O3').then(module=>module.barrierDemo),
   'time-iteration': () => import('./O3').then(module=>module.timeDemo),
+  'motivation-map': () => import('./I1').then(module=>module.motivationDemo),
+  'continuous-system': () => import('./I1').then(module=>module.continuousDemo),
+  'discrete-system': () => import('./I1').then(module=>module.discreteDemo),
+  'trajectory-equilibrium': () => import('./I1').then(module=>module.equilibriumDemo),
+  'linearization': () => import('./I1').then(module=>module.linearizationDemo),
+  'control-objectives': () => import('./I1').then(module=>module.objectivesDemo),
+  'optimization-geometry': () => import('./I1').then(module=>module.optimizationDemo),
+  'scalar-cost': () => import('./I1').then(module=>module.scalarDemo),
+  'semidefinite-cost': () => import('./I1').then(module=>module.weightsDemo),
+  'constraint-sets': () => import('./I1').then(module=>module.constraintsDemo),
 };
 export function hasDemo(id: string): boolean { return id in loaders; }
 

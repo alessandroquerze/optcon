@@ -41,14 +41,15 @@
               "id": "motivation-map",
               "label": "Perché ottimizzare un sistema?",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "scenario",
                 "peso del costo",
                 "limiti"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -66,14 +67,15 @@
               "id": "continuous-system",
               "label": "Stato, ingresso e uscita",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "stato iniziale",
                 "ingresso",
                 "parametri della dinamica"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -99,7 +101,7 @@
                 "stato iniziale",
                 "sequenza degli ingressi"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -124,7 +126,7 @@
                 "ingresso",
                 "tempo"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -150,7 +152,7 @@
                 "perturbazione",
                 "ingresso"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -175,7 +177,7 @@
                 "limiti",
                 "peso dello sforzo"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -201,7 +203,7 @@
                 "costo",
                 "vincoli"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -226,7 +228,7 @@
                 "obiettivo",
                 "punto"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -257,6 +259,24 @@
                 "pointY"
               ],
               "status": "ready"
+            },
+            {
+              "id": "semidefinite-cost",
+              "label": "Pesi nulli, nucleo e minimi non unici",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "w1",
+                "w2",
+                "angle",
+                "centerX",
+                "centerY",
+                "x",
+                "y"
+              ],
+              "status": "ready"
             }
           ]
         },
@@ -282,7 +302,7 @@
                 "termine noto",
                 "tipo di vincolo"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -308,7 +328,7 @@
                 "costo",
                 "vincoli"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -2229,6 +2249,42 @@
       "status": "corrected-in-O3",
       "note": "Incorporare le disuguaglianze nella barriera lascia esplicite le uguaglianze: il problema risultante resta vincolato.",
       "verification": "Esplicitato nelle sezioni O3 e coperto da casi analitici o controesempi nei test."
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        12
+      ],
+      "status": "clarified-in-I1",
+      "note": "La formula delle perturbazioni senza termine affine richiede una traiettoria base ammissibile. Per una base generica va aggiunto -R_t, con R_t=xbar_(t+1)-f(xbar_t,ubar_t).",
+      "verification": "Confronto visivo con la pagina PDF; formule e casi analitici verificati nei test I1."
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        14
+      ],
+      "status": "corrected-in-I1",
+      "note": "Il dominio della decisione usa d in modo uniforme: costo, vincoli e insieme ammissibile sono definiti in R^d.",
+      "verification": "Confronto visivo con la pagina PDF; formule e casi analitici verificati nei test I1."
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        16
+      ],
+      "status": "corrected-in-I1",
+      "note": "Nella somma diagonale del costo il secondo coefficiente stampato w1 va corretto in w2. Con W semidefinita singolare la distanza pesata è una seminorma e argmin=zbar+ker W.",
+      "verification": "Confronto visivo con la pagina PDF; formule e casi analitici verificati nei test I1."
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        17
+      ],
+      "status": "clarified-in-I1",
+      "note": "La regione ellittica richiede a,b,c positivi; coefficienti generici possono produrre coniche diverse, insiemi vuoti o tutto il piano. Uguaglianze non affini possono avere insiemi convessi, come x^2=0.",
+      "verification": "Confronto visivo con la pagina PDF; formule e casi analitici verificati nei test I1."
     }
   ]
 }

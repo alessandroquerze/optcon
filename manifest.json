@@ -345,9 +345,10 @@
         18
       ],
       "dependencies": [
-        "BASE"
+        "BASE",
+        "O3"
       ],
-      "status": "pending",
+      "status": "completed",
       "objective": "Appunti e schemi su motivazioni, sistemi, traiettorie, equilibri, linearizzazione, costi e vincoli.",
       "allowedPaths": [
         "web/content/blocks/I1.ts",
@@ -357,18 +358,43 @@
         "web/content/catalog.ts (registration only)",
         "web/demos/registry.ts (registration only)",
         "sources/inventory.json (assigned concepts only)",
-        "manifest.json (current status only)",
-        "checkpoints/I1*"
+        "manifest.json (I1 metadata and status only)",
+        "checkpoints/I1*",
+        "web/main.ts (availability wording only)",
+        "README.md (I1 availability and next-session examples)",
+        "checkpoints/prompts/I1.md (synchronize dependency and errata)",
+        "checkpoints/prompts/I2.md (handoff only; session not started)"
       ],
       "requiredArtifacts": [
-        "checkpoints/I1.md"
+        "checkpoints/I1.md",
+        "web/content/blocks/I1.ts",
+        "web/math/I1/systems.ts",
+        "web/math/I1/geometry.ts",
+        "web/demos/I1/index.ts",
+        "web/demos/I1/plots.ts",
+        "web/demos/I1/styles.css",
+        "web/tests/I1/models.test.ts",
+        "web/tests/I1/browser/I1.spec.ts"
       ],
       "acceptance": [
         "All assigned concepts covered, or explicit metadata-only rationale",
         "Figures recompute from parameters and agree with formulas",
         "No type errors; relevant analytic and browser checks pass",
         "Checkpoint records outcomes and remaining work"
-      ]
+      ],
+      "startedAt": "2026-10-13T20:32:08.139Z",
+      "completedAt": "2026-10-13T21:13:46.978Z",
+      "validationReport": "checkpoints/I1-validation.json",
+      "artifactHashes": {
+        "web/content/blocks/I1.ts": "99d74fb8ece811e4ba18258f83efeeeed63efb7d994e889790941e9ee96d8971",
+        "web/math/I1/systems.ts": "5c16306d8ad90c60393fbe477b48c9143226258b9a7c8661d868470e2da44a40",
+        "web/math/I1/geometry.ts": "9c22bb1a85b78210881015d1712782888bf433009b5875b7434745a1b4f005ec",
+        "web/demos/I1/index.ts": "bdf2edb24a10e441c002aaec9f8478bfc261f841b307b72d766223d72af3db44",
+        "web/demos/I1/plots.ts": "75a680d08b3204f99d89f280e04bf935356a52ad34b6a7a592ec68c7d8d05e54",
+        "web/demos/I1/styles.css": "386770e4d6f9f2f801f666a8b33beeb90d057cb758b08bb5b3cda39ad8cf5721",
+        "web/tests/I1/models.test.ts": "fb8fe2f1172d2632fcd36120e98b6ed20346181a9181fc4e6bcdf29100774d50",
+        "web/tests/I1/browser/I1.spec.ts": "2517adda4c491decc139cb17ebd107f314f609c8f8061fb35b4e55930817da03"
+      }
     },
     {
       "id": "I2",
@@ -589,5 +615,5 @@
     "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
     "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
   },
-  "updatedAt": "2026-10-13T19:09:49.856Z"
+  "updatedAt": "2026-10-13T21:14:57.271964Z"
 }

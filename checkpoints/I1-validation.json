@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "I1",
+  "startedAt": "2026-10-13T21:10:30.894Z",
+  "passed": true,
+  "checks": [
+    {
+      "script": "check:inventory",
+      "startedAt": "2026-10-13T21:10:30.895Z",
+      "finishedAt": "2026-10-13T21:10:31.299Z",
+      "exitCode": 0
+    },
+    {
+      "script": "typecheck",
+      "startedAt": "2026-10-13T21:10:31.301Z",
+      "finishedAt": "2026-10-13T21:10:34.785Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test",
+      "startedAt": "2026-10-13T21:10:34.786Z",
+      "finishedAt": "2026-10-13T21:10:37.211Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test:browser",
+      "startedAt": "2026-10-13T21:10:37.212Z",
+      "finishedAt": "2026-10-13T21:13:22.272Z",
+      "exitCode": 0
+    },
+    {
+      "script": "build",
+      "startedAt": "2026-10-13T21:13:22.273Z",
+      "finishedAt": "2026-10-13T21:13:46.972Z",
+      "exitCode": 0
+    }
+  ],
+  "finishedAt": "2026-10-13T21:13:46.974Z",
+  "contractHashes": {
+    "web/content/schema.ts": "56e0447dbde546f5b9aea164197d656ad766fc2fdbe39b84f659a9b0cc5fb1b3",
+    "web/math/quadratic.ts": "07825a9ee139a5cc4d754acc22f1aeb2535ac02f24d327c827d32ab69300df59",
+    "web/ui/dom.ts": "a58b0e95cac0901f6964225f58616e72f84855bf2f442750416ec2eca02191e9",
+    "web/ui/formula.ts": "8587fabdeafd216092379b0ffa976d667955f6f83134eb6b2424bb470ecc5936",
+    "web/ui/controls.ts": "b4dd2b43c54fc82b9e06fcdbb495cc2409eb7726ce38ac96434cfd10fc2f7aec",
+    "web/ui/plot.ts": "24b635329df73cc7986eb5a0a8937d4d097f4fcabfd979220883dfda10abd5f0",
+    "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
+    "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
+  },
+  "freezeAudit": {
+    "baselineCommit": "9a47afb",
+    "filesCompared": 30,
+    "allByteIdentical": true,
+    "paths": [
+      "web/content/blocks/O1.ts",
+      "web/content/blocks/O2.ts",
+      "web/content/blocks/O3.ts",
+      "web/content/schema.ts",
+      "web/demos/O1/index.ts",
+      "web/demos/O1/plots.ts",
+      "web/demos/O1/styles.css",
+      "web/demos/O2/index.ts",
+      "web/demos/O2/styles.css",
+      "web/demos/O3/factory.ts",
+      "web/demos/O3/index.ts",
+      "web/demos/O3/plots.ts",
+      "web/demos/O3/styles.css",
+      "web/math/O1/foundations.ts",
+      "web/math/O2/methods.ts",
+      "web/math/O3/models.ts",
+      "web/math/O3/solver.ts",
+      "web/math/quadratic.ts",
+      "web/tests/O1/browser/O1.spec.ts",
+      "web/tests/O1/foundations.test.ts",
+      "web/tests/O2/browser/O2.spec.ts",
+      "web/tests/O2/methods.test.ts",
+      "web/tests/O3/browser/O3.spec.ts",
+      "web/tests/O3/solver.test.ts",
+      "web/ui/controls.ts",
+      "web/ui/dom.ts",
+      "web/ui/formula.ts",
+      "web/ui/plot.ts",
+      "web/ui/styles.css",
+      "web/ui/tokens.css"
+    ]
+  },
+  "coverage": {
+    "sourceId": "introduzione",
+    "physicalPages": 18,
+    "theoryPages": 17,
+    "metadataPages": [
+      1
+    ],
+    "theoryConcepts": 11,
+    "completeLessons": 10,
+    "newDemoIds": [
+      "motivation-map",
+      "continuous-system",
+      "discrete-system",
+      "trajectory-equilibrium",
+      "linearization",
+      "control-objectives",
+      "optimization-geometry",
+      "scalar-cost",
+      "semidefinite-cost",
+      "constraint-sets"
+    ],
+    "reusedDemoIds": [
+      "weighted-cost"
+    ],
+    "totalDistinctDemos": 11
+  },
+  "tests": {
+    "numericTotal": 87,
+    "numericI1": 21,
+    "browserTotal": 48,
+    "browserI1": 12,
+    "browserStats": {
+      "startTime": "2026-10-13T21:10:38.378Z",
+      "duration": 163860.617,
+      "expected": 48,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "buildArtifacts": {
+    "html": [
+      "index.html",
+      "introduzione.html",
+      "kkt.html",
+      "ottimizzazione.html"
+    ],
+    "localPdfs": 3,
+    "pdfHashes": {
+      "introduzione": "ae169f3492dc0915d0777d62e90184107d7017aee03b8620bbfe0aee9bd3a469",
+      "ottimizzazione": "6c1dba877ca102f055845618f73205b71450b819e0cc09e149e1150017e458ea",
+      "kkt": "937db0d7a574f549eb1181f22207ccfa886ae6d79206720718692bfd6015bd97"
+    },
+    "temporaryPreviewStopped": true
+  },
+  "timebox": {
+    "singleReasoningSession": true,
+    "limitMinutes": 90,
+    "checkpointDeadlineMinutes": 75,
+    "startedAt": "2026-10-13T20:32:08.139Z",
+    "completedAt": "2026-10-13T21:13:46.978Z",
+    "elapsedMinutesToValidation": 41.65,
+    "checkpointPreparedAt": "2026-10-13T21:10:30.680035+00:00",
+    "checkpointPreparedAfterMinutes": 38.38
+  },
+  "handoff": {
+    "nextSession": "I2",
+    "status": "pending",
+    "prompt": "checkpoints/prompts/I2.md",
+    "started": false,
+    "localGitTag": "i1-v1"
+  }
+}

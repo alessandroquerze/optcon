@@ -6,7 +6,9 @@ Il passaggio 2, **O1**, aggiunge nove sezioni complete sulle pp. 2–25 di Ottim
 
 Il passaggio 3, **O2**, aggiunge 11 sezioni complete sulle pp. 26–54: discesa, gradiente/Newton, ricerca di zeri, modelli quadratici, Armijo, convergenza, proiezioni, metodi ammissibili, galleria dei costi e barriere. I metodi hanno esecuzione per passi, cronologia di costo/residuo e casi di fallimento espliciti. Aprire `ottimizzazione.html#o2-discesa`; il modulo si apre anche dal collegamento diretto.
 
-Il passaggio 4, **O3**, completa Ottimizzazione con 10 sezioni sulle pp. 55–81: regolarità, Lagrangiana, KKT del primo/secondo ordine, QP vincolati, Newton, SQP, merito, barriere con uguaglianze e distinzione t/k. Sono ora disponibili **30 sezioni complete per tutti i 33 concetti teorici** del PDF di Ottimizzazione, oltre al frontespizio. Aprire `ottimizzazione.html#o3-regolarita`. Il prossimo blocco è I1; non viene avviato automaticamente.
+Il passaggio 4, **O3**, completa Ottimizzazione con 10 sezioni sulle pp. 55–81: regolarità, Lagrangiana, KKT del primo/secondo ordine, QP vincolati, Newton, SQP, merito, barriere con uguaglianze e distinzione t/k. Sono disponibili **30 sezioni complete per tutti i 33 concetti teorici** del PDF di Ottimizzazione, oltre al frontespizio. Aprire `ottimizzazione.html#o3-regolarita`.
+
+Il passaggio 5, **I1**, copre Introduzione pp. 1–18: **10 sezioni per 11 concetti teorici**, più il frontespizio. Dieci nuovi laboratori e il costo pesato Base collegano cinque applicazioni, sistemi continui/discreti, stack di traiettorie, equilibri, linearizzazione, retroazione, costi anche semidefiniti e regioni ammissibili. Le riduzioni dimensionali, le ipotesi e la correzione del peso w₂ a p. 16 sono esplicite. Aprire `introduzione.html#i1-motivazioni`. Il blocco riusa presentazione e calcoli O3 senza modificarli. Il prossimo blocco è **I2**, sul drone planare; non viene avviato automaticamente.
 
 Per avviare il sito da PowerShell:
 
@@ -55,19 +57,19 @@ Da `web/`:
 
 ```powershell
 npm.cmd run session -- next
-npm.cmd run session -- prompt I1 --save
+npm.cmd run session -- prompt I2 --save
 ```
 
-Il prompt viene salvato in UTF-8 in `checkpoints/prompts/I1.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
+Il prompt viene salvato in UTF-8 in `checkpoints/prompts/I2.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
 
 ```powershell
-npm.cmd run session -- start I1
-npm.cmd run session -- watch I1
+npm.cmd run session -- start I2
+npm.cmd run session -- watch I2
 ```
 
 Il monitor avvisa al minuto 75 e segnala il tetto di 90 minuti; non interrompe il modello o altri processi. Una sessione aggiuntiva va conteggiata esplicitamente. Il runner prepara e monitora il lavoro locale; non invoca API o nuove conversazioni autonomamente.
 
-Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish I1`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
+Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish I2`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
 
 I contratti Base e i loro hash sono registrati nel manifest. Estendere i moduli registrando nuovi contenuti; per correggere un contratto già concluso documentare la motivazione e verificare le regressioni.
 

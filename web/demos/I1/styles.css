@@ -1,0 +1,6 @@
+.i1-flow { overflow-x:auto; margin:18px 0; border:1px solid #d7e2cf; background:#f8faf4; border-radius:8px; }
+.i1-flow svg { display:block; width:100%; min-width:560px; height:auto; }
+.i1-flow figcaption { padding:0 14px 12px; font-size:.8rem; color:#5b7053; }
+.i1-stack { font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+.i1-stack summary { cursor:pointer; color:#34573a; padding:10px 0; }
+.i1-stack p { max-height:180px; overflow:auto; padding:10px; background:#f3f7ed; }
