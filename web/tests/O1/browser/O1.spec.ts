@@ -11,11 +11,11 @@ const metric=(lab:Locator,label:string)=>lab.locator('.o1-metrics>div').filter({
 test('O1 renders each complete lesson once, with an index, formulas, source links and stable anchors',async({page})=>{
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   await page.goto('/ottimizzazione.html');
-  await expect(page.locator('.lesson')).toHaveCount(9);
-  await expect(page.locator('.lesson-toc a')).toHaveCount(9);
-  await expect(page.locator('.lesson-sources a')).toHaveCount(9);
-  await expect(page.locator('.lesson-anchor')).toHaveCount(12);
-  expect(await page.locator('.lesson').evaluateAll(nodes=>new Set(nodes.map(n=>n.id)).size)).toBe(9);
+  await expect(page.locator('.lesson[id^="o1-"]')).toHaveCount(9);
+  await expect(page.locator('.lesson-toc a[href^="#o1-"]')).toHaveCount(9);
+  await expect(page.locator('.lesson[id^="o1-"] .lesson-sources a')).toHaveCount(9);
+  await expect(page.locator('.lesson[id^="o1-"] .lesson-anchor')).toHaveCount(12);
+  expect(await page.locator('.lesson[id^="o1-"]').evaluateAll(nodes=>new Set(nodes.map(n=>n.id)).size)).toBe(9);
   await page.getByRole('link',{name:'Appunti disponibili',exact:true}).click();
   await expect(page).toHaveURL(/#o1-minimi$/);
   await expect(page.locator('#o1-minimi h3')).toBeInViewport();

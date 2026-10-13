@@ -186,7 +186,7 @@
       "dependencies": [
         "O1"
       ],
-      "status": "pending",
+      "status": "completed",
       "objective": "Discesa, Newton, Armijo, convergenza, proiezioni e barriere con esperimenti verificabili.",
       "allowedPaths": [
         "web/content/blocks/O2.ts",
@@ -197,17 +197,41 @@
         "web/demos/registry.ts (registration only)",
         "sources/inventory.json (assigned concepts only)",
         "manifest.json (current status only)",
-        "checkpoints/O2*"
+        "checkpoints/O2*",
+        "web/main.ts (availability wording only)",
+        "web/tests/O1/browser/O1.spec.ts (scope O1 coverage selectors only)",
+        "README.md (content availability and next-session examples)",
+        "checkpoints/prompts/O3.md (handoff only; session not started)"
       ],
       "requiredArtifacts": [
-        "checkpoints/O2.md"
+        "checkpoints/O2.md",
+        "web/content/blocks/O2.ts",
+        "web/math/O2/methods.ts",
+        "web/demos/O2/index.ts",
+        "web/demos/O2/styles.css",
+        "web/tests/O2/methods.test.ts",
+        "web/tests/O2/browser/O2.spec.ts"
       ],
       "acceptance": [
         "All assigned concepts covered, or explicit metadata-only rationale",
         "Figures recompute from parameters and agree with formulas",
         "No type errors; relevant analytic and browser checks pass",
         "Checkpoint records outcomes and remaining work"
-      ]
+      ],
+      "startedAt": "2026-10-13T17:43:33.908Z",
+      "artifactHashes": {
+        "web/content/blocks/O2.ts": "d6671d49a7243eb24a94d39b4a8626ad4539be7612b1326b00ff786e06ab2069",
+        "web/math/O2/methods.ts": "57431cec40e34feb45dc586fd29995e4f2bf25a7a43e6b5e2173684fc7ea3338",
+        "web/demos/O2/index.ts": "06314c5be7d458ec6ba29dd3e2db398bdfdf99a7a030c855f2b7f51962da0cf5",
+        "web/demos/O2/styles.css": "13dfbd125abeff9667985353276a139712b13270027ae27c0845e14da8aff757",
+        "web/tests/O2/methods.test.ts": "244d93c70711bc67f1c4780e6feafaaa9c7b68ffa7b8dde3f12a48bbec5124a9",
+        "web/tests/O2/browser/O2.spec.ts": "46a640635c3b1f45d9843370b685ca4031e4bde756162c5cacbac4f34c6f52d6"
+      },
+      "integrationExceptions": {
+        "web/tests/O1/browser/O1.spec.ts": "Coverage selectors scoped to O1 sections so that adding O2 preserves the original nine-section assertion."
+      },
+      "completedAt": "2026-10-13T18:13:49.931Z",
+      "validationReport": "checkpoints/O2-validation.json"
     },
     {
       "id": "O3",
@@ -539,5 +563,5 @@
     "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
     "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
   },
-  "updatedAt": "2026-10-13T17:31:18.943Z"
+  "updatedAt": "2026-10-13T18:13:49.931Z"
 }

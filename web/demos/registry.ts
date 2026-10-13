@@ -14,6 +14,17 @@ const loaders: Record<string, () => Promise<{ mount(container: HTMLElement): Pro
   'quadratic-bounds': () => import('./O1').then(module=>module.boundsDemo),
   'convex-optimality': () => import('./O1').then(module=>module.functionDemo),
   'quadratic-program': () => import('./O1').then(module=>module.qpDemo),
+  'descent-methods': () => import('./O2').then(module=>module.descentDemo),
+  'gradient-versus-newton': () => import('./O2').then(module=>module.comparisonDemo),
+  'newton-root': () => import('./O2').then(module=>module.rootDemo),
+  'newton-model': () => import('./O2').then(module=>module.modelDemo),
+  'armijo': () => import('./O2').then(module=>module.armijoDemo),
+  'convergence': () => import('./O2').then(module=>module.convergenceDemo),
+  'feasible-directions': () => import('./O2').then(module=>module.feasibleDemo),
+  'projection': () => import('./O2').then(module=>module.projectionDemo),
+  'projected-gradient': () => import('./O2').then(module=>module.projectedDemo),
+  'function-gallery': () => import('./O2').then(module=>module.galleryDemo),
+  'barrier': () => import('./O2').then(module=>module.barrierDemo),
 };
 export function hasDemo(id: string): boolean { return id in loaders; }
 

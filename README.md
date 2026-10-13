@@ -1,8 +1,10 @@
 # OPTCON — Quaderno interattivo
 
-Base locale degli appunti associati ai tre PDF originali. Il passaggio 1 comprende la mappa completa delle fonti, tre pagine distinte e il laboratorio del costo quadratico. Gli approfondimenti successivi sono esplicitamente indicati come in preparazione.
+Appunti locali associati ai tre PDF originali. Il passaggio 1 comprende la mappa completa delle fonti, tre pagine distinte e il laboratorio del costo quadratico. Gli argomenti ancora da sviluppare sono esplicitamente indicati come in preparazione.
 
-Il passaggio 2, **O1**, aggiunge nove sezioni complete sulle pp. 2–25 di Ottimizzazione (p. 1: frontespizio), coprendo i 12 concetti assegnati. Sono disponibili laboratori per minimi/argmin, derivate, punti stazionari, insiemi e funzioni convesse, vincoli, limiti quadratici e QP anche singolari o indefiniti. Aprire `ottimizzazione.html#o1-minimi` oppure scegliere “Appunti disponibili”. Gli altri blocchi restano in preparazione.
+Il passaggio 2, **O1**, aggiunge nove sezioni complete sulle pp. 2–25 di Ottimizzazione (p. 1: frontespizio), coprendo i 12 concetti assegnati. Sono disponibili laboratori per minimi/argmin, derivate, punti stazionari, insiemi e funzioni convesse, vincoli, limiti quadratici e QP anche singolari o indefiniti. Aprire `ottimizzazione.html#o1-minimi` oppure scegliere “Appunti disponibili”.
+
+Il passaggio 3, **O2**, aggiunge 11 sezioni complete sulle pp. 26–54: discesa, gradiente/Newton, ricerca di zeri, modelli quadratici, Armijo, convergenza, proiezioni, metodi ammissibili, galleria dei costi e barriere. I metodi hanno esecuzione per passi, cronologia di costo/residuo e casi di fallimento espliciti. Aprire `ottimizzazione.html#o2-discesa`; il modulo si apre anche dal collegamento diretto. Sono disponibili complessivamente 20 sezioni complete. Il prossimo blocco è O3; non viene avviato automaticamente.
 
 Per avviare il sito da PowerShell:
 
@@ -51,18 +53,18 @@ Da `web/`:
 
 ```powershell
 npm.cmd run session -- next
-npm.cmd run session -- prompt O1 --save
+npm.cmd run session -- prompt O3 --save
 ```
 
-Il prompt viene salvato in UTF-8 in `checkpoints/prompts/O1.md`, con le sole pagine assegnate e gli errata pertinenti. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
+Il prompt viene salvato in UTF-8 in `checkpoints/prompts/O3.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
 
 ```powershell
-npm.cmd run session -- start O1
-npm.cmd run session -- watch O1
+npm.cmd run session -- start O3
+npm.cmd run session -- watch O3
 ```
 
 Il monitor avvisa al minuto 75 e segnala il tetto di 90 minuti; non interrompe il modello o altri processi. Una sessione aggiuntiva va conteggiata esplicitamente. Il runner prepara e monitora il lavoro locale; non invoca API o nuove conversazioni autonomamente.
 
-Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish O1`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
+Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish O3`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
 
 I contratti Base e i loro hash sono registrati nel manifest. Estendere i moduli registrando nuovi contenuti; per correggere un contratto già concluso documentare la motivazione e verificare le regressioni.

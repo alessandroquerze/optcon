@@ -1078,12 +1078,22 @@
                 "3d"
               ],
               "parameters": [
-                "punto iniziale",
-                "passo",
-                "matrice D",
-                "funzione"
+                "funzione",
+                "punto iniziale x/y",
+                "metodo",
+                "regola del passo",
+                "passo iniziale",
+                "beta",
+                "c",
+                "condizionamento",
+                "scala D11",
+                "regolarizzazione",
+                "differenza finita",
+                "esponente",
+                "budget iterazioni",
+                "passo osservato"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1106,11 +1116,16 @@
                 "3d"
               ],
               "parameters": [
-                "punto iniziale",
+                "funzione",
+                "punto iniziale x/y",
+                "metodo",
                 "passo",
-                "condizionamento"
+                "condizionamento",
+                "regolarizzazione",
+                "differenza finita",
+                "passo osservato"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1132,10 +1147,12 @@
               ],
               "parameters": [
                 "funzione",
-                "punto iniziale",
-                "iterazione"
+                "parametro a",
+                "partenza",
+                "budget iterazioni",
+                "iterazione osservata"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1159,11 +1176,12 @@
                 "3d"
               ],
               "parameters": [
-                "punto base",
                 "funzione",
+                "punto base x/y",
+                "condizionamento",
                 "regolarizzazione"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1186,12 +1204,15 @@
                 "2d"
               ],
               "parameters": [
+                "punto x/y",
+                "condizionamento",
                 "passo iniziale",
                 "beta",
                 "c",
-                "direzione"
+                "segno direzione",
+                "tentativo osservato"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1217,12 +1238,16 @@
                 "2d"
               ],
               "parameters": [
-                "regola del passo",
-                "iterazioni",
                 "funzione",
-                "punto iniziale"
+                "metodo",
+                "regola del passo",
+                "partenza",
+                "passo iniziale",
+                "esponente",
+                "budget iterazioni",
+                "iterazione osservata"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1244,11 +1269,13 @@
                 "2d"
               ],
               "parameters": [
-                "punto",
-                "insieme",
-                "gradiente"
+                "disco/quadrato",
+                "dimensione b",
+                "punto esterno x/y",
+                "centro del costo",
+                "punto di prova theta"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1269,11 +1296,13 @@
                 "2d"
               ],
               "parameters": [
-                "punto",
-                "insieme",
-                "dimensioni"
+                "disco/quadrato",
+                "dimensione b",
+                "punto esterno x/y",
+                "centro del costo",
+                "punto di prova theta"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1296,12 +1325,17 @@
                 "2d"
               ],
               "parameters": [
-                "punto iniziale",
+                "disco/quadrato",
+                "dimensione b",
+                "partenza",
+                "centro del costo",
+                "curvatura Q22",
+                "metodo",
                 "passo",
-                "insieme",
-                "costo"
+                "budget iterazioni",
+                "iterazione osservata"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1324,10 +1358,12 @@
               ],
               "parameters": [
                 "funzione",
-                "coefficienti",
-                "dominio"
+                "fattore del costo",
+                "condizionamento Q",
+                "dominio",
+                "punto x/y"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1349,11 +1385,15 @@
                 "3d"
               ],
               "parameters": [
-                "epsilon",
-                "vincoli",
-                "punto interno"
+                "epsilon iniziale",
+                "riduzione di epsilon",
+                "stadi",
+                "semilato b",
+                "centro del costo",
+                "partenza interna",
+                "iterazione osservata"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -2004,8 +2044,9 @@
       "pages": [
         36
       ],
-      "status": "identified",
-      "note": "Il passo definito come argmin del modello quadratico si somma: z_next = z + delta_z."
+      "status": "corrected-in-O2",
+      "note": "Il passo definito come argmin del modello quadratico si somma: z_next = z + delta_z.",
+      "verification": "Passo firmato sommato; verifica Newton su QP in un aggiornamento e modello esatto."
     },
     {
       "sourceId": "ottimizzazione",
@@ -2046,6 +2087,43 @@
       ],
       "status": "to-review",
       "note": "Non imporre gradiente nullo rispetto a tutti i moltiplicatori delle disuguaglianze: distinguere stazionarietà nelle decisioni, g<=0, mu>=0 e complementarità."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        37
+      ],
+      "status": "corrected-in-O2",
+      "note": "Il passo che minimizza il modello con curvatura D^-1 è -D grad f; segno iniziale corretto in coerenza con le equazioni successive.",
+      "verification": "Formule e ipotesi esplicite negli appunti O2; casi analitici e interattivi nei test O2."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        41
+      ],
+      "status": "corrected-in-O2",
+      "note": "La formula del passo decrescente si scrive gamma0/(k+1)^alpha se le iterazioni iniziano da k=0.",
+      "verification": "Formule e ipotesi esplicite negli appunti O2; casi analitici e interattivi nei test O2."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        44,
+        45
+      ],
+      "status": "corrected-in-O2",
+      "note": "Non ogni sottosequenza converge: distinguere esistenza di punti di accumulazione, stazionarietà dei limiti e convergenza dell’intera sequenza.",
+      "verification": "Formule e ipotesi esplicite negli appunti O2; casi analitici e interattivi nei test O2."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        51
+      ],
+      "status": "corrected-in-O2",
+      "note": "La combinazione di due punti ammissibili resta nell’insieme convesso per gamma in [0,1]; ammissibilità distinta dalla diminuzione del costo.",
+      "verification": "Formule e ipotesi esplicite negli appunti O2; casi analitici e interattivi nei test O2."
     }
   ]
 }
