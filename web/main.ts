@@ -70,9 +70,10 @@ function lessonMarkup(lesson: LessonSection): string {
 
 function outline(item: CourseSource): string {
   const concepts = item.concepts.filter(c => c.kind === 'theory');
+  const complete = concepts.every(c=>lessons[item.id]?.some(s=>s.conceptIds.includes(c.id)));
   const blocks = [...new Set(concepts.map(c => c.block))];
   return `<section class="outline-section" id="percorso" aria-labelledby="outline-title"><div class="section-heading"><div><span class="eyebrow">METTI IN ORDINE LE IDEE</span><h2 id="outline-title">Il percorso del capitolo</h2></div><span class="outline-count">${concepts.length} concetti</span></div>
-    <p class="section-lead">La mappa completa degli argomenti, con rimandi alle slide. Gli approfondimenti e i laboratori indicati “in preparazione” verranno aggiunti qui.</p>
+    <p class="section-lead">${complete?'Tutti gli argomenti del PDF sono sviluppati negli appunti, con laboratori e rimandi alle slide.':'La mappa completa degli argomenti, con rimandi alle slide. Gli approfondimenti e i laboratori indicati “in preparazione” verranno aggiunti qui.'}</p>
     <div class="key-idea"><span>IDEA CHIAVE</span><div>${formula(courseCopy[item.id].formula)}</div><p>${html(courseCopy[item.id].formulaCaption)}</p></div>
     ${blocks.map((block, index) => {
       const entries = concepts.filter(c=>c.block === block);
@@ -92,9 +93,10 @@ function outline(item: CourseSource): string {
 }
 
 function sourceSection(item: CourseSource): string {
+  const complete=item.concepts.filter(c=>c.kind==='theory').every(c=>lessons[item.id]?.some(s=>s.conceptIds.includes(c.id)));
   return `<section class="sources-section" id="fonti" aria-labelledby="source-title"><div class="section-heading"><div><span class="eyebrow">TORNA ALLA FONTE</span><h2 id="source-title">Dalle slide al quaderno</h2></div></div>
     <a href="${pdfUrl(item)}" target="_blank" rel="noopener" class="source-card"><span class="pdf-icon">PDF</span><span><strong>${html(item.title)}</strong><small>G. Notarstefano · Università di Bologna · ${item.pageCount} pagine</small></span>${arrow}</a>
-    <p class="source-caption">I rimandi usano il numero effettivo della pagina PDF, includendo la copertina. Può differire dal numero stampato sulla slide. ${lessons[item.id]?.length?`Sono disponibili ${lessons[item.id]!.length} sezioni complete; gli altri argomenti sono in preparazione.`:'Gli appunti completi sono in preparazione; il laboratorio del costo quadratico è già disponibile.'}</p></section>`;
+    <p class="source-caption">I rimandi usano il numero effettivo della pagina PDF, includendo la copertina. Può differire dal numero stampato sulla slide. ${lessons[item.id]?.length?`Sono disponibili ${lessons[item.id]!.length} sezioni complete${complete?', che coprono tutti gli argomenti del PDF.':'; gli altri argomenti sono in preparazione.'}`:'Gli appunti completi sono in preparazione; il laboratorio del costo quadratico è già disponibile.'}</p></section>`;
 }
 
 function home(): string {

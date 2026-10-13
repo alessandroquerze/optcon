@@ -270,7 +270,7 @@
       "dependencies": [
         "O2"
       ],
-      "status": "pending",
+      "status": "completed",
       "objective": "Regolarit?, moltiplicatori, KKT, QP vincolati, SQP e funzione di merito; consolidare il solutore.",
       "allowedPaths": [
         "web/content/blocks/O3.ts",
@@ -281,17 +281,43 @@
         "web/demos/registry.ts (registration only)",
         "sources/inventory.json (assigned concepts only)",
         "manifest.json (current status only)",
-        "checkpoints/O3*"
+        "checkpoints/O3*",
+        "web/main.ts (content coverage wording only)",
+        "README.md (availability, solver contract and next-session examples)",
+        "checkpoints/prompts/I1.md (handoff only; session not started)"
       ],
       "requiredArtifacts": [
-        "checkpoints/O3.md"
+        "checkpoints/O3.md",
+        "web/content/blocks/O3.ts",
+        "web/math/O3/solver.ts",
+        "web/math/O3/models.ts",
+        "web/demos/O3/index.ts",
+        "web/demos/O3/factory.ts",
+        "web/demos/O3/plots.ts",
+        "web/demos/O3/styles.css",
+        "web/tests/O3/solver.test.ts",
+        "web/tests/O3/browser/O3.spec.ts"
       ],
       "acceptance": [
         "All assigned concepts covered, or explicit metadata-only rationale",
         "Figures recompute from parameters and agree with formulas",
         "No type errors; relevant analytic and browser checks pass",
         "Checkpoint records outcomes and remaining work"
-      ]
+      ],
+      "startedAt": "2026-10-13T18:25:17.812Z",
+      "artifactHashes": {
+        "web/content/blocks/O3.ts": "26c45b022f0024c5ebf001e3911f819b7c6993f5d739c211fb62a9cca91327eb",
+        "web/math/O3/solver.ts": "4cee15455a0e1cb87740cf6c25b1ba90cd64af581c2acf5933d6dda670028e68",
+        "web/math/O3/models.ts": "1faf79438533476631c3d59c13742bc9cc3c9f2e0b81decd5076e0e0e81b41f7",
+        "web/demos/O3/index.ts": "976a19939d35124e80cdbae41b2a1e02d02842c5acd1ad242ed03e436bbe1d7e",
+        "web/demos/O3/factory.ts": "55ae204ceffe504bd45be25fa7cf8a79d0ec2c38694f176cf859fde03913380d",
+        "web/demos/O3/plots.ts": "9d247f6a1cdb14ad212bc8dcb7f9e73a93d72547f19b8a38bc8a78d1b925f354",
+        "web/demos/O3/styles.css": "1d964fcbd038c869e8a7cea2fb6e3120d8c9c0327ceae16ec59b745b7e3e78f7",
+        "web/tests/O3/solver.test.ts": "4945e8ff3c3d52baa5a1311a916b6fb9d40a082ef9ec8ab4ad2a8e418cc6ad58",
+        "web/tests/O3/browser/O3.spec.ts": "2e721b121cc27aa88b9ebd7b419f037db21bde390f30df1e4fbac043618200ee"
+      },
+      "completedAt": "2026-10-13T19:09:49.856Z",
+      "validationReport": "checkpoints/O3-validation.json"
     },
     {
       "id": "I1",
@@ -563,5 +589,5 @@
     "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
     "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
   },
-  "updatedAt": "2026-10-13T18:13:49.931Z"
+  "updatedAt": "2026-10-13T19:09:49.856Z"
 }

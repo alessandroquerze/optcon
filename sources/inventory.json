@@ -1416,11 +1416,13 @@
                 "2d"
               ],
               "parameters": [
-                "punto",
-                "vincoli",
-                "angolo dei gradienti"
+                "punto x/y",
+                "famiglia di vincoli",
+                "angolo normali",
+                "soglia vincolo",
+                "uguaglianza opzionale"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1442,12 +1444,14 @@
                 "3d"
               ],
               "parameters": [
-                "punto",
+                "punto x/y",
+                "obiettivo a1/a2",
+                "bordo disuguaglianza",
+                "livello uguaglianza",
                 "lambda",
-                "mu",
-                "vincoli"
+                "mu"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1469,15 +1473,18 @@
               "id": "kkt-geometry",
               "label": "Le condizioni KKT",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
-                "punto",
+                "punto x/y",
+                "obiettivo a1/a2",
+                "bordo disuguaglianza",
+                "livello uguaglianza",
                 "lambda",
-                "mu",
-                "vincoli"
+                "mu"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1500,11 +1507,16 @@
                 "3d"
               ],
               "parameters": [
-                "punto",
-                "direzione tangente",
-                "Hessiana"
+                "geometria del vincolo",
+                "punto sul cerchio",
+                "raggio",
+                "coefficienti del costo",
+                "lambda",
+                "componente normale",
+                "direzione nel semipiano",
+                "perturbazione"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1528,12 +1540,15 @@
                 "3d"
               ],
               "parameters": [
-                "Q",
-                "q",
-                "A",
-                "b"
+                "Q11",
+                "Q22",
+                "Q12",
+                "q1",
+                "q2",
+                "angolo A",
+                "termine noto b"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1559,11 +1574,20 @@
                 "3d"
               ],
               "parameters": [
-                "punto iniziale",
-                "moltiplicatori",
-                "regolarizzazione"
+                "vincolo",
+                "partenza x/y",
+                "lambda iniziale",
+                "obiettivo",
+                "curvatura vincolo",
+                "Hessiana del modello",
+                "regolarizzazione",
+                "regola del passo",
+                "beta",
+                "c",
+                "passo",
+                "iterazione"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1585,12 +1609,21 @@
                 "3d"
               ],
               "parameters": [
-                "punto iniziale",
+                "vincolo",
+                "partenza x/y",
+                "lambda iniziale",
+                "obiettivo",
                 "Hessiana",
-                "vincoli",
+                "regolarizzazione",
+                "salvaguardia",
+                "penalita",
+                "adattamento penalita",
+                "beta",
+                "c",
+                "passo",
                 "iterazione"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1613,12 +1646,15 @@
                 "2d"
               ],
               "parameters": [
-                "penalita",
+                "punto x/y",
+                "penalita s",
+                "adattamento penalita",
                 "beta",
                 "c",
-                "passo"
+                "passo iniziale",
+                "tentativo osservato"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1640,11 +1676,16 @@
                 "3d"
               ],
               "parameters": [
-                "epsilon",
-                "uguaglianze",
-                "punto interno"
+                "epsilon iniziale",
+                "riduzione epsilon",
+                "stadi",
+                "semilato b",
+                "uguaglianza x+y=c",
+                "obiettivo",
+                "partenza interna",
+                "iterazione"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1667,11 +1708,17 @@
                 "2d"
               ],
               "parameters": [
+                "orizzonte",
                 "tempo t",
                 "iterazione k",
-                "orizzonte"
+                "stato iniziale",
+                "riferimento terminale",
+                "dinamica a/b",
+                "pesi q/r/qT",
+                "passo",
+                "budget iterazioni"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         }
@@ -2053,16 +2100,18 @@
       "pages": [
         68
       ],
-      "status": "identified",
-      "note": "Per A di dimensione m x d e y in R^d, il vincolo tangente è Ay=0, non A^T y=0."
+      "status": "corrected-in-O3",
+      "note": "Per A di dimensione m x d e y in R^d, il vincolo tangente è Ay=0, non A^T y=0.",
+      "verification": "Formule corrette negli appunti O3; QP ridotto e derivata del merito verificati numericamente."
     },
     {
       "sourceId": "ottimizzazione",
       "pages": [
         75
       ],
-      "status": "identified",
-      "note": "La penalità per h(z)=0 usa ||h(z)||_1."
+      "status": "corrected-in-O3",
+      "note": "La penalità per h(z)=0 usa ||h(z)||_1.",
+      "verification": "Formule corrette negli appunti O3; QP ridotto e derivata del merito verificati numericamente."
     },
     {
       "sourceId": "introduzione",
@@ -2124,6 +2173,62 @@
       "status": "corrected-in-O2",
       "note": "La combinazione di due punti ammissibili resta nell’insieme convesso per gamma in [0,1]; ammissibilità distinta dalla diminuzione del costo.",
       "verification": "Formule e ipotesi esplicite negli appunti O2; casi analitici e interattivi nei test O2."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        58
+      ],
+      "status": "clarified-in-O3",
+      "note": "L'infimo della Lagrangiana a moltiplicatori fissati definisce il duale; non equivale a risolvere il primale.",
+      "verification": "Esplicitato nelle sezioni O3 e coperto da casi analitici o controesempi nei test."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        65
+      ],
+      "status": "clarified-in-O3",
+      "note": "Il test sul sottospazio che annulla tutte le normali attive è necessario ma più debole del test sul cono critico quando alcuni moltiplicatori attivi sono nulli.",
+      "verification": "Esplicitato nelle sezioni O3 e coperto da casi analitici o controesempi nei test."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        73
+      ],
+      "status": "corrected-in-O3",
+      "note": "Le equazioni KKT del QP sono sufficienti per un minimo solo con appropriate condizioni di curvatura; la sola risolubilità del sistema non basta.",
+      "verification": "Esplicitato nelle sezioni O3 e coperto da casi analitici o controesempi nei test."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        74,
+        77
+      ],
+      "status": "clarified-in-O3",
+      "note": "Il moltiplicatore del QP è lambdaQP; l’incremento Newton è lambdaQP-lambda. Con passo smorzato anche lambda va interpolato.",
+      "verification": "Esplicitato nelle sezioni O3 e coperto da casi analitici o controesempi nei test."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        75,
+        76
+      ],
+      "status": "clarified-in-O3",
+      "note": "La diminuzione del merito non impone diminuzione simultanea di costo e violazione. Esattezza locale e derivata direzionale richiedono le ipotesi dichiarate.",
+      "verification": "Esplicitato nelle sezioni O3 e coperto da casi analitici o controesempi nei test."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        78
+      ],
+      "status": "corrected-in-O3",
+      "note": "Incorporare le disuguaglianze nella barriera lascia esplicite le uguaglianze: il problema risultante resta vincolato.",
+      "verification": "Esplicitato nelle sezioni O3 e coperto da casi analitici o controesempi nei test."
     }
   ]
 }

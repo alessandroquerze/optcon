@@ -25,6 +25,16 @@ const loaders: Record<string, () => Promise<{ mount(container: HTMLElement): Pro
   'projected-gradient': () => import('./O2').then(module=>module.projectedDemo),
   'function-gallery': () => import('./O2').then(module=>module.galleryDemo),
   'barrier': () => import('./O2').then(module=>module.barrierDemo),
+  'active-constraints': () => import('./O3').then(module=>module.activeDemo),
+  'lagrangian': () => import('./O3').then(module=>module.lagrangianDemo),
+  'kkt-geometry': () => import('./O3').then(module=>module.kktDemo),
+  'constrained-curvature': () => import('./O3').then(module=>module.curvatureDemo),
+  'constrained-qp': () => import('./O3').then(module=>module.qpDemo),
+  'constrained-newton': () => import('./O3').then(module=>module.newtonDemo),
+  'sqp': () => import('./O3').then(module=>module.sqpDemo),
+  'merit-line-search': () => import('./O3').then(module=>module.meritDemo),
+  'barrier-equalities': () => import('./O3').then(module=>module.barrierDemo),
+  'time-iteration': () => import('./O3').then(module=>module.timeDemo),
 };
 export function hasDemo(id: string): boolean { return id in loaders; }
 
