@@ -45,6 +45,14 @@ const loaders: Record<string, () => Promise<{ mount(container: HTMLElement): Pro
   'scalar-cost': () => import('./I1').then(module=>module.scalarDemo),
   'semidefinite-cost': () => import('./I1').then(module=>module.weightsDemo),
   'constraint-sets': () => import('./I1').then(module=>module.constraintsDemo),
+  'dynamics-residual': () => import('./I2').then(module=>module.residualDemo),
+  'trajectory-cost': () => import('./I2').then(module=>module.costDemo),
+  'path-boundary': () => import('./I2').then(module=>module.pathDemo),
+  'discrete-control': () => import('./I2').then(module=>module.controlDemo),
+  'reference-versus-trajectory': () => import('./I2').then(module=>module.referenceDemo),
+  'planar-drone': () => import('./I2').then(module=>module.flightDemo),
+  'drone-optimal-control': () => import('./I2').then(module=>module.droneDemo),
+  'drone-constraints': () => import('./I2').then(module=>module.constraintsDemo),
 };
 export function hasDemo(id: string): boolean { return id in loaders; }
 

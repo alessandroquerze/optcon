@@ -353,7 +353,7 @@
                 "ingressi",
                 "orizzonte"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -378,7 +378,7 @@
                 "pesi intermedi",
                 "peso terminale"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -403,7 +403,7 @@
                 "stato iniziale",
                 "obiettivo finale"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -429,7 +429,7 @@
                 "QT",
                 "riferimento"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -455,7 +455,7 @@
                 "pesi",
                 "limiti"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -481,7 +481,7 @@
                 "dinamica",
                 "pesi"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -500,7 +500,8 @@
               "id": "planar-drone",
               "label": "Un drone nel piano",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "M",
@@ -509,7 +510,7 @@
                 "passo di discretizzazione",
                 "spinte"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -528,7 +529,8 @@
               "id": "drone-optimal-control",
               "label": "Progettare il volo",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "Q",
@@ -537,7 +539,7 @@
                 "orizzonte",
                 "riferimento"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -555,7 +557,8 @@
               "id": "drone-constraints",
               "label": "Dove può volare?",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "spinta minima",
@@ -563,7 +566,7 @@
                 "quota minima",
                 "quota massima"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -2138,8 +2141,9 @@
       "pages": [
         26
       ],
-      "status": "identified",
-      "note": "Il modello presentato è planare, sebbene il testo descriva un obiettivo nello spazio 3D."
+      "status": "clarified-in-I2",
+      "note": "Il modello presentato è planare, sebbene il testo descriva un obiettivo nello spazio 3D.",
+      "verification": "Confronto visivo con il PDF. Viste 3D con assi px, py, tempo; nessuna terza coordinata spaziale."
     },
     {
       "sourceId": "introduzione",
@@ -2285,6 +2289,25 @@
       "status": "clarified-in-I1",
       "note": "La regione ellittica richiede a,b,c positivi; coefficienti generici possono produrre coniche diverse, insiemi vuoti o tutto il piano. Uguaglianze non affini possono avere insiemi convessi, come x^2=0.",
       "verification": "Confronto visivo con la pagina PDF; formule e casi analitici verificati nei test I1."
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        19
+      ],
+      "status": "clarified-in-I2",
+      "note": "Nelle espansioni temporali leggere f0, f1, ..., f_(T-1); sono T uguaglianze vettoriali, cioè nT scalari. Il laboratorio usa il residuo x_(t+1)-f_t coerentemente.",
+      "verification": "Confronto con il PDF e prova analitica dei residui di uno stato modificato."
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        21,
+        30
+      ],
+      "status": "clarified-in-I2",
+      "note": "Gli ingressi hanno indici 0...T-1; gli stati 0...T. Il laboratorio dichiara esplicitamente i limiti di stato anche al terminale. La barriera richiede un interno stretto e non certifica il comportamento continuo fra campioni.",
+      "verification": "Indici e controlli verificati nei test numerici e browser I2."
     }
   ]
 }

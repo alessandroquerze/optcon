@@ -1,0 +1,23 @@
+import type { Data } from 'plotly.js';
+import type { PlotFrame } from '../../ui/plot';
+import type { State,Thrust } from '../../math/I2/drone';
+import { curve,layout } from '../O1/plots';
+import { num } from '../O3/factory';
+export const green='#356b45',orange='#b77130',blue='#587d9a';
+export const profile=(data:Data[],x='Tempo discreto t',y='Valore',height=300):PlotFrame=>({data,layout:layout({height,margin:{l:60,r:20,t:20,b:80},xaxis:{title:{text:x}},yaxis:{title:{text:y}},legend:{orientation:'h',y:-.32}})});
+export function flightFrame(states:State[],reference:State[]|undefined,dt:number,time:number,view:'2d'|'3d',bounds?:{lower:number;upper:number}):PlotFrame {
+  const path=(x:State[],name:string,color:string,dash?:'dash'):Data=>view==='2d'?{type:'scatter',x:x.map(s=>s[0]),y:x.map(s=>s[2]),name,line:{color,dash},mode:'lines+markers',marker:{size:3}}:{type:'scatter3d',x:x.map(s=>s[0]),y:x.map(s=>s[2]),z:x.map((_,i)=>i*dt),mode:'lines',line:{color,width:5,dash},name};
+  const current=states[Math.min(time,states.length-1)],data:Data[]=[path(states,'Traiettoria',orange),...(reference?[path(reference,'Riferimento',blue,'dash')]:[])];
+  data.push(view==='2d'?{type:'scatter',x:[current[0]],y:[current[2]],mode:'markers',marker:{color:green,size:10},name:'Drone al tempo osservato'}:{type:'scatter3d',x:[current[0]],y:[current[2]],z:[time*dt],mode:'markers',marker:{color:green,size:6},name:'Tempo osservato'});
+  const all=[...states,...(reference??[])],left=Math.min(...all.map(x=>x[0]))-.1,right=Math.max(...all.map(x=>x[0]))+.1;
+  if(bounds)for(const [value,name] of [[bounds.lower,'Quota minima'],[bounds.upper,'Quota massima']] as const){
+    data.push(view==='2d'?curve([left,right],[value,value],name,'#86a375','dot'):{type:'surface',x:[[left,right],[left,right]],y:[[value,value],[value,value]],z:[[0,0],[(states.length-1)*dt,(states.length-1)*dt]],opacity:.15,colorscale:[[0,'#86a375'],[1,'#86a375']],showscale:false,name,showlegend:true});
+  }
+  return {data,layout:layout({height:390,xaxis:{title:{text:'Posizione px (m)'}},yaxis:{title:{text:'Quota py (m)'},scaleanchor:'x',scaleratio:1},...(bounds&&view==='2d'?{shapes:[{type:'rect' as const,xref:'paper' as const,yref:'y' as const,x0:0,x1:1,y0:bounds.lower,y1:bounds.upper,fillcolor:'#dceacf55',line:{width:0},layer:'below' as const}]}:{}),...(view==='3d'?{scene:{xaxis:{title:{text:'px (m)'}},yaxis:{title:{text:'py (m)'}},zaxis:{title:{text:'Tempo (s)'}},aspectmode:'auto'},margin:{l:0,r:0,t:10,b:60},uirevision:'i2-flight'}:{})})};
+}
+export function droneSVG(states:State[],inputs:Thrust[],time:number,length:number,dt:number,reference?:State[]){
+  const current=states[Math.min(time,states.length-1)],all=[...states,...(reference??[])],minX=Math.min(...all.map(x=>x[0]))-.2,maxX=Math.max(...all.map(x=>x[0]))+.2,minY=Math.min(...all.map(x=>x[2]))-.15,maxY=Math.max(...all.map(x=>x[2]))+.15,
+    scale=Math.min(500/Math.max(.8,maxX-minX),120/Math.max(.5,maxY-minY)),X=(x:number)=>320+(x-(minX+maxX)/2)*scale,Y=(y:number)=>105-(y-(minY+maxY)/2)*scale,px=X(current[0]),py=Y(current[2]),half=Math.min(72,Math.max(30,length*scale/2)),c=Math.cos(current[4]),s=Math.sin(current[4]),u=inputs[Math.min(time,inputs.length-1)],points=(path:State[])=>path.map(x=>`${X(x[0])},${Y(x[2])}`).join(' ');
+  const rotor=(sign:number,index:number)=>{const x=px+sign*half*c,y=py-sign*half*s,direction=Math.sign(u[index]),force=Math.min(55,Math.abs(u[index])*4)*direction,endX=x-s*force,endY=y-c*force,arrow=Math.abs(force)>1e-8?`<path d="M${x},${y}L${endX},${endY}" stroke="#b77130" stroke-width="3"/><path d="M${endX},${endY}L${endX+7*s*direction+3*c},${endY+7*c*direction-3*s}L${endX+7*s*direction-3*c},${endY+7*c*direction+3*s}Z" fill="#b77130"/>`:'';return `<circle cx="${x}" cy="${y}" r="7" fill="#f7faf0" stroke="#356b45"/>${arrow}<text x="${x+sign*12}" y="${y+22}" text-anchor="${sign<0?'end':'start'}" font-size="14">u${index+1}=${num(u[index])} N</text>`;};
+  return `<figure class="i2-animation"><svg viewBox="0 0 640 215" role="img" aria-label="Drone planare al tempo ${num(time*dt)} secondi: posizione, assetto e spinte."><polyline points="${reference?points(reference):''}" fill="none" stroke="#7a9cb2" stroke-dasharray="4 4"/><polyline points="${points(states.slice(0,time+1))}" fill="none" stroke="#b77130"/><line x1="${px-half*c}" y1="${py+half*s}" x2="${px+half*c}" y2="${py-half*s}" stroke="#356b45" stroke-width="6"/>${rotor(-1,1)}${rotor(1,0)}<circle cx="${px}" cy="${py}" r="5" fill="#356b45"/><text x="12" y="200" font-size="12">t=${num(time*dt)} s · θ=${num(current[4])} rad · corpo schematico</text></svg><figcaption>Movimento nel piano px/py. Il corpo può essere ingrandito per leggibilità.</figcaption></figure>`;
+}

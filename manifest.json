@@ -419,7 +419,7 @@
         "I1",
         "O3"
       ],
-      "status": "pending",
+      "status": "completed",
       "objective": "Formulazione discreta e laboratorio del drone planare con costi, riferimenti e vincoli.",
       "allowedPaths": [
         "web/content/blocks/I2.ts",
@@ -429,18 +429,47 @@
         "web/content/catalog.ts (registration only)",
         "web/demos/registry.ts (registration only)",
         "sources/inventory.json (assigned concepts only)",
-        "manifest.json (current status only)",
-        "checkpoints/I2*"
+        "manifest.json (I2 metadata and status only)",
+        "checkpoints/I2*",
+        "README.md (I2 availability and next-session examples)",
+        "checkpoints/prompts/I3.md (handoff only; session not started)"
       ],
       "requiredArtifacts": [
-        "checkpoints/I2.md"
+        "checkpoints/I2.md",
+        "web/content/blocks/I2.ts",
+        "web/math/I2/scalar.ts",
+        "web/math/I2/drone.ts",
+        "web/demos/I2/index.ts",
+        "web/demos/I2/drone-lab.ts",
+        "web/demos/I2/solver.worker.ts",
+        "web/demos/I2/plots.ts",
+        "web/demos/I2/styles.css",
+        "web/tests/I2/models.test.ts",
+        "web/tests/I2/browser/I2.spec.ts",
+        "web/tests/I2/production.mjs"
       ],
       "acceptance": [
         "All assigned concepts covered, or explicit metadata-only rationale",
         "Figures recompute from parameters and agree with formulas",
         "No type errors; relevant analytic and browser checks pass",
         "Checkpoint records outcomes and remaining work"
-      ]
+      ],
+      "startedAt": "2026-10-13T21:27:05.850Z",
+      "completedAt": "2026-10-13T22:07:16.860Z",
+      "validationReport": "checkpoints/I2-validation.json",
+      "artifactHashes": {
+        "web/content/blocks/I2.ts": "0ff72e4fc7abd5ce5598c3b8fef9151e4fe491e84c1d8a7c5204095088b27808",
+        "web/math/I2/scalar.ts": "25435ba207e95eb5d552f6ff506eb1a1807e15e268e70e37b9ed864095dfe7c3",
+        "web/math/I2/drone.ts": "42045c80054d5fbe1d0d17d9813f6ae20639c09067398ce6cfe0ffc1e1fe3213",
+        "web/demos/I2/index.ts": "851497a95ead039c875cdbaac195e5d71f00a8a126ab3e6240ceaf9c7495ffd5",
+        "web/demos/I2/drone-lab.ts": "6dfd80f29cea5df21ee0cfae722162e1157e62ff5d1abc00593232eb03ce6b4d",
+        "web/demos/I2/solver.worker.ts": "e52b140ee1627c9c5660f166debba060a7d8b0cbb1d2140528cc64338301265e",
+        "web/demos/I2/plots.ts": "fdfecf0686c9b835fe12df693ffe80050b75c41deeec8cd3eb0fb32511133aa8",
+        "web/demos/I2/styles.css": "28214f1de591c2ecf7db4aac8053a619242566213dc1de961e0d4e48bdc2dd1c",
+        "web/tests/I2/models.test.ts": "11b9cb8bce7c5f654292d1c5ce4031420a0d376f8a859e7d27fbb0ba752d8215",
+        "web/tests/I2/browser/I2.spec.ts": "7736d0a1fe240d3341eab93aed8f5f7abe10d6c4f9edac3a3020985d3b4632dd",
+        "web/tests/I2/production.mjs": "ee877d2485d4f0c1c161fa1b6d834ed8107403017296d356f651d8e0c2c248f5"
+      }
     },
     {
       "id": "I3",
@@ -615,5 +644,5 @@
     "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
     "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
   },
-  "updatedAt": "2026-10-13T21:14:57.271964Z"
+  "updatedAt": "2026-10-13T22:09:27.824460Z"
 }

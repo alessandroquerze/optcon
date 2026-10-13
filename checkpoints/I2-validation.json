@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "I2",
+  "startedAt": "2026-10-13T22:02:45.112Z",
+  "passed": true,
+  "checks": [
+    {
+      "script": "check:inventory",
+      "startedAt": "2026-10-13T22:02:45.113Z",
+      "finishedAt": "2026-10-13T22:02:45.538Z",
+      "exitCode": 0
+    },
+    {
+      "script": "typecheck",
+      "startedAt": "2026-10-13T22:02:45.540Z",
+      "finishedAt": "2026-10-13T22:02:49.481Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test",
+      "startedAt": "2026-10-13T22:02:49.483Z",
+      "finishedAt": "2026-10-13T22:02:56.711Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test:browser",
+      "startedAt": "2026-10-13T22:02:56.713Z",
+      "finishedAt": "2026-10-13T22:06:50.514Z",
+      "exitCode": 0
+    },
+    {
+      "script": "build",
+      "startedAt": "2026-10-13T22:06:50.516Z",
+      "finishedAt": "2026-10-13T22:07:16.854Z",
+      "exitCode": 0
+    }
+  ],
+  "finishedAt": "2026-10-13T22:07:16.856Z",
+  "contractHashes": {
+    "web/content/schema.ts": "56e0447dbde546f5b9aea164197d656ad766fc2fdbe39b84f659a9b0cc5fb1b3",
+    "web/math/quadratic.ts": "07825a9ee139a5cc4d754acc22f1aeb2535ac02f24d327c827d32ab69300df59",
+    "web/ui/dom.ts": "a58b0e95cac0901f6964225f58616e72f84855bf2f442750416ec2eca02191e9",
+    "web/ui/formula.ts": "8587fabdeafd216092379b0ffa976d667955f6f83134eb6b2424bb470ecc5936",
+    "web/ui/controls.ts": "b4dd2b43c54fc82b9e06fcdbb495cc2409eb7726ce38ac96434cfd10fc2f7aec",
+    "web/ui/plot.ts": "24b635329df73cc7986eb5a0a8937d4d097f4fcabfd979220883dfda10abd5f0",
+    "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
+    "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
+  },
+  "freezeAudit": {
+    "baselineCommit": "93dddd6",
+    "filesCompared": 38,
+    "allByteIdentical": true,
+    "paths": [
+      "web/content/blocks/I1.ts",
+      "web/content/blocks/O1.ts",
+      "web/content/blocks/O2.ts",
+      "web/content/blocks/O3.ts",
+      "web/content/schema.ts",
+      "web/demos/I1/index.ts",
+      "web/demos/I1/plots.ts",
+      "web/demos/I1/styles.css",
+      "web/demos/O1/index.ts",
+      "web/demos/O1/plots.ts",
+      "web/demos/O1/styles.css",
+      "web/demos/O2/index.ts",
+      "web/demos/O2/styles.css",
+      "web/demos/O3/factory.ts",
+      "web/demos/O3/index.ts",
+      "web/demos/O3/plots.ts",
+      "web/demos/O3/styles.css",
+      "web/math/I1/geometry.ts",
+      "web/math/I1/systems.ts",
+      "web/math/O1/foundations.ts",
+      "web/math/O2/methods.ts",
+      "web/math/O3/models.ts",
+      "web/math/O3/solver.ts",
+      "web/math/quadratic.ts",
+      "web/tests/I1/browser/I1.spec.ts",
+      "web/tests/I1/models.test.ts",
+      "web/tests/O1/browser/O1.spec.ts",
+      "web/tests/O1/foundations.test.ts",
+      "web/tests/O2/browser/O2.spec.ts",
+      "web/tests/O2/methods.test.ts",
+      "web/tests/O3/browser/O3.spec.ts",
+      "web/tests/O3/solver.test.ts",
+      "web/ui/controls.ts",
+      "web/ui/dom.ts",
+      "web/ui/formula.ts",
+      "web/ui/plot.ts",
+      "web/ui/styles.css",
+      "web/ui/tokens.css"
+    ]
+  },
+  "coverage": {
+    "sourceId": "introduzione",
+    "physicalPages": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "theoryConcepts": 9,
+    "completeLessons": 8,
+    "demoIds": [
+      "dynamics-residual",
+      "trajectory-cost",
+      "path-boundary",
+      "discrete-control",
+      "reference-versus-trajectory",
+      "planar-drone",
+      "drone-optimal-control",
+      "drone-constraints"
+    ],
+    "totalIntroductionLessons": 18,
+    "totalIntroductionTheoryConcepts": 20
+  },
+  "tests": {
+    "numericTotal": 106,
+    "numericI2": 19,
+    "browserTotal": 60,
+    "browserI2": 12,
+    "browserStats": {
+      "startTime": "2026-10-13T22:02:57.906Z",
+      "duration": 232531.641,
+      "expected": 60,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "productionSmoke": {
+    "passed": true,
+    "command": "node tests/I2/production.mjs",
+    "builtWorker": true,
+    "errors": [],
+    "temporaryServerClosed": true,
+    "screenshot": "artifacts/I2-production.png"
+  },
+  "buildArtifacts": {
+    "html": [
+      "index.html",
+      "introduzione.html",
+      "kkt.html",
+      "ottimizzazione.html"
+    ],
+    "localPdfs": 3,
+    "pdfHashes": {
+      "introduzione": "ae169f3492dc0915d0777d62e90184107d7017aee03b8620bbfe0aee9bd3a469",
+      "ottimizzazione": "6c1dba877ca102f055845618f73205b71450b819e0cc09e149e1150017e458ea",
+      "kkt": "937db0d7a574f549eb1181f22207ccfa886ae6d79206720718692bfd6015bd97"
+    },
+    "compiledWorker": "solver.worker-Cu4XwRRZ.js",
+    "compiledWorkerBytes": 10963,
+    "compiledWorkerSha256": "07a1941136c7ff0d0634f3be448258dcb73e715f3e302e88cac69b563b6ca6dc",
+    "temporaryPreviewStopped": true
+  },
+  "timebox": {
+    "singleReasoningSession": true,
+    "limitMinutes": 90,
+    "checkpointDeadlineMinutes": 75,
+    "startedAt": "2026-10-13T21:27:05.850Z",
+    "completedAt": "2026-10-13T22:07:16.860Z",
+    "elapsedMinutesToValidation": 40.18,
+    "checkpointPreparedAt": "2026-10-13T22:02:44.966621+00:00",
+    "checkpointPreparedAfterMinutes": 35.65
+  },
+  "handoff": {
+    "nextSession": "I3",
+    "status": "pending",
+    "prompt": "checkpoints/prompts/I3.md",
+    "started": false,
+    "localGitTag": "i2-v1"
+  }
+}

@@ -8,7 +8,9 @@ Il passaggio 3, **O2**, aggiunge 11 sezioni complete sulle pp. 26–54: discesa,
 
 Il passaggio 4, **O3**, completa Ottimizzazione con 10 sezioni sulle pp. 55–81: regolarità, Lagrangiana, KKT del primo/secondo ordine, QP vincolati, Newton, SQP, merito, barriere con uguaglianze e distinzione t/k. Sono disponibili **30 sezioni complete per tutti i 33 concetti teorici** del PDF di Ottimizzazione, oltre al frontespizio. Aprire `ottimizzazione.html#o3-regolarita`.
 
-Il passaggio 5, **I1**, copre Introduzione pp. 1–18: **10 sezioni per 11 concetti teorici**, più il frontespizio. Dieci nuovi laboratori e il costo pesato Base collegano cinque applicazioni, sistemi continui/discreti, stack di traiettorie, equilibri, linearizzazione, retroazione, costi anche semidefiniti e regioni ammissibili. Le riduzioni dimensionali, le ipotesi e la correzione del peso w₂ a p. 16 sono esplicite. Aprire `introduzione.html#i1-motivazioni`. Il blocco riusa presentazione e calcoli O3 senza modificarli. Il prossimo blocco è **I2**, sul drone planare; non viene avviato automaticamente.
+Il passaggio 5, **I1**, copre Introduzione pp. 1–18: **10 sezioni per 11 concetti teorici**, più il frontespizio. Dieci nuovi laboratori e il costo pesato Base collegano cinque applicazioni, sistemi continui/discreti, stack di traiettorie, equilibri, linearizzazione, retroazione, costi anche semidefiniti e regioni ammissibili. Le riduzioni dimensionali, le ipotesi e la correzione del peso w₂ a p. 16 sono esplicite. Aprire `introduzione.html#i1-motivazioni`. Il blocco riusa presentazione e calcoli O3 senza modificarli.
+
+Il passaggio 6, **I2**, aggiunge **8 sezioni per 9 concetti** sulle pp. 19–30: dinamica come uguaglianza, costi di stadio/terminali, vincoli ai bordi e sul percorso, formulazione discreta, riferimento rispetto a traiettoria e drone planare. Otto nuovi laboratori includono QP scalare verificato con Riccati e drone a sei stati/due spinte, animazione, viste px/py e px/py/tempo, Q/R/QT, massa/inerzia, discretizzazione e limiti fisici. Il calcolo nonlineare è eseguito in un **Web Worker**, con cancellazione, residui e messaggi di arresto. Aprire `introduzione.html#i2-dinamica` oppure `#i2-drone-costo`. Introduzione dispone ora di **18 sezioni per 20 concetti teorici**, fino a p. 30. Il prossimo blocco è **I3**, sul controllo continuo e pendolo; non viene avviato automaticamente.
 
 Per avviare il sito da PowerShell:
 
@@ -57,19 +59,19 @@ Da `web/`:
 
 ```powershell
 npm.cmd run session -- next
-npm.cmd run session -- prompt I2 --save
+npm.cmd run session -- prompt I3 --save
 ```
 
-Il prompt viene salvato in UTF-8 in `checkpoints/prompts/I2.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
+Il prompt viene salvato in UTF-8 in `checkpoints/prompts/I3.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
 
 ```powershell
-npm.cmd run session -- start I2
-npm.cmd run session -- watch I2
+npm.cmd run session -- start I3
+npm.cmd run session -- watch I3
 ```
 
 Il monitor avvisa al minuto 75 e segnala il tetto di 90 minuti; non interrompe il modello o altri processi. Una sessione aggiuntiva va conteggiata esplicitamente. Il runner prepara e monitora il lavoro locale; non invoca API o nuove conversazioni autonomamente.
 
-Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish I2`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
+Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish I3`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
 
 I contratti Base e i loro hash sono registrati nel manifest. Estendere i moduli registrando nuovi contenuti; per correggere un contratto già concluso documentare la motivazione e verificare le regressioni.
 
@@ -80,3 +82,5 @@ I contratti Base e i loro hash sono registrati nel manifest. Estendere i moduli 
 Il QP richiede rango pieno delle righe di A e controlla la positività ridotta prima di dichiarare un minimo unico; Newton per zeri può invece risolvere anche un sistema indefinito, senza dichiararlo un minimo. Il solutore conserva cronologia e motivi di arresto, distingue `lambdaQP` da `deltaLambda` e interpola i moltiplicatori con il passo. La fattorizzazione è densa, con un limite di 640 righe del sistema; non è un solutore sparso per grandi orizzonti. Le prove sulle traiettorie confrontano il risultato con una ricorsione di Riccati indipendente.
 
 Per I2/I3 riusare il contratto, fornendo derivate coerenti e costruendo il problema dentro un Web Worker quando il calcolo diventa impegnativo. Le disuguaglianze possono essere trattate con una barriera interna; non è implementato un metodo generale di fase I per trovare una partenza strettamente ammissibile.
+
+Il modulo I2 `web/math/I2/drone.ts` riusa `solveEqualityQP`, `searchMerit` e `residuals` di O3 in un metodo SQP/Gauss–Newton con eliminazione degli stati tramite rollout. `droneStep`, `droneJacobians`, `droneSensitivities`, `assembleDrone` e `solveDrone` sono puri. `assembleDrone.model` è una matrice di curvatura Gauss–Newton, non la Hessiana esatta. Il seed è hovering, i limiti sono imposti tramite barriera e il terminale opzionale fissa solo la posizione. Sono mostrati candidati, costo senza barriera, violazioni e residuo KKT relativo al singolo ε. Nessuna garanzia globale per il problema nonlineare. Il Web Worker viene sostituito quando cambiano i parametri e terminato all’uscita; tempo osservato, animazione, vista e selezione di k riusano il risultato già calcolato.
