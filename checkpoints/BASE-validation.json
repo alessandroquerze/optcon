@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "BASE",
+  "startedAt": "2026-10-13T16:46:06.837Z",
+  "passed": true,
+  "checks": [
+    {
+      "script": "check:inventory",
+      "startedAt": "2026-10-13T16:46:06.838Z",
+      "finishedAt": "2026-10-13T16:46:07.224Z",
+      "exitCode": 0
+    },
+    {
+      "script": "typecheck",
+      "startedAt": "2026-10-13T16:46:07.226Z",
+      "finishedAt": "2026-10-13T16:46:09.161Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test",
+      "startedAt": "2026-10-13T16:46:09.163Z",
+      "finishedAt": "2026-10-13T16:46:10.556Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test:browser",
+      "startedAt": "2026-10-13T16:46:10.558Z",
+      "finishedAt": "2026-10-13T16:46:23.484Z",
+      "exitCode": 0
+    },
+    {
+      "script": "build",
+      "startedAt": "2026-10-13T16:46:23.485Z",
+      "finishedAt": "2026-10-13T16:46:45.219Z",
+      "exitCode": 0
+    }
+  ],
+  "finishedAt": "2026-10-13T16:46:45.221Z",
+  "contractHashes": {
+    "web/content/schema.ts": "56e0447dbde546f5b9aea164197d656ad766fc2fdbe39b84f659a9b0cc5fb1b3",
+    "web/math/quadratic.ts": "07825a9ee139a5cc4d754acc22f1aeb2535ac02f24d327c827d32ab69300df59",
+    "web/ui/dom.ts": "a58b0e95cac0901f6964225f58616e72f84855bf2f442750416ec2eca02191e9",
+    "web/ui/formula.ts": "8587fabdeafd216092379b0ffa976d667955f6f83134eb6b2424bb470ecc5936",
+    "web/ui/controls.ts": "b4dd2b43c54fc82b9e06fcdbb495cc2409eb7726ce38ac96434cfd10fc2f7aec",
+    "web/ui/plot.ts": "24b635329df73cc7986eb5a0a8937d4d097f4fcabfd979220883dfda10abd5f0",
+    "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
+    "web/ui/styles.css": "d0cc7e1413911e38b17035115d526b829cea0bd38cc0e020e1f27d22e54bc80e"
+  }
+}

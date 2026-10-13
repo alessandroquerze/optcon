@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "kkt",
+  "filename": "OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf",
+  "sha256": "937db0d7a574f549eb1181f22207ccfa886ae6d79206720718692bfd6015bd97",
+  "pageCount": 20,
+  "extractedAt": "2026-10-13T16:22:38.088114+00:00",
+  "extractor": "PyMuPDF 1.28.2",
+  "pages": [
+    {
+      "pdfPage": 1,
+      "title": "Optimal Control and Reinforcement Learning",
+      "rawText": "Optimal Control and Reinforcement Learning\n      Optimality conditions for Optimal Control\n\n\n\n                   Prof. Giuseppe Notarstefano\n\n\n  Department of Electrical, Electronic, and Information Engineering\n          Alma Mater Studiorum Universit`a di Bologna\n              giuseppe.notarstefano@unibo.it\n\n\n       The present slides are for internal use of the course\nOptimal Control and Reinforcement Learning @ University of Bologna.",
+      "text": "Optimal Control and Reinforcement Learning\nOptimality conditions for Optimal Control\nDepartment of Electrical, Electronic, and Information Engineering\nAlma Mater Studiorum Universit`a di Bologna\ngiuseppe.notarstefano@unibo.it\nThe present slides are for internal use of the course\nOptimal Control and Reinforcement Learning @ University of Bologna.",
+      "imageCount": 0,
+      "conceptIds": [
+        "frontespizio"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 2,
+      "title": "Discrete-time control system and notation (Refresh)",
+      "rawText": "Discrete-time control system and notation (Refresh)\n\n\n   We consider nonlinear, discrete-time systems described by\n\n                                     xt+1 = ft(xt, ut)      t ∈N0                                  (1)\n\n    where xt ∈Rn and ut ∈Rm are the state and the input of the system at time t.\n\n\n    Notation\n   We use x ∈RnT and u ∈RmT to denote, respectively, the stack of the states xt for all t ∈1, . . . , T\n    and the inputs ut for all t ∈0, . . . , T −1, that is\n\n\n                              x := col(x1, . . . , xT )\n                             u := col(u0, . . . , uT −1).\n\n    where col(x1, . . . , xT ) is the (column) vector with components x1, . . . , xT .\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 1 |18",
+      "text": "Discrete-time control system and notation (Refresh)\nWe consider nonlinear, discrete-time systems described by\nxt+1 = ft(xt, ut) t ∈N0 (1)\nwhere xt ∈Rn and ut ∈Rm are the state and the input of the system at time t.\nNotation\nWe use x ∈RnT and u ∈RmT to denote, respectively, the stack of the states xt for all t ∈1, . . . , T\nand the inputs ut for all t ∈0, . . . , T −1, that is\nx := col(x1, . . . , xT )\nu := col(u0, . . . , uT −1).\nwhere col(x1, . . . , xT ) is the (column) vector with components x1, . . . , xT .",
+      "imageCount": 0,
+      "conceptIds": [
+        "stati-ingressi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 3,
+      "title": "System trajectories (Refresh)",
+      "rawText": "System trajectories (Refresh)\n\n\n   We recall the definition of trajectory of a (possibly) nonlinear, discrete-time control system.\n\n     Definition A pair (¯x, ¯u) ∈RnT × RmT  is called a trajectory of system (1) if ¯xt+1 = ft(¯xt, ¯ut) for all\n     t ∈0, . . . , T −1. In particular, ¯x is the state trajectory, while ¯u is the input trajectory.        □\n\n    Remark It will be sometimes useful to refer to a generic pair (α, µ) ∈RnT ×RmT with α := col(α1, . . . , αT )\n    and µ := col(µ0, . . . , µT −1) as a state-input curve. Notice that a curve (α, µ) is not necessarily a tra-\n     jectory, i.e., it does not necessarily satisfy the dynamics (1).                       □\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 2 |18",
+      "text": "System trajectories (Refresh)\nWe recall the definition of trajectory of a (possibly) nonlinear, discrete-time control system.\nDefinition A pair (¯x, ¯u) ∈RnT × RmT is called a trajectory of system (1) if ¯xt+1 = ft(¯xt, ¯ut) for all\nt ∈0, . . . , T −1. In particular, ¯x is the state trajectory, while ¯u is the input trajectory. □\nRemark It will be sometimes useful to refer to a generic pair (α, µ) ∈RnT ×RmT with α := col(α1, . . . , αT )\nand µ := col(µ0, . . . , µT −1) as a state-input curve. Notice that a curve (α, µ) is not necessarily a tra-\njectory, i.e., it does not necessarily satisfy the dynamics (1). □",
+      "imageCount": 0,
+      "conceptIds": [
+        "curve-traiettorie"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 4,
+      "title": "Dynamics as equality constraints",
+      "rawText": "Dynamics as equality constraints\n\n    Let us rewrite the nonlinear dynamics (1) as an implicit equality constraint h : RnT ×RmT →RnT\n\n                                  f0(x0, u0) −x1   \n\n                                 h(x, u) :=                                                         (2)                                                                                                                                                                                                                                                                                  ...                                                                                       ,\n                                           fT −1(xT −1, uT −1) −xT\n\n    so that a curve (¯x, ¯u) is a trajectory of  (1) if it satisfies the (possibly nonlinear) equality constraint\n\n                                                        h(¯x, ¯u) = 0.\n\n    Remark Recall that a nonlinear equality constraint is a nonconvex constraint.             □\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 3 |18",
+      "text": "Dynamics as equality constraints\nLet us rewrite the nonlinear dynamics (1) as an implicit equality constraint h : RnT ×RmT →RnT\n f0(x0, u0) −x1 \nh(x, u) := (2) ...  ,\nfT −1(xT −1, uT −1) −xT\nso that a curve (¯x, ¯u) is a trajectory of (1) if it satisfies the (possibly nonlinear) equality constraint\nh(¯x, ¯u) = 0.\nRemark Recall that a nonlinear equality constraint is a nonconvex constraint. □",
+      "imageCount": 0,
+      "conceptIds": [
+        "dinamica-implicita"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 5,
+      "title": "System trajectories and trajectory manifold",
+      "rawText": "System trajectories and trajectory manifold\n\n   We can now define the trajectory manifold T ⊂RnT × RmT of (1) as\n\n    T := {(x, u) ∈RnT × RmT  | h(x, u) = 0} = {(x, u) ∈RnT × RmT  | xt+1 = ft(xt, ut), t = 0, . . . , T −1}.\n                                                                                                       (3)\n\n\n\n                                α\n\n                                                                                            T(¯x,¯u)T\n\n                                                                                                       (¯x, ¯u)\n\n\n\n                                                               T\n\n\n\n\n                                                                   µ\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 4 |18",
+      "text": "System trajectories and trajectory manifold\nWe can now define the trajectory manifold T ⊂RnT × RmT of (1) as\nT := {(x, u) ∈RnT × RmT | h(x, u) = 0} = {(x, u) ∈RnT × RmT | xt+1 = ft(xt, ut), t = 0, . . . , T −1}.\n(3)\nα\nT(¯x,¯u)T\n(¯x, ¯u)\nT\nµ",
+      "imageCount": 0,
+      "conceptIds": [
+        "varieta-traiettorie"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 6,
+      "title": "System linearization and tangent hyperplane",
+      "rawText": "System linearization and tangent hyperplane\n\n    Let (¯x, ¯u) ∈T be a trajectory of the system, i.e., a point on the trajectory manifold T .\n\n\n                                α\n\n                                                                                            T(¯x,¯u)T\n\n                                                                                                       (¯x, ¯u)\n\n\n\n                                                               T\n\n\n\n\n                                                                   µ\n\n    The tangent space to T at a given trajectory (point) (¯x, ¯u), denoted as T(¯x,¯u)T , is the set of trajectories\n     satisfying the linearization of xt+1 = ft(xt, ut) about the trajectory (¯x, ¯u).\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 5 |18",
+      "text": "System linearization and tangent hyperplane\nLet (¯x, ¯u) ∈T be a trajectory of the system, i.e., a point on the trajectory manifold T .\nα\nT(¯x,¯u)T\n(¯x, ¯u)\nT\nµ\nThe tangent space to T at a given trajectory (point) (¯x, ¯u), denoted as T(¯x,¯u)T , is the set of trajectories\nsatisfying the linearization of xt+1 = ft(xt, ut) about the trajectory (¯x, ¯u).",
+      "imageCount": 0,
+      "conceptIds": [
+        "spazio-tangente"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 7,
+      "title": "System linearization and tangent hyperplane",
+      "rawText": "System linearization and tangent hyperplane\n\n    That is, T(¯x,¯u)T = {(∆x, ∆u) ∈RnT × RmT  | ∇1h(x, u)⊤∆x + ∇2h(x, u)⊤∆u = 0} is the set of\n     trajectories (∆x, ∆u) of\n                                 ∆xt+1 = At∆xt + Bt∆ut,\n\n    with\n\n                                    At = ∇1ft(¯xt, ¯ut)⊤\n                                    Bt = ∇2ft(¯xt, ¯ut)⊤.\n\n    Remark Recall that for a vector function f : Rn+m →Rn, ∇f is the transpose of the Jacobian matrix.\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 6 |18",
+      "text": "System linearization and tangent hyperplane\nThat is, T(¯x,¯u)T = {(∆x, ∆u) ∈RnT × RmT | ∇1h(x, u)⊤∆x + ∇2h(x, u)⊤∆u = 0} is the set of\ntrajectories (∆x, ∆u) of\n∆xt+1 = At∆xt + Bt∆ut,\nwith\nAt = ∇1ft(¯xt, ¯ut)⊤\nBt = ∇2ft(¯xt, ¯ut)⊤.\nRemark Recall that for a vector function f : Rn+m →Rn, ∇f is the transpose of the Jacobian matrix.",
+      "imageCount": 0,
+      "conceptIds": [
+        "spazio-tangente"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 8,
+      "title": "Unconstrained optimal control problem (discrete-time)",
+      "rawText": "Unconstrained optimal control problem (discrete-time)\n\n\n   We look for a solution of the following discrete-time optimal control problem\n\n                                       T −1\n                           min X ℓt(xt, ut) + ℓT (xT )                                  (4a)\n                           x∈Rn,u∈Rm\n                                           t=0\n                                      subj.to xt+1 = ft(xt, ut),   t ∈0, . . . , T −1                     (4b)\n\n    with given initial condition x0 = x0 ∈Rn, where ℓt : Rn × Rm →R is the so-called stage cost while\n    ℓT  : Rn →R is the terminal cost.\n\n\n    Remark An optimal control problem constrained only through the dynamics (without boundary and path\n     constraints) is named unconstrained optimal control. This notation will be clarified in the following.\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 7 |18",
+      "text": "Unconstrained optimal control problem (discrete-time)\nWe look for a solution of the following discrete-time optimal control problem\nT −1\nmin X ℓt(xt, ut) + ℓT (xT ) (4a)\nx∈Rn,u∈Rm\nt=0\nsubj.to xt+1 = ft(xt, ut), t ∈0, . . . , T −1 (4b)\nwith given initial condition x0 = x0 ∈Rn, where ℓt : Rn × Rm →R is the so-called stage cost while\nℓT : Rn →R is the terminal cost.\nRemark An optimal control problem constrained only through the dynamics (without boundary and path\nconstraints) is named unconstrained optimal control. This notation will be clarified in the following.",
+      "imageCount": 0,
+      "conceptIds": [
+        "controllo-senza-extra"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 9,
+      "title": "Unconstrained optimal control problem (discrete-time)",
+      "rawText": "Unconstrained optimal control problem (discrete-time)\n\n\n   We look for a solution of the following discrete-time optimal control problem\n\n                                       T −1\n                           min X ℓt(xt, ut) + ℓT (xT )                                  (4a)\n                           x∈Rn,u∈Rm\n                                           t=0\n                                      subj.to xt+1 = ft(xt, ut),   t ∈0, . . . , T −1                     (4b)\n\n    with given initial condition x0 = x0 ∈Rn, where ℓt : Rn × Rm →R is the so-called stage cost while\n    ℓT  : Rn →R is the terminal cost.\n\n\n    From now on, we will use the following assumption.\n    Assumption Functions ℓt(·, ·), ℓT (·), ft(·, ·) are twice continuously differentiable, i.e., they are class C2.\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 7 |18",
+      "text": "Unconstrained optimal control problem (discrete-time)\nWe look for a solution of the following discrete-time optimal control problem\nT −1\nmin X ℓt(xt, ut) + ℓT (xT ) (4a)\nx∈Rn,u∈Rm\nt=0\nsubj.to xt+1 = ft(xt, ut), t ∈0, . . . , T −1 (4b)\nwith given initial condition x0 = x0 ∈Rn, where ℓt : Rn × Rm →R is the so-called stage cost while\nℓT : Rn →R is the terminal cost.\nFrom now on, we will use the following assumption.\nAssumption Functions ℓt(·, ·), ℓT (·), ft(·, ·) are twice continuously differentiable, i.e., they are class C2.",
+      "imageCount": 0,
+      "conceptIds": [
+        "controllo-senza-extra"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 10,
+      "title": "Unconstrained optimal control problem (compact notation)",
+      "rawText": "Unconstrained optimal control problem (compact notation)\n\n\n    Consider the discrete-time system xt+1 = ft(xt, ut). We can introduce the compact notation\n\n                              x1         u0 \n\n                            x :=        u :=                                                                                                                                                                                                                             ...                                                                             ...                                                                                  \n                                      xT           uT −1\n\n    which let us write compactly the cost function as\n\n                                            T −1\n                                      ℓ(x, u) := X ℓt(xt, ut) + ℓT (xT ).\n\n                                                t=0\n\n    and the equality constraint represented by the dynamics\n\n                                  f0(x0, u0) −x1   \n\n                                 h(x, u) :=                                                                                                                                                                                                                                                                                     ...                                                                                           \n                                           fT −1(xT −1, uT −1) −xT\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 8 |18",
+      "text": "Unconstrained optimal control problem (compact notation)\nConsider the discrete-time system xt+1 = ft(xt, ut). We can introduce the compact notation\n x1   u0 \nx := u := ... ...    \nxT uT −1\nwhich let us write compactly the cost function as\nT −1\nℓ(x, u) := X ℓt(xt, ut) + ℓT (xT ).\nt=0\nand the equality constraint represented by the dynamics\n f0(x0, u0) −x1 \nh(x, u) := ...  \nfT −1(xT −1, uT −1) −xT",
+      "imageCount": 0,
+      "conceptIds": [
+        "forma-compatta"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 11,
+      "title": "Optimal control as equality constrained optimization",
+      "rawText": "Optimal control as equality constrained optimization\n\n\n     In light of this compact notation, we can rewrite the optimal control problem as\n\n                                    min      ℓ(x, u)\n                                     x∈RnT ,u∈RmT\n\n                                                   subj.to h(x, u) = 0\n\n    where ℓ: RnT × RmT →R and h : RnT × RmT →RnT .\n\n    This is a constrained nonlinear optimization problem with decision variable (x, u).\n\n\n\n\n\n                                   Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 9 |18",
+      "text": "Optimal control as equality constrained optimization\nIn light of this compact notation, we can rewrite the optimal control problem as\nmin ℓ(x, u)\nx∈RnT ,u∈RmT\nsubj.to h(x, u) = 0\nwhere ℓ: RnT × RmT →R and h : RnT × RmT →RnT .\nThis is a constrained nonlinear optimization problem with decision variable (x, u).",
+      "imageCount": 0,
+      "conceptIds": [
+        "forma-compatta"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 12,
+      "title": "Optimality conditions (Refresh from “Optimization” part)",
+      "rawText": "Optimality conditions (Refresh from “Optimization” part)\n\n    Let z∗be a regular local minimum of the equality-constrained minimization problem:\n\n                                      min  ℓ(z)\n                                            z∈Rn\n\n                                                 subj.to h(z) = 0\n\n    where ℓ: Rn →R and h : Rn →Rn.\n    Then\n\n                                     ∇ℓ(z∗) + ∇h(z∗)λ∗= 0\n                                                    h(z∗) = 0\n\n    which can be written as\n\n                                           ∇ℓ(z∗) + ∇h(z∗)λ∗\n                   ∇L z∗, λ∗ =             = 0.\n                                                    h(z∗)\n\n\n    Remark If you have doubts go back to Part “Equality and Inequality Constrained Optimization”.\n\n\n\n\n\n                                  Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 10 |18",
+      "text": "Optimality conditions (Refresh from “Optimization” part)\nLet z∗be a regular local minimum of the equality-constrained minimization problem:\nmin ℓ(z)\nz∈Rn\nsubj.to h(z) = 0\nwhere ℓ: Rn →R and h : Rn →Rn.\nThen\n∇ℓ(z∗) + ∇h(z∗)λ∗= 0\nh(z∗) = 0\nwhich can be written as\n∇ℓ(z∗) + ∇h(z∗)λ∗\n∇L z∗, λ∗ = = 0.\nh(z∗)\nRemark If you have doubts go back to Part “Equality and Inequality Constrained Optimization”.",
+      "imageCount": 0,
+      "conceptIds": [
+        "richiamo-kkt"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 13,
+      "title": "KKT conditions for unconstrained optimal control",
+      "rawText": "KKT conditions for unconstrained optimal control",
+      "text": "KKT conditions for unconstrained optimal control",
+      "imageCount": 0,
+      "conceptIds": [
+        "lagrangiana-temporale"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 14,
+      "title": "KKT conditions for unconstrained optimal control",
+      "rawText": "KKT conditions for unconstrained optimal control\n\n\n    The Lagrangian function has the form\n                   L(x, u, λ) = ℓ(x, u) + λ⊤h(x, u)\n\n                                T −1                    T −1\n                  = X ℓt(xt, ut) + ℓT (xT ) + X λ⊤t+1(ft(xt, ut) −xt+1)\n                                   t=0                      t=0\n                                  |         ℓ(x,u){z         }   |        λ⊤h(x,u){z           }\n\n                                T −1\n                  = X  ℓt(xt, ut) + λ⊤t+1(ft(xt, ut) −xt+1) + ℓT (xT )\n                                   t=0\n\n                                 T\n                  = X Lt(xt, ut, λ)\n\n                                  t=0\n    where λ ∈RnT and\n                                     ⊤\n                  L0(x0, u0, λ) = ℓ0(x0, u0) + λ1 f0(x0, u0)\n\n                                    ⊤\n                    Lt(xt, ut, λ) = ℓt(xt, ut) + λt+1ft(xt, ut) −λtxt      t = 1, . . . , T −1\n\n                                   ⊤\n                 LT (xT , λ) = ℓT (xT ) −λT xT\n\n\n                                  Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 12 |18",
+      "text": "KKT conditions for unconstrained optimal control\nThe Lagrangian function has the form\nL(x, u, λ) = ℓ(x, u) + λ⊤h(x, u)\nT −1 T −1\n= X ℓt(xt, ut) + ℓT (xT ) + X λ⊤t+1(ft(xt, ut) −xt+1)\nt=0 t=0\n| ℓ(x,u){z } | λ⊤h(x,u){z }\nT −1\n= X ℓt(xt, ut) + λ⊤t+1(ft(xt, ut) −xt+1) + ℓT (xT )\nt=0\nT\n= X Lt(xt, ut, λ)\nt=0\nwhere λ ∈RnT and\n⊤\nL0(x0, u0, λ) = ℓ0(x0, u0) + λ1 f0(x0, u0)\n⊤\nLt(xt, ut, λ) = ℓt(xt, ut) + λt+1ft(xt, ut) −λtxt t = 1, . . . , T −1\n⊤\nLT (xT , λ) = ℓT (xT ) −λT xT",
+      "imageCount": 0,
+      "conceptIds": [
+        "lagrangiana-temporale"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 15,
+      "title": "KKT conditions for unconstrained optimal control",
+      "rawText": "KKT conditions for unconstrained optimal control\n\n    Let (x∗, u∗) be a regular point for the dynamics constraints and an optimal (state-input) trajectory.\n    Then there exists λ∗such that ∇L(x∗, u∗, λ∗) = 0.\n\n    Let us explicitly write condition ∇(1,2)L(x∗, u∗, λ∗) = 0\n\n                                             ∇1L(x∗, u∗, λ∗)                              ∇(1,2)L(x∗, u∗, λ∗) =           = 0                                             ∇2L(x∗, u∗, λ∗)\n\n\n    Since L(x, u, λ) = PTt=0 Lt(xt, ut, λ), we can exploit this sparsity and write\n\n      ∇2L0(x0, u0, λ) = 0           ∇2ℓ(x0, u0) + ∇2f0(x0, u0)λ1 = 0\n\n      ∇1Lt(xt, ut, λ)                  ∇1ℓ(xt, ut) + ∇1ft(xt, ut)λt+1 −λt\n             = 0                            = 0      t = 1, . . . , T −1\n      ∇2Lt(xt, ut, λ)                    ∇2ℓ(xt, ut) + ∇2ft(xt, ut)λt+1\n\n       ∇1LT (xT , λ) = 0         ∇ℓT (zT ) −λT = 0\n\n     for (xt, ut, λt) = (x∗t , u∗t , λ∗t ) for all t = 0, . . . , T.\n\n\n\n                                  Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 13 |18",
+      "text": "KKT conditions for unconstrained optimal control\nLet (x∗, u∗) be a regular point for the dynamics constraints and an optimal (state-input) trajectory.\nThen there exists λ∗such that ∇L(x∗, u∗, λ∗) = 0.\nLet us explicitly write condition ∇(1,2)L(x∗, u∗, λ∗) = 0\n∇1L(x∗, u∗, λ∗) ∇(1,2)L(x∗, u∗, λ∗) = = 0 ∇2L(x∗, u∗, λ∗)\nSince L(x, u, λ) = PTt=0 Lt(xt, ut, λ), we can exploit this sparsity and write\n∇2L0(x0, u0, λ) = 0 ∇2ℓ(x0, u0) + ∇2f0(x0, u0)λ1 = 0\n∇1Lt(xt, ut, λ) ∇1ℓ(xt, ut) + ∇1ft(xt, ut)λt+1 −λt\n= 0 = 0 t = 1, . . . , T −1\n∇2Lt(xt, ut, λ) ∇2ℓ(xt, ut) + ∇2ft(xt, ut)λt+1\n∇1LT (xT , λ) = 0 ∇ℓT (zT ) −λT = 0\nfor (xt, ut, λt) = (x∗t , u∗t , λ∗t ) for all t = 0, . . . , T.",
+      "imageCount": 0,
+      "conceptIds": [
+        "costati"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 16,
+      "title": "KKT conditions for constrained optimal control",
+      "rawText": "KKT conditions for constrained optimal control",
+      "text": "KKT conditions for constrained optimal control",
+      "imageCount": 0,
+      "conceptIds": [
+        "costati"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 17,
+      "title": "Recall KKT conditions for unconstrained optimal control",
+      "rawText": "Recall KKT conditions for unconstrained optimal control\n\n    Let (x∗, u∗) be a regular point for the dynamics constraints and an optimal (state-input) trajectory.\n    Then there exists λ∗such that ∇L(x∗, u∗, λ∗) = 0, i.e.,\n\n\n                                             ∇1L(x∗, u∗, λ∗)                              ∇(1,2)L(x∗, u∗, λ∗) =           = 0                                             ∇2L(x∗, u∗, λ∗)\n\n    and\n\n                                            h(x∗, u∗) = 0\n\n    namely, x∗, u∗is a trajectory of the system, i.e., it satisfies the dynamics.\n\n\n\n\n\n                                  Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 15 |18",
+      "text": "Recall KKT conditions for unconstrained optimal control\nLet (x∗, u∗) be a regular point for the dynamics constraints and an optimal (state-input) trajectory.\nThen there exists λ∗such that ∇L(x∗, u∗, λ∗) = 0, i.e.,\n∇1L(x∗, u∗, λ∗) ∇(1,2)L(x∗, u∗, λ∗) = = 0 ∇2L(x∗, u∗, λ∗)\nand\nh(x∗, u∗) = 0\nnamely, x∗, u∗is a trajectory of the system, i.e., it satisfies the dynamics.",
+      "imageCount": 0,
+      "conceptIds": [
+        "costati"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 18,
+      "title": "Discrete-time optimal control problem (constrained)",
+      "rawText": "Discrete-time optimal control problem (constrained)\n\n\n   We look for a solution of the discrete-time optimal control problem\n\n\n\n                                           T −1\n                           min   X ℓt(xt, ut) + ℓT (xT )                              (5a)\n                         x0∈Rn,x∈RnT ,u∈RmT  t=0\n                                          subj.to xt+1 = ft(xt, ut),   t = 0, . . . , T −1\n                                               r(x0, xT ) = 0,                                      (5b)\n                                                  gt(xt, ut) ≤0,   t = 0, . . . , T −1\n\n    where\n      •  ℓt : Rn × Rm →R is the so-called stage cost,\n      • ℓT  : Rn →R is the terminal cost,\n      • r : Rn × Rn →Rp0 identifies a boundary constraint on initial and final states,\n      •  gt : Rn × Rm →Rp for each t identifies point-wise constraints on state and input at some time t.\n\n\n\n\n\n                                  Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 16 |18",
+      "text": "Discrete-time optimal control problem (constrained)\nWe look for a solution of the discrete-time optimal control problem\nT −1\nmin X ℓt(xt, ut) + ℓT (xT ) (5a)\nx0∈Rn,x∈RnT ,u∈RmT t=0\nsubj.to xt+1 = ft(xt, ut), t = 0, . . . , T −1\nr(x0, xT ) = 0, (5b)\ngt(xt, ut) ≤0, t = 0, . . . , T −1\nwhere\n• ℓt : Rn × Rm →R is the so-called stage cost,\n• ℓT : Rn →R is the terminal cost,\n• r : Rn × Rn →Rp0 identifies a boundary constraint on initial and final states,\n• gt : Rn × Rm →Rp for each t identifies point-wise constraints on state and input at some time t.",
+      "imageCount": 0,
+      "conceptIds": [
+        "controllo-vincolato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 19,
+      "title": "KKT conditions for constrained optimal control",
+      "rawText": "KKT conditions for constrained optimal control\n\n\n    The Lagrangian function has the form\n\n                       ⊤        ⊤\n    L(x, u, λ, µ) = ℓ(x, u) + λ d h(x, u) + λb r(x0, xT ) + µ ⊤g(x, u)\n\n                  T −1                    T −1                                      T −1\n          = X ℓt(xt, ut) + ℓT (xT ) + X λ⊤d,t+1(ft(xt, ut) −xt+1) +λ⊤b r(x0, xT ) + X µ ⊤t gt(xt, ut)\n                    t=0                      t=0                                          t=0\n                    |         ℓ(x,u){z         }   |       λ⊤d h(x,u){z            }                 |   µ⊤g(x,u){z      }\n\n                   T\n          = X Lt(xt, ut, λ)\n\n                    t=0\n\n    where\n\n                                ⊤           ⊤          ⊤\n          L0(x0, u0, λ, µ) = ℓ0(x0, u0) + λd,1f(x0, u0) + λb,0r0(x0) + +µ 0 g0(x0, u0)\n\n                                ⊤                ⊤\n            Lt(xt, ut, λ, µ) = ℓt(xt, ut) + λt+1f(xt, ut) −λtxt + µ t gt(xt, ut)      t = 1, . . . , T −1\n\n                              ⊤     ⊤\n            LT (xT , λ) = ℓT (xT ) −λT xT + λb,T rT (xT )\n\n    and we assumed r(x0, xT ) = col(r0(x0), rT (xT )) and λb = col(λb,0, λb,T ).\n\n\n                                  Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 17 |18",
+      "text": "KKT conditions for constrained optimal control\nThe Lagrangian function has the form\n⊤ ⊤\nL(x, u, λ, µ) = ℓ(x, u) + λ d h(x, u) + λb r(x0, xT ) + µ ⊤g(x, u)\nT −1 T −1 T −1\n= X ℓt(xt, ut) + ℓT (xT ) + X λ⊤d,t+1(ft(xt, ut) −xt+1) +λ⊤b r(x0, xT ) + X µ ⊤t gt(xt, ut)\nt=0 t=0 t=0\n| ℓ(x,u){z } | λ⊤d h(x,u){z } | µ⊤g(x,u){z }\nT\n= X Lt(xt, ut, λ)\nt=0\nwhere\n⊤ ⊤ ⊤\nL0(x0, u0, λ, µ) = ℓ0(x0, u0) + λd,1f(x0, u0) + λb,0r0(x0) + +µ 0 g0(x0, u0)\n⊤ ⊤\nLt(xt, ut, λ, µ) = ℓt(xt, ut) + λt+1f(xt, ut) −λtxt + µ t gt(xt, ut) t = 1, . . . , T −1\n⊤ ⊤\nLT (xT , λ) = ℓT (xT ) −λT xT + λb,T rT (xT )\nand we assumed r(x0, xT ) = col(r0(x0), rT (xT )) and λb = col(λb,0, λb,T ).",
+      "imageCount": 0,
+      "conceptIds": [
+        "controllo-vincolato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 20,
+      "title": "KKT conditions for constrained optimal control",
+      "rawText": "KKT conditions for constrained optimal control\n\n    Let (x∗, u∗) be a regular optimal (state-input) trajectory. Then there exist λ∗and µ∗≥0 such that\n    ∇L(x∗, u∗, λ∗, µ∗) = 0 + complementary slackness conditions.\n\n    Let us explicitly write condition ∇(1,2)L(x∗, u∗, λ∗, µ∗) = 0\n\n                                             ∇1L(x∗, u∗, λ∗, µ∗)                           ∇(1,2)L(x∗, u∗, λ∗, µ∗) =             = 0                                             ∇2L(x∗, u∗, λ∗, µ∗)\n\n    Since L(x, u, λ, µ) = PTt=0 Lt(xt, ut, λ), we can exploit this sparsity and write\n\n     ∇1L0(x0, u0, λ, µ) = 0        ∇1ℓ(x0, u0) + ∇1f0(x0, u0)λ1 + ∇r0(x0)λb,0 + ∇1gt(x0, u0)µ0 = 0\n     ∇2L0(x0, u0, λ, µ)                    ∇2ℓ(x0, u0) + ∇2f0(x0, u0)λ1 + ∇2gt(x0, u0)µ0\n        ∇1Lt(xt, ut, λ) = 0        ∇1ℓ(xt, ut) + ∇1ft(xt, ut)λt+1 −λt + ∇1gt(xt, ut)µt = 0  t=1, . . . , T                    ut, λ)                        ut) +         ut)λt+1 +         ut)µt              −1        ∇2Lt(xt,                     ∇2ℓ(xt,      ∇2ft(xt,          ∇2gt(xt,\n         ∇1LT (xT , λ) = 0      ∇ℓT (xT ) −λT + ∇rT (xT )λb,T = 0\n      for (xt, ut, λt, µt) = (x∗t , u∗t , λ∗t , µ∗t ).\n\n\n\n\n                                  Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Optimality Conditions for Optimal Control 18 |18",
+      "text": "KKT conditions for constrained optimal control\nLet (x∗, u∗) be a regular optimal (state-input) trajectory. Then there exist λ∗and µ∗≥0 such that\n∇L(x∗, u∗, λ∗, µ∗) = 0 + complementary slackness conditions.\nLet us explicitly write condition ∇(1,2)L(x∗, u∗, λ∗, µ∗) = 0\n∇1L(x∗, u∗, λ∗, µ∗) ∇(1,2)L(x∗, u∗, λ∗, µ∗) = = 0 ∇2L(x∗, u∗, λ∗, µ∗)\nSince L(x, u, λ, µ) = PTt=0 Lt(xt, ut, λ), we can exploit this sparsity and write\n∇1L0(x0, u0, λ, µ) = 0 ∇1ℓ(x0, u0) + ∇1f0(x0, u0)λ1 + ∇r0(x0)λb,0 + ∇1gt(x0, u0)µ0 = 0\n∇2L0(x0, u0, λ, µ) ∇2ℓ(x0, u0) + ∇2f0(x0, u0)λ1 + ∇2gt(x0, u0)µ0\n∇1Lt(xt, ut, λ) = 0 ∇1ℓ(xt, ut) + ∇1ft(xt, ut)λt+1 −λt + ∇1gt(xt, ut)µt = 0 t=1, . . . , T ut, λ) ut) + ut)λt+1 + ut)µt −1 ∇2Lt(xt, ∇2ℓ(xt, ∇2ft(xt, ∇2gt(xt,\n∇1LT (xT , λ) = 0 ∇ℓT (xT ) −λT + ∇rT (xT )λb,T = 0\nfor (xt, ut, λt, µt) = (x∗t , u∗t , λ∗t , µ∗t ).",
+      "imageCount": 0,
+      "conceptIds": [
+        "kkt-controllo"
+      ],
+      "equationReview": "check-original-pdf"
+    }
+  ]
+}

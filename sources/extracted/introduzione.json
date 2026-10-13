@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "introduzione",
+  "filename": "OPTCON-RL_introduction_optimal_control_2026_09_14.pdf",
+  "sha256": "ae169f3492dc0915d0777d62e90184107d7017aee03b8620bbfe0aee9bd3a469",
+  "pageCount": 36,
+  "extractedAt": "2026-10-13T16:22:38.088114+00:00",
+  "extractor": "PyMuPDF 1.28.2",
+  "pages": [
+    {
+      "pdfPage": 1,
+      "title": "Optimal Control and Reinforcement Learning",
+      "rawText": "       Optimal Control and Reinforcement Learning\n                    Introduction to Optimal Control\n\n\n\n                               Prof. Giuseppe Notarstefano\n\n\n            Department of Electrical, Electronic, and Information Engineering\n                   Alma Mater Studiorum Universit`a di Bologna\n                        giuseppe.notarstefano@unibo.it\n\n\n\nA special thank to L. Sforni, S. Baroncini, M. Falotico for the support on the slide preparation\n\n                The present slides are for internal use of the course\n          Optimal Control and Reinforcement Learning @ University of Bologna.",
+      "text": "Optimal Control and Reinforcement Learning\nIntroduction to Optimal Control\nDepartment of Electrical, Electronic, and Information Engineering\nAlma Mater Studiorum Universit`a di Bologna\ngiuseppe.notarstefano@unibo.it\nA special thank to L. Sforni, S. Baroncini, M. Falotico for the support on the slide preparation\nThe present slides are for internal use of the course\nOptimal Control and Reinforcement Learning @ University of Bologna.",
+      "imageCount": 0,
+      "conceptIds": [
+        "frontespizio"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 2,
+      "title": "Optimal Control",
+      "rawText": "Optimal Control\n\n    So far, feedback control design paradigm\n\n       • given a “control system”\n          (model of an actual systems)\n\n       • goal: track a desired/reference output                                                                                                    disturbance\n            (or stabilize an equilibrium)\n                                                                                                                                        reference                                  input                               output\n       • design input as function of output/state                            CONTROLLER                    SYSTEM\n\n    Two ingredients are mainly missing\n\n       • performance index\n\n       • constraints\n           (input limitations, geometric constraints,...)\n\n    Optimization:\n     theory to find “best” decision while handling constraints\n\n                        pervasive in Engineering... and several other fields!\n\n\n                     Optimal Control: combine optimization with (feedback) control!\n\n\n                                              Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 1 |35",
+      "text": "Optimal Control\nSo far, feedback control design paradigm\n• given a “control system”\n(model of an actual systems)\n• goal: track a desired/reference output disturbance\n(or stabilize an equilibrium)\nreference input output\n• design input as function of output/state CONTROLLER SYSTEM\nTwo ingredients are mainly missing\n• performance index\n• constraints\n(input limitations, geometric constraints,...)\nOptimization:\ntheory to find “best” decision while handling constraints\npervasive in Engineering... and several other fields!\nOptimal Control: combine optimization with (feedback) control!",
+      "imageCount": 0,
+      "conceptIds": [
+        "motivazioni"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 3,
+      "title": "Optimal Control: motivating domains",
+      "rawText": "Optimal Control: motivating domains\n\n\n     Aircraft systems\n\n     Performance index\n\n       • distance from desired “behavior”\n            (position path, velocities, ...)\n\n       • minimum time\n\n       • fuel/battery consumption\n\n       • passenger confort\n\n      Constraints\n\n       • geometric (obstacles, attitude, stall limits,...)\n\n       • inputs (thrust, flaps)\n\n       •  internal systems (angular and linear velocities,\n          aerodynamic limits,...)\n\n\n\n\n                                              Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 2 |35",
+      "text": "Optimal Control: motivating domains\nAircraft systems\nPerformance index\n• distance from desired “behavior”\n(position path, velocities, ...)\n• minimum time\n• fuel/battery consumption\n• passenger confort\nConstraints\n• geometric (obstacles, attitude, stall limits,...)\n• inputs (thrust, flaps)\n• internal systems (angular and linear velocities,\naerodynamic limits,...)",
+      "imageCount": 2,
+      "conceptIds": [
+        "motivazioni"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 4,
+      "title": "Optimal Control: motivating domains",
+      "rawText": "Optimal Control: motivating domains\n\n\n    Robotic systems\n\n\n\n\n     Performance index\n\n       • distance from desired “behavior”\n           (evolution of end-effector, position path,...)\n\n       • minimum time\n\n       •  ...\n\n      Constraints\n\n       • geometric (workspace, obstacles, payload geometry, ...)\n\n       • inputs (motor saturations)\n\n       •  internal systems (joint constraints, velocities,...)\n\n\n\n\n                                              Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 3 |35",
+      "text": "Optimal Control: motivating domains\nRobotic systems\nPerformance index\n• distance from desired “behavior”\n(evolution of end-effector, position path,...)\n• minimum time\n• ...\nConstraints\n• geometric (workspace, obstacles, payload geometry, ...)\n• inputs (motor saturations)\n• internal systems (joint constraints, velocities,...)",
+      "imageCount": 3,
+      "conceptIds": [
+        "motivazioni"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 5,
+      "title": "Optimal Control: motivating domains",
+      "rawText": "Optimal Control: motivating domains\n\n\n    Autonomous driving\n\n     Performance index\n\n       • distance from desired “behavior”\n           (lane center, velocity,...)\n\n       • minimum time (race vehicles)\n\n       • passengers confort\n\n       •  fuel consumption\n\n\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           115\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           110                                           acceleration\n\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           105\n      Constraints                                                                                                                                                                                                                                                                                                                                                                                                                                             10095\n                                                                                                                                                                                                                                                                                                                                                [m]  9085\n       • geometric (lane, obstacles,...)                                                                                                                                                                                                                                                                                                    8075\n\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                70\n\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                −120      −110      −100  [m]−90       −80       −70       −60       • inputs (throttle, steering wheel)                                                                                                                                                                                                                                                                                        65                                       brake\n\n       •  internal systems (tire limits, normal load, velocities,...)\n\n\n\n\n\n                                              Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 4 |35",
+      "text": "Optimal Control: motivating domains\nAutonomous driving\nPerformance index\n• distance from desired “behavior”\n(lane center, velocity,...)\n• minimum time (race vehicles)\n• passengers confort\n• fuel consumption\n115\n110 acceleration\n105\nConstraints 10095\n[m] 9085\n• geometric (lane, obstacles,...) 8075\n70\n−120 −110 −100 [m]−90 −80 −70 −60 • inputs (throttle, steering wheel) 65 brake\n• internal systems (tire limits, normal load, velocities,...)",
+      "imageCount": 9,
+      "conceptIds": [
+        "motivazioni"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 6,
+      "title": "Optimal Control: motivating domains",
+      "rawText": "Optimal Control: motivating domains\n\n\n    Autonomous aerial vehicles (drones)\n\n     Performance index\n\n       • distance from desired “behavior”\n           (given 3D path, velocities,...)\n\n       • minimum time\n\n       • fuel/battery consumption\n\n       • exploration cost\n\n      Constraints\n\n       • geometric (buildings, other obstacles, attitude,...)\n\n       • inputs (thrust)\n\n       •  internal systems (angular and linear velocities,...)\n\n\n\n\n\n                                              Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 5 |35",
+      "text": "Optimal Control: motivating domains\nAutonomous aerial vehicles (drones)\nPerformance index\n• distance from desired “behavior”\n(given 3D path, velocities,...)\n• minimum time\n• fuel/battery consumption\n• exploration cost\nConstraints\n• geometric (buildings, other obstacles, attitude,...)\n• inputs (thrust)\n• internal systems (angular and linear velocities,...)",
+      "imageCount": 3,
+      "conceptIds": [
+        "motivazioni"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 7,
+      "title": "Optimal Control: motivating domains",
+      "rawText": "Optimal Control: motivating domains\n\n\n    Space systems\n\n     Performance index\n\n       • distance from desired “behavior”\n            (desired orbit, velocities,...)\n\n       • energy consumption\n\n       • minimum time\n\n      Constraints\n\n       • geometric (orbit, orientation wrt sun/Earth, ...)\n\n       • inputs (thrust)\n\n       •  internal systems (angular and linear velocities,...)\n\n\n\n\n\n                                              Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 6 |35",
+      "text": "Optimal Control: motivating domains\nSpace systems\nPerformance index\n• distance from desired “behavior”\n(desired orbit, velocities,...)\n• energy consumption\n• minimum time\nConstraints\n• geometric (orbit, orientation wrt sun/Earth, ...)\n• inputs (thrust)\n• internal systems (angular and linear velocities,...)",
+      "imageCount": 2,
+      "conceptIds": [
+        "motivazioni"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 8,
+      "title": "Continuous-time control systems",
+      "rawText": "Continuous-time control systems\n\n    Consider the continuous-time, t ∈R, (time-varying) system\n\n                                  ˙x(t) = f(x(t), u(t), t),     x(0) = x0     state equation\n\n                            y(t) = h(x(t), u(t), t)                  output equation\n\n      • x(t) ∈Rn state of the system at time t\n      • u(t) ∈Rm input of the system at time t\n      • y(t) ∈Rp output of the system at time t\n\n\n                       x1(t)          u1(t)          y1(t) \n\n                           x(t) =              u(t) =               y(t) =                                                                                                                                                                             ...                                                                                             ...                                                                                            ...                                                                                               \n                                 xn(t)             um(t)               yp(t)\n\n\n    Remark In applications, we will mainly work with time-invariant systems, ˙x(t) = f(x(t), u(t)), even\n    though time-varying ones may be considered.                               □\n\n\n                                              Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 7 |35",
+      "text": "Continuous-time control systems\nConsider the continuous-time, t ∈R, (time-varying) system\n˙x(t) = f(x(t), u(t), t), x(0) = x0 state equation\ny(t) = h(x(t), u(t), t) output equation\n• x(t) ∈Rn state of the system at time t\n• u(t) ∈Rm input of the system at time t\n• y(t) ∈Rp output of the system at time t\n x1(t)   u1(t)   y1(t) \nx(t) = u(t) = y(t) = ... ... ...      \nxn(t) um(t) yp(t)\nRemark In applications, we will mainly work with time-invariant systems, ˙x(t) = f(x(t), u(t)), even\nthough time-varying ones may be considered. □",
+      "imageCount": 0,
+      "conceptIds": [
+        "sistemi-continui"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 9,
+      "title": "Discrete-time control systems and notation",
+      "rawText": "Discrete-time control systems and notation\n\n\n   We consider nonlinear, discrete-time systems described by\n\n                            x(t + 1) = f(x(t), u(t), t),     x(0) = x0,      t ∈N0\n\n    but from now on we will use the (more compact) notation\n\n                               xt+1 = ft(xt, ut),     x0 = x0,      t ∈N0\n\n    where xt ∈Rn and ut ∈Rm are the state and the input of the system at time t.\n\n\n\n\n\n                                              Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 8 |35",
+      "text": "Discrete-time control systems and notation\nWe consider nonlinear, discrete-time systems described by\nx(t + 1) = f(x(t), u(t), t), x(0) = x0, t ∈N0\nbut from now on we will use the (more compact) notation\nxt+1 = ft(xt, ut), x0 = x0, t ∈N0\nwhere xt ∈Rn and ut ∈Rm are the state and the input of the system at time t.",
+      "imageCount": 0,
+      "conceptIds": [
+        "sistemi-discreti"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 10,
+      "title": "Discrete-time control systems and notation",
+      "rawText": "Discrete-time control systems and notation\n\n\n    Consider a nonlinear, discrete-time system on a finite time-horizon\n\n                          xt+1 = ft(xt, ut),     x0 = x0,      t = 0, . . . , T −1                     (1)\n\n    where xt ∈Rn and ut ∈Rm are the state and the input of the system at time t.\n\n    Notation\n   We use x ∈RnT and u ∈RmT to denote, respectively, the stack of the states xt for all t = 1, . . . , T\n    and the inputs ut for all t = 0, . . . , T −1, that is\n\n                              x := col(x1, . . . , xT )\n                             u := col(u0, . . . , uT −1).\n\n    where col(x1, . . . , xT ) is the vector with components x1, . . . , xT .\n\n\n\n\n\n                                              Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 9 |35",
+      "text": "Discrete-time control systems and notation\nConsider a nonlinear, discrete-time system on a finite time-horizon\nxt+1 = ft(xt, ut), x0 = x0, t = 0, . . . , T −1 (1)\nwhere xt ∈Rn and ut ∈Rm are the state and the input of the system at time t.\nNotation\nWe use x ∈RnT and u ∈RmT to denote, respectively, the stack of the states xt for all t = 1, . . . , T\nand the inputs ut for all t = 0, . . . , T −1, that is\nx := col(x1, . . . , xT )\nu := col(u0, . . . , uT −1).\nwhere col(x1, . . . , xT ) is the vector with components x1, . . . , xT .",
+      "imageCount": 0,
+      "conceptIds": [
+        "sistemi-discreti"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 11,
+      "title": "System trajectories",
+      "rawText": "System trajectories\n\n\n    Let us introduce the definition of trajectory of a (possibly) nonlinear, discrete-time control system.\n\n     Definition A pair (¯x, ¯u) ∈RnT × RmT  is called a trajectory of system (1) if ¯xt+1 = ft(¯xt, ¯ut) for all\n     t = 0, . . . , T −1. In particular, ¯x is the state trajectory, while ¯u is the input trajectory.        □\n\n\n    Let us recall a special class of trajectories characterized by constant input and constant state.\n\n     Definition A state-input pair (xe, ue) ∈Rn×Rm is called an equilibrium pair of (1) if (xt, ut) = (xe, ue),\n     t ∈N0, is a trajectory of the system.                                    □\n\n     Equilibria of discerete-time, time-invariant systems satisfy xe = f(xe, ue).\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 10 |35",
+      "text": "System trajectories\nLet us introduce the definition of trajectory of a (possibly) nonlinear, discrete-time control system.\nDefinition A pair (¯x, ¯u) ∈RnT × RmT is called a trajectory of system (1) if ¯xt+1 = ft(¯xt, ¯ut) for all\nt = 0, . . . , T −1. In particular, ¯x is the state trajectory, while ¯u is the input trajectory. □\nLet us recall a special class of trajectories characterized by constant input and constant state.\nDefinition A state-input pair (xe, ue) ∈Rn×Rm is called an equilibrium pair of (1) if (xt, ut) = (xe, ue),\nt ∈N0, is a trajectory of the system. □\nEquilibria of discerete-time, time-invariant systems satisfy xe = f(xe, ue).",
+      "imageCount": 0,
+      "conceptIds": [
+        "traiettorie-equilibri"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 12,
+      "title": "Linearization of a system about a trajectory",
+      "rawText": "Linearization of a system about a trajectory\n\n\n    Given the dynamics\n\n                                     xt+1 = ft(xt, ut)      t ∈N0,\n\n    and a trajectory (¯x, ¯u) (i.e., ¯xt+1 = ft(¯xt, ¯ut) for all t ∈N0), the linearization of (1) about (¯x, ¯u) is\n     given by the linear (possibly) time-varying system\n\n                            ∆xt+1 = At∆xt + Bt∆ut      t ∈N0,\n\n    with At and Bt the Jacobians of ft, with respect to state and input respectively, evaluated at (¯x, ¯u).\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 11 |35",
+      "text": "Linearization of a system about a trajectory\nGiven the dynamics\nxt+1 = ft(xt, ut) t ∈N0,\nand a trajectory (¯x, ¯u) (i.e., ¯xt+1 = ft(¯xt, ¯ut) for all t ∈N0), the linearization of (1) about (¯x, ¯u) is\ngiven by the linear (possibly) time-varying system\n∆xt+1 = At∆xt + Bt∆ut t ∈N0,\nwith At and Bt the Jacobians of ft, with respect to state and input respectively, evaluated at (¯x, ¯u).",
+      "imageCount": 0,
+      "conceptIds": [
+        "linearizzazione"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 13,
+      "title": "Recall some tools for nonlinear systems analysis and control",
+      "rawText": "Recall some tools for nonlinear systems analysis and control\n\n\n      • System Trajectories and equilibria\n\n      • Linearization\n\n      • Equilibrium (origin) stabilization (typically time-invariant systems)\n\n      • Output/trajectory tracking (typically time-varying systems)\n\n\n    The following issues are not handled explicitly\n\n      • Optimize a performance index (e.g., control effort, distance from a target point, time, ...)\n\n      •  Explicitly handle constraints (e.g., saturations on the inputs, collision/obstacle avoidance, regions\n         where the state has to be confined,...)\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 12 |35",
+      "text": "Recall some tools for nonlinear systems analysis and control\n• System Trajectories and equilibria\n• Linearization\n• Equilibrium (origin) stabilization (typically time-invariant systems)\n• Output/trajectory tracking (typically time-varying systems)\nThe following issues are not handled explicitly\n• Optimize a performance index (e.g., control effort, distance from a target point, time, ...)\n• Explicitly handle constraints (e.g., saturations on the inputs, collision/obstacle avoidance, regions\nwhere the state has to be confined,...)",
+      "imageCount": 0,
+      "conceptIds": [
+        "strumenti-controllo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 14,
+      "title": "Optimization: main ingredients",
+      "rawText": "Optimization: main ingredients\n\n\n    The main ingredients of an optimization problem are\n\n    Decision vector: z ∈Rd\n\n    Cost function: ℓ(z) : Rd →R cost associated to decision z\n\n     Constraints (constraint sets): for some given functions hi : Rn →R, i = 1, . . . , m, and gj : Rn →R,\n    the decision vector z ∈Rd needs to satisfy\n\n                                        hi(z) = 0      i = 1, . . . , m\n                                         gj(z) ≤0     j = 1, . . . , r.\n\n     Equivalently we can say that we require z ∈Z with\n\n                        Z = {z ∈Rn | h(z) = 0, g(z) ≤0},\n\n    where we compactly denoted h(z) = col(h1(z), . . . , hm(z)) and g(z) = col(g1(z), . . . , gr(z)).\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 13 |35",
+      "text": "Optimization: main ingredients\nThe main ingredients of an optimization problem are\nDecision vector: z ∈Rd\nCost function: ℓ(z) : Rd →R cost associated to decision z\nConstraints (constraint sets): for some given functions hi : Rn →R, i = 1, . . . , m, and gj : Rn →R,\nthe decision vector z ∈Rd needs to satisfy\nhi(z) = 0 i = 1, . . . , m\ngj(z) ≤0 j = 1, . . . , r.\nEquivalently we can say that we require z ∈Z with\nZ = {z ∈Rn | h(z) = 0, g(z) ≤0},\nwhere we compactly denoted h(z) = col(h1(z), . . . , hm(z)) and g(z) = col(g1(z), . . . , gr(z)).",
+      "imageCount": 0,
+      "conceptIds": [
+        "ingredienti-ottimizzazione"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 15,
+      "title": "Example of cost function: scalar set up",
+      "rawText": "Example of cost function: scalar set up\n\n\n     Scalar set up d = 1\n\n    Decision variable: z ∈Rd = R\n\n    Cost function: ℓ(z) = 2(z1   −¯z)2, with ¯z ∈R a give point.\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 14 |35",
+      "text": "Example of cost function: scalar set up\nScalar set up d = 1\nDecision variable: z ∈Rd = R\nCost function: ℓ(z) = 2(z1 −¯z)2, with ¯z ∈R a give point.",
+      "imageCount": 0,
+      "conceptIds": [
+        "costo-scalare"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 16,
+      "title": "Example of cost function: vector set up",
+      "rawText": "Example of cost function: vector set up\n\n    Decision variable: z ∈Rd\n\n    Cost function:\n      • Distance from a point: ℓ(z) = 2∥z1   −¯z∥2 = 12(z −¯z)⊤(z −¯z) with ¯z ∈Rd a given point.\n      • Weighted distance: given a positive (semi-)definite (weight) matrix W ∈Rd×d,\n\n                                     ℓ(z) = 2∥z1   −¯z∥2W = 12(z −¯z)⊤W(z −¯z),\n\n          with ¯z ∈Rd a given point.\n\n\n                           z1       w1   0    Consider z ∈R2, z =        , W =      > 0 with w1 > 0, w2 > 0, the cost function is\n                           z2         0   w2\n\n                             ℓ(z) = 2∥z1   −¯z∥2W = 12w1(z1 −¯z1)2 + 2w1(z21      −¯z2)2\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 15 |35",
+      "text": "Example of cost function: vector set up\nDecision variable: z ∈Rd\nCost function:\n• Distance from a point: ℓ(z) = 2∥z1 −¯z∥2 = 12(z −¯z)⊤(z −¯z) with ¯z ∈Rd a given point.\n• Weighted distance: given a positive (semi-)definite (weight) matrix W ∈Rd×d,\nℓ(z) = 2∥z1 −¯z∥2W = 12(z −¯z)⊤W(z −¯z),\nwith ¯z ∈Rd a given point.\nz1 w1 0 Consider z ∈R2, z = , W = > 0 with w1 > 0, w2 > 0, the cost function is\nz2 0 w2\nℓ(z) = 2∥z1 −¯z∥2W = 12w1(z1 −¯z1)2 + 2w1(z21 −¯z2)2",
+      "imageCount": 0,
+      "conceptIds": [
+        "costo-pesato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 17,
+      "title": "Examples of constraint sets",
+      "rawText": "Examples of constraint sets\n\n\n\n                                                                                      z2  Inequality constraint\n  z ∈R2, such that az21 + bz22 −c ≤0, for some given                                 az21 + bz22 −c ≤0\n  parameters a ∈R, b ∈R, c ∈R.\n  Then, the constraint set Z is\n\n          Z = {z ∈R2 | az21 + bz22 −c ≤0}.\n\n                                                                                                             z1\n\n\n                                                                                       z2  Equality constraint\n  z ∈Rd, such that z⊤Qz + q⊤z −c = 0, for some given\n  parameters Q ∈Rd×d, q ∈Rd, c ∈R.                                                                 z⊤Qz + q⊤z   = 0  Then, the constraints set X is                                            −c\n\n         Z = {z ∈Rd | z⊤Qz + q⊤z −c = 0}.\n\n                                                                                                             z1\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 16 |35",
+      "text": "Examples of constraint sets\nz2 Inequality constraint\nz ∈R2, such that az21 + bz22 −c ≤0, for some given az21 + bz22 −c ≤0\nparameters a ∈R, b ∈R, c ∈R.\nThen, the constraint set Z is\nZ = {z ∈R2 | az21 + bz22 −c ≤0}.\nz1\nz2 Equality constraint\nz ∈Rd, such that z⊤Qz + q⊤z −c = 0, for some given\nparameters Q ∈Rd×d, q ∈Rd, c ∈R. z⊤Qz + q⊤z = 0 Then, the constraints set X is −c\nZ = {z ∈Rd | z⊤Qz + q⊤z −c = 0}.\nz1",
+      "imageCount": 0,
+      "conceptIds": [
+        "insiemi-ammissibili"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 18,
+      "title": "Optimization problem (minimization)",
+      "rawText": "Optimization problem (minimization)\n\n\n   We can write our optimization problem as\n\n                               min  ℓ(z)\n                                      z∈Rd\n                                        subj.to hi(z) = 0      i = 1, . . . , m\n                                             gj(z) ≤0     j = 1, . . . , r\n\n    where hi : Rd →R and gj : Rd →R.\n\n\n   We can write it more compactly as\n\n                                      min  ℓ(z)\n                                              z∈Rd\n                                                 subj.to h(z) = 0\n\n                                                    g(z) ≤0\n\n    where h : Rd →Rm and g : Rd →Rr.\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 17 |35",
+      "text": "Optimization problem (minimization)\nWe can write our optimization problem as\nmin ℓ(z)\nz∈Rd\nsubj.to hi(z) = 0 i = 1, . . . , m\ngj(z) ≤0 j = 1, . . . , r\nwhere hi : Rd →R and gj : Rd →R.\nWe can write it more compactly as\nmin ℓ(z)\nz∈Rd\nsubj.to h(z) = 0\ng(z) ≤0\nwhere h : Rd →Rm and g : Rd →Rr.",
+      "imageCount": 0,
+      "conceptIds": [
+        "problema-minimizzazione"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 19,
+      "title": "Discrete-time optimal control: main ingredients (I)",
+      "rawText": "Discrete-time optimal control: main ingredients (I)\n\n\n    The main ingredients of a discrete-time optimal control problem are\n\n    Dynamics: a (discrete-time) system in state space form\n\n                                 xt+1 = ft(xt, ut)      t = 0, . . . , T −1\n\n   We will mainly work on a finite horizon, i.e. 0 < T < +∞(notation: 0, . . . , T −1). In some cases we\n      will also consider an infinite horizon, i.e., T = +∞.\n\n\n    The dynamics introduces T equality constraints\n\n                x1 = f(x0, u0)                          i.e.                    ft(x0, u0) −x1 = 0\n                x2 = f(x1, u1)                          i.e.                    ft(x1, u1) −x2 = 0\n                                                                                            ...                                                                                                                                                                                                                                                                                                                      ...\n              xT = f(xT −1, uT −1)                  i.e.             ft(xT −1, uT −1) −xT = 0\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 18 |35",
+      "text": "Discrete-time optimal control: main ingredients (I)\nThe main ingredients of a discrete-time optimal control problem are\nDynamics: a (discrete-time) system in state space form\nxt+1 = ft(xt, ut) t = 0, . . . , T −1\nWe will mainly work on a finite horizon, i.e. 0 < T < +∞(notation: 0, . . . , T −1). In some cases we\nwill also consider an infinite horizon, i.e., T = +∞.\nThe dynamics introduces T equality constraints\nx1 = f(x0, u0) i.e. ft(x0, u0) −x1 = 0\nx2 = f(x1, u1) i.e. ft(x1, u1) −x2 = 0\n... ...\nxT = f(xT −1, uT −1) i.e. ft(xT −1, uT −1) −xT = 0",
+      "imageCount": 0,
+      "conceptIds": [
+        "vincoli-dinamici"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 20,
+      "title": "Discrete-time optimal control: main ingredients (II)",
+      "rawText": "Discrete-time optimal control: main ingredients (II)\n\n\n    Decision variable: state-input vector (x, u) and, if not given, initial state x0.\n\n\n    Cost function: a cost “to be payed” for a chosen trajectory. We consider an additive structure in time\n\n                                             T −1\n                                     ℓ(x0, x, u) = X ℓt(xt, ut) + ℓT (xT )\n\n                                                 t=0\n\n    where ℓt : Rn × Rm →R is the so-called stage cost, while ℓT  : Rn →R is the terminal cost.\n\n    Notation:  if the initial state is given, i.e., x0 = x0, we lighten the notation and write\n\n                                            T −1\n                                       ℓ(x, u) = X ℓt(xt, ut) + ℓT (xT )\n\n                                                t=0\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 19 |35",
+      "text": "Discrete-time optimal control: main ingredients (II)\nDecision variable: state-input vector (x, u) and, if not given, initial state x0.\nCost function: a cost “to be payed” for a chosen trajectory. We consider an additive structure in time\nT −1\nℓ(x0, x, u) = X ℓt(xt, ut) + ℓT (xT )\nt=0\nwhere ℓt : Rn × Rm →R is the so-called stage cost, while ℓT : Rn →R is the terminal cost.\nNotation: if the initial state is given, i.e., x0 = x0, we lighten the notation and write\nT −1\nℓ(x, u) = X ℓt(xt, ut) + ℓT (xT )\nt=0",
+      "imageCount": 0,
+      "conceptIds": [
+        "costi-temporali"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 21,
+      "title": "Discrete-time optimal control: main ingredients (III)",
+      "rawText": "Discrete-time optimal control: main ingredients (III)\n\n\n    End-point constraints: function of the state variable prescribed at initial and/or final point\n\n                                               r(x0, xT ) = 0.\n\n    Path constraints: point-wise (in time) constraints representing possible limits on states and inputs at\n    each time t\n\n                                        gt(xt, ut) ≤0,   t = 0, . . . , T −1.\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 20 |35",
+      "text": "Discrete-time optimal control: main ingredients (III)\nEnd-point constraints: function of the state variable prescribed at initial and/or final point\nr(x0, xT ) = 0.\nPath constraints: point-wise (in time) constraints representing possible limits on states and inputs at\neach time t\ngt(xt, ut) ≤0, t = 0, . . . , T −1.",
+      "imageCount": 0,
+      "conceptIds": [
+        "vincoli-percorso"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 22,
+      "title": "Cost function: examples",
+      "rawText": "Cost function: examples\n\n\n    Distance from a desired state-input function of time (“state-input curve”)\n\n\n                              T −1\n                       ℓ(x, u) = X 12∥xt −xdest ∥2Q + 2∥ut1    −udest ∥2R + 12∥xT −xdesT ∥2QT\n                                t=0 |             ℓt(xt,ut){z             }   |    ℓT {z(xT )    }\n\n    where, x0 = x0, and xdest  , t = 1, . . . , T, udest  , t = 0, . . . , T −1, (compactly (xdes, udes)) represents a\n     desired behavior for the system based on designers goals (not taking into account dynamic models).\n\n     Recall:\n      •  2∥xt1    −xdest ∥2Q = 12(xt −xdest )⊤Q(xt −xdest  ) for some Q positive (semi-)definite\n      • 2∥xT1    −xdesT ∥2QT = 2(xT1    −xdesT )⊤QT (xT −xdesT ) for some QT positive (semi-)definite\n      •  2∥ut1    −udest ∥2R = 12(ut −udest )⊤R(ut −udest  ) for some R positive definite\n\n    Note: The desired curve (xdes, udes) does not satisfy the dynamics in general (e.g., a step transition\n    between two equilibria).\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 21 |35",
+      "text": "Cost function: examples\nDistance from a desired state-input function of time (“state-input curve”)\nT −1\nℓ(x, u) = X 12∥xt −xdest ∥2Q + 2∥ut1 −udest ∥2R + 12∥xT −xdesT ∥2QT\nt=0 | ℓt(xt,ut){z } | ℓT {z(xT ) }\nwhere, x0 = x0, and xdest , t = 1, . . . , T, udest , t = 0, . . . , T −1, (compactly (xdes, udes)) represents a\ndesired behavior for the system based on designers goals (not taking into account dynamic models).\nRecall:\n• 2∥xt1 −xdest ∥2Q = 12(xt −xdest )⊤Q(xt −xdest ) for some Q positive (semi-)definite\n• 2∥xT1 −xdesT ∥2QT = 2(xT1 −xdesT )⊤QT (xT −xdesT ) for some QT positive (semi-)definite\n• 2∥ut1 −udest ∥2R = 12(ut −udest )⊤R(ut −udest ) for some R positive definite\nNote: The desired curve (xdes, udes) does not satisfy the dynamics in general (e.g., a step transition\nbetween two equilibria).",
+      "imageCount": 0,
+      "conceptIds": [
+        "inseguimento-pesato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 23,
+      "title": "Discrete-time optimal control problem",
+      "rawText": "Discrete-time optimal control problem\n\n\n   A discrete-time optimal control problem can be written as\n\n                                       T −1\n                          min X ℓt(xt, ut) + ℓT (xT )\n                                       x0,x1,...,xT\n                                       u0,...,uT −1  t=0\n\n                                     subj.to xt+1 = ft(xt, ut),   t = 0, . . . , T −1\n                                          r(x0, xT ) = 0,\n                                             gt(xt, ut) ≤0,   t = 0, . . . , T −1\n\n    where ℓt : Rn × Rm →R is the so-called stage cost while ℓT  : Rn →R is the terminal cost.\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 22 |35",
+      "text": "Discrete-time optimal control problem\nA discrete-time optimal control problem can be written as\nT −1\nmin X ℓt(xt, ut) + ℓT (xT )\nx0,x1,...,xT\nu0,...,uT −1 t=0\nsubj.to xt+1 = ft(xt, ut), t = 0, . . . , T −1\nr(x0, xT ) = 0,\ngt(xt, ut) ≤0, t = 0, . . . , T −1\nwhere ℓt : Rn × Rm →R is the so-called stage cost while ℓT : Rn →R is the terminal cost.",
+      "imageCount": 0,
+      "conceptIds": [
+        "controllo-discreto"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 24,
+      "title": "Trajectory generation",
+      "rawText": "Trajectory generation\n\n  Consider the nonlinear, discrete-time system\n\n            xt+1 = ft(xt, ut)      t ∈N0\n\n  and let\n\n               yt = ht(xt, ut)      t ∈N0\n\n  be a performance output of the system.\n\n   We would like the (performance) output to follow a desired time law ydest   , for t ∈N0.\n\n\n                                       Optimal Control Task\n                                  Find a (state-input) trajectory (x, u)\n             i.e., a function of time (xt, ut), t ∈N0, satisfying xt+1 = ft(xt, ut), for all t ∈N0, such that\n\n                                              yt ≈ydest   for all t ∈N0.\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 23 |35",
+      "text": "Trajectory generation\nConsider the nonlinear, discrete-time system\nxt+1 = ft(xt, ut) t ∈N0\nand let\nyt = ht(xt, ut) t ∈N0\nbe a performance output of the system.\nWe would like the (performance) output to follow a desired time law ydest , for t ∈N0.\nOptimal Control Task\nFind a (state-input) trajectory (x, u)\ni.e., a function of time (xt, ut), t ∈N0, satisfying xt+1 = ft(xt, ut), for all t ∈N0, such that\nyt ≈ydest for all t ∈N0.",
+      "imageCount": 2,
+      "conceptIds": [
+        "riferimento-traiettoria"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 25,
+      "title": "Optimal control for trajectory generation",
+      "rawText": "Optimal control for trajectory generation\n\n\n   We can pose a trajectory generation problem as\n\n                               T −1 1              1              1\n                                                                           T  ||2QT                   min  X 2||xt −xdes                                                                  t  ||2Q + 2||ut −udes                                                                                          t  ||2R + 2||xT −xdes                  x∈RnT ,u∈RmT  t=0\n                            subj.to xt+1 = ft(xt, ut),   t = 0, . . . , T −1\n                              x0 = x0,\n\n    with x0 a given initial condition.\n\n    The state-input curve (function of time) (xdest  , udest  ), t ∈N0, represents a desired behavior of the system\n    and (in general) does NOT satisfy the dynamics.\n\n    The curve (xdest  , udest  ), t ∈N0 is related to the performance output, i.e., ydest = ht(xdest  , udest  ).\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 24 |35",
+      "text": "Optimal control for trajectory generation\nWe can pose a trajectory generation problem as\nT −1 1 1 1\nT ||2QT min X 2||xt −xdes t ||2Q + 2||ut −udes t ||2R + 2||xT −xdes x∈RnT ,u∈RmT t=0\nsubj.to xt+1 = ft(xt, ut), t = 0, . . . , T −1\nx0 = x0,\nwith x0 a given initial condition.\nThe state-input curve (function of time) (xdest , udest ), t ∈N0, represents a desired behavior of the system\nand (in general) does NOT satisfy the dynamics.\nThe curve (xdest , udest ), t ∈N0 is related to the performance output, i.e., ydest = ht(xdest , udest ).",
+      "imageCount": 0,
+      "conceptIds": [
+        "riferimento-traiettoria"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 26,
+      "title": "Trajectory generation for an autonomous drone",
+      "rawText": "Trajectory generation for an autonomous drone\n\n\n    Consider a planar drone model (continuous-time to be discretized)\n\n                         ¨px = −u1 + u2 sin θ\n             M\n                     u1 + u2\n                               cos θ −g                                  v                          ¨py =\n            M                                             θ\n                                                                                               (pdesx   , pdesy  )                L\n                             ¨θ =                          (u1 −u2)                        u2                    2J                                                                       (px, py)\n  with performance output (discrete-time)\n\n                            px,t                                          u1                    yt =              t ∈N0\n                             py,t\n\n  being, e.g., the position of the drone center of mass.\n\n\n                                                    Goal:\n     We would like the position of the drone to follow a given time law in the 3D space possibly not\n                exceeding some limits in the angles, in the angular velocities and in the inputs.\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 25 |35",
+      "text": "Trajectory generation for an autonomous drone\nConsider a planar drone model (continuous-time to be discretized)\n¨px = −u1 + u2 sin θ\nM\nu1 + u2\ncos θ −g v ¨py =\nM θ\n(pdesx , pdesy ) L\n¨θ = (u1 −u2) u2 2J (px, py)\nwith performance output (discrete-time)\npx,t u1 yt = t ∈N0\npy,t\nbeing, e.g., the position of the drone center of mass.\nGoal:\nWe would like the position of the drone to follow a given time law in the 3D space possibly not\nexceeding some limits in the angles, in the angular velocities and in the inputs.",
+      "imageCount": 0,
+      "conceptIds": [
+        "modello-drone"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 27,
+      "title": "Example: trajectory generation for an autonomous drone (I)",
+      "rawText": "Example: trajectory generation for an autonomous drone (I)\n\n\n    Consider the discrete-time version of the drone dynamics (discretized via, e.g., forward Euler), i.e.\n\n                                      xt+1 = xt + δfCT(xt, ut, t)\n                                                |     ft(xt,ut){z       }\n\n    where δ > 0 sufficiently small discretization step and fCT(·, ·, ·) continuous-time dynamics.\n\n\n    The state and input vector are:\n\n                 px,t    x1,t \n                              vx,t       x2,t\n                              py,t       x3,t                                             u1,t\n                   xt =    =                                      ut =\n                               vy,t       x4,t                                             u2,t\n                              θt        x5,t                                                                                                                                                               \n                         ωt        x6,t\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 26 |35",
+      "text": "Example: trajectory generation for an autonomous drone (I)\nConsider the discrete-time version of the drone dynamics (discretized via, e.g., forward Euler), i.e.\nxt+1 = xt + δfCT(xt, ut, t)\n| ft(xt,ut){z }\nwhere δ > 0 sufficiently small discretization step and fCT(·, ·, ·) continuous-time dynamics.\nThe state and input vector are:\n px,t   x1,t \nvx,t x2,t\npy,t x3,t u1,t\nxt = = ut =\nvy,t x4,t u2,t\nθt x5,t    \nωt x6,t",
+      "imageCount": 0,
+      "conceptIds": [
+        "modello-drone"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 28,
+      "title": "Example: trajectory generation for an autonomous drone (II)",
+      "rawText": "Example: trajectory generation for an autonomous drone (II)\n\n\n     Trajectory generation task: compute a (state-input) trajectory of the drone such that\n      • the time-evolution of the center of mass is close to a desired one, (pdesx,t, pdesy,t) for all t = 1, . . . , T\n      • the velocity is close to the corresponding desired velocity profile (vdesx,t, vdesy,t) for all t = 1, . . . , T\n      • angle and angular velocity, θt, ωt, are “not too high”\n\n      • inputs u1,t, u2,t are “not too high”.\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 27 |35",
+      "text": "Example: trajectory generation for an autonomous drone (II)\nTrajectory generation task: compute a (state-input) trajectory of the drone such that\n• the time-evolution of the center of mass is close to a desired one, (pdesx,t, pdesy,t) for all t = 1, . . . , T\n• the velocity is close to the corresponding desired velocity profile (vdesx,t, vdesy,t) for all t = 1, . . . , T\n• angle and angular velocity, θt, ωt, are “not too high”\n• inputs u1,t, u2,t are “not too high”.",
+      "imageCount": 0,
+      "conceptIds": [
+        "obiettivo-drone"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 29,
+      "title": "Example: trajectory generation for an autonomous drone (III)",
+      "rawText": "Example: trajectory generation for an autonomous drone (III)\n\n\n   We can choose diagonal weighting matrices\n\n       q1            qT 1       \n                                                          r1\n  Q =        ...     QT =          ...     R =               .                            ,                             ,            r2\n                     q6                     qT 6\n\n\n    The cost function then reads\n\n                    T −1\n            ℓ(x, u) = X 12  q1(x1,t −pdesx,t)2 + q2(x2,t −vdesx,t)2 + q3(x3,t −pdesy,t)2 + q4(x4,t −vdesy,t)2\n                      t=0\n\n                + q5x25,t + q6x26,t + r1u21,t + r2u22,t + 2∥xT1    −xdesT ∥2QT\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 28 |35",
+      "text": "Example: trajectory generation for an autonomous drone (III)\nWe can choose diagonal weighting matrices\n q1   qT 1 \nr1\nQ = ... QT = ... R = .  ,  , r2\nq6 qT 6\nThe cost function then reads\nT −1\nℓ(x, u) = X 12 q1(x1,t −pdesx,t)2 + q2(x2,t −vdesx,t)2 + q3(x3,t −pdesy,t)2 + q4(x4,t −vdesy,t)2\nt=0\n+ q5x25,t + q6x26,t + r1u21,t + r2u22,t + 2∥xT1 −xdesT ∥2QT",
+      "imageCount": 0,
+      "conceptIds": [
+        "obiettivo-drone"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 30,
+      "title": "Example: path constraints",
+      "rawText": "Example: path constraints\n\n    As for the (inequality) path constraints g(x, u) ≤0, they represent restriction we want to (must) enforce\n     at each time t = 1, . . . , T. For example:\n\n      • Saturation of the inputs\n\n                                            umint  ≤ut ≤umaxt\n\n      • State limitations, e.g. due to obstacles or limitation in the states. In the drone example, we may\n         need to ensure\n\n                                 pminy,t ≤py,t ≤pmaxy,t      (pminy,t ≤x3,t ≤pmaxy,t )\n\n\n                                                                    pmaxy,t\n                                                                     (pdesx   , pdesy  )\n\n\n\n                                                                         pminy,t\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 29 |35",
+      "text": "Example: path constraints\nAs for the (inequality) path constraints g(x, u) ≤0, they represent restriction we want to (must) enforce\nat each time t = 1, . . . , T. For example:\n• Saturation of the inputs\numint ≤ut ≤umaxt\n• State limitations, e.g. due to obstacles or limitation in the states. In the drone example, we may\nneed to ensure\npminy,t ≤py,t ≤pmaxy,t (pminy,t ≤x3,t ≤pmaxy,t )\npmaxy,t\n(pdesx , pdesy )\npminy,t",
+      "imageCount": 0,
+      "conceptIds": [
+        "limiti-drone"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 31,
+      "title": "Continuous-time Optimal Control problem (I)",
+      "rawText": "Continuous-time Optimal Control problem (I)\n\n   A continuous-time optimal control problem, i.e., t ∈R, can be written as\n\n                                  Z T\n                           min         ℓτ(x(τ), u(τ))dτ + ℓT (x(T)))\n                                      (x(·),u(·))∈F   0\n                                      subj.to  ˙x(t) = ft(x(t), u(t))      t ∈[0, T]\n                                            r(x(0), x(T)) = 0\n\n                                               gt(x(t), u(t)) ≤0      t ∈[0, T)\n\n    Note F is a space of functions (function space).\n\n      • Cost functional ℓ: F →R\n\n                                     Z T\n                                      ℓ(x(·), u(·)) =     ℓτ(x(τ), u(τ))dτ + ℓT (x(T))\n                                                      0\n\n      • Space of trajectories (or trajectory manifold)\n\n                      n                               o                       T =  (x(·), u(·))) ∈F | ˙x(t) = ft(x(t), u(t)), t ∈[0, T]\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 30 |35",
+      "text": "Continuous-time Optimal Control problem (I)\nA continuous-time optimal control problem, i.e., t ∈R, can be written as\nZ T\nmin ℓτ(x(τ), u(τ))dτ + ℓT (x(T)))\n(x(·),u(·))∈F 0\nsubj.to ˙x(t) = ft(x(t), u(t)) t ∈[0, T]\nr(x(0), x(T)) = 0\ngt(x(t), u(t)) ≤0 t ∈[0, T)\nNote F is a space of functions (function space).\n• Cost functional ℓ: F →R\nZ T\nℓ(x(·), u(·)) = ℓτ(x(τ), u(τ))dτ + ℓT (x(T))\n0\n• Space of trajectories (or trajectory manifold)\nn o T = (x(·), u(·))) ∈F | ˙x(t) = ft(x(t), u(t)), t ∈[0, T]",
+      "imageCount": 0,
+      "conceptIds": [
+        "controllo-continuo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 32,
+      "title": "Continuous-time Optimal Control problem (II)",
+      "rawText": "Continuous-time Optimal Control problem (II)\n\n\n    Suppose we neglect path and terminal constraints. We can write the optimal control problem as\n\n                                  min     ℓ(x(·), u(·))\n                                                 (x(·),u(·))∈F\n                                                subj.to (x(·), u(·)) ∈T\n\n    which is an infinite dimensional optimization problem.\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 31 |35",
+      "text": "Continuous-time Optimal Control problem (II)\nSuppose we neglect path and terminal constraints. We can write the optimal control problem as\nmin ℓ(x(·), u(·))\n(x(·),u(·))∈F\nsubj.to (x(·), u(·)) ∈T\nwhich is an infinite dimensional optimization problem.",
+      "imageCount": 0,
+      "conceptIds": [
+        "controllo-continuo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 33,
+      "title": "Example: trajectory generation for a pendulum (I)",
+      "rawText": "Example: trajectory generation for a pendulum (I)\n\n  Consider a pendulum with (nonlinear) dynamics\n\n                                ¨θ = −g sin θ +  1  τ\n                                        l      mℓ2\n\n  with state-space representation\n                                                                                                                  l    Mg                                                                         τ\n                           ˙x1 = x2\n                                  1                           ˙x2 = −g sin x1 +    u                        θ\n                                        l       mℓ2\n\n  and performance output y = θ.\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 32 |35",
+      "text": "Example: trajectory generation for a pendulum (I)\nConsider a pendulum with (nonlinear) dynamics\n¨θ = −g sin θ + 1 τ\nl mℓ2\nwith state-space representation\nl Mg τ\n˙x1 = x2\n1 ˙x2 = −g sin x1 + u θ\nl mℓ2\nand performance output y = θ.",
+      "imageCount": 0,
+      "conceptIds": [
+        "modello-pendolo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 34,
+      "title": "Example: trajectory generation for a pendulum (II)",
+      "rawText": "Example: trajectory generation for a pendulum (II)\n\n\n  Task\n  Transfer the pendulum from an equilibrium to another one.\n\n  Equilibrium conditions\n\n                 0 = x1,e                                              θ1e                          θ2e                                                             How to?\n                 0 = −g sin x1,e +  1  ue                           u1e                     u2e\n                                      l         mℓ2\n\n  then, the first equilibrium is\n\n                    θ1e            x1e =               u1e = mgℓsin θ1e                  0\n\n A similar reasoning holds for the second equilibrium (x2e, u2e).\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 33 |35",
+      "text": "Example: trajectory generation for a pendulum (II)\nTask\nTransfer the pendulum from an equilibrium to another one.\nEquilibrium conditions\n0 = x1,e θ1e θ2e How to?\n0 = −g sin x1,e + 1 ue u1e u2e\nl mℓ2\nthen, the first equilibrium is\nθ1e x1e = u1e = mgℓsin θ1e 0\nA similar reasoning holds for the second equilibrium (x2e, u2e).",
+      "imageCount": 0,
+      "conceptIds": [
+        "equilibri-pendolo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 35,
+      "title": "Example: trajectory generation for a pendulum (III)",
+      "rawText": "Example: trajectory generation for a pendulum (III)\n\n\n     In order to find a trajectory to move from an equilibrium to another one, we can define as desired curve\n\n              (θ1e    0 ≤t < T2                      θ1e                  xdes1  (t) =         T\n                          θ2e      2 ≤t ≤T\n                  xdes2  (t) = 0                                             T      T   t\n                                                                                   2\n                                                                  θ2e     with desired input\n\n             (u1e    0 ≤t < T2                  udes(t) =\n                                                                           e                        u2e     T2 ≤t ≤T                   u2\n\n     At the same time, we want ˙θ as small as possible.\n                                                                     T      T   t\n                                                                                   2\n                   Important                           u1e\n       (xdes(t), udes(t)) is not a trajectory of the system!\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 34 |35",
+      "text": "Example: trajectory generation for a pendulum (III)\nIn order to find a trajectory to move from an equilibrium to another one, we can define as desired curve\n(θ1e 0 ≤t < T2 θ1e xdes1 (t) = T\nθ2e 2 ≤t ≤T\nxdes2 (t) = 0 T T t\n2\nθ2e with desired input\n(u1e 0 ≤t < T2 udes(t) =\ne u2e T2 ≤t ≤T u2\nAt the same time, we want ˙θ as small as possible.\nT T t\n2\nImportant u1e\n(xdes(t), udes(t)) is not a trajectory of the system!",
+      "imageCount": 0,
+      "conceptIds": [
+        "riferimento-pendolo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 36,
+      "title": "Example: trajectory generation for a pendulum (IV)",
+      "rawText": "Example: trajectory generation for a pendulum (IV)\n\n\n    The optimal control problem then reads\n\n                        Z T\n                 min         q1(x1(τ) −xdes1 (τ))2 + q2x2(τ)2 + r(u(τ) −udes(τ))2dτ\n                       (x(·),u(·))∈F   0\n                  + qT 1(x1(T) −xdes1 (T))2 + qT 2x2(T)2\n                 (˙x1(t) = x2(t)\n                         subj.to                              1\n                                        ˙x2(t) = −gl sin x1(t) + mℓ2 u(t)\n                             x(0) = x0\n\n                                              q1   0          qT 1   0\n    where we chose as weight matrices Q =               , QT =                   , R = r.\n                                       0   q2          0   qT 2\n\n\n\n\n\n                                            Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Introduction to Optimal Control 35 |35",
+      "text": "Example: trajectory generation for a pendulum (IV)\nThe optimal control problem then reads\nZ T\nmin q1(x1(τ) −xdes1 (τ))2 + q2x2(τ)2 + r(u(τ) −udes(τ))2dτ\n(x(·),u(·))∈F 0\n+ qT 1(x1(T) −xdes1 (T))2 + qT 2x2(T)2\n(˙x1(t) = x2(t)\nsubj.to 1\n˙x2(t) = −gl sin x1(t) + mℓ2 u(t)\nx(0) = x0\nq1 0 qT 1 0\nwhere we chose as weight matrices Q = , QT = , R = r.\n0 q2 0 qT 2",
+      "imageCount": 0,
+      "conceptIds": [
+        "controllo-pendolo"
+      ],
+      "equationReview": "check-original-pdf"
+    }
+  ]
+}

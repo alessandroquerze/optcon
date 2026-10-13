@@ -1,0 +1,458 @@
+===== PDF PAGE 1 =====
+Optimal Control and Reinforcement Learning
+Introduction to Optimal Control
+Department of Electrical, Electronic, and Information Engineering
+Alma Mater Studiorum Universit`a di Bologna
+giuseppe.notarstefano@unibo.it
+A special thank to L. Sforni, S. Baroncini, M. Falotico for the support on the slide preparation
+The present slides are for internal use of the course
+Optimal Control and Reinforcement Learning @ University of Bologna.
+
+===== PDF PAGE 2 =====
+Optimal Control
+So far, feedback control design paradigm
+• given a “control system”
+(model of an actual systems)
+• goal: track a desired/reference output disturbance
+(or stabilize an equilibrium)
+reference input output
+• design input as function of output/state CONTROLLER SYSTEM
+Two ingredients are mainly missing
+• performance index
+• constraints
+(input limitations, geometric constraints,...)
+Optimization:
+theory to find “best” decision while handling constraints
+pervasive in Engineering... and several other fields!
+Optimal Control: combine optimization with (feedback) control!
+
+===== PDF PAGE 3 =====
+Optimal Control: motivating domains
+Aircraft systems
+Performance index
+• distance from desired “behavior”
+(position path, velocities, ...)
+• minimum time
+• fuel/battery consumption
+• passenger confort
+Constraints
+• geometric (obstacles, attitude, stall limits,...)
+• inputs (thrust, flaps)
+• internal systems (angular and linear velocities,
+aerodynamic limits,...)
+
+===== PDF PAGE 4 =====
+Optimal Control: motivating domains
+Robotic systems
+Performance index
+• distance from desired “behavior”
+(evolution of end-effector, position path,...)
+• minimum time
+• ...
+Constraints
+• geometric (workspace, obstacles, payload geometry, ...)
+• inputs (motor saturations)
+• internal systems (joint constraints, velocities,...)
+
+===== PDF PAGE 5 =====
+Optimal Control: motivating domains
+Autonomous driving
+Performance index
+• distance from desired “behavior”
+(lane center, velocity,...)
+• minimum time (race vehicles)
+• passengers confort
+• fuel consumption
+115
+110 acceleration
+105
+Constraints 10095
+[m] 9085
+• geometric (lane, obstacles,...) 8075
+70
+−120 −110 −100 [m]−90 −80 −70 −60 • inputs (throttle, steering wheel) 65 brake
+• internal systems (tire limits, normal load, velocities,...)
+
+===== PDF PAGE 6 =====
+Optimal Control: motivating domains
+Autonomous aerial vehicles (drones)
+Performance index
+• distance from desired “behavior”
+(given 3D path, velocities,...)
+• minimum time
+• fuel/battery consumption
+• exploration cost
+Constraints
+• geometric (buildings, other obstacles, attitude,...)
+• inputs (thrust)
+• internal systems (angular and linear velocities,...)
+
+===== PDF PAGE 7 =====
+Optimal Control: motivating domains
+Space systems
+Performance index
+• distance from desired “behavior”
+(desired orbit, velocities,...)
+• energy consumption
+• minimum time
+Constraints
+• geometric (orbit, orientation wrt sun/Earth, ...)
+• inputs (thrust)
+• internal systems (angular and linear velocities,...)
+
+===== PDF PAGE 8 =====
+Continuous-time control systems
+Consider the continuous-time, t ∈R, (time-varying) system
+˙x(t) = f(x(t), u(t), t), x(0) = x0 state equation
+y(t) = h(x(t), u(t), t) output equation
+• x(t) ∈Rn state of the system at time t
+• u(t) ∈Rm input of the system at time t
+• y(t) ∈Rp output of the system at time t
+ x1(t)   u1(t)   y1(t) 
+x(t) = u(t) = y(t) = ... ... ...      
+xn(t) um(t) yp(t)
+Remark In applications, we will mainly work with time-invariant systems, ˙x(t) = f(x(t), u(t)), even
+though time-varying ones may be considered. □
+
+===== PDF PAGE 9 =====
+Discrete-time control systems and notation
+We consider nonlinear, discrete-time systems described by
+x(t + 1) = f(x(t), u(t), t), x(0) = x0, t ∈N0
+but from now on we will use the (more compact) notation
+xt+1 = ft(xt, ut), x0 = x0, t ∈N0
+where xt ∈Rn and ut ∈Rm are the state and the input of the system at time t.
+
+===== PDF PAGE 10 =====
+Discrete-time control systems and notation
+Consider a nonlinear, discrete-time system on a finite time-horizon
+xt+1 = ft(xt, ut), x0 = x0, t = 0, . . . , T −1 (1)
+where xt ∈Rn and ut ∈Rm are the state and the input of the system at time t.
+Notation
+We use x ∈RnT and u ∈RmT to denote, respectively, the stack of the states xt for all t = 1, . . . , T
+and the inputs ut for all t = 0, . . . , T −1, that is
+x := col(x1, . . . , xT )
+u := col(u0, . . . , uT −1).
+where col(x1, . . . , xT ) is the vector with components x1, . . . , xT .
+
+===== PDF PAGE 11 =====
+System trajectories
+Let us introduce the definition of trajectory of a (possibly) nonlinear, discrete-time control system.
+Definition A pair (¯x, ¯u) ∈RnT × RmT is called a trajectory of system (1) if ¯xt+1 = ft(¯xt, ¯ut) for all
+t = 0, . . . , T −1. In particular, ¯x is the state trajectory, while ¯u is the input trajectory. □
+Let us recall a special class of trajectories characterized by constant input and constant state.
+Definition A state-input pair (xe, ue) ∈Rn×Rm is called an equilibrium pair of (1) if (xt, ut) = (xe, ue),
+t ∈N0, is a trajectory of the system. □
+Equilibria of discerete-time, time-invariant systems satisfy xe = f(xe, ue).
+
+===== PDF PAGE 12 =====
+Linearization of a system about a trajectory
+Given the dynamics
+xt+1 = ft(xt, ut) t ∈N0,
+and a trajectory (¯x, ¯u) (i.e., ¯xt+1 = ft(¯xt, ¯ut) for all t ∈N0), the linearization of (1) about (¯x, ¯u) is
+given by the linear (possibly) time-varying system
+∆xt+1 = At∆xt + Bt∆ut t ∈N0,
+with At and Bt the Jacobians of ft, with respect to state and input respectively, evaluated at (¯x, ¯u).
+
+===== PDF PAGE 13 =====
+Recall some tools for nonlinear systems analysis and control
+• System Trajectories and equilibria
+• Linearization
+• Equilibrium (origin) stabilization (typically time-invariant systems)
+• Output/trajectory tracking (typically time-varying systems)
+The following issues are not handled explicitly
+• Optimize a performance index (e.g., control effort, distance from a target point, time, ...)
+• Explicitly handle constraints (e.g., saturations on the inputs, collision/obstacle avoidance, regions
+where the state has to be confined,...)
+
+===== PDF PAGE 14 =====
+Optimization: main ingredients
+The main ingredients of an optimization problem are
+Decision vector: z ∈Rd
+Cost function: ℓ(z) : Rd →R cost associated to decision z
+Constraints (constraint sets): for some given functions hi : Rn →R, i = 1, . . . , m, and gj : Rn →R,
+the decision vector z ∈Rd needs to satisfy
+hi(z) = 0 i = 1, . . . , m
+gj(z) ≤0 j = 1, . . . , r.
+Equivalently we can say that we require z ∈Z with
+Z = {z ∈Rn | h(z) = 0, g(z) ≤0},
+where we compactly denoted h(z) = col(h1(z), . . . , hm(z)) and g(z) = col(g1(z), . . . , gr(z)).
+
+===== PDF PAGE 15 =====
+Example of cost function: scalar set up
+Scalar set up d = 1
+Decision variable: z ∈Rd = R
+Cost function: ℓ(z) = 2(z1 −¯z)2, with ¯z ∈R a give point.
+
+===== PDF PAGE 16 =====
+Example of cost function: vector set up
+Decision variable: z ∈Rd
+Cost function:
+• Distance from a point: ℓ(z) = 2∥z1 −¯z∥2 = 12(z −¯z)⊤(z −¯z) with ¯z ∈Rd a given point.
+• Weighted distance: given a positive (semi-)definite (weight) matrix W ∈Rd×d,
+ℓ(z) = 2∥z1 −¯z∥2W = 12(z −¯z)⊤W(z −¯z),
+with ¯z ∈Rd a given point.
+z1 w1 0 Consider z ∈R2, z = , W = > 0 with w1 > 0, w2 > 0, the cost function is
+z2 0 w2
+ℓ(z) = 2∥z1 −¯z∥2W = 12w1(z1 −¯z1)2 + 2w1(z21 −¯z2)2
+
+===== PDF PAGE 17 =====
+Examples of constraint sets
+z2 Inequality constraint
+z ∈R2, such that az21 + bz22 −c ≤0, for some given az21 + bz22 −c ≤0
+parameters a ∈R, b ∈R, c ∈R.
+Then, the constraint set Z is
+Z = {z ∈R2 | az21 + bz22 −c ≤0}.
+z1
+z2 Equality constraint
+z ∈Rd, such that z⊤Qz + q⊤z −c = 0, for some given
+parameters Q ∈Rd×d, q ∈Rd, c ∈R. z⊤Qz + q⊤z = 0 Then, the constraints set X is −c
+Z = {z ∈Rd | z⊤Qz + q⊤z −c = 0}.
+z1
+
+===== PDF PAGE 18 =====
+Optimization problem (minimization)
+We can write our optimization problem as
+min ℓ(z)
+z∈Rd
+subj.to hi(z) = 0 i = 1, . . . , m
+gj(z) ≤0 j = 1, . . . , r
+where hi : Rd →R and gj : Rd →R.
+We can write it more compactly as
+min ℓ(z)
+z∈Rd
+subj.to h(z) = 0
+g(z) ≤0
+where h : Rd →Rm and g : Rd →Rr.
+
+===== PDF PAGE 19 =====
+Discrete-time optimal control: main ingredients (I)
+The main ingredients of a discrete-time optimal control problem are
+Dynamics: a (discrete-time) system in state space form
+xt+1 = ft(xt, ut) t = 0, . . . , T −1
+We will mainly work on a finite horizon, i.e. 0 < T < +∞(notation: 0, . . . , T −1). In some cases we
+will also consider an infinite horizon, i.e., T = +∞.
+The dynamics introduces T equality constraints
+x1 = f(x0, u0) i.e. ft(x0, u0) −x1 = 0
+x2 = f(x1, u1) i.e. ft(x1, u1) −x2 = 0
+... ...
+xT = f(xT −1, uT −1) i.e. ft(xT −1, uT −1) −xT = 0
+
+===== PDF PAGE 20 =====
+Discrete-time optimal control: main ingredients (II)
+Decision variable: state-input vector (x, u) and, if not given, initial state x0.
+Cost function: a cost “to be payed” for a chosen trajectory. We consider an additive structure in time
+T −1
+ℓ(x0, x, u) = X ℓt(xt, ut) + ℓT (xT )
+t=0
+where ℓt : Rn × Rm →R is the so-called stage cost, while ℓT : Rn →R is the terminal cost.
+Notation: if the initial state is given, i.e., x0 = x0, we lighten the notation and write
+T −1
+ℓ(x, u) = X ℓt(xt, ut) + ℓT (xT )
+t=0
+
+===== PDF PAGE 21 =====
+Discrete-time optimal control: main ingredients (III)
+End-point constraints: function of the state variable prescribed at initial and/or final point
+r(x0, xT ) = 0.
+Path constraints: point-wise (in time) constraints representing possible limits on states and inputs at
+each time t
+gt(xt, ut) ≤0, t = 0, . . . , T −1.
+
+===== PDF PAGE 22 =====
+Cost function: examples
+Distance from a desired state-input function of time (“state-input curve”)
+T −1
+ℓ(x, u) = X 12∥xt −xdest ∥2Q + 2∥ut1 −udest ∥2R + 12∥xT −xdesT ∥2QT
+t=0 | ℓt(xt,ut){z } | ℓT {z(xT ) }
+where, x0 = x0, and xdest , t = 1, . . . , T, udest , t = 0, . . . , T −1, (compactly (xdes, udes)) represents a
+desired behavior for the system based on designers goals (not taking into account dynamic models).
+Recall:
+• 2∥xt1 −xdest ∥2Q = 12(xt −xdest )⊤Q(xt −xdest ) for some Q positive (semi-)definite
+• 2∥xT1 −xdesT ∥2QT = 2(xT1 −xdesT )⊤QT (xT −xdesT ) for some QT positive (semi-)definite
+• 2∥ut1 −udest ∥2R = 12(ut −udest )⊤R(ut −udest ) for some R positive definite
+Note: The desired curve (xdes, udes) does not satisfy the dynamics in general (e.g., a step transition
+between two equilibria).
+
+===== PDF PAGE 23 =====
+Discrete-time optimal control problem
+A discrete-time optimal control problem can be written as
+T −1
+min X ℓt(xt, ut) + ℓT (xT )
+x0,x1,...,xT
+u0,...,uT −1 t=0
+subj.to xt+1 = ft(xt, ut), t = 0, . . . , T −1
+r(x0, xT ) = 0,
+gt(xt, ut) ≤0, t = 0, . . . , T −1
+where ℓt : Rn × Rm →R is the so-called stage cost while ℓT : Rn →R is the terminal cost.
+
+===== PDF PAGE 24 =====
+Trajectory generation
+Consider the nonlinear, discrete-time system
+xt+1 = ft(xt, ut) t ∈N0
+and let
+yt = ht(xt, ut) t ∈N0
+be a performance output of the system.
+We would like the (performance) output to follow a desired time law ydest , for t ∈N0.
+Optimal Control Task
+Find a (state-input) trajectory (x, u)
+i.e., a function of time (xt, ut), t ∈N0, satisfying xt+1 = ft(xt, ut), for all t ∈N0, such that
+yt ≈ydest for all t ∈N0.
+
+===== PDF PAGE 25 =====
+Optimal control for trajectory generation
+We can pose a trajectory generation problem as
+T −1 1 1 1
+T ||2QT min X 2||xt −xdes t ||2Q + 2||ut −udes t ||2R + 2||xT −xdes x∈RnT ,u∈RmT t=0
+subj.to xt+1 = ft(xt, ut), t = 0, . . . , T −1
+x0 = x0,
+with x0 a given initial condition.
+The state-input curve (function of time) (xdest , udest ), t ∈N0, represents a desired behavior of the system
+and (in general) does NOT satisfy the dynamics.
+The curve (xdest , udest ), t ∈N0 is related to the performance output, i.e., ydest = ht(xdest , udest ).
+
+===== PDF PAGE 26 =====
+Trajectory generation for an autonomous drone
+Consider a planar drone model (continuous-time to be discretized)
+¨px = −u1 + u2 sin θ
+M
+u1 + u2
+cos θ −g v ¨py =
+M θ
+(pdesx , pdesy ) L
+¨θ = (u1 −u2) u2 2J (px, py)
+with performance output (discrete-time)
+px,t u1 yt = t ∈N0
+py,t
+being, e.g., the position of the drone center of mass.
+Goal:
+We would like the position of the drone to follow a given time law in the 3D space possibly not
+exceeding some limits in the angles, in the angular velocities and in the inputs.
+
+===== PDF PAGE 27 =====
+Example: trajectory generation for an autonomous drone (I)
+Consider the discrete-time version of the drone dynamics (discretized via, e.g., forward Euler), i.e.
+xt+1 = xt + δfCT(xt, ut, t)
+| ft(xt,ut){z }
+where δ > 0 sufficiently small discretization step and fCT(·, ·, ·) continuous-time dynamics.
+The state and input vector are:
+ px,t   x1,t 
+vx,t x2,t
+py,t x3,t u1,t
+xt = = ut =
+vy,t x4,t u2,t
+θt x5,t    
+ωt x6,t
+
+===== PDF PAGE 28 =====
+Example: trajectory generation for an autonomous drone (II)
+Trajectory generation task: compute a (state-input) trajectory of the drone such that
+• the time-evolution of the center of mass is close to a desired one, (pdesx,t, pdesy,t) for all t = 1, . . . , T
+• the velocity is close to the corresponding desired velocity profile (vdesx,t, vdesy,t) for all t = 1, . . . , T
+• angle and angular velocity, θt, ωt, are “not too high”
+• inputs u1,t, u2,t are “not too high”.
+
+===== PDF PAGE 29 =====
+Example: trajectory generation for an autonomous drone (III)
+We can choose diagonal weighting matrices
+ q1   qT 1 
+r1
+Q = ... QT = ... R = .  ,  , r2
+q6 qT 6
+The cost function then reads
+T −1
+ℓ(x, u) = X 12 q1(x1,t −pdesx,t)2 + q2(x2,t −vdesx,t)2 + q3(x3,t −pdesy,t)2 + q4(x4,t −vdesy,t)2
+t=0
++ q5x25,t + q6x26,t + r1u21,t + r2u22,t + 2∥xT1 −xdesT ∥2QT
+
+===== PDF PAGE 30 =====
+Example: path constraints
+As for the (inequality) path constraints g(x, u) ≤0, they represent restriction we want to (must) enforce
+at each time t = 1, . . . , T. For example:
+• Saturation of the inputs
+umint ≤ut ≤umaxt
+• State limitations, e.g. due to obstacles or limitation in the states. In the drone example, we may
+need to ensure
+pminy,t ≤py,t ≤pmaxy,t (pminy,t ≤x3,t ≤pmaxy,t )
+pmaxy,t
+(pdesx , pdesy )
+pminy,t
+
+===== PDF PAGE 31 =====
+Continuous-time Optimal Control problem (I)
+A continuous-time optimal control problem, i.e., t ∈R, can be written as
+Z T
+min ℓτ(x(τ), u(τ))dτ + ℓT (x(T)))
+(x(·),u(·))∈F 0
+subj.to ˙x(t) = ft(x(t), u(t)) t ∈[0, T]
+r(x(0), x(T)) = 0
+gt(x(t), u(t)) ≤0 t ∈[0, T)
+Note F is a space of functions (function space).
+• Cost functional ℓ: F →R
+Z T
+ℓ(x(·), u(·)) = ℓτ(x(τ), u(τ))dτ + ℓT (x(T))
+0
+• Space of trajectories (or trajectory manifold)
+n o T = (x(·), u(·))) ∈F | ˙x(t) = ft(x(t), u(t)), t ∈[0, T]
+
+===== PDF PAGE 32 =====
+Continuous-time Optimal Control problem (II)
+Suppose we neglect path and terminal constraints. We can write the optimal control problem as
+min ℓ(x(·), u(·))
+(x(·),u(·))∈F
+subj.to (x(·), u(·)) ∈T
+which is an infinite dimensional optimization problem.
+
+===== PDF PAGE 33 =====
+Example: trajectory generation for a pendulum (I)
+Consider a pendulum with (nonlinear) dynamics
+¨θ = −g sin θ + 1 τ
+l mℓ2
+with state-space representation
+l Mg τ
+˙x1 = x2
+1 ˙x2 = −g sin x1 + u θ
+l mℓ2
+and performance output y = θ.
+
+===== PDF PAGE 34 =====
+Example: trajectory generation for a pendulum (II)
+Task
+Transfer the pendulum from an equilibrium to another one.
+Equilibrium conditions
+0 = x1,e θ1e θ2e How to?
+0 = −g sin x1,e + 1 ue u1e u2e
+l mℓ2
+then, the first equilibrium is
+θ1e x1e = u1e = mgℓsin θ1e 0
+A similar reasoning holds for the second equilibrium (x2e, u2e).
+
+===== PDF PAGE 35 =====
+Example: trajectory generation for a pendulum (III)
+In order to find a trajectory to move from an equilibrium to another one, we can define as desired curve
+(θ1e 0 ≤t < T2 θ1e xdes1 (t) = T
+θ2e 2 ≤t ≤T
+xdes2 (t) = 0 T T t
+2
+θ2e with desired input
+(u1e 0 ≤t < T2 udes(t) =
+e u2e T2 ≤t ≤T u2
+At the same time, we want ˙θ as small as possible.
+T T t
+2
+Important u1e
+(xdes(t), udes(t)) is not a trajectory of the system!
+
+===== PDF PAGE 36 =====
+Example: trajectory generation for a pendulum (IV)
+The optimal control problem then reads
+Z T
+min q1(x1(τ) −xdes1 (τ))2 + q2x2(τ)2 + r(u(τ) −udes(τ))2dτ
+(x(·),u(·))∈F 0
++ qT 1(x1(T) −xdes1 (T))2 + qT 2x2(T)2
+(˙x1(t) = x2(t)
+subj.to 1
+˙x2(t) = −gl sin x1(t) + mℓ2 u(t)
+x(0) = x0
+q1 0 qT 1 0
+where we chose as weight matrices Q = , QT = , R = r.
+0 q2 0 qT 2

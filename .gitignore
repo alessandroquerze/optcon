@@ -1,0 +1,9 @@
+web/node_modules/
+web/dist/
+web/public/pdfs/
+web/test-results/
+web/playwright-report/
+artifacts/
+__pycache__/
+*.pyc
+.session/

@@ -1,0 +1,2014 @@
+{
+  "schemaVersion": 1,
+  "numbering": "physical-pdf-pages-1-based-including-cover",
+  "extractionWarning": "L'estrazione testuale non certifica le formule: confrontare frazioni, indici e trasposte con il PDF.",
+  "sources": [
+    {
+      "id": "introduzione",
+      "filename": "OPTCON-RL_introduction_optimal_control_2026_09_14.pdf",
+      "pageCount": 36,
+      "title": "Introduzione al controllo ottimo",
+      "shortTitle": "Introduzione",
+      "concepts": [
+        {
+          "id": "frontespizio",
+          "title": "Frontespizio e attribuzione",
+          "pages": [
+            1
+          ],
+          "block": "I1",
+          "summary": "Materiale del corso di Giuseppe Notarstefano, Università di Bologna.",
+          "kind": "metadata",
+          "visualizations": [],
+          "noVisualizationReason": "Attribuzione e titolo: nessun contenuto matematico da rappresentare."
+        },
+        {
+          "id": "motivazioni",
+          "title": "Perché ottimizzare un sistema?",
+          "pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "block": "I1",
+          "summary": "Prestazioni e vincoli collegano controllo, robotica, guida, droni e sistemi spaziali.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "motivation-map",
+              "label": "Perché ottimizzare un sistema?",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "scenario",
+                "peso del costo",
+                "limiti"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "sistemi-continui",
+          "title": "Stato, ingresso e uscita",
+          "pages": [
+            8
+          ],
+          "block": "I1",
+          "summary": "Il modello continuo descrive come cambia lo stato e come si genera l'uscita.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "continuous-system",
+              "label": "Stato, ingresso e uscita",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "stato iniziale",
+                "ingresso",
+                "parametri della dinamica"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "sistemi-discreti",
+          "title": "Dinamica discreta e notazione",
+          "pages": [
+            9,
+            10
+          ],
+          "block": "I1",
+          "summary": "Un orizzonte finito raccoglie stati e ingressi in vettori distinti.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "discrete-system",
+              "label": "Dinamica discreta e notazione",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "orizzonte",
+                "stato iniziale",
+                "sequenza degli ingressi"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "traiettorie-equilibri",
+          "title": "Traiettorie ed equilibri",
+          "pages": [
+            11
+          ],
+          "block": "I1",
+          "summary": "Una traiettoria soddisfa la dinamica; un equilibrio mantiene costanti stato e ingresso.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "trajectory-equilibrium",
+              "label": "Traiettorie ed equilibri",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "stato",
+                "ingresso",
+                "tempo"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "linearizzazione",
+          "title": "Una dinamica vista da vicino",
+          "pages": [
+            12
+          ],
+          "block": "I1",
+          "summary": "La linearizzazione approssima la risposta a piccole perturbazioni attorno a una traiettoria.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "linearization",
+              "label": "Una dinamica vista da vicino",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "traiettoria base",
+                "perturbazione",
+                "ingresso"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "strumenti-controllo",
+          "title": "Stabilizzare, inseguire, ottimizzare",
+          "pages": [
+            13
+          ],
+          "block": "I1",
+          "summary": "Stabilizzazione e inseguimento acquistano un indice di prestazione e vincoli espliciti.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "control-objectives",
+              "label": "Stabilizzare, inseguire, ottimizzare",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "riferimento",
+                "limiti",
+                "peso dello sforzo"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "ingredienti-ottimizzazione",
+          "title": "Decisioni, costo e vincoli",
+          "pages": [
+            14
+          ],
+          "block": "I1",
+          "summary": "Ottimizzare significa scegliere una decisione ammissibile minimizzando il costo.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "optimization-geometry",
+              "label": "Decisioni, costo e vincoli",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "decisione",
+                "costo",
+                "vincoli"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "costo-scalare",
+          "title": "Distanza da un obiettivo",
+          "pages": [
+            15
+          ],
+          "block": "I1",
+          "summary": "Un costo quadratico scalare penalizza la distanza dal punto desiderato.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "scalar-cost",
+              "label": "Distanza da un obiettivo",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "peso",
+                "obiettivo",
+                "punto"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "costo-pesato",
+          "title": "La geometria dei pesi",
+          "pages": [
+            16
+          ],
+          "block": "I1",
+          "summary": "Una matrice positiva pesa diversamente gli scostamenti nelle diverse direzioni.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "weighted-cost",
+              "label": "La geometria dei pesi",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "weight1",
+                "weight2",
+                "angle",
+                "centerX",
+                "centerY",
+                "pointX",
+                "pointY"
+              ],
+              "status": "ready"
+            }
+          ]
+        },
+        {
+          "id": "insiemi-ammissibili",
+          "title": "Uguaglianze e disuguaglianze",
+          "pages": [
+            17
+          ],
+          "block": "I1",
+          "summary": "Un'uguaglianza descrive un bordo o una superficie; una disuguaglianza anche una regione.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "constraint-sets",
+              "label": "Uguaglianze e disuguaglianze",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "coefficienti",
+                "termine noto",
+                "tipo di vincolo"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "problema-minimizzazione",
+          "title": "Scrivere il problema",
+          "pages": [
+            18
+          ],
+          "block": "I1",
+          "summary": "La forma compatta separa funzione di costo e insieme ammissibile.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "optimization-geometry",
+              "label": "Scrivere il problema",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "decisione",
+                "costo",
+                "vincoli"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "vincoli-dinamici",
+          "title": "La dinamica come vincolo",
+          "pages": [
+            19
+          ],
+          "block": "I2",
+          "summary": "Ogni passo temporale impone un'uguaglianza tra stato corrente, ingresso e stato successivo.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "dynamics-residual",
+              "label": "La dinamica come vincolo",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "stati",
+                "ingressi",
+                "orizzonte"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "costi-temporali",
+          "title": "Costo di stadio e costo terminale",
+          "pages": [
+            20
+          ],
+          "block": "I2",
+          "summary": "Il costo totale somma i contributi intermedi e un termine sullo stato finale.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "trajectory-cost",
+              "label": "Costo di stadio e costo terminale",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "orizzonte",
+                "pesi intermedi",
+                "peso terminale"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "vincoli-percorso",
+          "title": "Vincoli lungo il percorso e ai bordi",
+          "pages": [
+            21
+          ],
+          "block": "I2",
+          "summary": "I limiti possono valere a ogni istante oppure soltanto all'inizio e alla fine.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "path-boundary",
+              "label": "Vincoli lungo il percorso e ai bordi",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "limiti",
+                "stato iniziale",
+                "obiettivo finale"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "inseguimento-pesato",
+          "title": "Quanto costa inseguire?",
+          "pages": [
+            22
+          ],
+          "block": "I2",
+          "summary": "Q, R e QT bilanciano errore di inseguimento, uso degli ingressi e accuratezza finale.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "trajectory-cost",
+              "label": "Quanto costa inseguire?",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "Q",
+                "R",
+                "QT",
+                "riferimento"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "controllo-discreto",
+          "title": "Il problema di controllo discreto",
+          "pages": [
+            23
+          ],
+          "block": "I2",
+          "summary": "Costi, dinamica e vincoli formano un unico problema su stati e ingressi.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "discrete-control",
+              "label": "Il problema di controllo discreto",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "orizzonte",
+                "riferimento",
+                "pesi",
+                "limiti"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "riferimento-traiettoria",
+          "title": "Desiderare una curva, trovare una traiettoria",
+          "pages": [
+            24,
+            25
+          ],
+          "block": "I2",
+          "summary": "Il riferimento può violare la dinamica: la traiettoria calcolata deve rispettarla.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "reference-versus-trajectory",
+              "label": "Desiderare una curva, trovare una traiettoria",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "riferimento",
+                "dinamica",
+                "pesi"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "modello-drone",
+          "title": "Un drone nel piano",
+          "pages": [
+            26,
+            27
+          ],
+          "block": "I2",
+          "summary": "Il modello ha sei stati e due spinte; la discretizzazione di Eulero produce la dinamica discreta.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "planar-drone",
+              "label": "Un drone nel piano",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "M",
+                "J",
+                "L",
+                "passo di discretizzazione",
+                "spinte"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "obiettivo-drone",
+          "title": "Progettare il volo",
+          "pages": [
+            28,
+            29
+          ],
+          "block": "I2",
+          "summary": "L'obiettivo penalizza scostamenti di posizione, velocità, assetto e ingressi.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "drone-optimal-control",
+              "label": "Progettare il volo",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "Q",
+                "R",
+                "QT",
+                "orizzonte",
+                "riferimento"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "limiti-drone",
+          "title": "Dove può volare?",
+          "pages": [
+            30
+          ],
+          "block": "I2",
+          "summary": "Saturazioni degli ingressi e limiti sull'altezza restringono le traiettorie ammissibili.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "drone-constraints",
+              "label": "Dove può volare?",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "spinta minima",
+                "spinta massima",
+                "quota minima",
+                "quota massima"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "controllo-continuo",
+          "title": "Dal costo sommato al costo integrale",
+          "pages": [
+            31,
+            32
+          ],
+          "block": "I3",
+          "summary": "Nel tempo continuo la decisione è una funzione e il costo diventa un funzionale.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "continuous-versus-discrete",
+              "label": "Dal costo sommato al costo integrale",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "durata",
+                "discretizzazione",
+                "ingresso"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "modello-pendolo",
+          "title": "Il pendolo nonlineare",
+          "pages": [
+            33
+          ],
+          "block": "I3",
+          "summary": "Angolo e velocità descrivono la dinamica sotto gravità e coppia applicata.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "pendulum",
+              "label": "Il pendolo nonlineare",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "massa",
+                "lunghezza",
+                "coppia",
+                "angolo iniziale"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "equilibri-pendolo",
+          "title": "Restare in equilibrio",
+          "pages": [
+            34
+          ],
+          "block": "I3",
+          "summary": "In equilibrio la velocità è nulla e la coppia bilancia il momento della gravità.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "pendulum-equilibrium",
+              "label": "Restare in equilibrio",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "angolo",
+                "massa",
+                "lunghezza"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "riferimento-pendolo",
+          "title": "Un salto desiderato non è una traiettoria",
+          "pages": [
+            35
+          ],
+          "block": "I3",
+          "summary": "Un riferimento discontinuo tra due equilibri non soddisfa la dinamica del pendolo.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "pendulum-reference",
+              "label": "Un salto desiderato non è una traiettoria",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "angolo iniziale",
+                "angolo finale",
+                "durata"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "controllo-pendolo",
+          "title": "Trasferire il pendolo tra equilibri",
+          "pages": [
+            36
+          ],
+          "block": "I3",
+          "summary": "Il costo bilancia inseguimento, velocità, coppia e comportamento finale.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "pendulum-optimal-control",
+              "label": "Trasferire il pendolo tra equilibri",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "Q",
+                "R",
+                "QT",
+                "durata",
+                "limite di coppia"
+              ],
+              "status": "planned"
+            }
+          ]
+        }
+      ],
+      "sha256": "ae169f3492dc0915d0777d62e90184107d7017aee03b8620bbfe0aee9bd3a469",
+      "extractedPath": "sources/extracted/introduzione.json"
+    },
+    {
+      "id": "ottimizzazione",
+      "filename": "OPTCON-RL_optimization_2026_09_14.pdf",
+      "pageCount": 81,
+      "title": "Ottimizzazione nonlineare",
+      "shortTitle": "Ottimizzazione",
+      "concepts": [
+        {
+          "id": "frontespizio",
+          "title": "Frontespizio e attribuzione",
+          "pages": [
+            1
+          ],
+          "block": "O1",
+          "summary": "Materiale del corso di Giuseppe Notarstefano, Università di Bologna.",
+          "kind": "metadata",
+          "visualizations": [],
+          "noVisualizationReason": "Attribuzione e titolo: nessun contenuto matematico da rappresentare."
+        },
+        {
+          "id": "minimi",
+          "title": "Minimi locali, globali e stretti",
+          "pages": [
+            2,
+            3,
+            4
+          ],
+          "block": "O1",
+          "summary": "La definizione di minimo dipende dalla regione in cui confrontiamo i valori della funzione.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "local-global-minima",
+              "label": "Minimi locali, globali e stretti",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "coefficienti",
+                "punto",
+                "raggio dell'intorno"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "min-argmin",
+          "title": "Valore minimo e punto di minimo",
+          "pages": [
+            5
+          ],
+          "block": "O1",
+          "summary": "min indica il costo raggiunto; argmin indica la decisione che lo raggiunge.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "minimum-point-value",
+              "label": "Valore minimo e punto di minimo",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "funzione",
+                "decisione"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "gradiente-hessiana",
+          "title": "Pendenza, curvatura e Jacobiano",
+          "pages": [
+            6,
+            7
+          ],
+          "block": "O1",
+          "summary": "Il gradiente descrive la variazione locale; l'Hessiana la curvatura. Nelle slide il gradiente vettoriale è il Jacobiano trasposto.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "derivatives",
+              "label": "Pendenza, curvatura e Jacobiano",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "punto",
+                "funzione",
+                "direzione"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "ottimalita-libera",
+          "title": "Un punto stazionario non basta",
+          "pages": [
+            8,
+            9
+          ],
+          "block": "O1",
+          "summary": "Le condizioni necessarie comprendono anche punti che non sono minimi; la positività definita dà una condizione sufficiente locale.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "stationary-classification",
+              "label": "Un punto stazionario non basta",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "autovalori",
+                "punto",
+                "funzione"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "insiemi-convessi",
+          "title": "Il segmento resta nell'insieme?",
+          "pages": [
+            10
+          ],
+          "block": "O1",
+          "summary": "Un insieme è convesso se contiene il segmento tra ogni coppia dei suoi punti.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "convex-set",
+              "label": "Il segmento resta nell'insieme?",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "estremi del segmento",
+                "theta",
+                "forma dell'insieme"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "funzioni-convesse",
+          "title": "Corde e convessità",
+          "pages": [
+            11
+          ],
+          "block": "O1",
+          "summary": "Per una funzione convessa il grafico sta sotto ogni corda tra due punti.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "convex-function",
+              "label": "Corde e convessità",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "estremi",
+                "theta",
+                "curvatura"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "geometria-vincoli",
+          "title": "Convessità e vincoli",
+          "pages": [
+            12,
+            13
+          ],
+          "block": "O1",
+          "summary": "Sottolivelli convessi e uguaglianze affini forniscono classi utili di insiemi ammissibili; controllare le equivalenze troppo generali nelle slide.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "constraint-convexity",
+              "label": "Convessità e vincoli",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "tipo di vincolo",
+                "coefficienti",
+                "livello"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "monotonia",
+          "title": "Convessità e monotonia del gradiente",
+          "pages": [
+            14,
+            15,
+            16
+          ],
+          "block": "O1",
+          "summary": "Convessità, convessità stretta e forte si riflettono in disuguaglianze sui gradienti.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "gradient-monotonicity",
+              "label": "Convessità e monotonia del gradiente",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "punti di confronto",
+                "mu",
+                "curvatura"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "lipschitz",
+          "title": "Quanto può cambiare il gradiente?",
+          "pages": [
+            17,
+            18
+          ],
+          "block": "O1",
+          "summary": "L e mu legano regolarità del gradiente, curvatura e disuguaglianze di confronto.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "gradient-bounds",
+              "label": "Quanto può cambiare il gradiente?",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "L",
+                "mu",
+                "punti di confronto"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "limiti-quadratici",
+          "title": "Tangenti e limiti quadratici",
+          "pages": [
+            19,
+            20
+          ],
+          "block": "O1",
+          "summary": "La convessità fornisce un limite inferiore; un gradiente Lipschitz fornisce un limite superiore quadratico.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "quadratic-bounds",
+              "label": "Tangenti e limiti quadratici",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "punto base",
+                "mu",
+                "L",
+                "curvatura"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "minimizzazione-convessa",
+          "title": "Quando locale significa globale",
+          "pages": [
+            21,
+            22
+          ],
+          "block": "O1",
+          "summary": "In un problema convesso un minimo locale è globale; nel caso differenziabile libero il gradiente nullo lo caratterizza.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "convex-optimality",
+              "label": "Quando locale significa globale",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "funzione",
+                "punto",
+                "corda"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "qp-liberi",
+          "title": "Programmi quadratici",
+          "pages": [
+            23,
+            24,
+            25
+          ],
+          "block": "O1",
+          "summary": "La matrice del costo governa curvatura ed esistenza del minimo; se è definita positiva il minimo è unico.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "weighted-cost",
+              "label": "Programmi quadratici",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "weight1",
+                "weight2",
+                "angle",
+                "centerX",
+                "centerY",
+                "pointX",
+                "pointY"
+              ],
+              "status": "ready"
+            }
+          ]
+        },
+        {
+          "id": "direzioni-discesa",
+          "title": "Scegliere direzione e passo",
+          "pages": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "block": "O2",
+          "summary": "Un metodo iterativo combina una direzione di discesa con una lunghezza del passo.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "descent-methods",
+              "label": "Scegliere direzione e passo",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "punto iniziale",
+                "passo",
+                "matrice D",
+                "funzione"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "metodi-gradiente",
+          "title": "Gradiente e curvatura",
+          "pages": [
+            32,
+            33
+          ],
+          "block": "O2",
+          "summary": "Il gradiente negativo è la direzione di massima discesa nella norma euclidea; Newton usa anche la curvatura.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "gradient-versus-newton",
+              "label": "Gradiente e curvatura",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "punto iniziale",
+                "passo",
+                "condizionamento"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "newton-zeri",
+          "title": "Newton per trovare uno zero",
+          "pages": [
+            34
+          ],
+          "block": "O2",
+          "summary": "La radice della linearizzazione aggiorna la stima della radice della funzione.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "newton-root",
+              "label": "Newton per trovare uno zero",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "funzione",
+                "punto iniziale",
+                "iterazione"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "modelli-quadratici",
+          "title": "Newton come problema quadratico",
+          "pages": [
+            35,
+            36,
+            37
+          ],
+          "block": "O2",
+          "summary": "Il passo di Newton minimizza il modello quadratico quando la curvatura lo consente.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "newton-model",
+              "label": "Newton come problema quadratico",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "punto base",
+                "funzione",
+                "regolarizzazione"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "armijo",
+          "title": "Quanto lungo può essere il passo?",
+          "pages": [
+            38,
+            39,
+            40
+          ],
+          "block": "O2",
+          "summary": "Il backtracking riduce il passo finché il costo soddisfa la diminuzione richiesta da Armijo.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "armijo",
+              "label": "Quanto lungo può essere il passo?",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "passo iniziale",
+                "beta",
+                "c",
+                "direzione"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "passi-convergenza",
+          "title": "Passi e convergenza",
+          "pages": [
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "block": "O2",
+          "summary": "Passi costanti o decrescenti richiedono ipotesi precise. Distinguere convergenza della sequenza, sottosequenze e stazionarietà.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "convergence",
+              "label": "Passi e convergenza",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "regola del passo",
+                "iterazioni",
+                "funzione",
+                "punto iniziale"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "ottimalita-convessi",
+          "title": "Ottimizzare su un insieme convesso",
+          "pages": [
+            47,
+            48
+          ],
+          "block": "O2",
+          "summary": "Al bordo, le direzioni ammissibili modificano la condizione di primo ordine.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "feasible-directions",
+              "label": "Ottimizzare su un insieme convesso",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "punto",
+                "insieme",
+                "gradiente"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "proiezione",
+          "title": "Il punto ammissibile più vicino",
+          "pages": [
+            49
+          ],
+          "block": "O2",
+          "summary": "La proiezione su un insieme chiuso, convesso e non vuoto esiste ed è unica.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "projection",
+              "label": "Il punto ammissibile più vicino",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "punto",
+                "insieme",
+                "dimensioni"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "gradiente-proiettato",
+          "title": "Scendere e tornare nell'insieme",
+          "pages": [
+            50,
+            51,
+            52
+          ],
+          "block": "O2",
+          "summary": "Il gradiente proiettato e le direzioni ammissibili mantengono gli iterati nei vincoli.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "projected-gradient",
+              "label": "Scendere e tornare nell'insieme",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "punto iniziale",
+                "passo",
+                "insieme",
+                "costo"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "esempi-costo",
+          "title": "Una galleria di funzioni",
+          "pages": [
+            53
+          ],
+          "block": "O2",
+          "summary": "Funzioni polinomiali, esponenziali e quadratiche mostrano geometrie differenti.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "function-gallery",
+              "label": "Una galleria di funzioni",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "funzione",
+                "coefficienti",
+                "dominio"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "barriere",
+          "title": "Avvicinarsi al bordo dall'interno",
+          "pages": [
+            54
+          ],
+          "block": "O2",
+          "summary": "La barriera logaritmica è definita soltanto nell'interno strettamente ammissibile.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "barrier",
+              "label": "Avvicinarsi al bordo dall'interno",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "epsilon",
+                "vincoli",
+                "punto interno"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "vincoli-regolarita",
+          "title": "Vincoli attivi e punti regolari",
+          "pages": [
+            55,
+            56,
+            57
+          ],
+          "block": "O3",
+          "summary": "La regolarità richiede indipendenza dei gradienti delle uguaglianze e delle disuguaglianze attive.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "active-constraints",
+              "label": "Vincoli attivi e punti regolari",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "punto",
+                "vincoli",
+                "angolo dei gradienti"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "lagrangiana",
+          "title": "Moltiplicatori e Lagrangiana",
+          "pages": [
+            58
+          ],
+          "block": "O3",
+          "summary": "I moltiplicatori combinano gradienti del costo e dei vincoli.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "lagrangian",
+              "label": "Moltiplicatori e Lagrangiana",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "punto",
+                "lambda",
+                "mu",
+                "vincoli"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "kkt-primo-ordine",
+          "title": "Le condizioni KKT",
+          "pages": [
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "block": "O3",
+          "summary": "Stazionarietà, ammissibilità primale/duale e complementarità caratterizzano candidati sotto regolarità.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "kkt-geometry",
+              "label": "Le condizioni KKT",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "punto",
+                "lambda",
+                "mu",
+                "vincoli"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "kkt-secondo-ordine",
+          "title": "Curvatura nelle direzioni ammissibili",
+          "pages": [
+            64,
+            65
+          ],
+          "block": "O3",
+          "summary": "La curvatura della Lagrangiana va valutata lungo direzioni coerenti con i vincoli.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "constrained-curvature",
+              "label": "Curvatura nelle direzioni ammissibili",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "punto",
+                "direzione tangente",
+                "Hessiana"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "qp-vincolati",
+          "title": "Un costo quadratico, vincoli lineari",
+          "pages": [
+            66,
+            67,
+            68
+          ],
+          "block": "O3",
+          "summary": "Un sistema KKT lega decisione e moltiplicatori; la curvatura rilevante è quella nello spazio nullo dei vincoli.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "constrained-qp",
+              "label": "Un costo quadratico, vincoli lineari",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "Q",
+                "q",
+                "A",
+                "b"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "newton-vincolato",
+          "title": "Newton sul sistema KKT",
+          "pages": [
+            69,
+            70,
+            71,
+            72,
+            73
+          ],
+          "block": "O3",
+          "summary": "La linearizzazione congiunta aggiorna decisione e moltiplicatori.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "constrained-newton",
+              "label": "Newton sul sistema KKT",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "punto iniziale",
+                "moltiplicatori",
+                "regolarizzazione"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "sqp",
+          "title": "Una sequenza di problemi quadratici",
+          "pages": [
+            74
+          ],
+          "block": "O3",
+          "summary": "SQP costruisce un sottoproblema quadratico con vincoli linearizzati.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "sqp",
+              "label": "Una sequenza di problemi quadratici",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "punto iniziale",
+                "Hessiana",
+                "vincoli",
+                "iterazione"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "merito",
+          "title": "Costo e violazione nello stesso criterio",
+          "pages": [
+            75,
+            76,
+            77
+          ],
+          "block": "O3",
+          "summary": "La funzione di merito bilancia diminuzione del costo e riduzione della violazione dei vincoli.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "merit-line-search",
+              "label": "Costo e violazione nello stesso criterio",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "penalita",
+                "beta",
+                "c",
+                "passo"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "barriere-uguaglianze",
+          "title": "Barriere con vincoli di uguaglianza",
+          "pages": [
+            78
+          ],
+          "block": "O3",
+          "summary": "La barriera incorpora le disuguaglianze, mentre le uguaglianze restano vincoli espliciti.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "barrier-equalities",
+              "label": "Barriere con vincoli di uguaglianza",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "epsilon",
+                "uguaglianze",
+                "punto interno"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "tempo-iterazione",
+          "title": "Tempo del sistema, iterazione del metodo",
+          "pages": [
+            79,
+            80,
+            81
+          ],
+          "block": "O3",
+          "summary": "t indica il passo della dinamica; k indica l'iterazione dell'algoritmo che aggiorna l'intera traiettoria.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "time-iteration",
+              "label": "Tempo del sistema, iterazione del metodo",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "tempo t",
+                "iterazione k",
+                "orizzonte"
+              ],
+              "status": "planned"
+            }
+          ]
+        }
+      ],
+      "sha256": "6c1dba877ca102f055845618f73205b71450b819e0cc09e149e1150017e458ea",
+      "extractedPath": "sources/extracted/ottimizzazione.json"
+    },
+    {
+      "id": "kkt",
+      "filename": "OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf",
+      "pageCount": 20,
+      "title": "Condizioni di ottimalità per il controllo",
+      "shortTitle": "Condizioni KKT",
+      "concepts": [
+        {
+          "id": "frontespizio",
+          "title": "Frontespizio e attribuzione",
+          "pages": [
+            1
+          ],
+          "block": "K1",
+          "summary": "Materiale del corso di Giuseppe Notarstefano, Università di Bologna.",
+          "kind": "metadata",
+          "visualizations": [],
+          "noVisualizationReason": "Attribuzione e titolo: nessun contenuto matematico da rappresentare."
+        },
+        {
+          "id": "stati-ingressi",
+          "title": "Raccogliere stati e ingressi",
+          "pages": [
+            2
+          ],
+          "block": "K1",
+          "summary": "I vettori compatti raccolgono tutti gli istanti dell'orizzonte.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "discrete-system",
+              "label": "Raccogliere stati e ingressi",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "orizzonte",
+                "stato iniziale",
+                "sequenza degli ingressi"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "curve-traiettorie",
+          "title": "Una curva è una traiettoria?",
+          "pages": [
+            3
+          ],
+          "block": "K1",
+          "summary": "Una coppia stato-ingresso arbitraria diventa traiettoria solo se soddisfa la dinamica.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "dynamics-residual",
+              "label": "Una curva è una traiettoria?",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "stati",
+                "ingressi",
+                "orizzonte"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "dinamica-implicita",
+          "title": "Tutta la dinamica in h(x,u)=0",
+          "pages": [
+            4
+          ],
+          "block": "K1",
+          "summary": "Il residuo impilato traduce la dinamica in vincoli di uguaglianza.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "dynamics-residual",
+              "label": "Tutta la dinamica in h(x,u)=0",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "stati",
+                "ingressi",
+                "orizzonte"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "varieta-traiettorie",
+          "title": "La varietà delle traiettorie",
+          "pages": [
+            5
+          ],
+          "block": "K1",
+          "summary": "Le traiettorie ammissibili formano una superficie nello spazio delle curve stato-ingresso.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "trajectory-manifold",
+              "label": "La varietà delle traiettorie",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "ingresso",
+                "punto base",
+                "dinamica"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "spazio-tangente",
+          "title": "Linearizzazione e spazio tangente",
+          "pages": [
+            6,
+            7
+          ],
+          "block": "K1",
+          "summary": "Lo spazio tangente contiene le perturbazioni che soddisfano la dinamica linearizzata.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "trajectory-tangent",
+              "label": "Linearizzazione e spazio tangente",
+              "dimensions": [
+                "2d",
+                "3d"
+              ],
+              "parameters": [
+                "punto base",
+                "perturbazione",
+                "dinamica"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "controllo-senza-extra",
+          "title": "Unconstrained non significa senza dinamica",
+          "pages": [
+            8,
+            9
+          ],
+          "block": "K1",
+          "summary": "Nel controllo, unconstrained indica assenza di vincoli aggiuntivi a quelli dinamici; le funzioni sono assunte C2.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "discrete-control",
+              "label": "Unconstrained non significa senza dinamica",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "orizzonte",
+                "riferimento",
+                "pesi",
+                "limiti"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "forma-compatta",
+          "title": "Il controllo come ottimizzazione vincolata",
+          "pages": [
+            10,
+            11
+          ],
+          "block": "K1",
+          "summary": "Costo e vincoli dinamici permettono di applicare la teoria dell'ottimizzazione.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "optimal-control-structure",
+              "label": "Il controllo come ottimizzazione vincolata",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "orizzonte",
+                "dimensione dello stato",
+                "dimensione dell'ingresso"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "richiamo-kkt",
+          "title": "La condizione di stazionarietà",
+          "pages": [
+            12
+          ],
+          "block": "K1",
+          "summary": "Il gradiente del costo è bilanciato dai gradienti dei vincoli pesati dai moltiplicatori.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "kkt-geometry",
+              "label": "La condizione di stazionarietà",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "punto",
+                "lambda",
+                "mu",
+                "vincoli"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "lagrangiana-temporale",
+          "title": "Scomporre la Lagrangiana nel tempo",
+          "pages": [
+            13,
+            14
+          ],
+          "block": "K2",
+          "summary": "La somma per istanti rivela quali stati, ingressi e costati interagiscono.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "costate-structure",
+              "label": "Scomporre la Lagrangiana nel tempo",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "orizzonte",
+                "stato selezionato",
+                "pesi"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "costati",
+          "title": "Stati in avanti, costati all'indietro",
+          "pages": [
+            15,
+            16,
+            17
+          ],
+          "block": "K2",
+          "summary": "Stazionarietà, condizione terminale e dinamica formano un sistema accoppiato.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "costates",
+              "label": "Stati in avanti, costati all'indietro",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "stato iniziale",
+                "Q",
+                "R",
+                "QT",
+                "orizzonte"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "controllo-vincolato",
+          "title": "Aggiungere limiti e condizioni al bordo",
+          "pages": [
+            18,
+            19
+          ],
+          "block": "K2",
+          "summary": "Vincoli terminali e di percorso introducono moltiplicatori distinti.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "constrained-optimal-control",
+              "label": "Aggiungere limiti e condizioni al bordo",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "limiti",
+                "obiettivo terminale",
+                "pesi"
+              ],
+              "status": "planned"
+            }
+          ]
+        },
+        {
+          "id": "kkt-controllo",
+          "title": "KKT e complementarità nel controllo",
+          "pages": [
+            20
+          ],
+          "block": "K2",
+          "summary": "Stazionarietà rispetto alle decisioni, ammissibilità e complementarità devono essere controllate separatamente.",
+          "kind": "theory",
+          "visualizations": [
+            {
+              "id": "optimal-control-kkt",
+              "label": "KKT e complementarità nel controllo",
+              "dimensions": [
+                "2d"
+              ],
+              "parameters": [
+                "Q",
+                "R",
+                "QT",
+                "limiti",
+                "moltiplicatori"
+              ],
+              "status": "planned"
+            }
+          ]
+        }
+      ],
+      "sha256": "937db0d7a574f549eb1181f22207ccfa886ae6d79206720718692bfd6015bd97",
+      "extractedPath": "sources/extracted/kkt.json"
+    }
+  ],
+  "errata": [
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        12,
+        13
+      ],
+      "status": "to-review",
+      "note": "Verificare le equivalenze generali tra convessità dell'insieme e forma del vincolo; un singolo sottolivello convesso non implica quasi-convessità globale."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        16,
+        19
+      ],
+      "status": "to-review",
+      "note": "Uniformare fattore 1/2 e disuguaglianze nella definizione di forte convessità."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        36
+      ],
+      "status": "identified",
+      "note": "Il passo definito come argmin del modello quadratico si somma: z_next = z + delta_z."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        68
+      ],
+      "status": "identified",
+      "note": "Per A di dimensione m x d e y in R^d, il vincolo tangente è Ay=0, non A^T y=0."
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        75
+      ],
+      "status": "identified",
+      "note": "La penalità per h(z)=0 usa ||h(z)||_1."
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        26
+      ],
+      "status": "identified",
+      "note": "Il modello presentato è planare, sebbene il testo descriva un obiettivo nello spazio 3D."
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        34
+      ],
+      "status": "identified",
+      "note": "La prima condizione di equilibrio è x_2,e=0 (velocità nulla), non x_1,e=0."
+    },
+    {
+      "sourceId": "kkt",
+      "pages": [
+        20
+      ],
+      "status": "to-review",
+      "note": "Non imporre gradiente nullo rispetto a tutti i moltiplicatori delle disuguaglianze: distinguere stazionarietà nelle decisioni, g<=0, mu>=0 e complementarità."
+    }
+  ]
+}

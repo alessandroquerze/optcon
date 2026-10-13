@@ -1,0 +1,902 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "ottimizzazione",
+  "filename": "OPTCON-RL_optimization_2026_09_14.pdf",
+  "sha256": "6c1dba877ca102f055845618f73205b71450b819e0cc09e149e1150017e458ea",
+  "pageCount": 81,
+  "extractedAt": "2026-10-13T16:22:38.088114+00:00",
+  "extractor": "PyMuPDF 1.28.2",
+  "pages": [
+    {
+      "pdfPage": 1,
+      "title": "Optimal Control and Reinforcement Learning",
+      "rawText": "Optimal Control and Reinforcement Learning\n               Nonlinear Optimization\n\n\n\n                   Prof. Giuseppe Notarstefano\n\n\n  Department of Electrical, Electronic, and Information Engineering\n          Alma Mater Studiorum Universit`a di Bologna\n              giuseppe.notarstefano@unibo.it\n\n\n\n       The present slides are for internal use of the course\nOptimal Control and Reinforcement Learning @ University of Bologna.",
+      "text": "Optimal Control and Reinforcement Learning\nNonlinear Optimization\nDepartment of Electrical, Electronic, and Information Engineering\nAlma Mater Studiorum Universit`a di Bologna\ngiuseppe.notarstefano@unibo.it\nThe present slides are for internal use of the course\nOptimal Control and Reinforcement Learning @ University of Bologna.",
+      "imageCount": 0,
+      "conceptIds": [
+        "frontespizio"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 2,
+      "title": "Unconstrained optimization: definitions, optimality conditions and",
+      "rawText": "Unconstrained optimization: definitions, optimality conditions and\n                       special problem classes",
+      "text": "Unconstrained optimization: definitions, optimality conditions and\nspecial problem classes",
+      "imageCount": 0,
+      "conceptIds": [
+        "minimi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 3,
+      "title": "Unconstrained optimization: introduction",
+      "rawText": "Unconstrained optimization: introduction\n\n\n    Consider the unconstrained optimization problem\n\n                                       min ℓ(z),\n                                               z∈Rd\n    with ℓ: Rd →R a cost function to be minimized and z a decision vector.\n\n   We say that z⋆is a\n      • global minimum if ℓ(z⋆) ≤ℓ(z) for all z ∈Rd\n      •  strict global minimum if ℓ(z⋆) < ℓ(z) for all z̸ = z⋆\n      •  local minimum if there exists ϵ > 0 such that ℓ(z⋆) ≤ℓ(z) for all\n         z ∈B(z⋆, ϵ) = {z ∈Rd | ∥z −z⋆∥< ϵ}\n      •  strict local minimum if there exists ϵ > 0 such that ℓ(z⋆) < ℓ(z) for all z ∈B(z⋆, ϵ) and z̸ = z⋆.\n\n\n\n\n\n                                                       Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 2 |73",
+      "text": "Unconstrained optimization: introduction\nConsider the unconstrained optimization problem\nmin ℓ(z),\nz∈Rd\nwith ℓ: Rd →R a cost function to be minimized and z a decision vector.\nWe say that z⋆is a\n• global minimum if ℓ(z⋆) ≤ℓ(z) for all z ∈Rd\n• strict global minimum if ℓ(z⋆) < ℓ(z) for all z̸ = z⋆\n• local minimum if there exists ϵ > 0 such that ℓ(z⋆) ≤ℓ(z) for all\nz ∈B(z⋆, ϵ) = {z ∈Rd | ∥z −z⋆∥< ϵ}\n• strict local minimum if there exists ϵ > 0 such that ℓ(z⋆) < ℓ(z) for all z ∈B(z⋆, ϵ) and z̸ = z⋆.",
+      "imageCount": 0,
+      "conceptIds": [
+        "minimi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 4,
+      "title": "Unconstrained optimization: introduction",
+      "rawText": "Unconstrained optimization: introduction\n\n\n    Consider the unconstrained optimization problem\n\n                                       min ℓ(z),\n                                               z∈Rd\n    with ℓ: Rd →R a cost function to be minimized and z a decision vector.\n\n\n\n\n\n                                                  strict local maximum\n\n\n                                                                   local minima\n\n\n\n                                          strict global minimum\n\n\n    Remark Maxima can be equivalently defined. Moreover, maxima are minima of −ℓ.\n\n\n                                                       Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 3 |73",
+      "text": "Unconstrained optimization: introduction\nConsider the unconstrained optimization problem\nmin ℓ(z),\nz∈Rd\nwith ℓ: Rd →R a cost function to be minimized and z a decision vector.\nstrict local maximum\nlocal minima\nstrict global minimum\nRemark Maxima can be equivalently defined. Moreover, maxima are minima of −ℓ.",
+      "imageCount": 0,
+      "conceptIds": [
+        "minimi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 5,
+      "title": "Notation",
+      "rawText": "Notation\n\n    Optimal solution\n   We denote ℓ(z∗) the optimal (minimum) value of a generic optimization problem, i.e.\n\n                                              ℓ(z∗) = min ℓ(z),\n                                                   z∈Rd\n    where z∗is the minimum point (optimal value for the optimization variable), i.e.,\n\n                             z∗= argmin ℓ(z),\n                                                  z∈Rd\n\n\n\n\n\n                                                       Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 4 |73",
+      "text": "Notation\nOptimal solution\nWe denote ℓ(z∗) the optimal (minimum) value of a generic optimization problem, i.e.\nℓ(z∗) = min ℓ(z),\nz∈Rd\nwhere z∗is the minimum point (optimal value for the optimization variable), i.e.,\nz∗= argmin ℓ(z),\nz∈Rd",
+      "imageCount": 0,
+      "conceptIds": [
+        "min-argmin"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 6,
+      "title": "Remarks on notation: gradient and Hessian matrix of a function",
+      "rawText": "Remarks on notation: gradient and Hessian matrix of a function\n\n\n    Gradient of a function\n    For a function r : Rd →R, the gradient is denoted as\n\n                                  ∂r(z) \n\n                                   ∇r(z) =                                                                                                                 ∂z1...                                                                                                    ∂r(z) ∈Rd×1\n                                                       ∂zd\n\n    Hessian matrix of a function\n    For a function r : Rd →R, the Hessian matrix is denoted as\n\n                              ∂2r(z)    · · ·   ∂2r(z) \n                                                  ∂z21          ∂z1zn\n                              ∇2(r(z)) =   ∂r(z)...       ...   ∂2r(z)...   ∈Rd×d                                                                                     · · ·\n                                                 ∂zdz1          ∂z2d\n\n    The Hessian matrix is a symmetric matrix, since the assumption of continuity of the second derivatives\n     implies that the order of differentiation does not matter.\n\n\n                                                       Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 5 |73",
+      "text": "Remarks on notation: gradient and Hessian matrix of a function\nGradient of a function\nFor a function r : Rd →R, the gradient is denoted as\n ∂r(z) \n∇r(z) = ∂z1...  ∂r(z) ∈Rd×1\n∂zd\nHessian matrix of a function\nFor a function r : Rd →R, the Hessian matrix is denoted as\n ∂2r(z) · · · ∂2r(z) \n∂z21 ∂z1zn\n∇2(r(z)) =  ∂r(z)... ... ∂2r(z)... ∈Rd×d · · ·\n∂zdz1 ∂z2d\nThe Hessian matrix is a symmetric matrix, since the assumption of continuity of the second derivatives\nimplies that the order of differentiation does not matter.",
+      "imageCount": 0,
+      "conceptIds": [
+        "gradiente-hessiana"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 7,
+      "title": "Remarks on notation: gradient of a vector-valued function",
+      "rawText": "Remarks on notation: gradient of a vector-valued function\n\n\n    Gradient of a (vector-valued) function\n    For a vector field r : Rd →Rm, the gradient is denoted as\n\n                            ∇r(z) = ∇r1(z)    · · ·  ∇rm(z)\n                             ∂r1(z)    · · ·   ∂rm(z) \n                                                 ∂z1            ∂z1\n                                                                                                                                                                                                                           ...      ...                                                                                                                                                                                                                                                                                             ...  ∈Rd×m                                                          ∂rm(z)                      =  ∂r1(z)                                                                                  · · ·\n                                               ∂zd           ∂zd\n\n    which is the transpose of the Jacobian matrix of r.\n\n\n\n\n\n                                                       Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 6 |73",
+      "text": "Remarks on notation: gradient of a vector-valued function\nGradient of a (vector-valued) function\nFor a vector field r : Rd →Rm, the gradient is denoted as\n∇r(z) = ∇r1(z) · · · ∇rm(z)\n ∂r1(z) · · · ∂rm(z) \n∂z1 ∂z1\n... ... ... ∈Rd×m ∂rm(z) =  ∂r1(z) · · ·\n∂zd ∂zd\nwhich is the transpose of the Jacobian matrix of r.",
+      "imageCount": 0,
+      "conceptIds": [
+        "gradiente-hessiana"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 8,
+      "title": "Necessary conditions of optimality (unconstrainted)",
+      "rawText": "Necessary conditions of optimality (unconstrainted)\n\n\n     First order necessary condition (FNC) of optimality (unconstrained)\n    Let z⋆be an unconstrained local minimum of ℓ: Rd →R and assume that ℓis continuously differentiable\n    (C1) in B(z⋆, ϵ) for some ϵ > 0. Then ∇ℓ(z⋆) = 0.\n\n    Second order necessary condition of optimality (unconstrained)\n       If additionally ℓis twice continuously differentiable (C2) in B(z⋆, ϵ), then ∇2ℓ(z⋆) ≥0 (the Hessian\n    ∇2ℓ(z⋆) of ℓis positive semidefinite).\n\n\n    Remark Points ¯z satisfying ∇ℓ(¯z) = 0 are called stationary points. They include minima, maxima and\n     saddle points.\n\n\n\n\n                                                         saddle point\n\n                                                    strict local maximum\n\n\n                                                                  local minima\n\n                                                 strict global minimum\n\n                                                       Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 7 |73",
+      "text": "Necessary conditions of optimality (unconstrainted)\nFirst order necessary condition (FNC) of optimality (unconstrained)\nLet z⋆be an unconstrained local minimum of ℓ: Rd →R and assume that ℓis continuously differentiable\n(C1) in B(z⋆, ϵ) for some ϵ > 0. Then ∇ℓ(z⋆) = 0.\nSecond order necessary condition of optimality (unconstrained)\nIf additionally ℓis twice continuously differentiable (C2) in B(z⋆, ϵ), then ∇2ℓ(z⋆) ≥0 (the Hessian\n∇2ℓ(z⋆) of ℓis positive semidefinite).\nRemark Points ¯z satisfying ∇ℓ(¯z) = 0 are called stationary points. They include minima, maxima and\nsaddle points.\nsaddle point\nstrict local maximum\nlocal minima\nstrict global minimum",
+      "imageCount": 0,
+      "conceptIds": [
+        "ottimalita-libera"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 9,
+      "title": "Second order sufficient conditions of optimality",
+      "rawText": "Second order sufficient conditions of optimality\n\n\n    Second order sufficient condition of optimality (unconstrained)\n    Let ℓ: Rd →R be twice continuously differentiable (C2) in B(z⋆, ϵ) for some ϵ > 0. Suppose that\n   z⋆∈Rd satisfies\n\n                         ∇ℓ(z⋆) = 0  and  ∇2ℓ(z⋆) > 0 (positive definite).\n\n    Then z⋆is a strict (unconstrained) local minimum of ℓ.\n\n\n\n\n\n                                                       Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 8 |73",
+      "text": "Second order sufficient conditions of optimality\nSecond order sufficient condition of optimality (unconstrained)\nLet ℓ: Rd →R be twice continuously differentiable (C2) in B(z⋆, ϵ) for some ϵ > 0. Suppose that\nz⋆∈Rd satisfies\n∇ℓ(z⋆) = 0 and ∇2ℓ(z⋆) > 0 (positive definite).\nThen z⋆is a strict (unconstrained) local minimum of ℓ.",
+      "imageCount": 0,
+      "conceptIds": [
+        "ottimalita-libera"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 10,
+      "title": "Convex sets",
+      "rawText": "Convex sets\n\n    Convex set\n   A set Z ⊂Rd is convex if for any two points zA and zB in Z and for all θ ∈[0, 1], then\n\n                                    θzA + (1 −θ)zB ∈Z.\n\n\n\n\n\n                                      zB\n\n\n                               Z                               zA\n\n\n                                Convex set              Nonconvex set\n\n\n\n\n\n                                                       Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 9 |73",
+      "text": "Convex sets\nConvex set\nA set Z ⊂Rd is convex if for any two points zA and zB in Z and for all θ ∈[0, 1], then\nθzA + (1 −θ)zB ∈Z.\nzB\nZ zA\nConvex set Nonconvex set",
+      "imageCount": 0,
+      "conceptIds": [
+        "insiemi-convessi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 11,
+      "title": "Convex functions",
+      "rawText": "Convex functions\n\n    Convex function\n    Let Z ⊂Rd be a convex set. A function ℓ: Z →R is convex if for any two points zA and zB in Z and\n     for all θ ∈[0, 1], then\n\n                             ℓ(θzA + (1 −θ)zB) ≤θℓ(zA) + (1 −θ)ℓ(zB).\n\n\n\n\n\n    Remark A function ℓis concave if −ℓis convex. A function ℓis strictly convex if the inequality holds\n      strictly for zA̸ = zB and θ ∈(0, 1).\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 10 |73",
+      "text": "Convex functions\nConvex function\nLet Z ⊂Rd be a convex set. A function ℓ: Z →R is convex if for any two points zA and zB in Z and\nfor all θ ∈[0, 1], then\nℓ(θzA + (1 −θ)zB) ≤θℓ(zA) + (1 −θ)ℓ(zB).\nRemark A function ℓis concave if −ℓis convex. A function ℓis strictly convex if the inequality holds\nstrictly for zA̸ = zB and θ ∈(0, 1).",
+      "imageCount": 0,
+      "conceptIds": [
+        "funzioni-convesse"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 12,
+      "title": "Inequality constraints and convex sets",
+      "rawText": "Inequality constraints and convex sets\n\n    Let g : Rd →Rp, we can define a set Zineq ⊂Rd as\n\n                                               Zineq = {z ∈Rd | g(z) ≤0}\n\n\n    The set Zineq is convex if and only if g is a quasi-convex function (e.g., monotone functions on the axis).\n\n     Corollary:  If g is convex, then Zineq is convex.\n\n\n                 z2                                                    z2\n                     az21 + bz22 −c ≤0\n                                                           a⊤z −c ≤0\n\n\n\n                                       z1                                                    z1\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 11 |73",
+      "text": "Inequality constraints and convex sets\nLet g : Rd →Rp, we can define a set Zineq ⊂Rd as\nZineq = {z ∈Rd | g(z) ≤0}\nThe set Zineq is convex if and only if g is a quasi-convex function (e.g., monotone functions on the axis).\nCorollary: If g is convex, then Zineq is convex.\nz2 z2\naz21 + bz22 −c ≤0\na⊤z −c ≤0\nz1 z1",
+      "imageCount": 0,
+      "conceptIds": [
+        "geometria-vincoli"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 13,
+      "title": "Equality constraints and convex sets",
+      "rawText": "Equality constraints and convex sets\n\n    Let h : Rd →Rp, we can define a set Zeq ⊂Rd as\n\n                                        Zeq = {z ∈Rd | h(z) = 0}\n\n\n    The set Zeq  is convex  if and only  if h is an affine function. Convex sets identified through equality\n     constraints are linear spaces (hyperplanes).\n\n\n\n\n                    z2                                                 z2\n\n                 z⊤Qz + q⊤z −c = 0                         a⊤z −c = 0\n\n\n\n                                          z1                                                 z1\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 12 |73",
+      "text": "Equality constraints and convex sets\nLet h : Rd →Rp, we can define a set Zeq ⊂Rd as\nZeq = {z ∈Rd | h(z) = 0}\nThe set Zeq is convex if and only if h is an affine function. Convex sets identified through equality\nconstraints are linear spaces (hyperplanes).\nz2 z2\nz⊤Qz + q⊤z −c = 0 a⊤z −c = 0\nz1 z1",
+      "imageCount": 0,
+      "conceptIds": [
+        "geometria-vincoli"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 14,
+      "title": "Convexity and gradient monotonicity",
+      "rawText": "Convexity and gradient monotonicity\n\n       If ℓis differentiable and convex, then for all zA, zB ∈Z it holds\n\n                                  ℓ(zB) ≥ℓ(zA) + ∇ℓ(zA)⊤(zB −zA)\n\n\n       If ℓis differentiable and convex, then its gradient ∇ℓ: Rd →Rd satisfies\n\n                                       ⊤                               ∇ℓ(zA) −∇ℓ(zB)   (zA −zB) ≥0\n\n     for all zA, zB ∈Z.\n\n\n    That is, the gradient ∇ℓis a monotone operator\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 13 |73",
+      "text": "Convexity and gradient monotonicity\nIf ℓis differentiable and convex, then for all zA, zB ∈Z it holds\nℓ(zB) ≥ℓ(zA) + ∇ℓ(zA)⊤(zB −zA)\nIf ℓis differentiable and convex, then its gradient ∇ℓ: Rd →Rd satisfies\n⊤ ∇ℓ(zA) −∇ℓ(zB) (zA −zB) ≥0\nfor all zA, zB ∈Z.\nThat is, the gradient ∇ℓis a monotone operator",
+      "imageCount": 0,
+      "conceptIds": [
+        "monotonia"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 15,
+      "title": "Strict convexity and gradient monotonicity",
+      "rawText": "Strict convexity and gradient monotonicity\n\n   A function ℓis strictly convex if for zA̸ = zB and θ ∈(0, 1)\n\n                              ℓ(θzA + (1 −θ)zB) < θℓ(zA) + (1 −θ)ℓ(zB)\n\n\n\n       If the strictly convex function ℓis also differentiable, then its gradient satisfies\n\n                                       ⊤                               ∇ℓ(zA) −∇ℓ(zB)   (zA −zB) > 0\n\n     for all zA, zB ∈Z.\n\n\n    That is, the gradient ∇ℓis a strictly monotone operator\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 14 |73",
+      "text": "Strict convexity and gradient monotonicity\nA function ℓis strictly convex if for zA̸ = zB and θ ∈(0, 1)\nℓ(θzA + (1 −θ)zB) < θℓ(zA) + (1 −θ)ℓ(zB)\nIf the strictly convex function ℓis also differentiable, then its gradient satisfies\n⊤ ∇ℓ(zA) −∇ℓ(zB) (zA −zB) > 0\nfor all zA, zB ∈Z.\nThat is, the gradient ∇ℓis a strictly monotone operator",
+      "imageCount": 0,
+      "conceptIds": [
+        "monotonia"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 16,
+      "title": "Strong convexity and gradient monotonicity",
+      "rawText": "Strong convexity and gradient monotonicity\n\n   A function ℓis strongly convex with parameter µ > 0 if for zA̸ = zB and θ ∈(0, 1)\n\n                   ℓ(θzA + (1 −θ)zB) < θℓ(zA) + (1 −θ)ℓ(zB) −µθ(1 −θ)∥zA −zB∥2\n\n\n\n    The gradient of a differentiable strongly convex function satisfies\n\n                                   ⊤                          ∇ℓ(zA) −∇ℓ(zB)   (zA −zB) ≥µ∥zA −zB∥2\n\n     for all zA, zB ∈Z.\n\n\n    That is, the gradient ∇ℓis a strongly monotone operator\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 15 |73",
+      "text": "Strong convexity and gradient monotonicity\nA function ℓis strongly convex with parameter µ > 0 if for zA̸ = zB and θ ∈(0, 1)\nℓ(θzA + (1 −θ)zB) < θℓ(zA) + (1 −θ)ℓ(zB) −µθ(1 −θ)∥zA −zB∥2\nThe gradient of a differentiable strongly convex function satisfies\n⊤ ∇ℓ(zA) −∇ℓ(zB) (zA −zB) ≥µ∥zA −zB∥2\nfor all zA, zB ∈Z.\nThat is, the gradient ∇ℓis a strongly monotone operator",
+      "imageCount": 0,
+      "conceptIds": [
+        "monotonia"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 17,
+      "title": "Convexity and Lipschitz continuity of the gradient",
+      "rawText": "Convexity and Lipschitz continuity of the gradient\n\n\n    Consider a differentiable convex function ℓwith a Lipschitz continuous gradient with parameter L > 0,\n      i.e.,\n\n                               ∥∇ℓ(zA) −∇ℓ(zB)∥≤L∥zA −zB∥\n\n     for all zA, zB ∈Z.\n\n\n    Then, the following characterization holds\n\n                                ⊤\n                      ∇ℓ(zA) −∇ℓ(zB)   (zA −zB) ≥1L∥∇ℓ(zA) −∇ℓ(zB)∥2\n\n     for all zA, zB ∈Z.\n\n\n    That is, the gradient ∇ℓis a co-coercive operator\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 16 |73",
+      "text": "Convexity and Lipschitz continuity of the gradient\nConsider a differentiable convex function ℓwith a Lipschitz continuous gradient with parameter L > 0,\ni.e.,\n∥∇ℓ(zA) −∇ℓ(zB)∥≤L∥zA −zB∥\nfor all zA, zB ∈Z.\nThen, the following characterization holds\n⊤\n∇ℓ(zA) −∇ℓ(zB) (zA −zB) ≥1L∥∇ℓ(zA) −∇ℓ(zB)∥2\nfor all zA, zB ∈Z.\nThat is, the gradient ∇ℓis a co-coercive operator",
+      "imageCount": 0,
+      "conceptIds": [
+        "lipschitz"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 18,
+      "title": "Strong convexity and Lipschitz continuity of the gradient",
+      "rawText": "Strong convexity and Lipschitz continuity of the gradient\n\n\n    Consider a strongly convex (with parameter µ > 0) function ℓwith Lipschitz continuous gradient (with\n    parameter L > 0)\n\n\n    Then the following characterization holds\n\n                        ⊤            µL                   1\n             ∇ℓ(zA) −∇ℓ(zB)   (zA −zB) ≥ µ+L ∥zA −zB∥2 + µ+L ∥∇ℓ(zA) −∇ℓ(zB)∥2\n                                             |{z}γ1               |{z}γ2\n\n     for all zA, zB ∈Z.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 17 |73",
+      "text": "Strong convexity and Lipschitz continuity of the gradient\nConsider a strongly convex (with parameter µ > 0) function ℓwith Lipschitz continuous gradient (with\nparameter L > 0)\nThen the following characterization holds\n⊤ µL 1\n∇ℓ(zA) −∇ℓ(zB) (zA −zB) ≥ µ+L ∥zA −zB∥2 + µ+L ∥∇ℓ(zA) −∇ℓ(zB)∥2\n|{z}γ1 |{z}γ2\nfor all zA, zB ∈Z.",
+      "imageCount": 0,
+      "conceptIds": [
+        "lipschitz"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 19,
+      "title": "Graphical interpretation of convexity",
+      "rawText": "Graphical interpretation of convexity\n\n\n       If ℓis differentiable and convex, then\n                                  ℓ(zB) ≥ℓ(zA) + ∇ℓ(zA)⊤(zB −zA)\n\n     for all zA, zB ∈Z.\n\n       If ℓis differentiable and µ-strongly convex, then\n                          ℓ(zB) ≥ℓ(zA) + ∇ℓ(zA)⊤(zB −zA) + µ2 ∥zB −zA∥2\n     for all zA, zB ∈Z.\n\n    That is, strong convexity imposes a quadratic lower bound on ℓ\n\n                                 ℓ(zB)\n\n\n\n\n\n                                                           (zA, ℓ(zA))\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 18 |73",
+      "text": "Graphical interpretation of convexity\nIf ℓis differentiable and convex, then\nℓ(zB) ≥ℓ(zA) + ∇ℓ(zA)⊤(zB −zA)\nfor all zA, zB ∈Z.\nIf ℓis differentiable and µ-strongly convex, then\nℓ(zB) ≥ℓ(zA) + ∇ℓ(zA)⊤(zB −zA) + µ2 ∥zB −zA∥2\nfor all zA, zB ∈Z.\nThat is, strong convexity imposes a quadratic lower bound on ℓ\nℓ(zB)\n(zA, ℓ(zA))",
+      "imageCount": 0,
+      "conceptIds": [
+        "limiti-quadratici"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 20,
+      "title": "Graphical interpretation of Lipschitz continuity of the gradient",
+      "rawText": "Graphical interpretation of Lipschitz continuity of the gradient\n\n\n       If ℓis differentiable with Lipschitz continuous gradient, then\n\n                          ℓ(zB) ≤ℓ(zA) + ∇ℓ(zA)⊤(zB −zA) + L2 ∥zB −zA∥2\n\n     for all zA, zB ∈Z.\n\n    That is, Lipschitz continuity of ∇ℓimposes a quadratic upper bound on ℓ\n\n\n\n\n                                 ℓ(zB)\n\n\n\n\n\n                                                           (zA, ℓ(zA))\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 19 |73",
+      "text": "Graphical interpretation of Lipschitz continuity of the gradient\nIf ℓis differentiable with Lipschitz continuous gradient, then\nℓ(zB) ≤ℓ(zA) + ∇ℓ(zA)⊤(zB −zA) + L2 ∥zB −zA∥2\nfor all zA, zB ∈Z.\nThat is, Lipschitz continuity of ∇ℓimposes a quadratic upper bound on ℓ\nℓ(zB)\n(zA, ℓ(zA))",
+      "imageCount": 0,
+      "conceptIds": [
+        "limiti-quadratici"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 21,
+      "title": "Minimization of convex functions",
+      "rawText": "Minimization of convex functions\n\n     Proposition (Prop. B.10 Nonlin. Progr.)\n    Let Z ⊂Rd be a convex set and ℓ: Z →R a convex function. Then a local minimum of ℓis also a\n     global minimum.\n\n    Proof\n    Let z⋆be a local minimum of ℓ. Suppose by contradiction that z⋆is not a global minimum. Then there\n     exists a global minimum ¯z ∈X such that ℓ(¯z) < ℓ(z⋆).\n\n    Using the definition of convexity it holds\n\n                       ℓ(θz⋆+ (1 −θ)¯z) ≤θℓ(z⋆) + (1 −θ)ℓ(¯z)\n                          < θℓ(z⋆) + (1 −θ)ℓ(z⋆) = ℓ(z⋆),\n\n     for every θ ∈[0, 1).\n\n    This contradicts the assumption that z⋆is a local minimum since we found points, ˜z = θz⋆+ (1 −θ)¯z\n    with θ ∈[0, 1), arbitrarily close to z⋆with ℓ(˜z) < ℓ(z⋆). This concludes the proof.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 20 |73",
+      "text": "Minimization of convex functions\nProposition (Prop. B.10 Nonlin. Progr.)\nLet Z ⊂Rd be a convex set and ℓ: Z →R a convex function. Then a local minimum of ℓis also a\nglobal minimum.\nProof\nLet z⋆be a local minimum of ℓ. Suppose by contradiction that z⋆is not a global minimum. Then there\nexists a global minimum ¯z ∈X such that ℓ(¯z) < ℓ(z⋆).\nUsing the definition of convexity it holds\nℓ(θz⋆+ (1 −θ)¯z) ≤θℓ(z⋆) + (1 −θ)ℓ(¯z)\n< θℓ(z⋆) + (1 −θ)ℓ(z⋆) = ℓ(z⋆),\nfor every θ ∈[0, 1).\nThis contradicts the assumption that z⋆is a local minimum since we found points, ˜z = θz⋆+ (1 −θ)¯z\nwith θ ∈[0, 1), arbitrarily close to z⋆with ℓ(˜z) < ℓ(z⋆). This concludes the proof.",
+      "imageCount": 0,
+      "conceptIds": [
+        "minimizzazione-convessa"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 22,
+      "title": "Minimization of convex functions",
+      "rawText": "Minimization of convex functions\n\n    Necessary and sufficient condition of optimality (unconstrained)\n    For the unconstrained minimization of a convex function it can be shown that the first order necessary\n     condition of optimality is also sufficient (for a global minimum).\n\n     Proposition (Prop. 1.1.2 Nonlin. Progr.)\n    Let ℓ: Rd →R be a convex function. Then z⋆is a global minimum if and only if ∇ℓ(z⋆) = 0.\n\n    Proof (sketch)\n    Use the fact (Proposition B3 in Nonlinear Programming) that ℓconvex if and only if\n\n                                       ℓ(z) ≥ℓ(z⋆) + ∇ℓ(z⋆)T (z −z⋆)\n\n     for all z ∈Rd. Thus, if ∇ℓ(z⋆) = 0 it follows immediately ℓ(z) ≥ℓ(z⋆) for all z ∈Rd. The converse is\n     true by the first order necessary condition and the fact that a local minimum is a global minimum.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 21 |73",
+      "text": "Minimization of convex functions\nNecessary and sufficient condition of optimality (unconstrained)\nFor the unconstrained minimization of a convex function it can be shown that the first order necessary\ncondition of optimality is also sufficient (for a global minimum).\nProposition (Prop. 1.1.2 Nonlin. Progr.)\nLet ℓ: Rd →R be a convex function. Then z⋆is a global minimum if and only if ∇ℓ(z⋆) = 0.\nProof (sketch)\nUse the fact (Proposition B3 in Nonlinear Programming) that ℓconvex if and only if\nℓ(z) ≥ℓ(z⋆) + ∇ℓ(z⋆)T (z −z⋆)\nfor all z ∈Rd. Thus, if ∇ℓ(z⋆) = 0 it follows immediately ℓ(z) ≥ℓ(z⋆) for all z ∈Rd. The converse is\ntrue by the first order necessary condition and the fact that a local minimum is a global minimum.",
+      "imageCount": 0,
+      "conceptIds": [
+        "minimizzazione-convessa"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 23,
+      "title": "Quadratic Programming (unconstrained)",
+      "rawText": "Quadratic Programming (unconstrained)\n\n\n    Let us consider a special class of optimization problems, namely quadratic optimization problems or\n     quadratic programs.\n\n    Quadratic program\n\n                                           1\n                                   min 2zT Qz + qT z                                          z∈Rd\n    with Q = QT ∈Rd×d and q ∈Rd.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 22 |73",
+      "text": "Quadratic Programming (unconstrained)\nLet us consider a special class of optimization problems, namely quadratic optimization problems or\nquadratic programs.\nQuadratic program\n1\nmin 2zT Qz + qT z z∈Rd\nwith Q = QT ∈Rd×d and q ∈Rd.",
+      "imageCount": 0,
+      "conceptIds": [
+        "qp-liberi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 24,
+      "title": "Quadratic Programming (unconstrained): optimality conditions",
+      "rawText": "Quadratic Programming (unconstrained): optimality conditions\n\n     First-order necessary condition for optimality:  if z⋆is a minimum then\n\n                                  ∇ℓ(z⋆) = 0 =⇒Qz⋆+ q = 0\n\n\n    Second-order necessary condition for optimality:  if z⋆is a minimum then\n\n                                     ∇2ℓ(z⋆) ≥0 =⇒Q ≥0\n\n\n\n\n                                     Important\n       A necessary condition for the existence of minima for a quadratic program is that Q ≥0.\n         Thus, quadratic programs admitting at least a minimum are convex optimization problems.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 23 |73",
+      "text": "Quadratic Programming (unconstrained): optimality conditions\nFirst-order necessary condition for optimality: if z⋆is a minimum then\n∇ℓ(z⋆) = 0 =⇒Qz⋆+ q = 0\nSecond-order necessary condition for optimality: if z⋆is a minimum then\n∇2ℓ(z⋆) ≥0 =⇒Q ≥0\nImportant\nA necessary condition for the existence of minima for a quadratic program is that Q ≥0.\nThus, quadratic programs admitting at least a minimum are convex optimization problems.",
+      "imageCount": 0,
+      "conceptIds": [
+        "qp-liberi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 25,
+      "title": "Quadratic Programming (unconstrained): properties",
+      "rawText": "Quadratic Programming (unconstrained): properties\n\n\n    Since quadratic programs are convex program (Q ≥0 is necessary to have a local minimum), then the\n     following holds.\n\n                                     Important\n                For a quadratic program necessary conditions of optimality are also sufficient\n                                     and minima are global.\n\n\n       If Q > 0, then there exists a unique global minimum given by\n\n                              z⋆= −Q−1q.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 24 |73",
+      "text": "Quadratic Programming (unconstrained): properties\nSince quadratic programs are convex program (Q ≥0 is necessary to have a local minimum), then the\nfollowing holds.\nImportant\nFor a quadratic program necessary conditions of optimality are also sufficient\nand minima are global.\nIf Q > 0, then there exists a unique global minimum given by\nz⋆= −Q−1q.",
+      "imageCount": 0,
+      "conceptIds": [
+        "qp-liberi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 26,
+      "title": "Unconstrained optimization: algorithms",
+      "rawText": "Unconstrained optimization: algorithms",
+      "text": "Unconstrained optimization: algorithms",
+      "imageCount": 0,
+      "conceptIds": [
+        "direzioni-discesa"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 27,
+      "title": "Optimization algorithms (unconstrained): iterative descent methods",
+      "rawText": "Optimization algorithms (unconstrained): iterative descent methods\n\n\n   We consider optimization algorithms relying on the iterative descent idea.\n\n    Notation We denote zk ∈Rd an estimate of a local minimum at iteration k ∈N.\n\n    The algorithm starts at a given initial guess z0 and iteratively generates vectors z1, z2, . . . such that ℓis\n    decreased at each iteration, i.e.,\n\n                                    ℓ(zk+1) < ℓ(zk)    k = 1, 2, . . .\n\n\n\n                                               ℓ(z)           zk\n\n\n                                                 zk+1\n\n                                             z⋆\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 26 |73",
+      "text": "Optimization algorithms (unconstrained): iterative descent methods\nWe consider optimization algorithms relying on the iterative descent idea.\nNotation We denote zk ∈Rd an estimate of a local minimum at iteration k ∈N.\nThe algorithm starts at a given initial guess z0 and iteratively generates vectors z1, z2, . . . such that ℓis\ndecreased at each iteration, i.e.,\nℓ(zk+1) < ℓ(zk) k = 1, 2, . . .\nℓ(z) zk\nzk+1\nz⋆",
+      "imageCount": 0,
+      "conceptIds": [
+        "direzioni-discesa"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 28,
+      "title": "Optimization algorithms: two-step procedure",
+      "rawText": "Optimization algorithms: two-step procedure\n\n\n   We consider a general two-step procedure that reads as follows\n\n                                 zk+1 = zk + γkdk,    k = 1, 2, . . .\n\n     in which\n        1. each γk > 0 is a “step-size”,\n        2. dk ∈Rd is a “direction”.\n\n\n    The goal is to\n        1. choose a direction dk along which the cost decreases for γk sufficiently small;\n        2.  select a step-size γk guaranteeing a sufficient decrease.\n\n\n    Notation In other references these are called line-search methods.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 27 |73",
+      "text": "Optimization algorithms: two-step procedure\nWe consider a general two-step procedure that reads as follows\nzk+1 = zk + γkdk, k = 1, 2, . . .\nin which\n1. each γk > 0 is a “step-size”,\n2. dk ∈Rd is a “direction”.\nThe goal is to\n1. choose a direction dk along which the cost decreases for γk sufficiently small;\n2. select a step-size γk guaranteeing a sufficient decrease.\nNotation In other references these are called line-search methods.",
+      "imageCount": 0,
+      "conceptIds": [
+        "direzioni-discesa"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 29,
+      "title": "Gradient methods: introduction",
+      "rawText": "Gradient methods: introduction\n\n    Let zk be such that ∇ℓ(zk)̸ = 0. We start by considering the update rule\n\n                                      zk+1 = zk −γk∇ℓ(zk),\n\n      i.e., we choose dk = −∇ℓ(zk).\n\n    From the first order Taylor expansion of ℓat zk we have\n\n                         ℓ(zk+1) = ℓ(zk) + ∇ℓ(zk)T (zk+1 −zk) + o(∥zk+1 −zk∥)\n                   = ℓ(zk) −γk∥∇ℓ(zk)∥2 + o(γk).\n\n    Thus, for γk > 0 sufficiently small it can be shown that ℓ(zk+1) < ℓ(zk).\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 28 |73",
+      "text": "Gradient methods: introduction\nLet zk be such that ∇ℓ(zk)̸ = 0. We start by considering the update rule\nzk+1 = zk −γk∇ℓ(zk),\ni.e., we choose dk = −∇ℓ(zk).\nFrom the first order Taylor expansion of ℓat zk we have\nℓ(zk+1) = ℓ(zk) + ∇ℓ(zk)T (zk+1 −zk) + o(∥zk+1 −zk∥)\n= ℓ(zk) −γk∥∇ℓ(zk)∥2 + o(γk).\nThus, for γk > 0 sufficiently small it can be shown that ℓ(zk+1) < ℓ(zk).",
+      "imageCount": 0,
+      "conceptIds": [
+        "direzioni-discesa"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 30,
+      "title": "Gradient methods: introduction",
+      "rawText": "Gradient methods: introduction\n\n    The update rule\n\n                                      zk+1 = zk −γk∇ℓ(zk),\n\n    can be generalized to so called gradient methods\n\n                                        zk+1 = zk + γkdk,\n\n    with dk such that\n\n                                        ∇ℓ(zk)T dk < 0.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 29 |73",
+      "text": "Gradient methods: introduction\nThe update rule\nzk+1 = zk −γk∇ℓ(zk),\ncan be generalized to so called gradient methods\nzk+1 = zk + γkdk,\nwith dk such that\n∇ℓ(zk)T dk < 0.",
+      "imageCount": 0,
+      "conceptIds": [
+        "direzioni-discesa"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 31,
+      "title": "Gradient methods: selecting the descent direction",
+      "rawText": "Gradient methods: selecting the descent direction\n\n\n     Several gradient methods can be written as\n\n                              zk+1 = zk −γkDk∇ℓ(zk)    k = 1, 2, . . .\n\n    where Dk ∈Rd×d is a symmetric positive definite matrix.\n      It can be immediately seen that\n\n                                  −∇ℓ(zk)T Dk∇ℓ(zk) < 0,\n\n      i.e., dk = −Dk∇ℓ(zk) is a descent direction.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 30 |73",
+      "text": "Gradient methods: selecting the descent direction\nSeveral gradient methods can be written as\nzk+1 = zk −γkDk∇ℓ(zk) k = 1, 2, . . .\nwhere Dk ∈Rd×d is a symmetric positive definite matrix.\nIt can be immediately seen that\n−∇ℓ(zk)T Dk∇ℓ(zk) < 0,\ni.e., dk = −Dk∇ℓ(zk) is a descent direction.",
+      "imageCount": 0,
+      "conceptIds": [
+        "direzioni-discesa"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 32,
+      "title": "Gradient methods: selecting the descent direction",
+      "rawText": "Gradient methods: selecting the descent direction\n\n   Some choices of Dk\n      • Steepest descent Dk = Id\n                                      −1      • Newton’s method Dk =  ∇2ℓ(zk)\n             It can be used when ∇2ℓ(zk) > 0. It typically converges very fast asymptotically. For γk = 1\n         pure Newton’s method.\n                                              −1      • Discretized Newton’s method Dk =  H(zk)      ,\n         where H(zk) is a positive definite symmetric approximation of ∇2ℓ(zk) obtained by using finite\n           difference approximations of the second derivatives.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 31 |73",
+      "text": "Gradient methods: selecting the descent direction\nSome choices of Dk\n• Steepest descent Dk = Id\n−1 • Newton’s method Dk = ∇2ℓ(zk)\nIt can be used when ∇2ℓ(zk) > 0. It typically converges very fast asymptotically. For γk = 1\npure Newton’s method.\n−1 • Discretized Newton’s method Dk = H(zk) ,\nwhere H(zk) is a positive definite symmetric approximation of ∇2ℓ(zk) obtained by using finite\ndifference approximations of the second derivatives.",
+      "imageCount": 0,
+      "conceptIds": [
+        "metodi-gradiente"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 33,
+      "title": "Steepest descent (gradient method)",
+      "rawText": "Steepest descent (gradient method)\n\n    The update rule obtained for Dk = I,\n\n                                      zk+1 = zk −γk∇ℓ(zk),\n\n      is called steepest descent (or gradient method tout court).\n\n\n    The name steepest descent is due to the following property. The normalized negative gradient direction\n\n                                         dk = −∇ℓ(zk)                                              ∥∇ℓ(zk)∥,\n\n    minimizes the slope ∇ℓ(zk)T dk among all normalized directions, i.e., it gives the steepest descent.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 32 |73",
+      "text": "Steepest descent (gradient method)\nThe update rule obtained for Dk = I,\nzk+1 = zk −γk∇ℓ(zk),\nis called steepest descent (or gradient method tout court).\nThe name steepest descent is due to the following property. The normalized negative gradient direction\ndk = −∇ℓ(zk) ∥∇ℓ(zk)∥,\nminimizes the slope ∇ℓ(zk)T dk among all normalized directions, i.e., it gives the steepest descent.",
+      "imageCount": 0,
+      "conceptIds": [
+        "metodi-gradiente"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 34,
+      "title": "Newton’s method for root finding",
+      "rawText": "Newton’s method for root finding\n\n\n    Consider the nonlinear root (zero) finding problem\n\n                                                 r(z) = 0\n\n     Idea: Iteratively refine the solution such that the improved guess zk+1 represents a root (zero) of the\n     linear approximation of r about the current tentative solution zk.\n\n\n    Consider the linear approximation of r about zk, we have\n\n                                 rk(zk + ∆zk) = r(zk) + ∇r(zk)⊤∆zk\n\n     then, finding the zeros of the approximation, we have\n\n                              ∆zk = − ∇r(zk)⊤ −1r(zk)\n\n    Thus, the solution is improved as\n\n                                  zk+1 = zk − ∇r(zk)⊤ −1r(zk).\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 33 |73",
+      "text": "Newton’s method for root finding\nConsider the nonlinear root (zero) finding problem\nr(z) = 0\nIdea: Iteratively refine the solution such that the improved guess zk+1 represents a root (zero) of the\nlinear approximation of r about the current tentative solution zk.\nConsider the linear approximation of r about zk, we have\nrk(zk + ∆zk) = r(zk) + ∇r(zk)⊤∆zk\nthen, finding the zeros of the approximation, we have\n∆zk = − ∇r(zk)⊤ −1r(zk)\nThus, the solution is improved as\nzk+1 = zk − ∇r(zk)⊤ −1r(zk).",
+      "imageCount": 0,
+      "conceptIds": [
+        "newton-zeri"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 35,
+      "title": "Newton’s Method for Unconstrained Optimization",
+      "rawText": "Newton’s Method for Unconstrained Optimization\n\n    Consider the unconstrained optimization problem\n\n                                       min ℓ(z),\n                                               z∈Rd\n     stationary points ¯z satisfy the first-order optimality condition\n\n                                                  ∇ℓ(¯z) = 0.\n\n   We can look at it as a root finding problem, with r(z) = ∇ℓ(z), and solve it via Newton’s method.\n\n\n     Therefore, we can compute ∆zk as the solution of the linearization of r(z) = ∇ℓ(z) at zk, i.e.,\n\n                                   ∇ℓ(zk) + ∇2ℓ(zk)∆zk = 0,\n\n    and run the update\n\n                                  zk+1 = zk −∇2ℓ(zk)−1∇ℓ(zk) .\n                                                   |     ∆zk{z       }\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 34 |73",
+      "text": "Newton’s Method for Unconstrained Optimization\nConsider the unconstrained optimization problem\nmin ℓ(z),\nz∈Rd\nstationary points ¯z satisfy the first-order optimality condition\n∇ℓ(¯z) = 0.\nWe can look at it as a root finding problem, with r(z) = ∇ℓ(z), and solve it via Newton’s method.\nTherefore, we can compute ∆zk as the solution of the linearization of r(z) = ∇ℓ(z) at zk, i.e.,\n∇ℓ(zk) + ∇2ℓ(zk)∆zk = 0,\nand run the update\nzk+1 = zk −∇2ℓ(zk)−1∇ℓ(zk) .\n| ∆zk{z }",
+      "imageCount": 0,
+      "conceptIds": [
+        "modelli-quadratici"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 36,
+      "title": "Newton’s Method via Quadratic Optimization",
+      "rawText": "Newton’s Method via Quadratic Optimization\n\n\n\n\n    Observe that\n\n                                   ∇ℓ(zk) + ∇2ℓ(zk)∆zk = 0\n\n      is the first-order necessary and sufficient condition of optimality for the quadratic program\n\n                      ∆zk = arg min                                    ∇ℓ(zk)⊤∆z + 12∆z⊤∇2ℓ(zk)∆z.                       (1)                                   ∆z\n\n\n    Thus, the k-th iteration of Newton’s method can be seen as\n\n                                         zk+1 = zk −∆zk\n\n    with ∆zk solution of the quadratic program (1).\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 35 |73",
+      "text": "Newton’s Method via Quadratic Optimization\nObserve that\n∇ℓ(zk) + ∇2ℓ(zk)∆zk = 0\nis the first-order necessary and sufficient condition of optimality for the quadratic program\n∆zk = arg min ∇ℓ(zk)⊤∆z + 12∆z⊤∇2ℓ(zk)∆z. (1) ∆z\nThus, the k-th iteration of Newton’s method can be seen as\nzk+1 = zk −∆zk\nwith ∆zk solution of the quadratic program (1).",
+      "imageCount": 0,
+      "conceptIds": [
+        "modelli-quadratici"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 37,
+      "title": "Gradient methods via quadratic optimization",
+      "rawText": "Gradient methods via quadratic optimization\n\n     Similarly to the Newton’s method, a descent direction ∆zk = Dk∇ℓ(zk) can be seen as the direction\n     that minimizes at each iteration a different quadratic approximation of ℓabout zk.\n\n     In fact, consider the quadratic approximation ℓk(z) of ℓabout zk given by\n                       ℓk(z) = ℓ(zk) + ∇ℓ(zk)⊤(z −zk) + 12(z −zk)⊤(Dk)−1(z −zk)\n\n   By setting the derivative to zero, we have\n                                  ∇ℓ(zk) + (Dk)−1(z −zk) = 0\n\n    we can calculate the minimum of ℓk(z) and set it as the next iterate zk+1\n\n                                      zk+1 = zk −Dk∇ℓ(zk)\n\n    namely,\n\n                                 ∆zk = −Dk∇ℓ(zk)\n\n    Remark Direction ∆zk can be computed by solving the quadratic approximation.  This can be very\n     helpful in optimization problems in which a gradient is not (easily) available, but it is to solve a quadratic\n     optimization problem. It is useful also in case the domain is a compact convex set.\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 36 |73",
+      "text": "Gradient methods via quadratic optimization\nSimilarly to the Newton’s method, a descent direction ∆zk = Dk∇ℓ(zk) can be seen as the direction\nthat minimizes at each iteration a different quadratic approximation of ℓabout zk.\nIn fact, consider the quadratic approximation ℓk(z) of ℓabout zk given by\nℓk(z) = ℓ(zk) + ∇ℓ(zk)⊤(z −zk) + 12(z −zk)⊤(Dk)−1(z −zk)\nBy setting the derivative to zero, we have\n∇ℓ(zk) + (Dk)−1(z −zk) = 0\nwe can calculate the minimum of ℓk(z) and set it as the next iterate zk+1\nzk+1 = zk −Dk∇ℓ(zk)\nnamely,\n∆zk = −Dk∇ℓ(zk)\nRemark Direction ∆zk can be computed by solving the quadratic approximation. This can be very\nhelpful in optimization problems in which a gradient is not (easily) available, but it is to solve a quadratic\noptimization problem. It is useful also in case the domain is a compact convex set.",
+      "imageCount": 0,
+      "conceptIds": [
+        "modelli-quadratici"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 38,
+      "title": "Gradient methods: step-size selection rules (I)",
+      "rawText": "Gradient methods: step-size selection rules (I)\n\n\n                                                               Cost\n  Armijo rule (Backtracking line-search)                                                         ℓ(zk + γdk)\n                                                                                                                                           ¯γ0 = 1\n  Step-size is selected following the procedure:\n     1. Set ¯γ0 > 0, β ∈(0, 1), c ∈(0, 1)\n                                                                                    ℓ(zk) + cγ∇ℓ(zk)⊤dk\n     2. While ℓ(zk + ¯γidk) ≥ℓ(zk) + c¯γi∇ℓ(zk)⊤dk:\n\n                                  ¯γi+1 = β¯γi\n                                                                            ℓ(zk) + γ∇ℓ(zk)⊤dk     3. Set γk = ¯γi                                                                                                 1 γ\n\n\n     Idea: Select γk such that cost is reduced while the algorithm makes progress.\n\n    Remark  Typical values are β = 0.7 and c = 0.5.\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 37 |73",
+      "text": "Gradient methods: step-size selection rules (I)\nCost\nArmijo rule (Backtracking line-search) ℓ(zk + γdk)\n¯γ0 = 1\nStep-size is selected following the procedure:\n1. Set ¯γ0 > 0, β ∈(0, 1), c ∈(0, 1)\nℓ(zk) + cγ∇ℓ(zk)⊤dk\n2. While ℓ(zk + ¯γidk) ≥ℓ(zk) + c¯γi∇ℓ(zk)⊤dk:\n¯γi+1 = β¯γi\nℓ(zk) + γ∇ℓ(zk)⊤dk 3. Set γk = ¯γi 1 γ\nIdea: Select γk such that cost is reduced while the algorithm makes progress.\nRemark Typical values are β = 0.7 and c = 0.5.",
+      "imageCount": 0,
+      "conceptIds": [
+        "armijo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 39,
+      "title": "Gradient methods: step-size selection rules (I)",
+      "rawText": "Gradient methods: step-size selection rules (I)\n\n\n                                                               Cost\n  Armijo rule (Backtracking line-search)                                                         ℓ(zk + γdk)\n\n  Step-size is selected following the procedure:\n     1. Set ¯γ0 > 0, β ∈(0, 1), c ∈(0, 1)\n                                                                                    ℓ(zk) + cγ∇ℓ(zk)⊤dk\n     2. While ℓ(zk + ¯γidk) ≥ℓ(zk) + c¯γi∇ℓ(zk)⊤dk:\n                                                                                                                                  ¯γ1\n                                  ¯γi+1 = β¯γi\n                                                                            ℓ(zk) + γ∇ℓ(zk)⊤dk     3. Set γk = ¯γi                                                                                                 1 γ\n\n\n     Idea: Select γk such that cost is reduced while the algorithm makes progress.\n\n    Remark  Typical values are β = 0.7 and c = 0.5.\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 37 |73",
+      "text": "Gradient methods: step-size selection rules (I)\nCost\nArmijo rule (Backtracking line-search) ℓ(zk + γdk)\nStep-size is selected following the procedure:\n1. Set ¯γ0 > 0, β ∈(0, 1), c ∈(0, 1)\nℓ(zk) + cγ∇ℓ(zk)⊤dk\n2. While ℓ(zk + ¯γidk) ≥ℓ(zk) + c¯γi∇ℓ(zk)⊤dk:\n¯γ1\n¯γi+1 = β¯γi\nℓ(zk) + γ∇ℓ(zk)⊤dk 3. Set γk = ¯γi 1 γ\nIdea: Select γk such that cost is reduced while the algorithm makes progress.\nRemark Typical values are β = 0.7 and c = 0.5.",
+      "imageCount": 0,
+      "conceptIds": [
+        "armijo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 40,
+      "title": "Gradient methods: step-size selection rules (I)",
+      "rawText": "Gradient methods: step-size selection rules (I)\n\n\n                                                               Cost\n  Armijo rule (Backtracking line-search)                                                         ℓ(zk + γdk)\n\n  Step-size is selected following the procedure:\n     1. Set ¯γ0 > 0, β ∈(0, 1), c ∈(0, 1)\n                                                                                    ℓ(zk) + cγ∇ℓ(zk)⊤dk\n     2. While ℓ(zk + ¯γidk) ≥ℓ(zk) + c¯γi∇ℓ(zk)⊤dk:\n\n                                  ¯γi+1 = β¯γi                                                                         ¯γ2\n                                                                            ℓ(zk) + γ∇ℓ(zk)⊤dk     3. Set γk = ¯γi                                                                                                 1 γ\n\n\n     Idea: Select γk such that cost is reduced while the algorithm makes progress.\n\n    Remark  Typical values are β = 0.7 and c = 0.5.\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 37 |73",
+      "text": "Gradient methods: step-size selection rules (I)\nCost\nArmijo rule (Backtracking line-search) ℓ(zk + γdk)\nStep-size is selected following the procedure:\n1. Set ¯γ0 > 0, β ∈(0, 1), c ∈(0, 1)\nℓ(zk) + cγ∇ℓ(zk)⊤dk\n2. While ℓ(zk + ¯γidk) ≥ℓ(zk) + c¯γi∇ℓ(zk)⊤dk:\n¯γi+1 = β¯γi ¯γ2\nℓ(zk) + γ∇ℓ(zk)⊤dk 3. Set γk = ¯γi 1 γ\nIdea: Select γk such that cost is reduced while the algorithm makes progress.\nRemark Typical values are β = 0.7 and c = 0.5.",
+      "imageCount": 0,
+      "conceptIds": [
+        "armijo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 41,
+      "title": "Gradient methods: step-size selection rules (II)",
+      "rawText": "Gradient methods: step-size selection rules (II)\n\n    Constant step-size γk = γ > 0 for all t = 0, 1, 2 . . .\n\n\n    Diminishing step-size γk →0\n      It must be avoided that becomes too small to guarantee substantial progress. For this reason we require\n\n                           ∞\n              X γk = ∞.\n\n                                                t=0\n\n\n    Remark The associated convergence rate tends to be slow.\n\n     Typical choice: γk chosen such that\n\n                    ∞          ∞       2\n           X γk = ∞  and X  γk  < ∞,\n\n                                    t=0                 t=0\n\n     e.g., γk = kα1  with 12 < α ≤1.\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 38 |73",
+      "text": "Gradient methods: step-size selection rules (II)\nConstant step-size γk = γ > 0 for all t = 0, 1, 2 . . .\nDiminishing step-size γk →0\nIt must be avoided that becomes too small to guarantee substantial progress. For this reason we require\n∞\nX γk = ∞.\nt=0\nRemark The associated convergence rate tends to be slow.\nTypical choice: γk chosen such that\n∞ ∞ 2\nX γk = ∞ and X γk < ∞,\nt=0 t=0\ne.g., γk = kα1 with 12 < α ≤1.",
+      "imageCount": 0,
+      "conceptIds": [
+        "passi-convergenza"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 42,
+      "title": "Gradient methods: convergence result (Armijo)",
+      "rawText": "Gradient methods: convergence result (Armijo)\n\n\n     Proposition (convergence with Armijo step-size)\n    Let {zk} be a sequence generated by a gradient method zk+1 = zk−γkDk∇ℓ(zk) with d1I ≤Dk ≤d2I,\n    d1 > 0, d2 > 0. Assume that γk is chosen by the Armijo rule and ℓ(z) be continuously differentiable.\n    Then, every limit point ¯z of the sequence {zk} is a stationary point, i.e., ∇ℓ(¯z) = 0.\n\n    Remark Recall that a vector z ∈Rd is a limit point of a sequence {zk} in Rd if there exists a subsequence\n     of {zk} that converges to z.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 39 |73",
+      "text": "Gradient methods: convergence result (Armijo)\nProposition (convergence with Armijo step-size)\nLet {zk} be a sequence generated by a gradient method zk+1 = zk−γkDk∇ℓ(zk) with d1I ≤Dk ≤d2I,\nd1 > 0, d2 > 0. Assume that γk is chosen by the Armijo rule and ℓ(z) be continuously differentiable.\nThen, every limit point ¯z of the sequence {zk} is a stationary point, i.e., ∇ℓ(¯z) = 0.\nRemark Recall that a vector z ∈Rd is a limit point of a sequence {zk} in Rd if there exists a subsequence\nof {zk} that converges to z.",
+      "imageCount": 0,
+      "conceptIds": [
+        "passi-convergenza"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 43,
+      "title": "Gradient methods: convergence result (constant/diminishing)",
+      "rawText": "Gradient methods: convergence result (constant/diminishing)\n\n\n     Proposition (convergence with constant or diminishing step-size)\n    Let {zk} be a sequence generated by a gradient method zk+1 = zk−γkDk∇ℓ(zk) with d1I ≤Dk ≤d2I,\n    d1 > 0, d2 > 0. Assume that for some L > 0\n\n                           ∥∇ℓ(z) −∇ℓ(y)∥≤L∥z −y∥,     ∀z, y ∈Rd.\n\n    Assume either\n        1. γk = γ > 0 sufficiently small, or\n        2. γk →0 and P∞t=0 γk = ∞.\n    Then, every limit point ¯z of the sequence {zk} is a stationary point, i.e., ∇ℓ(¯z) = 0.\n\n\n    Remark Check if the following problem minz∈Rd c⊤z, with c ∈R⊤satisfies the assumptions.     □\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 40 |73",
+      "text": "Gradient methods: convergence result (constant/diminishing)\nProposition (convergence with constant or diminishing step-size)\nLet {zk} be a sequence generated by a gradient method zk+1 = zk−γkDk∇ℓ(zk) with d1I ≤Dk ≤d2I,\nd1 > 0, d2 > 0. Assume that for some L > 0\n∥∇ℓ(z) −∇ℓ(y)∥≤L∥z −y∥, ∀z, y ∈Rd.\nAssume either\n1. γk = γ > 0 sufficiently small, or\n2. γk →0 and P∞t=0 γk = ∞.\nThen, every limit point ¯z of the sequence {zk} is a stationary point, i.e., ∇ℓ(¯z) = 0.\nRemark Check if the following problem minz∈Rd c⊤z, with c ∈R⊤satisfies the assumptions. □",
+      "imageCount": 0,
+      "conceptIds": [
+        "passi-convergenza"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 44,
+      "title": "Gradient methods: remarks",
+      "rawText": "Gradient methods: remarks\n\n    Remark The propositions do not guarantee that the sequence converges (to a point) and not even\n     existence of limit points. Then either ℓ(zk) →−∞or ℓ(zk) converges to a finite value and ∇ℓ(zk) →0.\n     In the second case, one can show that any subsequence {zkp} converges to some stationary point ¯z\n     satisfying ∇ℓ(¯z) = 0.                                            □\n\n\n    Remark Existence of minima can be guaranteed by excluding ℓ(zk)→−∞via suitable assumptions.\n    Assume, e.g., ℓcoercive (or radially unbounded), i.e., lim∥z∥→∞ℓ(z) = ∞.              □\n\n    Remark For general (nonconvex) problems, if coercivity is assumed, only convergence (of subsequences)\n     to stationary points (i.e., to ¯z with ∇ℓ(¯z) = 0) can be proven.                     □\n\n                                               {(−1)k}k>0,k=2n\n                                                 1\n\n\n                                                 0\n                                                                 5             10\n\n                                     −1\n                                            {(−1)n}n>0\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 41 |73",
+      "text": "Gradient methods: remarks\nRemark The propositions do not guarantee that the sequence converges (to a point) and not even\nexistence of limit points. Then either ℓ(zk) →−∞or ℓ(zk) converges to a finite value and ∇ℓ(zk) →0.\nIn the second case, one can show that any subsequence {zkp} converges to some stationary point ¯z\nsatisfying ∇ℓ(¯z) = 0. □\nRemark Existence of minima can be guaranteed by excluding ℓ(zk)→−∞via suitable assumptions.\nAssume, e.g., ℓcoercive (or radially unbounded), i.e., lim∥z∥→∞ℓ(z) = ∞. □\nRemark For general (nonconvex) problems, if coercivity is assumed, only convergence (of subsequences)\nto stationary points (i.e., to ¯z with ∇ℓ(¯z) = 0) can be proven. □\n{(−1)k}k>0,k=2n\n1\n0\n5 10\n−1\n{(−1)n}n>0",
+      "imageCount": 0,
+      "conceptIds": [
+        "passi-convergenza"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 45,
+      "title": "Gradient methods: remarks",
+      "rawText": "Gradient methods: remarks\n\n    Remark The propositions do not guarantee that the sequence converges (to a point) and not even\n     existence of limit points. Then either ℓ(zk) →−∞or ℓ(zk) converges to a finite value and ∇ℓ(zk) →0.\n     In the second case, one can show that any subsequence {zkp} converges to some stationary point ¯z\n     satisfying ∇ℓ(¯z) = 0.                                            □\n\n\n    Remark Existence of minima can be guaranteed by excluding ℓ(zk)→−∞via suitable assumptions.\n    Assume, e.g., ℓcoercive (or radially unbounded), i.e., lim∥z∥→∞ℓ(z) = ∞.              □\n\n    Remark For general (nonconvex) problems, if coercivity is assumed, only convergence (of subsequences)\n     to stationary points (i.e., to ¯z with ∇ℓ(¯z) = 0) can be proven.                     □\n\n\n    Remark For convex programs, assuming coercivity, convergence (of subsequences) to global minima is\n    guaranteed since necessary conditions of optimality are also sufficient.                 □\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 41 |73",
+      "text": "Gradient methods: remarks\nRemark The propositions do not guarantee that the sequence converges (to a point) and not even\nexistence of limit points. Then either ℓ(zk) →−∞or ℓ(zk) converges to a finite value and ∇ℓ(zk) →0.\nIn the second case, one can show that any subsequence {zkp} converges to some stationary point ¯z\nsatisfying ∇ℓ(¯z) = 0. □\nRemark Existence of minima can be guaranteed by excluding ℓ(zk)→−∞via suitable assumptions.\nAssume, e.g., ℓcoercive (or radially unbounded), i.e., lim∥z∥→∞ℓ(z) = ∞. □\nRemark For general (nonconvex) problems, if coercivity is assumed, only convergence (of subsequences)\nto stationary points (i.e., to ¯z with ∇ℓ(¯z) = 0) can be proven. □\nRemark For convex programs, assuming coercivity, convergence (of subsequences) to global minima is\nguaranteed since necessary conditions of optimality are also sufficient. □",
+      "imageCount": 0,
+      "conceptIds": [
+        "passi-convergenza"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 46,
+      "title": "Example: Gradient Method applied to Quadratic Programs",
+      "rawText": "Example: Gradient Method applied to Quadratic Programs\n\n\n    Quadratic program\n\n                                           1\n                                   min 2zT Qz + qT z                                          z∈Rd\n    with Q = QT ≥0 ∈Rd×d and q ∈Rd.\n\n\n    Steepest descent method\n\n                                      zk+1 = zk −γk∇ℓ(zk)\n\n     for a Quadratic Program is given by\n\n                                     zk+1 = zk −γk(Qzk + q).\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 42 |73",
+      "text": "Example: Gradient Method applied to Quadratic Programs\nQuadratic program\n1\nmin 2zT Qz + qT z z∈Rd\nwith Q = QT ≥0 ∈Rd×d and q ∈Rd.\nSteepest descent method\nzk+1 = zk −γk∇ℓ(zk)\nfor a Quadratic Program is given by\nzk+1 = zk −γk(Qzk + q).",
+      "imageCount": 0,
+      "conceptIds": [
+        "passi-convergenza"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 47,
+      "title": "Optimization (constrained) over convex sets: optimality conditions",
+      "rawText": "Optimization (constrained) over convex sets: optimality conditions\n                      and algorithms",
+      "text": "Optimization (constrained) over convex sets: optimality conditions\nand algorithms",
+      "imageCount": 0,
+      "conceptIds": [
+        "ottimalita-convessi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 48,
+      "title": "Optimization over convex sets",
+      "rawText": "Optimization over convex sets\n\n\n    Consider the optimization problem\n\n                                       min ℓ(z),\n                                           z∈Z\n    where Z ⊂Rd is nonempty, convex and closed, and ℓis continuously differentiable on Z.\n    Remark Recall that a set Z is closed if it contains all of its limit points.\n\n\n\n                                     Important\n                              The function ℓcan be nonconvex.\n\n\n\n    Optimality Conditions\n       If a point z∗∈Z is a local minimum of ℓ(z) over Z, then\n\n                                    ∇ℓ(z∗)⊤(¯z −z∗) ≥0     ∀¯z ∈Z\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 44 |73",
+      "text": "Optimization over convex sets\nConsider the optimization problem\nmin ℓ(z),\nz∈Z\nwhere Z ⊂Rd is nonempty, convex and closed, and ℓis continuously differentiable on Z.\nRemark Recall that a set Z is closed if it contains all of its limit points.\nImportant\nThe function ℓcan be nonconvex.\nOptimality Conditions\nIf a point z∗∈Z is a local minimum of ℓ(z) over Z, then\n∇ℓ(z∗)⊤(¯z −z∗) ≥0 ∀¯z ∈Z",
+      "imageCount": 0,
+      "conceptIds": [
+        "ottimalita-convessi"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 49,
+      "title": "Optimization over convex sets",
+      "rawText": "Optimization over convex sets\n\n\n     Projection over a convex set\n    Given a point z ∈Rd and a closed convex set Z, it can be shown that\n\n                                   PZ(z) := arg min ∥y −z∥2\n                                               y∈Z\n     exists and is unique.\n\n    The point PZ(z) is called the projection of z on Z.\n\n\n                                             z\n\n                                              PZ(z)\n\n\n\n                                      Z\n\n\n\n\n    Question: can you prove existence and uniqueness of projection point?\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 45 |73",
+      "text": "Optimization over convex sets\nProjection over a convex set\nGiven a point z ∈Rd and a closed convex set Z, it can be shown that\nPZ(z) := arg min ∥y −z∥2\ny∈Z\nexists and is unique.\nThe point PZ(z) is called the projection of z on Z.\nz\nPZ(z)\nZ\nQuestion: can you prove existence and uniqueness of projection point?",
+      "imageCount": 0,
+      "conceptIds": [
+        "proiezione"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 50,
+      "title": "Projected gradient",
+      "rawText": "Projected gradient\n\n\n    Gradient methods can be generalized to optimization over convex sets.\n\n    Projected gradient\n\n                                   zk+1 = PZ zk −γk∇ℓ(zk)  .\n\n    The algorithm is based on the idea of generating at each t feasible points (i.e., belonging to Z) that\n     give a descent in the cost.\n\n    The analysis follows similar arguments to the one of unconstrained gradient methods.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 46 |73",
+      "text": "Projected gradient\nGradient methods can be generalized to optimization over convex sets.\nProjected gradient\nzk+1 = PZ zk −γk∇ℓ(zk) .\nThe algorithm is based on the idea of generating at each t feasible points (i.e., belonging to Z) that\ngive a descent in the cost.\nThe analysis follows similar arguments to the one of unconstrained gradient methods.",
+      "imageCount": 0,
+      "conceptIds": [
+        "gradiente-proiettato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 51,
+      "title": "Feasible direction method",
+      "rawText": "Feasible direction method\n\n    Find ˜z ∈Rd such that\n\n                                      ˜z = argmin  ℓ(zk) + ∇ℓ(zk)⊤(z −zk) + 12(z −zk)⊤(z −zk)\n                          z∈Z\n    Update the solution\n\n                                     zk+1 = zk + γk (˜z −zk)\n                                                                                            feasible|  {zdirection}\n\n    Note: For γk sufficiently small, zk+1 ∈Z.\n\n\n             zk+1 = zk + γk(˜z −zk)                                      zk    zk+1\n           = (1 −γk)zk + γk˜z                                                                           ˜z\n                                                            Z\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 47 |73",
+      "text": "Feasible direction method\nFind ˜z ∈Rd such that\n˜z = argmin ℓ(zk) + ∇ℓ(zk)⊤(z −zk) + 12(z −zk)⊤(z −zk)\nz∈Z\nUpdate the solution\nzk+1 = zk + γk (˜z −zk)\nfeasible| {zdirection}\nNote: For γk sufficiently small, zk+1 ∈Z.\nzk+1 = zk + γk(˜z −zk) zk zk+1\n= (1 −γk)zk + γk˜z ˜z\nZ",
+      "imageCount": 0,
+      "conceptIds": [
+        "gradiente-proiettato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 52,
+      "title": "Example: Projected Gradient Method for Quadratic Programs",
+      "rawText": "Example: Projected Gradient Method for Quadratic Programs\n\n\n    Quadratic program\n\n                                           1\n                                   min 2zT Qz + qT z                                       z∈Z\n    with Q = QT ≥0 ∈Rd×d and q ∈Rd.\n\n\n    Projected gradient method\n\n                                    zk+1 = PZ zk −γk∇ℓ(zk)\n\n      is given by\n\n                                  zk+1 = PZ zk −γk(Qzk + q)  .\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 48 |73",
+      "text": "Example: Projected Gradient Method for Quadratic Programs\nQuadratic program\n1\nmin 2zT Qz + qT z z∈Z\nwith Q = QT ≥0 ∈Rd×d and q ∈Rd.\nProjected gradient method\nzk+1 = PZ zk −γk∇ℓ(zk)\nis given by\nzk+1 = PZ zk −γk(Qzk + q) .",
+      "imageCount": 0,
+      "conceptIds": [
+        "gradiente-proiettato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 53,
+      "title": "Examples of cost functions",
+      "rawText": "Examples of cost functions\n\n\n          ℓ(z) = z2\n          ℓ(z) = z4 + 2z3 −12z2 −2z + 6\n          ℓ(z) = ez1+3z2−0.1 + ez1−3z2−0.1 + e−z1−0.1\n          ℓ(z) = 2z⊤Qz1    + r⊤z\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 49 |73",
+      "text": "Examples of cost functions\nℓ(z) = z2\nℓ(z) = z4 + 2z3 −12z2 −2z + 6\nℓ(z) = ez1+3z2−0.1 + ez1−3z2−0.1 + e−z1−0.1\nℓ(z) = 2z⊤Qz1 + r⊤z",
+      "imageCount": 0,
+      "conceptIds": [
+        "esempi-costo"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 54,
+      "title": "Barrier function strategy for inequality constraints",
+      "rawText": "Barrier function strategy for inequality constraints\n\n\n  Consider the inequality constrained optimization problem\n\n              min ℓ(z)\n                z∈Rd\n                subj.to gj(z) ≤0     j ∈{1, . . . , r}                     −ε log(z)\n\n\n   Inequality constraints can be relaxed and embedded in the\n                                                                                    ε   cost function by means of a barrier function −ε log(z).               →0\n\n  The resulting unconstrained problem reads as\n                                                                                                  z\n\n                                    r\n             min ℓ(z) + ε X −log(−gj(z))\n                z∈Rd         j=1\n\n  Implementation: every few iterations shrink the barrier parameters ε.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 50 |73",
+      "text": "Barrier function strategy for inequality constraints\nConsider the inequality constrained optimization problem\nmin ℓ(z)\nz∈Rd\nsubj.to gj(z) ≤0 j ∈{1, . . . , r} −ε log(z)\nInequality constraints can be relaxed and embedded in the\nε cost function by means of a barrier function −ε log(z). →0\nThe resulting unconstrained problem reads as\nz\nr\nmin ℓ(z) + ε X −log(−gj(z))\nz∈Rd j=1\nImplementation: every few iterations shrink the barrier parameters ε.",
+      "imageCount": 0,
+      "conceptIds": [
+        "barriere"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 55,
+      "title": "Constrained optimization (equality and inequality constraints):",
+      "rawText": "Constrained optimization (equality and inequality constraints):\n                     optimality conditions",
+      "text": "Constrained optimization (equality and inequality constraints):\noptimality conditions",
+      "imageCount": 0,
+      "conceptIds": [
+        "vincoli-regolarita"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 56,
+      "title": "Constrained optimization problem set-up",
+      "rawText": "Constrained optimization problem set-up\n\n\n                              min ℓ(z)\n                                     z∈Rd\n                                       subj.to gj(z) ≤0     j ∈{1, . . . , r}\n                                           hi(z) = 0      i ∈{1, . . . , m}\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 52 |73",
+      "text": "Constrained optimization problem set-up\nmin ℓ(z)\nz∈Rd\nsubj.to gj(z) ≤0 j ∈{1, . . . , r}\nhi(z) = 0 i ∈{1, . . . , m}",
+      "imageCount": 0,
+      "conceptIds": [
+        "vincoli-regolarita"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 57,
+      "title": "Active constraints and regular points",
+      "rawText": "Active constraints and regular points\n\n\n\n\n\n    Set of active inequality constraints\n    For a point z, the set of active inequality constraints at z is A(z) = {j ∈{1, . . . , r} | gj(z) = 0}.\n\n\n    Regular point\n   A point z is regular if the vectors ∇hi(z), i ∈{1, . . . , m}, and ∇gj(z), j ∈A(z), are linearly indepen-\n     dent.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 53 |73",
+      "text": "Active constraints and regular points\nSet of active inequality constraints\nFor a point z, the set of active inequality constraints at z is A(z) = {j ∈{1, . . . , r} | gj(z) = 0}.\nRegular point\nA point z is regular if the vectors ∇hi(z), i ∈{1, . . . , m}, and ∇gj(z), j ∈A(z), are linearly indepen-\ndent.",
+      "imageCount": 0,
+      "conceptIds": [
+        "vincoli-regolarita"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 58,
+      "title": "Lagrangian function",
+      "rawText": "Lagrangian function\n\n\n\n\n     In order to state the first-order necessary conditions of optimality for (equality and inequality) constrained\n    problems it is useful to introduce the Lagrangian function\n\n                                                             r        m\n                              L(z, µ, λ) = ℓ(z) + X µjgj(z) + X λihi(z)\n\n                                                 j=1           i=1\n\n    with z ∈Rd, µ ∈Rr and λ ∈Rm.\n\n    Remark µj and λi can be seen as prices for violating the associated constraint.            □\n\n    Remark We are relaxing the constrained problem, but we cannot minimize the Lagrangian.      □\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 54 |73",
+      "text": "Lagrangian function\nIn order to state the first-order necessary conditions of optimality for (equality and inequality) constrained\nproblems it is useful to introduce the Lagrangian function\nr m\nL(z, µ, λ) = ℓ(z) + X µjgj(z) + X λihi(z)\nj=1 i=1\nwith z ∈Rd, µ ∈Rr and λ ∈Rm.\nRemark µj and λi can be seen as prices for violating the associated constraint. □\nRemark We are relaxing the constrained problem, but we cannot minimize the Lagrangian. □",
+      "imageCount": 0,
+      "conceptIds": [
+        "lagrangiana"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 59,
+      "title": "Karush-Kuhn-Tucker (KKT) necessary conditions",
+      "rawText": "Karush-Kuhn-Tucker (KKT) necessary conditions\n\n    Let z⋆be a regular local minimum of\n\n                              min ℓ(z)\n                                     z∈Rd\n                                       subj.to gj(z) ≤0     j ∈{1, . . . , r}\n                                           hi(z) = 0      i ∈{1, . . . , m}\n\n    where ℓ, gj and hi are C1.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 55 |73",
+      "text": "Karush-Kuhn-Tucker (KKT) necessary conditions\nLet z⋆be a regular local minimum of\nmin ℓ(z)\nz∈Rd\nsubj.to gj(z) ≤0 j ∈{1, . . . , r}\nhi(z) = 0 i ∈{1, . . . , m}\nwhere ℓ, gj and hi are C1.",
+      "imageCount": 0,
+      "conceptIds": [
+        "kkt-primo-ordine"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 60,
+      "title": "Karush-Kuhn-Tucker (KKT) necessary conditions",
+      "rawText": "Karush-Kuhn-Tucker (KKT) necessary conditions\n\n    Let z⋆be a regular local minimum of\n\n                              min ℓ(z)\n                                     z∈Rd\n                                       subj.to gj(z) ≤0     j ∈{1, . . . , r}\n                                           hi(z) = 0      i ∈{1, . . . , m}\n\n    where ℓ, gj and hi are C1.\n    Then ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n\n                              ∇1L(z⋆, µ⋆, λ⋆) = 0\n\n                                         µ⋆j ≥0\n                                    µ⋆j gj(z⋆) = 0     j ∈{1, . . . , r}\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 55 |73",
+      "text": "Karush-Kuhn-Tucker (KKT) necessary conditions\nLet z⋆be a regular local minimum of\nmin ℓ(z)\nz∈Rd\nsubj.to gj(z) ≤0 j ∈{1, . . . , r}\nhi(z) = 0 i ∈{1, . . . , m}\nwhere ℓ, gj and hi are C1.\nThen ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n∇1L(z⋆, µ⋆, λ⋆) = 0\nµ⋆j ≥0\nµ⋆j gj(z⋆) = 0 j ∈{1, . . . , r}",
+      "imageCount": 0,
+      "conceptIds": [
+        "kkt-primo-ordine"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 61,
+      "title": "Karush-Kuhn-Tucker (KKT) necessary conditions",
+      "rawText": "Karush-Kuhn-Tucker (KKT) necessary conditions\n\n    Let z⋆be a regular local minimum of\n\n                              min ℓ(z)\n                                     z∈Rd\n                                       subj.to gj(z) ≤0     j ∈{1, . . . , r}\n                                           hi(z) = 0      i ∈{1, . . . , m}\n\n    where ℓ, gj and hi are C1.\n    Then ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n\n                              ∇1L(z⋆, µ⋆, λ⋆) = 0\n\n                                         µ⋆j ≥0\n                                    µ⋆j gj(z⋆) = 0     j ∈{1, . . . , r}\n\n\n\n    Remark If ℓ, hi and gj twice differentiable, second order conditions.\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 55 |73",
+      "text": "Karush-Kuhn-Tucker (KKT) necessary conditions\nLet z⋆be a regular local minimum of\nmin ℓ(z)\nz∈Rd\nsubj.to gj(z) ≤0 j ∈{1, . . . , r}\nhi(z) = 0 i ∈{1, . . . , m}\nwhere ℓ, gj and hi are C1.\nThen ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n∇1L(z⋆, µ⋆, λ⋆) = 0\nµ⋆j ≥0\nµ⋆j gj(z⋆) = 0 j ∈{1, . . . , r}\nRemark If ℓ, hi and gj twice differentiable, second order conditions.",
+      "imageCount": 0,
+      "conceptIds": [
+        "kkt-primo-ordine"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 62,
+      "title": "Karush-Kuhn-Tucker (KKT) necessary conditions",
+      "rawText": "Karush-Kuhn-Tucker (KKT) necessary conditions\n\n    Let z⋆be a regular local minimum of\n\n                              min ℓ(z)\n                                     z∈Rd\n                                       subj.to gj(z) ≤0     j ∈{1, . . . , r}\n                                           hi(z) = 0      i ∈{1, . . . , m}\n\n    where ℓ, gj and hi are C1.\n    Then ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n\n                              ∇1L(z⋆, µ⋆, λ⋆) = 0\n\n                                         µ⋆j ≥0\n                                    µ⋆j gj(z⋆) = 0     j ∈{1, . . . , r}\n\n\n\n    Notation Points satisfying the KKT necessary conditions of optimality are referred to as KKT points.\n    They are the counterpart of stationary points in constrained optimization.\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 55 |73",
+      "text": "Karush-Kuhn-Tucker (KKT) necessary conditions\nLet z⋆be a regular local minimum of\nmin ℓ(z)\nz∈Rd\nsubj.to gj(z) ≤0 j ∈{1, . . . , r}\nhi(z) = 0 i ∈{1, . . . , m}\nwhere ℓ, gj and hi are C1.\nThen ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n∇1L(z⋆, µ⋆, λ⋆) = 0\nµ⋆j ≥0\nµ⋆j gj(z⋆) = 0 j ∈{1, . . . , r}\nNotation Points satisfying the KKT necessary conditions of optimality are referred to as KKT points.\nThey are the counterpart of stationary points in constrained optimization.",
+      "imageCount": 0,
+      "conceptIds": [
+        "kkt-primo-ordine"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 63,
+      "title": "Remarks on Karush-Kuhn-Tucker (KKT) necessary conditions",
+      "rawText": "Remarks on Karush-Kuhn-Tucker (KKT) necessary conditions\n\n\n    Remark The condition\n\n                                     ∇1L(z⋆, µ⋆, λ⋆) = 0\n\n    can be explicitly written as\n\n                                                 r          m\n                           ∇ℓ(z⋆) + X µ⋆j∇gj(z⋆) + X λ⋆i ∇hi(z⋆) = 0\n                                       j=1              i=1\n\n    Remark The condition µ⋆j g⋆j (z⋆) = 0, j ∈{1, . . . , r}, is called complementary slackness.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 56 |73",
+      "text": "Remarks on Karush-Kuhn-Tucker (KKT) necessary conditions\nRemark The condition\n∇1L(z⋆, µ⋆, λ⋆) = 0\ncan be explicitly written as\nr m\n∇ℓ(z⋆) + X µ⋆j∇gj(z⋆) + X λ⋆i ∇hi(z⋆) = 0\nj=1 i=1\nRemark The condition µ⋆j g⋆j (z⋆) = 0, j ∈{1, . . . , r}, is called complementary slackness.",
+      "imageCount": 0,
+      "conceptIds": [
+        "kkt-primo-ordine"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 64,
+      "title": "Karush-Kuhn-Tucker (KKT) necessary conditions (second order)",
+      "rawText": "Karush-Kuhn-Tucker (KKT) necessary conditions (second order)\n\n    Let z⋆be a regular local minimum of\n\n                              min ℓ(z)\n                                     z∈Rd\n                                       subj.to gj(z) ≤0     j ∈{1, . . . , r}\n                                           hi(z) = 0      i ∈{1, . . . , m}\n\n    where ℓ, gj and hi are C1.\n    Then ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n\n                ∇1L(z⋆, µ⋆, λ⋆) = 0,    µ⋆j ≥0,    µ⋆j gj(z⋆) = 0     j ∈{1, . . . , r}\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 57 |73",
+      "text": "Karush-Kuhn-Tucker (KKT) necessary conditions (second order)\nLet z⋆be a regular local minimum of\nmin ℓ(z)\nz∈Rd\nsubj.to gj(z) ≤0 j ∈{1, . . . , r}\nhi(z) = 0 i ∈{1, . . . , m}\nwhere ℓ, gj and hi are C1.\nThen ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n∇1L(z⋆, µ⋆, λ⋆) = 0, µ⋆j ≥0, µ⋆j gj(z⋆) = 0 j ∈{1, . . . , r}",
+      "imageCount": 0,
+      "conceptIds": [
+        "kkt-secondo-ordine"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 65,
+      "title": "Karush-Kuhn-Tucker (KKT) necessary conditions (second order)",
+      "rawText": "Karush-Kuhn-Tucker (KKT) necessary conditions (second order)\n\n    Let z⋆be a regular local minimum of\n\n                              min ℓ(z)\n                                     z∈Rd\n                                       subj.to gj(z) ≤0     j ∈{1, . . . , r}\n                                           hi(z) = 0      i ∈{1, . . . , m}\n\n    where ℓ, gj and hi are C1.\n    Then ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n\n                ∇1L(z⋆, µ⋆, λ⋆) = 0,    µ⋆j ≥0,    µ⋆j gj(z⋆) = 0     j ∈{1, . . . , r}\n\n\n    Moreover, if ℓ, gj and hi are C2 it holds\n\n                              y⊤∇211L(z⋆, µ⋆, λ⋆)y ≥0\n\n     for all y ∈Rd such that\n\n    ∇hi(z)⊤y = 0,   i ∈{1, . . . , m},    ∇gj(z)⊤y = 0,   j ∈A(z)   (i.e. j ∈{1, . . . , r} s.t. gj(z) = 0)\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 57 |73",
+      "text": "Karush-Kuhn-Tucker (KKT) necessary conditions (second order)\nLet z⋆be a regular local minimum of\nmin ℓ(z)\nz∈Rd\nsubj.to gj(z) ≤0 j ∈{1, . . . , r}\nhi(z) = 0 i ∈{1, . . . , m}\nwhere ℓ, gj and hi are C1.\nThen ∃unique µ⋆j and λ⋆i , called Lagrange multipliers, s.t.\n∇1L(z⋆, µ⋆, λ⋆) = 0, µ⋆j ≥0, µ⋆j gj(z⋆) = 0 j ∈{1, . . . , r}\nMoreover, if ℓ, gj and hi are C2 it holds\ny⊤∇211L(z⋆, µ⋆, λ⋆)y ≥0\nfor all y ∈Rd such that\n∇hi(z)⊤y = 0, i ∈{1, . . . , m}, ∇gj(z)⊤y = 0, j ∈A(z) (i.e. j ∈{1, . . . , r} s.t. gj(z) = 0)",
+      "imageCount": 0,
+      "conceptIds": [
+        "kkt-secondo-ordine"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 66,
+      "title": "Quadratic Programming (constrained)",
+      "rawText": "Quadratic Programming (constrained)\n\n\n    Let us consider quadratic optimization problems with linear equality constraints.\n\n    Quadratic program\n\n                                             1\n                                    min 2zT Qz + qT z                                           z∈Rd\n                                               subj.to Az = b\n\n    with Q = QT ∈Rd×d, q ∈Rd, A ∈Rm×d and b ∈Rm.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 58 |73",
+      "text": "Quadratic Programming (constrained)\nLet us consider quadratic optimization problems with linear equality constraints.\nQuadratic program\n1\nmin 2zT Qz + qT z z∈Rd\nsubj.to Az = b\nwith Q = QT ∈Rd×d, q ∈Rd, A ∈Rm×d and b ∈Rm.",
+      "imageCount": 0,
+      "conceptIds": [
+        "qp-vincolati"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 67,
+      "title": "Quadratic Programming (constrained): optimality conditions",
+      "rawText": "Quadratic Programming (constrained): optimality conditions\n\n\n    Let us introduce the Lagrangian of the constrained optimization problem, i.e.,\n\n                                  1\n                           L(z, λ) = 2zT Qz + qT z + λ⊤(Az −b)   λ ∈Rm\n\n     First-order necessary condition for optimality:  if z⋆is a minimum then there exists λ⋆such that\n\n                          ∇1L(z⋆, λ⋆)        Qz⋆+ q + A⊤λ⋆\n                         = 0 =⇒            = 0\n                          ∇2L(z⋆, λ⋆)           Az⋆−b\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 59 |73",
+      "text": "Quadratic Programming (constrained): optimality conditions\nLet us introduce the Lagrangian of the constrained optimization problem, i.e.,\n1\nL(z, λ) = 2zT Qz + qT z + λ⊤(Az −b) λ ∈Rm\nFirst-order necessary condition for optimality: if z⋆is a minimum then there exists λ⋆such that\n∇1L(z⋆, λ⋆) Qz⋆+ q + A⊤λ⋆\n= 0 =⇒ = 0\n∇2L(z⋆, λ⋆) Az⋆−b",
+      "imageCount": 0,
+      "conceptIds": [
+        "qp-vincolati"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 68,
+      "title": "Quadratic Programming (constrained): optimality conditions",
+      "rawText": "Quadratic Programming (constrained): optimality conditions\n\n    Second-order necessary condition for optimality:  if z⋆is a minimum then\n\n                            y⊤∇211L(z⋆, λ⋆)y = y⊤Qy ≥0\n\n     for all y ∈Rd such that\n\n                               ∇hi(z)⊤y = 0      i ∈{1, . . . , m}\n                        =⇒A⊤y = 0\n\n    namely, for all y ∈Rd in the null-space of A⊤.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 60 |73",
+      "text": "Quadratic Programming (constrained): optimality conditions\nSecond-order necessary condition for optimality: if z⋆is a minimum then\ny⊤∇211L(z⋆, λ⋆)y = y⊤Qy ≥0\nfor all y ∈Rd such that\n∇hi(z)⊤y = 0 i ∈{1, . . . , m}\n=⇒A⊤y = 0\nnamely, for all y ∈Rd in the null-space of A⊤.",
+      "imageCount": 0,
+      "conceptIds": [
+        "qp-vincolati"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 69,
+      "title": "Constrained optimization (equality and inequality constraints):",
+      "rawText": "Constrained optimization (equality and inequality constraints):\n                   optimization algorithms",
+      "text": "Constrained optimization (equality and inequality constraints):\noptimization algorithms",
+      "imageCount": 0,
+      "conceptIds": [
+        "newton-vincolato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 70,
+      "title": "Optimality conditions for equality constrained problems (refresh)",
+      "rawText": "Optimality conditions for equality constrained problems (refresh)\n\n\n    Consider the equality-constrained minimization problem:\n\n                                      min  ℓ(z)\n                                              z∈Rd\n                                                 subj.to h(z) = 0\n\n    where ℓ: Rd →R and h : Rd →Rm.\n\n\n    The first-order necessary conditions of optimality require the solution of\n\n                                      ∇ℓ(z) + ∇h(z)λ = 0\n\n                                                    h(z) = 0\n\n    which can be written as\n\n                                          ∇ℓ(z) + ∇h(z)λ\n                             ∇L(z, λ) =           = 0.\n                                                    h(z)\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 62 |73",
+      "text": "Optimality conditions for equality constrained problems (refresh)\nConsider the equality-constrained minimization problem:\nmin ℓ(z)\nz∈Rd\nsubj.to h(z) = 0\nwhere ℓ: Rd →R and h : Rd →Rm.\nThe first-order necessary conditions of optimality require the solution of\n∇ℓ(z) + ∇h(z)λ = 0\nh(z) = 0\nwhich can be written as\n∇ℓ(z) + ∇h(z)λ\n∇L(z, λ) = = 0.\nh(z)",
+      "imageCount": 0,
+      "conceptIds": [
+        "newton-vincolato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 71,
+      "title": "Newton’s method for equality constrained problems",
+      "rawText": "Newton’s method for equality constrained problems\n\n   KKT points can be found by solving a root finding problem in variables z, λ with r(z, λ) = ∇L(z, λ).\n\n\n    Newton’s method for this root finding problem reads as\n\n                                      zk+1     zk    ∆zk\n                            =   +\n                                     λk+1     λk    ∆λk\n\n    with ∆zk, ∆λk solution of\n\n                                  ∆z\n                               ∇2L(zk, λk)    = −∇L(zk, λk)\n                               ∆λ\n\n    where\n\n                       Bk     ∇h(zk)                      ∇ℓ(zk) + ∇h(zk)λk\n           ∇2L(zk, λk) :=                         ∇L(zk, λk) :=\n                        ∇h(zk)⊤     0                                 h(zk)\n\n    and Bk := ∇211L(zk, λk).\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 63 |73",
+      "text": "Newton’s method for equality constrained problems\nKKT points can be found by solving a root finding problem in variables z, λ with r(z, λ) = ∇L(z, λ).\nNewton’s method for this root finding problem reads as\nzk+1 zk ∆zk\n= +\nλk+1 λk ∆λk\nwith ∆zk, ∆λk solution of\n∆z\n∇2L(zk, λk) = −∇L(zk, λk)\n∆λ\nwhere\nBk ∇h(zk) ∇ℓ(zk) + ∇h(zk)λk\n∇2L(zk, λk) := ∇L(zk, λk) :=\n∇h(zk)⊤ 0 h(zk)\nand Bk := ∇211L(zk, λk).",
+      "imageCount": 0,
+      "conceptIds": [
+        "newton-vincolato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 72,
+      "title": "Newton’s method for equality constrained problems",
+      "rawText": "Newton’s method for equality constrained problems\n\n\n\n\n\n    Namely, search for ∆zk, ∆λk solution of\n\n                      Bk     ∇h(zk)  ∆z       ∇ℓ(zk) + ∇h(zk)λk\n                               = −\n                      ∇h(zk)⊤     0    ∆λ              h(zk).\n\n    Thus, ∆zk, ∆λk can be obtained as solution of a linear system of equations in the variables ∆z, ∆λ.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 64 |73",
+      "text": "Newton’s method for equality constrained problems\nNamely, search for ∆zk, ∆λk solution of\nBk ∇h(zk) ∆z ∇ℓ(zk) + ∇h(zk)λk\n= −\n∇h(zk)⊤ 0 ∆λ h(zk).\nThus, ∆zk, ∆λk can be obtained as solution of a linear system of equations in the variables ∆z, ∆λ.",
+      "imageCount": 0,
+      "conceptIds": [
+        "newton-vincolato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 73,
+      "title": "Newton’s method via Quadratic Programming",
+      "rawText": "Newton’s method via Quadratic Programming\n\n    The linear system of equations can be rewritten as\n                      Bk∆zk + ∇h(zk)∆λk = −∇ℓ(zk) −∇h(zk)λk\n                              ∇h(zk)⊤∆zk = −h(zk).\n\n    and equivalently as\n                               ∇ℓ(zk) + Bk∆zk + ∇h(zk)λk+1 = 0\n                                           h(zk) + ∇h(zk)⊤∆zk = 0.\n\n\n   We can observe that\n                                 ∇ℓ(zk) + Bk∆z + ∇h(zk)λ = 0\n                                          h(zk) + ∇h(zk)⊤∆z = 0\n\n     are the necessary and sufficient optimality conditions for the Quadratic Program (QP)\n\n                               min                                   ∇ℓ(zk)⊤∆z + 12∆z⊤Bk∆z                                  ∆z\n                                        subj.to h(zk) + ∇h(zk)⊤∆z = 0.\n\n     Therefore, in the Newton’s update, we can obtain (∆zk, λk+1) by solving this QP.\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 65 |73",
+      "text": "Newton’s method via Quadratic Programming\nThe linear system of equations can be rewritten as\nBk∆zk + ∇h(zk)∆λk = −∇ℓ(zk) −∇h(zk)λk\n∇h(zk)⊤∆zk = −h(zk).\nand equivalently as\n∇ℓ(zk) + Bk∆zk + ∇h(zk)λk+1 = 0\nh(zk) + ∇h(zk)⊤∆zk = 0.\nWe can observe that\n∇ℓ(zk) + Bk∆z + ∇h(zk)λ = 0\nh(zk) + ∇h(zk)⊤∆z = 0\nare the necessary and sufficient optimality conditions for the Quadratic Program (QP)\nmin ∇ℓ(zk)⊤∆z + 12∆z⊤Bk∆z ∆z\nsubj.to h(zk) + ∇h(zk)⊤∆z = 0.\nTherefore, in the Newton’s update, we can obtain (∆zk, λk+1) by solving this QP.",
+      "imageCount": 0,
+      "conceptIds": [
+        "newton-vincolato"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 74,
+      "title": "Newton’s Method via Sequential Quadratic Programming (SQP)",
+      "rawText": "Newton’s Method via Sequential Quadratic Programming (SQP)\n\n\n     Start from a tentative solution z0\n    For k = 0, 1, . . . (up to convergence)\n        1. Compute ∇ℓ(zk), Bk, ∇h(zk)\n        2. Obtain (∆zk, ∆λkQP) from\n\n                          ∆zk = argmin ∇ℓ(zk)⊤∆z + 12∆z⊤Bk∆z\n                                      ∆z\n                                               subj.to h(zk) + ∇h(zk)⊤∆z = 0.                         (2)\n\n          with ∆λkQP the Lagrange multiplier associated to the optimal solution of (2).\n\n        3. Update\n\n                                           zk+1 = zk + ∆zk\n                                            λk+1 = ∆λkQP\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 66 |73",
+      "text": "Newton’s Method via Sequential Quadratic Programming (SQP)\nStart from a tentative solution z0\nFor k = 0, 1, . . . (up to convergence)\n1. Compute ∇ℓ(zk), Bk, ∇h(zk)\n2. Obtain (∆zk, ∆λkQP) from\n∆zk = argmin ∇ℓ(zk)⊤∆z + 12∆z⊤Bk∆z\n∆z\nsubj.to h(zk) + ∇h(zk)⊤∆z = 0. (2)\nwith ∆λkQP the Lagrange multiplier associated to the optimal solution of (2).\n3. Update\nzk+1 = zk + ∆zk\nλk+1 = ∆λkQP",
+      "imageCount": 0,
+      "conceptIds": [
+        "sqp"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 75,
+      "title": "Stepsize selection for constrained optimization (I): Merit function",
+      "rawText": "Stepsize selection for constrained optimization (I): Merit function\n\n     Goal: Choose γk such that direction ∆zk simultaneously\n\n          i) decreases cost ℓ(z)\n\n          ii) reduces constraint violation, i.e., ∥h(z)∥\n\n     Idea: Measure progress, i.e., select stepsize γk, evaluating a merit function.\n\n    L1 merit function: Consider the optimization problem with cost ℓ(z) and equality constraint h(z) = 0,\n    the associated L1 merit function reads\n\n                                  M1(z; s) = ℓ(z) + s∥g(z)∥1\n\n    where, s ∈R parameter and ∥· ∥1 is the 1-norm, i.e., for z ∈Rd, ∥z∥1 = Pdi=1 |zi|.\n\n     Proposition (exact merit function) Call λ∗the optimal Lagrange multiplier associated to the original\n     constrained optimization problem. Then, if s > max |λ∗i |, i = 1, . . . , m, the merit function M1(z; s) is\n                                                                                i\n     exact, i.e., any solution (z∗, λ∗) of the original optimization problem is a local minimizer of M1(z; s).\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 67 |73",
+      "text": "Stepsize selection for constrained optimization (I): Merit function\nGoal: Choose γk such that direction ∆zk simultaneously\ni) decreases cost ℓ(z)\nii) reduces constraint violation, i.e., ∥h(z)∥\nIdea: Measure progress, i.e., select stepsize γk, evaluating a merit function.\nL1 merit function: Consider the optimization problem with cost ℓ(z) and equality constraint h(z) = 0,\nthe associated L1 merit function reads\nM1(z; s) = ℓ(z) + s∥g(z)∥1\nwhere, s ∈R parameter and ∥· ∥1 is the 1-norm, i.e., for z ∈Rd, ∥z∥1 = Pdi=1 |zi|.\nProposition (exact merit function) Call λ∗the optimal Lagrange multiplier associated to the original\nconstrained optimization problem. Then, if s > max |λ∗i |, i = 1, . . . , m, the merit function M1(z; s) is\ni\nexact, i.e., any solution (z∗, λ∗) of the original optimization problem is a local minimizer of M1(z; s).",
+      "imageCount": 0,
+      "conceptIds": [
+        "merito"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 76,
+      "title": "Stepsize selection for constrained optimization (II): Armijo rule",
+      "rawText": "Stepsize selection for constrained optimization (II): Armijo rule\n\n\n    Armijo rule (Backtracking line-search) with M1 merit function\n\n     Step-size is selected following the procedure:\n        1. Set ¯γ0 > 0, β ∈(0, 1), c ∈(0, 1)\n\n                                                                  derivative of M1(zk;s) along dk\n                                                   z           }|           {        2. While M1(zk + ¯γidk; s) ≥M1(zk; s) + c¯γi ∇ℓ(zk)⊤dk −s∥h(zk)∥1  :\n\n                                                            ¯γi+1 = β¯γi\n\n        3. Set γk = ¯γi\n\n   Good practice: to move towards exact merit function, adapt s at each iteration, i.e., set sk > ∥λk∥∞\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 68 |73",
+      "text": "Stepsize selection for constrained optimization (II): Armijo rule\nArmijo rule (Backtracking line-search) with M1 merit function\nStep-size is selected following the procedure:\n1. Set ¯γ0 > 0, β ∈(0, 1), c ∈(0, 1)\nderivative of M1(zk;s) along dk\nz }| { 2. While M1(zk + ¯γidk; s) ≥M1(zk; s) + c¯γi ∇ℓ(zk)⊤dk −s∥h(zk)∥1 :\n¯γi+1 = β¯γi\n3. Set γk = ¯γi\nGood practice: to move towards exact merit function, adapt s at each iteration, i.e., set sk > ∥λk∥∞",
+      "imageCount": 0,
+      "conceptIds": [
+        "merito"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 77,
+      "title": "Sequential Quadratic Programming (SQP)",
+      "rawText": "Sequential Quadratic Programming (SQP)\n\n     Start from a tentative solution z0\n    For k = 0, 1, . . . (up to convergence)\n        1. Compute ∇ℓ(zk), Bk, ∇h(zk)\n        2. Obtain (∆zk, ∆λkQP) from\n\n                          ∆zk = argmin ∇ℓ(zk)⊤∆z + 12∆z⊤Bk∆z\n                                      ∆z\n                                               subj.to h(zk) + ∇h(zk)⊤∆z = 0.                         (3)\n\n          with ∆λkQP the Lagrange multiplier associated to the optimal solution of (3).\n        3. Choose γk using Armijo’s rule on merit function M1(zk + γ∆zk; s)\n\n        4. Update\n\n                                      zk+1 = zk + γk∆zk\n                                    λk+1 = (1 −γk)λk + γk∆λkQP\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 69 |73",
+      "text": "Sequential Quadratic Programming (SQP)\nStart from a tentative solution z0\nFor k = 0, 1, . . . (up to convergence)\n1. Compute ∇ℓ(zk), Bk, ∇h(zk)\n2. Obtain (∆zk, ∆λkQP) from\n∆zk = argmin ∇ℓ(zk)⊤∆z + 12∆z⊤Bk∆z\n∆z\nsubj.to h(zk) + ∇h(zk)⊤∆z = 0. (3)\nwith ∆λkQP the Lagrange multiplier associated to the optimal solution of (3).\n3. Choose γk using Armijo’s rule on merit function M1(zk + γ∆zk; s)\n4. Update\nzk+1 = zk + γk∆zk\nλk+1 = (1 −γk)λk + γk∆λkQP",
+      "imageCount": 0,
+      "conceptIds": [
+        "merito"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 78,
+      "title": "Barrier function strategy for inequality constraints",
+      "rawText": "Barrier function strategy for inequality constraints\n\n\n  Consider the inequality constrained optimization problem\n\n              min ℓ(z)\n                z∈Rd\n                subj.to gj(z) ≤0     j ∈{1, . . . , r}                     −ε log(z)\n                     h(z) = 0\n\n   Inequality constraints can be embedded in the cost function                      ε →0\n  by means of a barrier function −ε log(z)\n  The resulting unconstrained problem reads as\n                                                                                                  z\n                                    r\n             min ℓ(z) + ε X −log(−gj(z))\n                z∈Rd         j=1\n\n                    h(z) = 0\n\n\n  Implementation: every few iterations shrink the barrier parameters ε.\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 70 |73",
+      "text": "Barrier function strategy for inequality constraints\nConsider the inequality constrained optimization problem\nmin ℓ(z)\nz∈Rd\nsubj.to gj(z) ≤0 j ∈{1, . . . , r} −ε log(z)\nh(z) = 0\nInequality constraints can be embedded in the cost function ε →0\nby means of a barrier function −ε log(z)\nThe resulting unconstrained problem reads as\nz\nr\nmin ℓ(z) + ε X −log(−gj(z))\nz∈Rd j=1\nh(z) = 0\nImplementation: every few iterations shrink the barrier parameters ε.",
+      "imageCount": 0,
+      "conceptIds": [
+        "barriere-uguaglianze"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 79,
+      "title": "Concluding Remarks on Notation",
+      "rawText": "Concluding Remarks on Notation",
+      "text": "Concluding Remarks on Notation",
+      "imageCount": 0,
+      "conceptIds": [
+        "tempo-iterazione"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 80,
+      "title": "Warning on notation in Optimization and Optimal Control",
+      "rawText": "Warning on notation in Optimization and Optimal Control\n\n\n    Notation z\n   We denote z ∈Rd the generic optimization variable of a generic optimization problem, e.g.\n\n                                       min ℓ(z),\n                                               z∈Rd\n    where ℓ: Rd →R cost function.\n\n\n\n\n\n    Notation zk\n   We denote zk ∈Rd the solution estimate at iteration k ∈N of an optimization algorithm for the\n     optimization problem.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 72 |73",
+      "text": "Warning on notation in Optimization and Optimal Control\nNotation z\nWe denote z ∈Rd the generic optimization variable of a generic optimization problem, e.g.\nmin ℓ(z),\nz∈Rd\nwhere ℓ: Rd →R cost function.\nNotation zk\nWe denote zk ∈Rd the solution estimate at iteration k ∈N of an optimization algorithm for the\noptimization problem.",
+      "imageCount": 0,
+      "conceptIds": [
+        "tempo-iterazione"
+      ],
+      "equationReview": "check-original-pdf"
+    },
+    {
+      "pdfPage": 81,
+      "title": "Warning on notation in Optimization and Optimal Control",
+      "rawText": "Warning on notation in Optimization and Optimal Control\n\n    Notation xt\n    Consider a discrete-time system in standard control notation x(t + 1) = ft(x(t), u(t)) with t ∈N.\n   We denote xt := x(t) and ut := u(t) the state and the input respectively, so that the dynamics is\n     written as\n\n                                          xt+1 = ft(xt, ut)\n\n\n\n\n    Notation (x, u), (xk, uk), (xkt , ukt )\n    The decision vector in optimal control problems  is (x, u) and we will denote (xk, uk) the solution\n    estimate at iteration k of an optimal control algorithm.\n   We will also use (xkt , ukt ) to denote the vector component of (xk, uk) associated to the state and input\n     at time t.\n\n\n\n\n\n                                                      Prof. Giuseppe Notarstefano – Optimal Control and Reinforcement Learning – Nonlinear Optimization 73 |73",
+      "text": "Warning on notation in Optimization and Optimal Control\nNotation xt\nConsider a discrete-time system in standard control notation x(t + 1) = ft(x(t), u(t)) with t ∈N.\nWe denote xt := x(t) and ut := u(t) the state and the input respectively, so that the dynamics is\nwritten as\nxt+1 = ft(xt, ut)\nNotation (x, u), (xk, uk), (xkt , ukt )\nThe decision vector in optimal control problems is (x, u) and we will denote (xk, uk) the solution\nestimate at iteration k of an optimal control algorithm.\nWe will also use (xkt , ukt ) to denote the vector component of (xk, uk) associated to the state and input\nat time t.",
+      "imageCount": 0,
+      "conceptIds": [
+        "tempo-iterazione"
+      ],
+      "equationReview": "check-original-pdf"
+    }
+  ]
+}
