@@ -58,6 +58,13 @@ const loaders: Record<string, () => Promise<{ mount(container: HTMLElement): Pro
   'pendulum-equilibrium': () => import('./I3').then(module=>module.equilibriumDemo),
   'pendulum-reference': () => import('./I3').then(module=>module.referenceDemo),
   'pendulum-optimal-control': () => import('./I3').then(module=>module.transferDemo),
+  'k1-state-input-stack': () => import('./K1').then(module=>module.stackDemo),
+  'k1-dynamics-residual': () => import('./K1').then(module=>module.residualDemo),
+  'trajectory-manifold': () => import('./K1').then(module=>module.manifoldDemo),
+  'trajectory-tangent': () => import('./K1').then(module=>module.tangentDemo),
+  'k1-unconstrained-control': () => import('./K1').then(module=>module.controlDemo),
+  'optimal-control-structure': () => import('./K1').then(module=>module.structureDemo),
+  'k1-kkt-geometry': () => import('./K1').then(module=>module.recallDemo),
 };
 export function hasDemo(id: string): boolean { return id in loaders; }
 

@@ -12,7 +12,9 @@ Il passaggio 5, **I1**, copre Introduzione pp. 1–18: **10 sezioni per 11 conce
 
 Il passaggio 6, **I2**, aggiunge **8 sezioni per 9 concetti** sulle pp. 19–30: dinamica come uguaglianza, costi di stadio/terminali, vincoli ai bordi e sul percorso, formulazione discreta, riferimento rispetto a traiettoria e drone planare. Otto nuovi laboratori includono QP scalare verificato con Riccati e drone a sei stati/due spinte, animazione, viste px/py e px/py/tempo, Q/R/QT, massa/inerzia, discretizzazione e limiti fisici. Il calcolo nonlineare è eseguito in un **Web Worker**, con cancellazione, residui e messaggi di arresto. Aprire `introduzione.html#i2-dinamica` oppure `#i2-drone-costo`. Introduzione dispone ora di **18 sezioni per 20 concetti teorici**, fino a p. 30.
 
-Il passaggio 7, **I3**, completa Introduzione con cinque sezioni sulle pp. 31–36 e cinque laboratori: costo integrale, modello del pendolo, equilibri, riferimento e trasferimento ottimizzato. Sono disponibili animazione, piano di fase 2D, viste 3D, parametri fisici e pesi, confronto Eulero/RK4 e griglia raffinata. Il trasferimento usa un Worker cancellabile e distingue tempo t, candidato k, riferimento e traiettoria. Aprire `introduzione.html#i3-continuo` oppure `#i3-pendolo-controllo`. Introduzione dispone di **23 sezioni per tutti i 25 concetti teorici**, oltre al frontespizio, su tutte le 36 pagine. La chiusura ha richiesto una sessione aggiuntiva rispetto alle tre stimate per questo PDF, registrata nel checkpoint. Prossimo blocco: **K1**, non avviato automaticamente.
+Il passaggio 7, **I3**, completa Introduzione con cinque sezioni sulle pp. 31–36 e cinque laboratori: costo integrale, modello del pendolo, equilibri, riferimento e trasferimento ottimizzato. Sono disponibili animazione, piano di fase 2D, viste 3D, parametri fisici e pesi, confronto Eulero/RK4 e griglia raffinata. Il trasferimento usa un Worker cancellabile e distingue tempo t, candidato k, riferimento e traiettoria. Aprire `introduzione.html#i3-continuo` oppure `#i3-pendolo-controllo`. Introduzione dispone di **23 sezioni per tutti i 25 concetti teorici**, oltre al frontespizio, su tutte le 36 pagine. La chiusura ha richiesto una sessione aggiuntiva rispetto alle tre stimate per questo PDF, registrata nel checkpoint.
+
+Il passaggio 8, **K1**, sviluppa KKT pp. 1–12 con **sette sezioni per otto concetti teorici**, oltre al frontespizio. Sette nuovi laboratori mostrano stack, curve/residui, varietà, tangente, controllo senza vincoli aggiuntivi, struttura temporale e richiamo KKT. Sono disponibili superfici 3D, errori di primo/secondo ordine, dimensioni n/m/T modificabili, QP verificato con Riccati e controesempi su regolarità/minimi. Aprire `kkt.html#k1-varieta` oppure `#k1-tangente`. I soli vincoli dinamici usano h=f−x successivo; i moduli precedenti restano stabili. Prossimo blocco: **K2**, pp. 13–20, non avviato automaticamente.
 
 Per avviare il sito da PowerShell:
 
@@ -39,6 +41,8 @@ npm.cmd run preview
 
 La build statica viene generata in `web/dist/`. Il test browser usa Chrome/Edge già installato, senza finestra, e un server temporaneo; in alternativa impostare `OPTCON_BROWSER_PATH`. Non è necessario scaricare un browser aggiuntivo. `preview` serve la build su `http://127.0.0.1:4173`.
 
+Per controllare il modulo K1 compilato: `node tests/K1/production.mjs`, da `web/`, dopo la build. La prova avvia e termina un server temporaneo.
+
 ## Fonti e struttura
 
 - `sources/inventory.json`: 73 voci, compresi 3 frontespizi, con pagine fisiche, riepiloghi, parametri, visualizzazioni e registro degli errata.
@@ -61,19 +65,19 @@ Da `web/`:
 
 ```powershell
 npm.cmd run session -- next
-npm.cmd run session -- prompt K1 --save
+npm.cmd run session -- prompt K2 --save
 ```
 
-Il prompt viene salvato in UTF-8 in `checkpoints/prompts/K1.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
+Il prompt viene salvato in UTF-8 in `checkpoints/prompts/K2.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
 
 ```powershell
-npm.cmd run session -- start K1
-npm.cmd run session -- watch K1
+npm.cmd run session -- start K2
+npm.cmd run session -- watch K2
 ```
 
 Il monitor avvisa al minuto 75 e segnala il tetto di 90 minuti; non interrompe il modello o altri processi. Una sessione aggiuntiva va conteggiata esplicitamente. Il runner prepara e monitora il lavoro locale; non invoca API o nuove conversazioni autonomamente.
 
-Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish K1`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
+Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish K2`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
 
 I contratti Base e i loro hash sono registrati nel manifest. Estendere i moduli registrando nuovi contenuti; per correggere un contratto già concluso documentare la motivazione e verificare le regressioni.
 

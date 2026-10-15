@@ -563,7 +563,7 @@
     {
       "id": "K1",
       "order": 8,
-      "title": "Variet? e spazio tangente",
+      "title": "Varietà e spazio tangente",
       "sourceId": "kkt",
       "pages": [
         1,
@@ -581,10 +581,11 @@
       ],
       "dependencies": [
         "I1",
-        "O1"
+        "O1",
+        "O3"
       ],
-      "status": "pending",
-      "objective": "Traiettorie, residui, variet?, spazio tangente e forma compatta del controllo ottimo.",
+      "status": "completed",
+      "objective": "Traiettorie, residui, varietà, spazio tangente e forma compatta del controllo ottimo.",
       "allowedPaths": [
         "web/content/blocks/K1.ts",
         "web/demos/K1/**",
@@ -594,17 +595,42 @@
         "web/demos/registry.ts (registration only)",
         "sources/inventory.json (assigned concepts only)",
         "manifest.json (current status only)",
-        "checkpoints/K1*"
+        "checkpoints/K1*",
+        "README.md (K1 availability and K2 examples)",
+        "web/main.ts (home availability count only)",
+        "checkpoints/prompts/K2.md (handoff only; session not started)",
+        "manifest.json (K1 metadata and status only)"
       ],
       "requiredArtifacts": [
-        "checkpoints/K1.md"
+        "checkpoints/K1.md",
+        "web/content/blocks/K1.ts",
+        "web/math/K1/trajectories.ts",
+        "web/demos/K1/index.ts",
+        "web/demos/K1/plots.ts",
+        "web/demos/K1/styles.css",
+        "web/tests/K1/models.test.ts",
+        "web/tests/K1/browser/K1.spec.ts",
+        "web/tests/K1/production.mjs"
       ],
       "acceptance": [
         "All assigned concepts covered, or explicit metadata-only rationale",
         "Figures recompute from parameters and agree with formulas",
         "No type errors; relevant analytic and browser checks pass",
         "Checkpoint records outcomes and remaining work"
-      ]
+      ],
+      "startedAt": "2026-10-15T15:16:03.619Z",
+      "artifactHashes": {
+        "web/content/blocks/K1.ts": "bf752fa60f6b5ef65e66877f064faeef4b4b7453f71cf00d36ca73954a7c7daf",
+        "web/math/K1/trajectories.ts": "3068eee0911bfc913d99b5d2986dd7c46087f3c80e040ada6983236a5e5668cc",
+        "web/demos/K1/index.ts": "4da656ac59cc99709bae25dcb4f493c8b23cd466e811426efb451d57c2937c2e",
+        "web/demos/K1/plots.ts": "4c7c8d289f5a20c148a675ea06d2cbbf6b1eae6977889f91248489f54eca5a93",
+        "web/demos/K1/styles.css": "4b741d4e81d14d57e854a285063ea30251aaff8a62f1a28522fac99638b2ae30",
+        "web/tests/K1/models.test.ts": "855350f9105643639e16307ec262af18156aebd05a95a473266adf4de5d86eae",
+        "web/tests/K1/browser/K1.spec.ts": "108ce850724b5d1f68157f4384101348dd4ebdf0fda5a9ae01c704eb98ef5989",
+        "web/tests/K1/production.mjs": "97110718604ea84908d2a7064b8acd27d61df290be499e6669dd6097168e8c3d"
+      },
+      "completedAt": "2026-10-15T15:44:29.563Z",
+      "validationReport": "checkpoints/K1-validation.json"
     },
     {
       "id": "K2",
@@ -693,5 +719,5 @@
     "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
     "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
   },
-  "updatedAt": "2026-10-15T14:36:56.883335Z"
+  "updatedAt": "2026-10-15T15:44:29.563Z"
 }

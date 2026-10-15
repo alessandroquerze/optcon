@@ -1783,7 +1783,7 @@
           "kind": "theory",
           "visualizations": [
             {
-              "id": "discrete-system",
+              "id": "k1-state-input-stack",
               "label": "Raccogliere stati e ingressi",
               "dimensions": [
                 "2d"
@@ -1793,7 +1793,7 @@
                 "stato iniziale",
                 "sequenza degli ingressi"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1808,7 +1808,7 @@
           "kind": "theory",
           "visualizations": [
             {
-              "id": "dynamics-residual",
+              "id": "k1-dynamics-residual",
               "label": "Una curva è una traiettoria?",
               "dimensions": [
                 "2d"
@@ -1818,7 +1818,7 @@
                 "ingressi",
                 "orizzonte"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1833,7 +1833,7 @@
           "kind": "theory",
           "visualizations": [
             {
-              "id": "dynamics-residual",
+              "id": "k1-dynamics-residual",
               "label": "Tutta la dinamica in h(x,u)=0",
               "dimensions": [
                 "2d"
@@ -1843,7 +1843,7 @@
                 "ingressi",
                 "orizzonte"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1869,7 +1869,7 @@
                 "punto base",
                 "dinamica"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1896,7 +1896,7 @@
                 "perturbazione",
                 "dinamica"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1912,18 +1912,20 @@
           "kind": "theory",
           "visualizations": [
             {
-              "id": "discrete-control",
+              "id": "k1-unconstrained-control",
               "label": "Unconstrained non significa senza dinamica",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "orizzonte",
+                "stato iniziale",
                 "riferimento",
                 "pesi",
-                "limiti"
+                "dinamica"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1949,7 +1951,7 @@
                 "dimensione dello stato",
                 "dimensione dell'ingresso"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -1964,18 +1966,20 @@
           "kind": "theory",
           "visualizations": [
             {
-              "id": "kkt-geometry",
+              "id": "k1-kkt-geometry",
               "label": "La condizione di stazionarietà",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "punto",
                 "lambda",
-                "mu",
-                "vincoli"
+                "curvatura",
+                "bersaglio",
+                "regolarità"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -2322,6 +2326,44 @@
       "status": "clarified-in-I3",
       "note": "Il costo integrale e terminale del pendolo non hanno il fattore 1/2. x(0) è fissato; il terminale è penalizzato. Uguaglianza finale e limite di coppia sono estensioni opzionali dichiarate.",
       "verification": "Confronto visivo con p. 36; costo analitico, fattore dt e gradiente verificati indipendentemente."
+    },
+    {
+      "sourceId": "kkt",
+      "pages": [
+        4
+      ],
+      "status": "corrected-in-K1",
+      "note": "Un’uguaglianza nonlineare non implica sempre un insieme nonconvesso: s^2=0 definisce una retta convessa. Il laboratorio mostra separatamente un midpoint non ammissibile di due traiettorie.",
+      "verification": "Confronto visivo con PDF, formule e controesempi analitici coperti dai test K1."
+    },
+    {
+      "sourceId": "kkt",
+      "pages": [
+        6,
+        7
+      ],
+      "status": "clarified-in-K1",
+      "note": "Il tangente è ker Dh valutato sulla traiettoria base, con delta x0=0 quando x0 è fissato. Il tangente affine è la sua traslazione; la codimensione generale è nT e non necessariamente uno.",
+      "verification": "Confronto visivo con PDF, formule e controesempi analitici coperti dai test K1."
+    },
+    {
+      "sourceId": "kkt",
+      "pages": [
+        8,
+        9
+      ],
+      "status": "corrected-in-K1",
+      "note": "Le variabili compatte sono x in R^(nT) e u in R^(mT), non nei soli spazi dello stato e dell’ingresso a un istante.",
+      "verification": "Confronto visivo con PDF, formule e controesempi analitici coperti dai test K1."
+    },
+    {
+      "sourceId": "kkt",
+      "pages": [
+        12
+      ],
+      "status": "clarified-in-K1",
+      "note": "Distinguere dimensione d della decisione e numero p delle uguaglianze: h:R^d->R^p, rank Dh=p. I moltiplicatori di uguaglianza sono liberi nel segno; KKT non certifica un minimo senza ulteriori ipotesi.",
+      "verification": "Confronto visivo con PDF, formule e controesempi analitici coperti dai test K1."
     }
   ]
 }
