@@ -53,6 +53,11 @@ const loaders: Record<string, () => Promise<{ mount(container: HTMLElement): Pro
   'planar-drone': () => import('./I2').then(module=>module.flightDemo),
   'drone-optimal-control': () => import('./I2').then(module=>module.droneDemo),
   'drone-constraints': () => import('./I2').then(module=>module.constraintsDemo),
+  'continuous-versus-discrete': () => import('./I3').then(module=>module.integralDemo),
+  'pendulum': () => import('./I3').then(module=>module.pendulumDemo),
+  'pendulum-equilibrium': () => import('./I3').then(module=>module.equilibriumDemo),
+  'pendulum-reference': () => import('./I3').then(module=>module.referenceDemo),
+  'pendulum-optimal-control': () => import('./I3').then(module=>module.transferDemo),
 };
 export function hasDemo(id: string): boolean { return id in loaders; }
 

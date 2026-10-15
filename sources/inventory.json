@@ -592,7 +592,7 @@
                 "discretizzazione",
                 "ingresso"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -610,7 +610,8 @@
               "id": "pendulum",
               "label": "Il pendolo nonlineare",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "massa",
@@ -618,7 +619,7 @@
                 "coppia",
                 "angolo iniziale"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -636,14 +637,15 @@
               "id": "pendulum-equilibrium",
               "label": "Restare in equilibrio",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "angolo",
                 "massa",
                 "lunghezza"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -661,14 +663,15 @@
               "id": "pendulum-reference",
               "label": "Un salto desiderato non è una traiettoria",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "angolo iniziale",
                 "angolo finale",
                 "durata"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -686,7 +689,8 @@
               "id": "pendulum-optimal-control",
               "label": "Trasferire il pendolo tra equilibri",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "Q",
@@ -695,7 +699,7 @@
                 "durata",
                 "limite di coppia"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         }
@@ -2150,8 +2154,9 @@
       "pages": [
         34
       ],
-      "status": "identified",
-      "note": "La prima condizione di equilibrio è x_2,e=0 (velocità nulla), non x_1,e=0."
+      "status": "corrected-in-I3",
+      "note": "La prima condizione di equilibrio è x_2,e=0 (velocità nulla), non x_1,e=0.",
+      "verification": "Confronto visivo con PDF p. 34, equilibrio analitico e residuo della velocità non nulla verificati nei test I3."
     },
     {
       "sourceId": "kkt",
@@ -2308,6 +2313,15 @@
       "status": "clarified-in-I2",
       "note": "Gli ingressi hanno indici 0...T-1; gli stati 0...T. Il laboratorio dichiara esplicitamente i limiti di stato anche al terminale. La barriera richiede un interno stretto e non certifica il comportamento continuo fra campioni.",
       "verification": "Indici e controlli verificati nei test numerici e browser I2."
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        36
+      ],
+      "status": "clarified-in-I3",
+      "note": "Il costo integrale e terminale del pendolo non hanno il fattore 1/2. x(0) è fissato; il terminale è penalizzato. Uguaglianza finale e limite di coppia sono estensioni opzionali dichiarate.",
+      "verification": "Confronto visivo con p. 36; costo analitico, fattore dt e gradiente verificati indipendentemente."
     }
   ]
 }

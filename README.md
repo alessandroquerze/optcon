@@ -10,7 +10,9 @@ Il passaggio 4, **O3**, completa Ottimizzazione con 10 sezioni sulle pp. 55–81
 
 Il passaggio 5, **I1**, copre Introduzione pp. 1–18: **10 sezioni per 11 concetti teorici**, più il frontespizio. Dieci nuovi laboratori e il costo pesato Base collegano cinque applicazioni, sistemi continui/discreti, stack di traiettorie, equilibri, linearizzazione, retroazione, costi anche semidefiniti e regioni ammissibili. Le riduzioni dimensionali, le ipotesi e la correzione del peso w₂ a p. 16 sono esplicite. Aprire `introduzione.html#i1-motivazioni`. Il blocco riusa presentazione e calcoli O3 senza modificarli.
 
-Il passaggio 6, **I2**, aggiunge **8 sezioni per 9 concetti** sulle pp. 19–30: dinamica come uguaglianza, costi di stadio/terminali, vincoli ai bordi e sul percorso, formulazione discreta, riferimento rispetto a traiettoria e drone planare. Otto nuovi laboratori includono QP scalare verificato con Riccati e drone a sei stati/due spinte, animazione, viste px/py e px/py/tempo, Q/R/QT, massa/inerzia, discretizzazione e limiti fisici. Il calcolo nonlineare è eseguito in un **Web Worker**, con cancellazione, residui e messaggi di arresto. Aprire `introduzione.html#i2-dinamica` oppure `#i2-drone-costo`. Introduzione dispone ora di **18 sezioni per 20 concetti teorici**, fino a p. 30. Il prossimo blocco è **I3**, sul controllo continuo e pendolo; non viene avviato automaticamente.
+Il passaggio 6, **I2**, aggiunge **8 sezioni per 9 concetti** sulle pp. 19–30: dinamica come uguaglianza, costi di stadio/terminali, vincoli ai bordi e sul percorso, formulazione discreta, riferimento rispetto a traiettoria e drone planare. Otto nuovi laboratori includono QP scalare verificato con Riccati e drone a sei stati/due spinte, animazione, viste px/py e px/py/tempo, Q/R/QT, massa/inerzia, discretizzazione e limiti fisici. Il calcolo nonlineare è eseguito in un **Web Worker**, con cancellazione, residui e messaggi di arresto. Aprire `introduzione.html#i2-dinamica` oppure `#i2-drone-costo`. Introduzione dispone ora di **18 sezioni per 20 concetti teorici**, fino a p. 30.
+
+Il passaggio 7, **I3**, completa Introduzione con cinque sezioni sulle pp. 31–36 e cinque laboratori: costo integrale, modello del pendolo, equilibri, riferimento e trasferimento ottimizzato. Sono disponibili animazione, piano di fase 2D, viste 3D, parametri fisici e pesi, confronto Eulero/RK4 e griglia raffinata. Il trasferimento usa un Worker cancellabile e distingue tempo t, candidato k, riferimento e traiettoria. Aprire `introduzione.html#i3-continuo` oppure `#i3-pendolo-controllo`. Introduzione dispone di **23 sezioni per tutti i 25 concetti teorici**, oltre al frontespizio, su tutte le 36 pagine. La chiusura ha richiesto una sessione aggiuntiva rispetto alle tre stimate per questo PDF, registrata nel checkpoint. Prossimo blocco: **K1**, non avviato automaticamente.
 
 Per avviare il sito da PowerShell:
 
@@ -59,19 +61,19 @@ Da `web/`:
 
 ```powershell
 npm.cmd run session -- next
-npm.cmd run session -- prompt I3 --save
+npm.cmd run session -- prompt K1 --save
 ```
 
-Il prompt viene salvato in UTF-8 in `checkpoints/prompts/I3.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
+Il prompt viene salvato in UTF-8 in `checkpoints/prompts/K1.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
 
 ```powershell
-npm.cmd run session -- start I3
-npm.cmd run session -- watch I3
+npm.cmd run session -- start K1
+npm.cmd run session -- watch K1
 ```
 
 Il monitor avvisa al minuto 75 e segnala il tetto di 90 minuti; non interrompe il modello o altri processi. Una sessione aggiuntiva va conteggiata esplicitamente. Il runner prepara e monitora il lavoro locale; non invoca API o nuove conversazioni autonomamente.
 
-Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish I3`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
+Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish K1`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
 
 I contratti Base e i loro hash sono registrati nel manifest. Estendere i moduli registrando nuovi contenuti; per correggere un contratto già concluso documentare la motivazione e verificare le regressioni.
 
@@ -82,5 +84,7 @@ I contratti Base e i loro hash sono registrati nel manifest. Estendere i moduli 
 Il QP richiede rango pieno delle righe di A e controlla la positività ridotta prima di dichiarare un minimo unico; Newton per zeri può invece risolvere anche un sistema indefinito, senza dichiararlo un minimo. Il solutore conserva cronologia e motivi di arresto, distingue `lambdaQP` da `deltaLambda` e interpola i moltiplicatori con il passo. La fattorizzazione è densa, con un limite di 640 righe del sistema; non è un solutore sparso per grandi orizzonti. Le prove sulle traiettorie confrontano il risultato con una ricorsione di Riccati indipendente.
 
 Per I2/I3 riusare il contratto, fornendo derivate coerenti e costruendo il problema dentro un Web Worker quando il calcolo diventa impegnativo. Le disuguaglianze possono essere trattate con una barriera interna; non è implementato un metodo generale di fase I per trovare una partenza strettamente ammissibile.
+
+I3 riusa RK4 di I1 e i QP/merito di O3 per il pendolo continuo, con sensibilità analitiche e costo integrato sugli stessi stadi della dinamica. Il costo di p. 36 è senza ½ e include il fattore temporale; terminale esatto e limiti di coppia sono opzioni dichiarate. La simulazione con quattro sottopassi RK4 mantiene il comando finale e misura lo scarto della discretizzazione, senza riottimizzare. Il residuo indica stazionarietà, senza garanzia globale. Le prove della build con i due Worker sono `node tests/I2/production.mjs` e `node tests/I3/production.mjs`, da `web/`.
 
 Il modulo I2 `web/math/I2/drone.ts` riusa `solveEqualityQP`, `searchMerit` e `residuals` di O3 in un metodo SQP/Gauss–Newton con eliminazione degli stati tramite rollout. `droneStep`, `droneJacobians`, `droneSensitivities`, `assembleDrone` e `solveDrone` sono puri. `assembleDrone.model` è una matrice di curvatura Gauss–Newton, non la Hessiana esatta. Il seed è hovering, i limiti sono imposti tramite barriera e il terminale opzionale fissa solo la posizione. Sono mostrati candidati, costo senza barriera, violazioni e residuo KKT relativo al singolo ε. Nessuna garanzia globale per il problema nonlineare. Il Web Worker viene sostituito quando cambiano i parametri e terminato all’uscita; tempo osservato, animazione, vista e selezione di k riusano il risultato già calcolato.

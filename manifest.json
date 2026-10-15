@@ -467,7 +467,7 @@
         "web/demos/I2/plots.ts": "fdfecf0686c9b835fe12df693ffe80050b75c41deeec8cd3eb0fb32511133aa8",
         "web/demos/I2/styles.css": "28214f1de591c2ecf7db4aac8053a619242566213dc1de961e0d4e48bdc2dd1c",
         "web/tests/I2/models.test.ts": "11b9cb8bce7c5f654292d1c5ce4031420a0d376f8a859e7d27fbb0ba752d8215",
-        "web/tests/I2/browser/I2.spec.ts": "7736d0a1fe240d3341eab93aed8f5f7abe10d6c4f9edac3a3020985d3b4632dd",
+        "web/tests/I2/browser/I2.spec.ts": "1e52e9dc67cdd792b6ae4d8b44897afd7bc4ee17fb5a7aaaa3a643ec998bb62c",
         "web/tests/I2/production.mjs": "ee877d2485d4f0c1c161fa1b6d834ed8107403017296d356f651d8e0c2c248f5"
       }
     },
@@ -488,7 +488,7 @@
         "I1",
         "O3"
       ],
-      "status": "pending",
+      "status": "completed",
       "objective": "Costo integrale e pendolo, equilibri e trasferimento tra equilibri; riusare il solutore.",
       "allowedPaths": [
         "web/content/blocks/I3.ts",
@@ -499,17 +499,66 @@
         "web/demos/registry.ts (registration only)",
         "sources/inventory.json (assigned concepts only)",
         "manifest.json (current status only)",
-        "checkpoints/I3*"
+        "checkpoints/I3*",
+        "README.md (I3 availability and next-session examples)",
+        "checkpoints/prompts/K1.md (handoff only; session not started)",
+        "web/tests/I2/browser/I2.spec.ts (scope historical lesson count to I1/I2)",
+        "manifest.json (I3 metadata and documented I2 browser-test hash correction)"
       ],
       "requiredArtifacts": [
-        "checkpoints/I3.md"
+        "checkpoints/I3.md",
+        "web/content/blocks/I3.ts",
+        "web/math/I3/continuous.ts",
+        "web/math/I3/pendulum.ts",
+        "web/demos/I3/index.ts",
+        "web/demos/I3/transfer-lab.ts",
+        "web/demos/I3/solver.worker.ts",
+        "web/demos/I3/plots.ts",
+        "web/demos/I3/styles.css",
+        "web/tests/I3/models.test.ts",
+        "web/tests/I3/browser/I3.spec.ts",
+        "web/tests/I3/production.mjs"
       ],
       "acceptance": [
         "All assigned concepts covered, or explicit metadata-only rationale",
         "Figures recompute from parameters and agree with formulas",
         "No type errors; relevant analytic and browser checks pass",
         "Checkpoint records outcomes and remaining work"
-      ]
+      ],
+      "startedAt": "2026-10-13T22:40:51.046Z",
+      "executionHistory": [
+        {
+          "kind": "initial-attempt",
+          "startedAt": "2026-10-13T22:40:51.046Z",
+          "outcome": "interrupted-incomplete",
+          "lastKnownWorkAt": "2026-10-13T22:57:59Z"
+        },
+        {
+          "kind": "additional-reasoning-session",
+          "startedAt": "2026-10-15T14:14:56Z",
+          "authorization": "User request: check and finish step 7",
+          "outcome": "completed",
+          "completedAt": "2026-10-15T14:36:56.883335Z",
+          "elapsedMinutes": 22.01
+        }
+      ],
+      "reasoningSessionsUsedAtLeast": 2,
+      "timeboxNote": "Original attempt interrupted. Completion requires an explicitly counted additional session; Introduction therefore uses at least four reasoning sessions instead of the three planned. Original startedAt is retained. Wall-clock span is not active reasoning time.",
+      "artifactHashes": {
+        "web/content/blocks/I3.ts": "b2af01920e5ec519e6d4c92b98833aff1b0ac3f770e8817e9d09072a02f5062d",
+        "web/math/I3/continuous.ts": "c04db57bfd1d3d1f749d8810ab04dfc4192b5695c0a5224d608218466459e404",
+        "web/math/I3/pendulum.ts": "72c6adb7db871c35c3ec3ca64412f9436c537742e1d545ef956b1165e12b31da",
+        "web/demos/I3/index.ts": "b30cc455215510a3e6eebfacbf3d35349d5f6a7e34bdf7e8ee13fb0a56e3e991",
+        "web/demos/I3/transfer-lab.ts": "e374a11981d635c57c6475c92fab2ccd0ab7cd1461d5f162ed7034cba25deaec",
+        "web/demos/I3/solver.worker.ts": "d8fb1d01375cb4f228e1cd43d0a6395813b03a477c567902ed08e656734ea262",
+        "web/demos/I3/plots.ts": "40e30e82dc7f4c7b8bf9aaa761c087aa7d3a7536fad8c9eb35f7caf98686de30",
+        "web/demos/I3/styles.css": "eeea677a091d9d73f8168573588becd31037ab269b210c5b515283c1b2041851",
+        "web/tests/I3/models.test.ts": "553123ef38993b9b591f21e2042ef3e7b395644613ab913074b8db39e8e4b7ab",
+        "web/tests/I3/browser/I3.spec.ts": "1284b7446ed052d5cf57dbe81743aacbc88a9988506354b3fbb7f87e3d43d457",
+        "web/tests/I3/production.mjs": "565145f5ec4171f13b4e5a2e4f12f1c0db01b5b7f20e11ff6014bed12f573cf8"
+      },
+      "completedAt": "2026-10-15T14:35:41.584Z",
+      "validationReport": "checkpoints/I3-validation.json"
     },
     {
       "id": "K1",
@@ -644,5 +693,5 @@
     "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
     "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
   },
-  "updatedAt": "2026-10-13T22:09:27.824460Z"
+  "updatedAt": "2026-10-15T14:36:56.883335Z"
 }

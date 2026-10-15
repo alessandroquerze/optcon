@@ -5,6 +5,7 @@ import { O2Lessons } from './blocks/O2';
 import { O3Lessons } from './blocks/O3';
 import { I1Lessons } from './blocks/I1';
 import { I2Lessons } from './blocks/I2';
+import { I3Lessons } from './blocks/I3';
 
 export const sources = inventoryData.sources as CourseSource[];
 export const getSource = (id: CourseId): CourseSource => {
@@ -15,7 +16,7 @@ export const getSource = (id: CourseId): CourseSource => {
 
 // Future sessions add complete LessonSection arrays in content/blocks/<ID>.ts
 // and register them here; the renderer and existing modules remain reusable.
-export const lessons: Partial<Record<CourseId, LessonSection[]>> = { introduzione: [...I1Lessons,...I2Lessons], ottimizzazione: [...O1Lessons, ...O2Lessons, ...O3Lessons] };
+export const lessons: Partial<Record<CourseId, LessonSection[]>> = { introduzione: [...I1Lessons,...I2Lessons,...I3Lessons], ottimizzazione: [...O1Lessons, ...O2Lessons, ...O3Lessons] };
 
 export const courseCopy: Record<CourseId, {
   number: string; title: string; lead: string; eyebrow: string; idea: string;

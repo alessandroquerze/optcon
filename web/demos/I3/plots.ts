@@ -1,0 +1,17 @@
+import type { Data } from 'plotly.js';
+import type { PlotFrame } from '../../ui/plot';
+import type { State,Physics } from '../../math/I3/pendulum';
+import { curve,layout } from '../O1/plots';
+import { num } from '../O3/factory';
+export const green='#356b45',orange='#b77130',blue='#587d9a';
+export const profile=(data:Data[],x='Tempo (s)',y='Valore',height=300):PlotFrame=>({data,layout:layout({height,margin:{l:60,r:20,t:20,b:85},xaxis:{title:{text:x}},yaxis:{title:{text:y}},legend:{orientation:'h',y:-.32}})});
+export function phase(states:State[],times:number[],cursor:number,view:'2d'|'3d',comparison?:{states:State[];times:number[];name:string;points?:boolean}):PlotFrame {
+  const trace=(path:State[],t:number[],name:string,color:string,points=false):Data=>view==='2d'?{type:'scatter',x:path.map(x=>x[0]),y:path.map(x=>x[1]),mode:points?'markers':'lines',line:{color,dash:points?undefined:'solid'},marker:{color,size:3},name}:{type:'scatter3d',x:path.map(x=>x[0]),y:path.map(x=>x[1]),z:t,mode:points?'markers':'lines',line:{color,width:5},marker:{color,size:2},name};
+  const state=states[cursor],data:Data[]=[trace(states,times,'Traiettoria',green),...(comparison?[trace(comparison.states,comparison.times,comparison.name,blue,comparison.points)]:[])];
+  data.push(view==='2d'?{type:'scatter',x:[state[0]],y:[state[1]],mode:'markers',marker:{color:orange,size:9},name:'Stato osservato'}:{type:'scatter3d',x:[state[0]],y:[state[1]],z:[times[cursor]],mode:'markers',marker:{color:orange,size:6},name:'Stato osservato'});
+  return {data,layout:layout({height:380,xaxis:{title:{text:'Angolo θ (rad)'}},yaxis:{title:{text:'Velocità ω (rad/s)'}},...(view==='3d'?{scene:{xaxis:{title:{text:'θ (rad)'}},yaxis:{title:{text:'ω (rad/s)'}},zaxis:{title:{text:'Tempo (s)'}}},margin:{l:0,r:0,t:10,b:60},uirevision:'i3-phase'}:{})})};
+}
+export function pendulumSVG(state:State,p:Physics,time:number,torque:number,desired?:number){
+  const scale=85,pivotX=210,pivotY=105,L=Math.min(135,Math.max(65,scale*p.length)),theta=state[0],bobX=pivotX+L*Math.sin(theta),bobY=pivotY+L*Math.cos(theta),r=9+3*Math.sqrt(p.mass),ref=desired===undefined?'':`<path d="M${pivotX},${pivotY}L${pivotX+L*Math.sin(desired)},${pivotY+L*Math.cos(desired)}" stroke="#87a7bc" stroke-width="3" stroke-dasharray="5 5"/>`,sign=Math.sign(torque),arc=Math.abs(torque)>1e-9?`<path d="M${pivotX-32},${pivotY}A32 32 0 0 ${sign>0?0:1} ${pivotX},${pivotY+32*sign}" fill="none" stroke="#b77130" stroke-width="3"/>`:'';
+  return `<figure class="i3-animation"><svg viewBox="0 0 620 275" role="img" aria-label="Pendolo al tempo ${num(time)} secondi, angolo ${num(theta)} radianti."><path d="M${pivotX},30V250" stroke="#cedbc3" stroke-dasharray="4 4"/>${ref}${arc}<line x1="${pivotX}" y1="${pivotY}" x2="${bobX}" y2="${bobY}" stroke="#356b45" stroke-width="5"/><circle cx="${pivotX}" cy="${pivotY}" r="6" fill="#5c7254"/><circle cx="${bobX}" cy="${bobY}" r="${r}" fill="#d5e3c8" stroke="#356b45" stroke-width="2"/><g fill="#42623d" font-family="system-ui,sans-serif" font-size="15"><text x="380" y="80">t=${num(time)} s</text><text x="380" y="110">θ=${num(theta)} rad</text><text x="380" y="140">ω=${num(state[1])} rad/s</text><text x="380" y="170">u=${num(torque)} N·m</text><text x="380" y="205">m=${num(p.mass)} kg · ℓ=${num(p.length)} m</text></g></svg><figcaption>θ=0 verso il basso; disegno schematico. Il tratteggio blu indica l’angolo desiderato. Al terminale si riporta l’ultima coppia applicata.</figcaption></figure>`;
+}

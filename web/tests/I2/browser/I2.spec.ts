@@ -6,7 +6,7 @@ async function click(node:Locator,name:string){await node.getByRole('button',{na
 const types=(node:Locator)=>node.locator('[data-i2-plot="0"],[data-o3-plot="0"]').evaluate(e=>(e as HTMLElement&{data:{type:string}[]}).data.map(t=>t.type));
 
 test('I2 adds eight lessons for nine concepts and every assigned physical page',async({page})=>{
-  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await lab(page,'i2-dinamica','dynamics-residual');await expect(page.locator('.lesson[id^="i2-"]')).toHaveCount(8);await expect(page.locator('.lesson-toc a[href^="#i2-"]')).toHaveCount(8);await expect(page.locator('.lesson')).toHaveCount(18);
+  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await lab(page,'i2-dinamica','dynamics-residual');await expect(page.locator('.lesson[id^="i2-"]')).toHaveCount(8);await expect(page.locator('.lesson-toc a[href^="#i2-"]')).toHaveCount(8);await expect(page.locator('.lesson[id^="i1-"],.lesson[id^="i2-"]')).toHaveCount(18);
   await expect(page.locator('#i2-costi .lesson-sources a')).toHaveCount(2);await expect(page.locator('#i2-costi .lesson-sources a').first()).toHaveAttribute('href',/#page=20$/);await expect(page.locator('#i2-costi .lesson-sources a').last()).toHaveAttribute('href',/#page=22$/);await expect(page.locator('#i2-drone-vincoli .lesson-sources a')).toHaveAttribute('href',/#page=30$/);
   expect(await page.locator('[id]').evaluateAll(nodes=>nodes.map(n=>n.id).filter((id,i,a)=>a.indexOf(id)!==i))).toEqual([]);expect(errors).toEqual([]);
 });
