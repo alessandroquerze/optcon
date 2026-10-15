@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "K2",
+  "startedAt": "2026-10-15T17:23:30.277Z",
+  "passed": true,
+  "checks": [
+    {
+      "script": "check:inventory",
+      "startedAt": "2026-10-15T17:23:30.278Z",
+      "finishedAt": "2026-10-15T17:23:30.674Z",
+      "exitCode": 0
+    },
+    {
+      "script": "typecheck",
+      "startedAt": "2026-10-15T17:23:30.676Z",
+      "finishedAt": "2026-10-15T17:23:34.496Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test",
+      "startedAt": "2026-10-15T17:23:34.498Z",
+      "finishedAt": "2026-10-15T17:23:41.299Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test:browser",
+      "startedAt": "2026-10-15T17:23:41.301Z",
+      "finishedAt": "2026-10-15T17:29:17.486Z",
+      "exitCode": 0
+    },
+    {
+      "script": "build",
+      "startedAt": "2026-10-15T17:29:17.488Z",
+      "finishedAt": "2026-10-15T17:29:43.110Z",
+      "exitCode": 0
+    }
+  ],
+  "finishedAt": "2026-10-15T17:29:43.112Z",
+  "contractHashes": {
+    "web/content/schema.ts": "56e0447dbde546f5b9aea164197d656ad766fc2fdbe39b84f659a9b0cc5fb1b3",
+    "web/math/quadratic.ts": "07825a9ee139a5cc4d754acc22f1aeb2535ac02f24d327c827d32ab69300df59",
+    "web/ui/dom.ts": "a58b0e95cac0901f6964225f58616e72f84855bf2f442750416ec2eca02191e9",
+    "web/ui/formula.ts": "8587fabdeafd216092379b0ffa976d667955f6f83134eb6b2424bb470ecc5936",
+    "web/ui/controls.ts": "b4dd2b43c54fc82b9e06fcdbb495cc2409eb7726ce38ac96434cfd10fc2f7aec",
+    "web/ui/plot.ts": "24b635329df73cc7986eb5a0a8937d4d097f4fcabfd979220883dfda10abd5f0",
+    "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
+    "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
+  },
+  "freezeAudit": {
+    "baselineCommit": "f2a8dd8",
+    "filesCompared": 68,
+    "byteIdentical": 67,
+    "allUnchangedExceptDocumentedTest": true,
+    "documentedChanges": [
+      "web/tests/K1/browser/K1.spec.ts"
+    ],
+    "paths": [
+      "web/content/blocks/I1.ts",
+      "web/content/blocks/I2.ts",
+      "web/content/blocks/I3.ts",
+      "web/content/blocks/K1.ts",
+      "web/content/blocks/O1.ts",
+      "web/content/blocks/O2.ts",
+      "web/content/blocks/O3.ts",
+      "web/content/schema.ts",
+      "web/demos/I1/index.ts",
+      "web/demos/I1/plots.ts",
+      "web/demos/I1/styles.css",
+      "web/demos/I2/drone-lab.ts",
+      "web/demos/I2/index.ts",
+      "web/demos/I2/plots.ts",
+      "web/demos/I2/solver.worker.ts",
+      "web/demos/I2/styles.css",
+      "web/demos/I3/index.ts",
+      "web/demos/I3/plots.ts",
+      "web/demos/I3/solver.worker.ts",
+      "web/demos/I3/styles.css",
+      "web/demos/I3/transfer-lab.ts",
+      "web/demos/K1/index.ts",
+      "web/demos/K1/plots.ts",
+      "web/demos/K1/styles.css",
+      "web/demos/O1/index.ts",
+      "web/demos/O1/plots.ts",
+      "web/demos/O1/styles.css",
+      "web/demos/O2/index.ts",
+      "web/demos/O2/styles.css",
+      "web/demos/O3/factory.ts",
+      "web/demos/O3/index.ts",
+      "web/demos/O3/plots.ts",
+      "web/demos/O3/styles.css",
+      "web/math/I1/geometry.ts",
+      "web/math/I1/systems.ts",
+      "web/math/I2/drone.ts",
+      "web/math/I2/scalar.ts",
+      "web/math/I3/continuous.ts",
+      "web/math/I3/pendulum.ts",
+      "web/math/K1/trajectories.ts",
+      "web/math/O1/foundations.ts",
+      "web/math/O2/methods.ts",
+      "web/math/O3/models.ts",
+      "web/math/O3/solver.ts",
+      "web/math/quadratic.ts",
+      "web/tests/I1/browser/I1.spec.ts",
+      "web/tests/I1/models.test.ts",
+      "web/tests/I2/browser/I2.spec.ts",
+      "web/tests/I2/models.test.ts",
+      "web/tests/I2/production.mjs",
+      "web/tests/I3/browser/I3.spec.ts",
+      "web/tests/I3/models.test.ts",
+      "web/tests/I3/production.mjs",
+      "web/tests/K1/browser/K1.spec.ts",
+      "web/tests/K1/models.test.ts",
+      "web/tests/K1/production.mjs",
+      "web/tests/O1/browser/O1.spec.ts",
+      "web/tests/O1/foundations.test.ts",
+      "web/tests/O2/browser/O2.spec.ts",
+      "web/tests/O2/methods.test.ts",
+      "web/tests/O3/browser/O3.spec.ts",
+      "web/tests/O3/solver.test.ts",
+      "web/ui/controls.ts",
+      "web/ui/dom.ts",
+      "web/ui/formula.ts",
+      "web/ui/plot.ts",
+      "web/ui/styles.css",
+      "web/ui/tokens.css"
+    ]
+  },
+  "coverage": {
+    "sourceId": "kkt",
+    "physicalPages": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "theoryConcepts": 4,
+    "completeLessons": 4,
+    "demoIds": [
+      "costate-structure",
+      "costates",
+      "constrained-optimal-control",
+      "optimal-control-kkt"
+    ],
+    "totalKktLessons": 11,
+    "totalKktTheoryConcepts": 12,
+    "allSourcesComplete": true,
+    "totalLessons": 64,
+    "totalTheoryConcepts": 70,
+    "metadataConcepts": 3,
+    "totalPhysicalPages": 137,
+    "readyDemoIds": 68,
+    "otherConceptsUnchanged": true
+  },
+  "tests": {
+    "numericTotal": 176,
+    "numericK2": 29,
+    "browserTotal": 93,
+    "browserK2": 12,
+    "browserStats": {
+      "startTime": "2026-10-15T17:23:42.391Z",
+      "duration": 335059.912,
+      "expected": 93,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "productionSmoke": [
+    {
+      "session": "K2",
+      "passed": true,
+      "command": "node tests/K2/production.mjs",
+      "errors": [],
+      "temporaryServerClosed": true,
+      "screenshot": "artifacts/K2-production.png"
+    },
+    {
+      "session": "K1",
+      "passed": true,
+      "command": "node tests/K1/production.mjs",
+      "errors": [],
+      "temporaryServerClosed": true,
+      "screenshot": "artifacts/K1-production.png"
+    },
+    {
+      "session": "I2",
+      "passed": true,
+      "command": "node tests/I2/production.mjs",
+      "errors": [],
+      "temporaryServerClosed": true,
+      "screenshot": "artifacts/I2-production.png"
+    },
+    {
+      "session": "I3",
+      "passed": true,
+      "command": "node tests/I3/production.mjs",
+      "errors": [],
+      "temporaryServerClosed": true,
+      "screenshot": "artifacts/I3-production.png"
+    }
+  ],
+  "buildArtifacts": {
+    "html": [
+      "index.html",
+      "introduzione.html",
+      "kkt.html",
+      "ottimizzazione.html"
+    ],
+    "localPdfs": 3,
+    "pdfHashes": {
+      "introduzione": "ae169f3492dc0915d0777d62e90184107d7017aee03b8620bbfe0aee9bd3a469",
+      "ottimizzazione": "6c1dba877ca102f055845618f73205b71450b819e0cc09e149e1150017e458ea",
+      "kkt": "937db0d7a574f549eb1181f22207ccfa886ae6d79206720718692bfd6015bd97"
+    },
+    "compiledWorkers": [
+      {
+        "name": "solver.worker-Cu4XwRRZ.js",
+        "bytes": 10963,
+        "sha256": "07a1941136c7ff0d0634f3be448258dcb73e715f3e302e88cac69b563b6ca6dc"
+      },
+      {
+        "name": "solver.worker-EMk0rAV3.js",
+        "bytes": 10007,
+        "sha256": "ba2b9a2f173e24645f8ee6cdd1bc6757411bc30bedd786e9d80005561f80e8ad"
+      }
+    ],
+    "temporaryServersStopped": true
+  },
+  "timebox": {
+    "singleReasoningSession": true,
+    "limitMinutes": 90,
+    "checkpointDeadlineMinutes": 75,
+    "startedAt": "2026-10-15T16:49:55.678Z",
+    "completedAt": "2026-10-15T17:29:43.115Z",
+    "elapsedMinutesToValidation": 39.79,
+    "checkpointPreparedBefore": "2026-10-15T17:16:34.153Z",
+    "checkpointPreparedAfterMinutesAtMost": 26.64
+  },
+  "validationAttempts": [
+    {
+      "passed": false,
+      "browserStats": {
+        "startTime": "2026-10-15T17:16:46.404Z",
+        "duration": 377876.01700000005,
+        "expected": 92,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "cause": "One malformed test label used g?0 instead of g<=0 (Unicode less-than-or-equal). UI calculation and terminal assertion succeeded. Only the test literal was corrected."
+    },
+    {
+      "passed": true,
+      "browserStats": {
+        "startTime": "2026-10-15T17:23:42.391Z",
+        "duration": 335059.912,
+        "expected": 93,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "applicationSourceChangesSinceFirstAttempt": false
+    }
+  ],
+  "handoff": {
+    "nextSession": "VERIFICA",
+    "status": "pending",
+    "prompt": "checkpoints/prompts/VERIFICA.md",
+    "started": false,
+    "localGitTag": "k2-v1"
+  }
+}

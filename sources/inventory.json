@@ -2005,7 +2005,7 @@
                 "stato selezionato",
                 "pesi"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -2025,7 +2025,8 @@
               "id": "costates",
               "label": "Stati in avanti, costati all'indietro",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "stato iniziale",
@@ -2034,7 +2035,7 @@
                 "QT",
                 "orizzonte"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -2053,14 +2054,15 @@
               "id": "constrained-optimal-control",
               "label": "Aggiungere limiti e condizioni al bordo",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "limiti",
                 "obiettivo terminale",
                 "pesi"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         },
@@ -2078,7 +2080,8 @@
               "id": "optimal-control-kkt",
               "label": "KKT e complementarità nel controllo",
               "dimensions": [
-                "2d"
+                "2d",
+                "3d"
               ],
               "parameters": [
                 "Q",
@@ -2087,7 +2090,7 @@
                 "limiti",
                 "moltiplicatori"
               ],
-              "status": "planned"
+              "status": "ready"
             }
           ]
         }
@@ -2167,8 +2170,9 @@
       "pages": [
         20
       ],
-      "status": "to-review",
-      "note": "Non imporre gradiente nullo rispetto a tutti i moltiplicatori delle disuguaglianze: distinguere stazionarietà nelle decisioni, g<=0, mu>=0 e complementarità."
+      "status": "corrected-in-K2",
+      "note": "Non imporre gradiente nullo rispetto a tutti i moltiplicatori delle disuguaglianze: distinguere stazionarietà nelle decisioni, g<=0, mu>=0 e complementarità.",
+      "verification": "Confronto visivo con p. 20; un vincolo inattivo con g<0 e mu=0 soddisfa KKT, mentre mu positivo o negativo produce residui distinti nei test."
     },
     {
       "sourceId": "ottimizzazione",
@@ -2364,6 +2368,26 @@
       "status": "clarified-in-K1",
       "note": "Distinguere dimensione d della decisione e numero p delle uguaglianze: h:R^d->R^p, rank Dh=p. I moltiplicatori di uguaglianza sono liberi nel segno; KKT non certifica un minimo senza ulteriori ipotesi.",
       "verification": "Confronto visivo con PDF, formule e controesempi analitici coperti dai test K1."
+    },
+    {
+      "sourceId": "kkt",
+      "pages": [
+        15
+      ],
+      "status": "corrected-in-K2",
+      "note": "Il costo terminale ha argomento xT (zT nella slide). Le derivate dei costi di stadio mantengono l’indice t. x0 fissato non richiede stazionarietà rispetto al dato.",
+      "verification": "Confronto visivo con p. 15; gradiente e costati verificati con differenze finite e con il QP K1."
+    },
+    {
+      "sourceId": "kkt",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "status": "clarified-in-K2",
+      "note": "Nella formulazione vincolata x0 è una decisione; r0 può fissarlo. La separazione della Lagrangiana ai bordi di p. 19 assume r=col(r0(x0),rT(xT)). I vincoli di percorso sono solo t=0...T-1, senza gT.",
+      "verification": "Confronto visivo con le fonti, condizioni di bordo e finale oltre fascia verificati nei test K2."
     }
   ]
 }

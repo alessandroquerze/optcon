@@ -65,6 +65,10 @@ const loaders: Record<string, () => Promise<{ mount(container: HTMLElement): Pro
   'k1-unconstrained-control': () => import('./K1').then(module=>module.controlDemo),
   'optimal-control-structure': () => import('./K1').then(module=>module.structureDemo),
   'k1-kkt-geometry': () => import('./K1').then(module=>module.recallDemo),
+  'costate-structure': () => import('./K2').then(module=>module.structureDemo),
+  'costates': () => import('./K2').then(module=>module.costateDemo),
+  'constrained-optimal-control': () => import('./K2').then(module=>module.constrainedDemo),
+  'optimal-control-kkt': () => import('./K2').then(module=>module.kktDemo),
 };
 export function hasDemo(id: string): boolean { return id in loaders; }
 
