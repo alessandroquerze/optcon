@@ -1,0 +1,1541 @@
+{
+  "generatedAt": "2026-10-15T18:29:05.772Z",
+  "sources": [
+    {
+      "sourceId": "introduzione",
+      "pages": 36,
+      "theoreticalConcepts": 25,
+      "sections": 23,
+      "formulas": 67,
+      "concepts": [
+        {
+          "id": "frontespizio",
+          "pages": [
+            1
+          ],
+          "kind": "metadata",
+          "sectionIds": [],
+          "demoIds": [],
+          "representatives": [],
+          "noVisualizationReason": "Attribuzione e titolo: nessun contenuto matematico da rappresentare."
+        },
+        {
+          "id": "motivazioni",
+          "pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-motivazioni"
+          ],
+          "demoIds": [
+            "motivation-map"
+          ],
+          "representatives": [
+            {
+              "id": "motivation-map",
+              "loader": "./I1/motivationDemo",
+              "mountedId": "motivation-map"
+            }
+          ]
+        },
+        {
+          "id": "sistemi-continui",
+          "pages": [
+            8
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-sistemi-continui"
+          ],
+          "demoIds": [
+            "continuous-system"
+          ],
+          "representatives": [
+            {
+              "id": "continuous-system",
+              "loader": "./I1/continuousDemo",
+              "mountedId": "continuous-system"
+            }
+          ]
+        },
+        {
+          "id": "sistemi-discreti",
+          "pages": [
+            9,
+            10
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-sistemi-discreti"
+          ],
+          "demoIds": [
+            "discrete-system"
+          ],
+          "representatives": [
+            {
+              "id": "discrete-system",
+              "loader": "./I1/discreteDemo",
+              "mountedId": "discrete-system"
+            }
+          ]
+        },
+        {
+          "id": "traiettorie-equilibri",
+          "pages": [
+            11
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-traiettorie"
+          ],
+          "demoIds": [
+            "trajectory-equilibrium"
+          ],
+          "representatives": [
+            {
+              "id": "trajectory-equilibrium",
+              "loader": "./I1/equilibriumDemo",
+              "mountedId": "trajectory-equilibrium"
+            }
+          ]
+        },
+        {
+          "id": "linearizzazione",
+          "pages": [
+            12
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-linearizzazione"
+          ],
+          "demoIds": [
+            "linearization"
+          ],
+          "representatives": [
+            {
+              "id": "linearization",
+              "loader": "./I1/linearizationDemo",
+              "mountedId": "linearization"
+            }
+          ]
+        },
+        {
+          "id": "strumenti-controllo",
+          "pages": [
+            13
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-obiettivi"
+          ],
+          "demoIds": [
+            "control-objectives"
+          ],
+          "representatives": [
+            {
+              "id": "control-objectives",
+              "loader": "./I1/objectivesDemo",
+              "mountedId": "control-objectives"
+            }
+          ]
+        },
+        {
+          "id": "ingredienti-ottimizzazione",
+          "pages": [
+            14
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-problema"
+          ],
+          "demoIds": [
+            "optimization-geometry"
+          ],
+          "representatives": [
+            {
+              "id": "optimization-geometry",
+              "loader": "./I1/optimizationDemo",
+              "mountedId": "optimization-geometry"
+            }
+          ]
+        },
+        {
+          "id": "costo-scalare",
+          "pages": [
+            15
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-costo-scalare"
+          ],
+          "demoIds": [
+            "scalar-cost"
+          ],
+          "representatives": [
+            {
+              "id": "scalar-cost",
+              "loader": "./I1/scalarDemo",
+              "mountedId": "scalar-cost"
+            }
+          ]
+        },
+        {
+          "id": "costo-pesato",
+          "pages": [
+            16
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-costo-pesato"
+          ],
+          "demoIds": [
+            "weighted-cost",
+            "semidefinite-cost"
+          ],
+          "representatives": [
+            {
+              "id": "weighted-cost",
+              "loader": "./weighted-cost/weightedCostDemo",
+              "mountedId": "weighted-cost"
+            },
+            {
+              "id": "semidefinite-cost",
+              "loader": "./I1/weightsDemo",
+              "mountedId": "semidefinite-cost"
+            }
+          ]
+        },
+        {
+          "id": "insiemi-ammissibili",
+          "pages": [
+            17
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-vincoli"
+          ],
+          "demoIds": [
+            "constraint-sets"
+          ],
+          "representatives": [
+            {
+              "id": "constraint-sets",
+              "loader": "./I1/constraintsDemo",
+              "mountedId": "constraint-sets"
+            }
+          ]
+        },
+        {
+          "id": "problema-minimizzazione",
+          "pages": [
+            18
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i1-problema"
+          ],
+          "demoIds": [
+            "optimization-geometry"
+          ],
+          "representatives": [
+            {
+              "id": "optimization-geometry",
+              "loader": "./I1/optimizationDemo",
+              "mountedId": "optimization-geometry"
+            }
+          ]
+        },
+        {
+          "id": "vincoli-dinamici",
+          "pages": [
+            19
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i2-dinamica"
+          ],
+          "demoIds": [
+            "dynamics-residual"
+          ],
+          "representatives": [
+            {
+              "id": "dynamics-residual",
+              "loader": "./I2/residualDemo",
+              "mountedId": "dynamics-residual"
+            }
+          ]
+        },
+        {
+          "id": "costi-temporali",
+          "pages": [
+            20
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i2-costi"
+          ],
+          "demoIds": [
+            "trajectory-cost"
+          ],
+          "representatives": [
+            {
+              "id": "trajectory-cost",
+              "loader": "./I2/costDemo",
+              "mountedId": "trajectory-cost"
+            }
+          ]
+        },
+        {
+          "id": "vincoli-percorso",
+          "pages": [
+            21
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i2-vincoli"
+          ],
+          "demoIds": [
+            "path-boundary"
+          ],
+          "representatives": [
+            {
+              "id": "path-boundary",
+              "loader": "./I2/pathDemo",
+              "mountedId": "path-boundary"
+            }
+          ]
+        },
+        {
+          "id": "inseguimento-pesato",
+          "pages": [
+            22
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i2-costi"
+          ],
+          "demoIds": [
+            "trajectory-cost"
+          ],
+          "representatives": [
+            {
+              "id": "trajectory-cost",
+              "loader": "./I2/costDemo",
+              "mountedId": "trajectory-cost"
+            }
+          ]
+        },
+        {
+          "id": "controllo-discreto",
+          "pages": [
+            23
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i2-problema"
+          ],
+          "demoIds": [
+            "discrete-control"
+          ],
+          "representatives": [
+            {
+              "id": "discrete-control",
+              "loader": "./I2/controlDemo",
+              "mountedId": "discrete-control"
+            }
+          ]
+        },
+        {
+          "id": "riferimento-traiettoria",
+          "pages": [
+            24,
+            25
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i2-riferimento"
+          ],
+          "demoIds": [
+            "reference-versus-trajectory"
+          ],
+          "representatives": [
+            {
+              "id": "reference-versus-trajectory",
+              "loader": "./I2/referenceDemo",
+              "mountedId": "reference-versus-trajectory"
+            }
+          ]
+        },
+        {
+          "id": "modello-drone",
+          "pages": [
+            26,
+            27
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i2-drone-modello"
+          ],
+          "demoIds": [
+            "planar-drone"
+          ],
+          "representatives": [
+            {
+              "id": "planar-drone",
+              "loader": "./I2/flightDemo",
+              "mountedId": "planar-drone"
+            }
+          ]
+        },
+        {
+          "id": "obiettivo-drone",
+          "pages": [
+            28,
+            29
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i2-drone-costo"
+          ],
+          "demoIds": [
+            "drone-optimal-control"
+          ],
+          "representatives": [
+            {
+              "id": "drone-optimal-control",
+              "loader": "./I2/droneDemo",
+              "mountedId": "drone-optimal-control"
+            }
+          ]
+        },
+        {
+          "id": "limiti-drone",
+          "pages": [
+            30
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i2-drone-vincoli"
+          ],
+          "demoIds": [
+            "drone-constraints"
+          ],
+          "representatives": [
+            {
+              "id": "drone-constraints",
+              "loader": "./I2/constraintsDemo",
+              "mountedId": "drone-constraints"
+            }
+          ]
+        },
+        {
+          "id": "controllo-continuo",
+          "pages": [
+            31,
+            32
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i3-continuo"
+          ],
+          "demoIds": [
+            "continuous-versus-discrete"
+          ],
+          "representatives": [
+            {
+              "id": "continuous-versus-discrete",
+              "loader": "./I3/integralDemo",
+              "mountedId": "continuous-versus-discrete"
+            }
+          ]
+        },
+        {
+          "id": "modello-pendolo",
+          "pages": [
+            33
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i3-pendolo-modello"
+          ],
+          "demoIds": [
+            "pendulum"
+          ],
+          "representatives": [
+            {
+              "id": "pendulum",
+              "loader": "./I3/pendulumDemo",
+              "mountedId": "pendulum"
+            }
+          ]
+        },
+        {
+          "id": "equilibri-pendolo",
+          "pages": [
+            34
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i3-pendolo-equilibri"
+          ],
+          "demoIds": [
+            "pendulum-equilibrium"
+          ],
+          "representatives": [
+            {
+              "id": "pendulum-equilibrium",
+              "loader": "./I3/equilibriumDemo",
+              "mountedId": "pendulum-equilibrium"
+            }
+          ]
+        },
+        {
+          "id": "riferimento-pendolo",
+          "pages": [
+            35
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i3-pendolo-riferimento"
+          ],
+          "demoIds": [
+            "pendulum-reference"
+          ],
+          "representatives": [
+            {
+              "id": "pendulum-reference",
+              "loader": "./I3/referenceDemo",
+              "mountedId": "pendulum-reference"
+            }
+          ]
+        },
+        {
+          "id": "controllo-pendolo",
+          "pages": [
+            36
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "i3-pendolo-controllo"
+          ],
+          "demoIds": [
+            "pendulum-optimal-control"
+          ],
+          "representatives": [
+            {
+              "id": "pendulum-optimal-control",
+              "loader": "./I3/transferDemo",
+              "mountedId": "pendulum-optimal-control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": 81,
+      "theoreticalConcepts": 33,
+      "sections": 30,
+      "formulas": 93,
+      "concepts": [
+        {
+          "id": "frontespizio",
+          "pages": [
+            1
+          ],
+          "kind": "metadata",
+          "sectionIds": [],
+          "demoIds": [],
+          "representatives": [],
+          "noVisualizationReason": "Attribuzione e titolo: nessun contenuto matematico da rappresentare."
+        },
+        {
+          "id": "minimi",
+          "pages": [
+            2,
+            3,
+            4
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-minimi"
+          ],
+          "demoIds": [
+            "local-global-minima"
+          ],
+          "representatives": [
+            {
+              "id": "local-global-minima",
+              "loader": "./O1/landscapeDemo",
+              "mountedId": "local-global-minima"
+            }
+          ]
+        },
+        {
+          "id": "min-argmin",
+          "pages": [
+            5
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-minimi"
+          ],
+          "demoIds": [
+            "minimum-point-value"
+          ],
+          "representatives": [
+            {
+              "id": "minimum-point-value",
+              "loader": "./O1/landscapeDemo",
+              "mountedId": "local-global-minima"
+            }
+          ]
+        },
+        {
+          "id": "gradiente-hessiana",
+          "pages": [
+            6,
+            7
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-derivate"
+          ],
+          "demoIds": [
+            "derivatives"
+          ],
+          "representatives": [
+            {
+              "id": "derivatives",
+              "loader": "./O1/derivativeDemo",
+              "mountedId": "derivatives"
+            }
+          ]
+        },
+        {
+          "id": "ottimalita-libera",
+          "pages": [
+            8,
+            9
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-stazionarieta"
+          ],
+          "demoIds": [
+            "stationary-classification"
+          ],
+          "representatives": [
+            {
+              "id": "stationary-classification",
+              "loader": "./O1/stationaryDemo",
+              "mountedId": "stationary-classification"
+            }
+          ]
+        },
+        {
+          "id": "insiemi-convessi",
+          "pages": [
+            10
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-insiemi-convessi"
+          ],
+          "demoIds": [
+            "convex-set"
+          ],
+          "representatives": [
+            {
+              "id": "convex-set",
+              "loader": "./O1/setDemo",
+              "mountedId": "convex-set"
+            }
+          ]
+        },
+        {
+          "id": "funzioni-convesse",
+          "pages": [
+            11
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-funzioni-convesse"
+          ],
+          "demoIds": [
+            "convex-function"
+          ],
+          "representatives": [
+            {
+              "id": "convex-function",
+              "loader": "./O1/functionDemo",
+              "mountedId": "convex-function"
+            }
+          ]
+        },
+        {
+          "id": "geometria-vincoli",
+          "pages": [
+            12,
+            13
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-convessita-vincoli"
+          ],
+          "demoIds": [
+            "constraint-convexity"
+          ],
+          "representatives": [
+            {
+              "id": "constraint-convexity",
+              "loader": "./O1/constraintDemo",
+              "mountedId": "constraint-convexity"
+            }
+          ]
+        },
+        {
+          "id": "monotonia",
+          "pages": [
+            14,
+            15,
+            16
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-curvatura"
+          ],
+          "demoIds": [
+            "gradient-monotonicity"
+          ],
+          "representatives": [
+            {
+              "id": "gradient-monotonicity",
+              "loader": "./O1/boundsDemo",
+              "mountedId": "quadratic-bounds"
+            }
+          ]
+        },
+        {
+          "id": "lipschitz",
+          "pages": [
+            17,
+            18
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-curvatura"
+          ],
+          "demoIds": [
+            "gradient-bounds"
+          ],
+          "representatives": [
+            {
+              "id": "gradient-bounds",
+              "loader": "./O1/boundsDemo",
+              "mountedId": "quadratic-bounds"
+            }
+          ]
+        },
+        {
+          "id": "limiti-quadratici",
+          "pages": [
+            19,
+            20
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-curvatura"
+          ],
+          "demoIds": [
+            "quadratic-bounds"
+          ],
+          "representatives": [
+            {
+              "id": "quadratic-bounds",
+              "loader": "./O1/boundsDemo",
+              "mountedId": "quadratic-bounds"
+            }
+          ]
+        },
+        {
+          "id": "minimizzazione-convessa",
+          "pages": [
+            21,
+            22
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-ottimalita-convessa"
+          ],
+          "demoIds": [
+            "convex-optimality"
+          ],
+          "representatives": [
+            {
+              "id": "convex-optimality",
+              "loader": "./O1/functionDemo",
+              "mountedId": "convex-optimality"
+            }
+          ]
+        },
+        {
+          "id": "qp-liberi",
+          "pages": [
+            23,
+            24,
+            25
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o1-programmi-quadratici"
+          ],
+          "demoIds": [
+            "weighted-cost",
+            "quadratic-program"
+          ],
+          "representatives": [
+            {
+              "id": "weighted-cost",
+              "loader": "./weighted-cost/weightedCostDemo",
+              "mountedId": "weighted-cost"
+            },
+            {
+              "id": "quadratic-program",
+              "loader": "./O1/qpDemo",
+              "mountedId": "quadratic-program"
+            }
+          ]
+        },
+        {
+          "id": "direzioni-discesa",
+          "pages": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-discesa"
+          ],
+          "demoIds": [
+            "descent-methods"
+          ],
+          "representatives": [
+            {
+              "id": "descent-methods",
+              "loader": "./O2/descentDemo",
+              "mountedId": "descent-methods"
+            }
+          ]
+        },
+        {
+          "id": "metodi-gradiente",
+          "pages": [
+            32,
+            33
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-gradiente-newton"
+          ],
+          "demoIds": [
+            "gradient-versus-newton"
+          ],
+          "representatives": [
+            {
+              "id": "gradient-versus-newton",
+              "loader": "./O2/comparisonDemo",
+              "mountedId": "gradient-versus-newton"
+            }
+          ]
+        },
+        {
+          "id": "newton-zeri",
+          "pages": [
+            34
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-newton-zeri"
+          ],
+          "demoIds": [
+            "newton-root"
+          ],
+          "representatives": [
+            {
+              "id": "newton-root",
+              "loader": "./O2/rootDemo",
+              "mountedId": "newton-root"
+            }
+          ]
+        },
+        {
+          "id": "modelli-quadratici",
+          "pages": [
+            35,
+            36,
+            37
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-modelli"
+          ],
+          "demoIds": [
+            "newton-model"
+          ],
+          "representatives": [
+            {
+              "id": "newton-model",
+              "loader": "./O2/modelDemo",
+              "mountedId": "newton-model"
+            }
+          ]
+        },
+        {
+          "id": "armijo",
+          "pages": [
+            38,
+            39,
+            40
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-armijo"
+          ],
+          "demoIds": [
+            "armijo"
+          ],
+          "representatives": [
+            {
+              "id": "armijo",
+              "loader": "./O2/armijoDemo",
+              "mountedId": "armijo"
+            }
+          ]
+        },
+        {
+          "id": "passi-convergenza",
+          "pages": [
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-convergenza"
+          ],
+          "demoIds": [
+            "convergence"
+          ],
+          "representatives": [
+            {
+              "id": "convergence",
+              "loader": "./O2/convergenceDemo",
+              "mountedId": "convergence"
+            }
+          ]
+        },
+        {
+          "id": "ottimalita-convessi",
+          "pages": [
+            47,
+            48
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-ottimalita-vincolata"
+          ],
+          "demoIds": [
+            "feasible-directions"
+          ],
+          "representatives": [
+            {
+              "id": "feasible-directions",
+              "loader": "./O2/feasibleDemo",
+              "mountedId": "feasible-directions"
+            }
+          ]
+        },
+        {
+          "id": "proiezione",
+          "pages": [
+            49
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-proiezione"
+          ],
+          "demoIds": [
+            "projection"
+          ],
+          "representatives": [
+            {
+              "id": "projection",
+              "loader": "./O2/projectionDemo",
+              "mountedId": "projection"
+            }
+          ]
+        },
+        {
+          "id": "gradiente-proiettato",
+          "pages": [
+            50,
+            51,
+            52
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-gradiente-proiettato"
+          ],
+          "demoIds": [
+            "projected-gradient"
+          ],
+          "representatives": [
+            {
+              "id": "projected-gradient",
+              "loader": "./O2/projectedDemo",
+              "mountedId": "projected-gradient"
+            }
+          ]
+        },
+        {
+          "id": "esempi-costo",
+          "pages": [
+            53
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-galleria"
+          ],
+          "demoIds": [
+            "function-gallery"
+          ],
+          "representatives": [
+            {
+              "id": "function-gallery",
+              "loader": "./O2/galleryDemo",
+              "mountedId": "function-gallery"
+            }
+          ]
+        },
+        {
+          "id": "barriere",
+          "pages": [
+            54
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o2-barriere"
+          ],
+          "demoIds": [
+            "barrier"
+          ],
+          "representatives": [
+            {
+              "id": "barrier",
+              "loader": "./O2/barrierDemo",
+              "mountedId": "barrier"
+            }
+          ]
+        },
+        {
+          "id": "vincoli-regolarita",
+          "pages": [
+            55,
+            56,
+            57
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-regolarita"
+          ],
+          "demoIds": [
+            "active-constraints"
+          ],
+          "representatives": [
+            {
+              "id": "active-constraints",
+              "loader": "./O3/activeDemo",
+              "mountedId": "active-constraints"
+            }
+          ]
+        },
+        {
+          "id": "lagrangiana",
+          "pages": [
+            58
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-lagrangiana"
+          ],
+          "demoIds": [
+            "lagrangian"
+          ],
+          "representatives": [
+            {
+              "id": "lagrangian",
+              "loader": "./O3/lagrangianDemo",
+              "mountedId": "lagrangian"
+            }
+          ]
+        },
+        {
+          "id": "kkt-primo-ordine",
+          "pages": [
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-kkt"
+          ],
+          "demoIds": [
+            "kkt-geometry"
+          ],
+          "representatives": [
+            {
+              "id": "kkt-geometry",
+              "loader": "./O3/kktDemo",
+              "mountedId": "kkt-geometry"
+            }
+          ]
+        },
+        {
+          "id": "kkt-secondo-ordine",
+          "pages": [
+            64,
+            65
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-curvatura"
+          ],
+          "demoIds": [
+            "constrained-curvature"
+          ],
+          "representatives": [
+            {
+              "id": "constrained-curvature",
+              "loader": "./O3/curvatureDemo",
+              "mountedId": "constrained-curvature"
+            }
+          ]
+        },
+        {
+          "id": "qp-vincolati",
+          "pages": [
+            66,
+            67,
+            68
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-qp"
+          ],
+          "demoIds": [
+            "constrained-qp"
+          ],
+          "representatives": [
+            {
+              "id": "constrained-qp",
+              "loader": "./O3/qpDemo",
+              "mountedId": "constrained-qp"
+            }
+          ]
+        },
+        {
+          "id": "newton-vincolato",
+          "pages": [
+            69,
+            70,
+            71,
+            72,
+            73
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-newton"
+          ],
+          "demoIds": [
+            "constrained-newton"
+          ],
+          "representatives": [
+            {
+              "id": "constrained-newton",
+              "loader": "./O3/newtonDemo",
+              "mountedId": "constrained-newton"
+            }
+          ]
+        },
+        {
+          "id": "sqp",
+          "pages": [
+            74
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-sqp"
+          ],
+          "demoIds": [
+            "sqp"
+          ],
+          "representatives": [
+            {
+              "id": "sqp",
+              "loader": "./O3/sqpDemo",
+              "mountedId": "sqp"
+            }
+          ]
+        },
+        {
+          "id": "merito",
+          "pages": [
+            75,
+            76,
+            77
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-merito"
+          ],
+          "demoIds": [
+            "merit-line-search"
+          ],
+          "representatives": [
+            {
+              "id": "merit-line-search",
+              "loader": "./O3/meritDemo",
+              "mountedId": "merit-line-search"
+            }
+          ]
+        },
+        {
+          "id": "barriere-uguaglianze",
+          "pages": [
+            78
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-barriere"
+          ],
+          "demoIds": [
+            "barrier-equalities"
+          ],
+          "representatives": [
+            {
+              "id": "barrier-equalities",
+              "loader": "./O3/barrierDemo",
+              "mountedId": "barrier-equalities"
+            }
+          ]
+        },
+        {
+          "id": "tempo-iterazione",
+          "pages": [
+            79,
+            80,
+            81
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "o3-tempo-iterazione"
+          ],
+          "demoIds": [
+            "time-iteration"
+          ],
+          "representatives": [
+            {
+              "id": "time-iteration",
+              "loader": "./O3/timeDemo",
+              "mountedId": "time-iteration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "kkt",
+      "pages": 20,
+      "theoreticalConcepts": 12,
+      "sections": 11,
+      "formulas": 35,
+      "concepts": [
+        {
+          "id": "frontespizio",
+          "pages": [
+            1
+          ],
+          "kind": "metadata",
+          "sectionIds": [],
+          "demoIds": [],
+          "representatives": [],
+          "noVisualizationReason": "Attribuzione e titolo: nessun contenuto matematico da rappresentare."
+        },
+        {
+          "id": "stati-ingressi",
+          "pages": [
+            2
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k1-vettori"
+          ],
+          "demoIds": [
+            "k1-state-input-stack"
+          ],
+          "representatives": [
+            {
+              "id": "k1-state-input-stack",
+              "loader": "./K1/stackDemo",
+              "mountedId": "k1-state-input-stack"
+            }
+          ]
+        },
+        {
+          "id": "curve-traiettorie",
+          "pages": [
+            3
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k1-curve"
+          ],
+          "demoIds": [
+            "k1-dynamics-residual"
+          ],
+          "representatives": [
+            {
+              "id": "k1-dynamics-residual",
+              "loader": "./K1/residualDemo",
+              "mountedId": "k1-dynamics-residual"
+            }
+          ]
+        },
+        {
+          "id": "dinamica-implicita",
+          "pages": [
+            4
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k1-curve"
+          ],
+          "demoIds": [
+            "k1-dynamics-residual"
+          ],
+          "representatives": [
+            {
+              "id": "k1-dynamics-residual",
+              "loader": "./K1/residualDemo",
+              "mountedId": "k1-dynamics-residual"
+            }
+          ]
+        },
+        {
+          "id": "varieta-traiettorie",
+          "pages": [
+            5
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k1-varieta"
+          ],
+          "demoIds": [
+            "trajectory-manifold"
+          ],
+          "representatives": [
+            {
+              "id": "trajectory-manifold",
+              "loader": "./K1/manifoldDemo",
+              "mountedId": "trajectory-manifold"
+            }
+          ]
+        },
+        {
+          "id": "spazio-tangente",
+          "pages": [
+            6,
+            7
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k1-tangente"
+          ],
+          "demoIds": [
+            "trajectory-tangent"
+          ],
+          "representatives": [
+            {
+              "id": "trajectory-tangent",
+              "loader": "./K1/tangentDemo",
+              "mountedId": "trajectory-tangent"
+            }
+          ]
+        },
+        {
+          "id": "controllo-senza-extra",
+          "pages": [
+            8,
+            9
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k1-controllo"
+          ],
+          "demoIds": [
+            "k1-unconstrained-control"
+          ],
+          "representatives": [
+            {
+              "id": "k1-unconstrained-control",
+              "loader": "./K1/controlDemo",
+              "mountedId": "k1-unconstrained-control"
+            }
+          ]
+        },
+        {
+          "id": "forma-compatta",
+          "pages": [
+            10,
+            11
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k1-struttura"
+          ],
+          "demoIds": [
+            "optimal-control-structure"
+          ],
+          "representatives": [
+            {
+              "id": "optimal-control-structure",
+              "loader": "./K1/structureDemo",
+              "mountedId": "optimal-control-structure"
+            }
+          ]
+        },
+        {
+          "id": "richiamo-kkt",
+          "pages": [
+            12
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k1-kkt"
+          ],
+          "demoIds": [
+            "k1-kkt-geometry"
+          ],
+          "representatives": [
+            {
+              "id": "k1-kkt-geometry",
+              "loader": "./K1/recallDemo",
+              "mountedId": "k1-kkt-geometry"
+            }
+          ]
+        },
+        {
+          "id": "lagrangiana-temporale",
+          "pages": [
+            13,
+            14
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k2-lagrangiana"
+          ],
+          "demoIds": [
+            "costate-structure"
+          ],
+          "representatives": [
+            {
+              "id": "costate-structure",
+              "loader": "./K2/structureDemo",
+              "mountedId": "costate-structure"
+            }
+          ]
+        },
+        {
+          "id": "costati",
+          "pages": [
+            15,
+            16,
+            17
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k2-costati"
+          ],
+          "demoIds": [
+            "costates"
+          ],
+          "representatives": [
+            {
+              "id": "costates",
+              "loader": "./K2/costateDemo",
+              "mountedId": "costates"
+            }
+          ]
+        },
+        {
+          "id": "controllo-vincolato",
+          "pages": [
+            18,
+            19
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k2-vincoli"
+          ],
+          "demoIds": [
+            "constrained-optimal-control"
+          ],
+          "representatives": [
+            {
+              "id": "constrained-optimal-control",
+              "loader": "./K2/constrainedDemo",
+              "mountedId": "constrained-optimal-control"
+            }
+          ]
+        },
+        {
+          "id": "kkt-controllo",
+          "pages": [
+            20
+          ],
+          "kind": "theory",
+          "sectionIds": [
+            "k2-kkt"
+          ],
+          "demoIds": [
+            "optimal-control-kkt"
+          ],
+          "representatives": [
+            {
+              "id": "optimal-control-kkt",
+              "loader": "./K2/kktDemo",
+              "mountedId": "optimal-control-kkt"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

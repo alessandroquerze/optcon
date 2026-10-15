@@ -1,6 +1,6 @@
 # OPTCON — Quaderno interattivo
 
-Appunti locali associati ai tre PDF originali, in tre pagine distinte. I passaggi 1–9 sviluppano tutti i contenuti; il passaggio 10 resta la verifica finale trasversale.
+Appunti locali associati ai tre PDF originali, in tre pagine distinte. **Tutti i dieci passaggi del piano sono completati.** Verifica finale: 183 test numerici/copertura, 95 test browser e audit di tutti i 66 laboratori compilati superati. Versione locale congelata nel tag `verifica-v1`; dettagli in [checkpoints/VERIFICA.md](checkpoints/VERIFICA.md).
 
 Il passaggio 2, **O1**, aggiunge nove sezioni complete sulle pp. 2–25 di Ottimizzazione (p. 1: frontespizio), coprendo i 12 concetti assegnati. Sono disponibili laboratori per minimi/argmin, derivate, punti stazionari, insiemi e funzioni convesse, vincoli, limiti quadratici e QP anche singolari o indefiniti. Aprire `ottimizzazione.html#o1-minimi` oppure scegliere “Appunti disponibili”.
 
@@ -16,7 +16,9 @@ Il passaggio 7, **I3**, completa Introduzione con cinque sezioni sulle pp. 31–
 
 Il passaggio 8, **K1**, sviluppa KKT pp. 1–12 con **sette sezioni per otto concetti teorici**, oltre al frontespizio. Sette nuovi laboratori mostrano stack, curve/residui, varietà, tangente, controllo senza vincoli aggiuntivi, struttura temporale e richiamo KKT. Sono disponibili superfici 3D, errori di primo/secondo ordine, dimensioni n/m/T modificabili, QP verificato con Riccati e controesempi su regolarità/minimi. Aprire `kkt.html#k1-varieta` oppure `#k1-tangente`. I soli vincoli dinamici usano h=f−x successivo; i moduli precedenti restano stabili.
 
-Il passaggio 9, **K2**, completa KKT con quattro sezioni sulle pp. 13–20 e quattro laboratori: Lagrangiana temporale, costati, controllo vincolato e KKT. Sono disponibili forward/backward per passi, viste stato/costato/tempo, raggiungibilità, QP con active set, limiti, bordi e perturbazioni dei moltiplicatori. KKT dispone di **11 sezioni per tutti i 12 concetti teorici**, su tutte le 20 pagine. I tre PDF hanno complessivamente **64 sezioni per 70 concetti teorici**, oltre ai tre frontespizi. Aprire `kkt.html#k2-costati` oppure `#k2-kkt`. Il prossimo blocco è **VERIFICA**, separato e non avviato automaticamente.
+Il passaggio 9, **K2**, completa KKT con quattro sezioni sulle pp. 13–20 e quattro laboratori: Lagrangiana temporale, costati, controllo vincolato e KKT. Sono disponibili forward/backward per passi, viste stato/costato/tempo, raggiungibilità, QP con active set, limiti, bordi e perturbazioni dei moltiplicatori. KKT dispone di **11 sezioni per tutti i 12 concetti teorici**, su tutte le 20 pagine. I tre PDF hanno complessivamente **64 sezioni per 70 concetti teorici**, oltre ai tre frontespizi. Aprire `kkt.html#k2-costati` oppure `#k2-kkt`.
+
+Il passaggio 10, **VERIFICA**, controlla tutte le 137 pagine, le 195 formule delle sezioni, i rimandi e i 68 ID di laboratorio dell'inventario. Gli ID condivisi rimandano allo stesso esperimento: il sito presenta 66 laboratori montati, con 65 ID distinti. L'audit della build prova ogni preset e opzione dei selettori, gli estremi del primo e ultimo parametro numerico visibile di ciascun laboratorio, tastiera, viste 3D e schermo da 390 px. Verifica anche i due Worker compilati, i PDF originali, l'assenza di richieste esterne e il funzionamento sotto un percorso come `/quaderno/`. I risultati dettagliati sono nei rapporti `checkpoints/VERIFICA*.json`.
 
 Per avviare il sito da PowerShell:
 
@@ -38,10 +40,13 @@ npm.cmd run typecheck
 npm.cmd test
 npm.cmd run test:browser
 npm.cmd run build
+npm.cmd run check:final
 npm.cmd run preview
 ```
 
 La build statica viene generata in `web/dist/`. Il test browser usa Chrome/Edge già installato, senza finestra, e un server temporaneo; in alternativa impostare `OPTCON_BROWSER_PATH`. Non è necessario scaricare un browser aggiuntivo. `preview` serve la build su `http://127.0.0.1:4173`.
+
+`check:final` richiede una build aggiornata e avvia un server temporaneo e Chrome senza finestra, chiudendoli al termine. Scrive misure, controlli e screenshot in `artifacts/VERIFICA-*`. I tempi dipendono dalla macchina; il rapporto distingue byte originali e gzip. Plotly resta differito fino alla visita di un laboratorio. I controlli di accessibilità sono funzionali (focus, tastiera, nomi, valori testuali, layout); non costituiscono una certificazione WCAG.
 
 Per controllare il modulo K1 compilato: `node tests/K1/production.mjs`, da `web/`, dopo la build. La prova avvia e termina un server temporaneo.
 
@@ -63,25 +68,18 @@ python scripts/extract_pdfs.py
 
 La riestrazione conserva le voci curate e gli stati dei laboratori. Le copie dei PDF in `web/public/pdfs/` sono preparate automaticamente prima di dev/build e non sono versionate; gli originali restano nella radice.
 
-## Una sessione alla volta
+## Automazione e storia delle sessioni
 
 Da `web/`:
 
 ```powershell
+npm.cmd run session -- status
 npm.cmd run session -- next
-npm.cmd run session -- prompt VERIFICA --save
 ```
 
-Il prompt viene salvato in UTF-8 in `checkpoints/prompts/VERIFICA.md`, con le sole pagine assegnate, gli errata pertinenti e i checkpoint delle dipendenze. Aprire una nuova sessione con quel prompt; non eseguire automaticamente altri blocchi dopo quello richiesto.
+Il runner conserva stato, dipendenze, orari e rapporti. I prompt in `checkpoints/prompts/` sono passaggi di consegne storici, non istruzioni per riavviare blocchi conclusi. La sessione aggiuntiva necessaria per chiudere I3 rimane registrata: Introduzione ha richiesto almeno quattro sessioni, rispetto alle tre stimate.
 
-```powershell
-npm.cmd run session -- start VERIFICA
-npm.cmd run session -- watch VERIFICA
-```
-
-Il monitor avvisa al minuto 75 e segnala il tetto di 90 minuti; non interrompe il modello o altri processi. Una sessione aggiuntiva va conteggiata esplicitamente. Il runner prepara e monitora il lavoro locale; non invoca API o nuove conversazioni autonomamente.
-
-Al termine, scrivere il checkpoint della sessione e usare `npm.cmd run session -- finish VERIFICA`: il runner esegue inventario, controllo dei tipi, test numerici, browser e build. Avanza lo stato solo se artefatti e verifiche passano, salvando un rapporto JSON. Per le sessioni successive aggiungere anche i test specifici del nuovo laboratorio.
+Per un blocco in corso, il monitor avvisa al minuto 75 e segnala il tetto di 90 minuti; non interrompe il modello o altri processi. Il runner prepara e monitora il lavoro locale e non invoca API o nuove conversazioni autonomamente. `finish` avanza lo stato soltanto dopo artefatti, inventario, tipi, test numerici, browser e build; per VERIFICA richiede anche `check:final`. Per ripetere i controlli di un progetto concluso usare i comandi della sezione «Verifiche e build», senza riaprire le sessioni.
 
 I contratti Base e i loro hash sono registrati nel manifest. Estendere i moduli registrando nuovi contenuti; per correggere un contratto già concluso documentare la motivazione e verificare le regressioni.
 

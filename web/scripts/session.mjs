@@ -88,7 +88,9 @@ try {
     const checks=[];
     const report={ schemaVersion:1, sessionId:id, startedAt:now(), passed:false, checks };
     const reportPath=resolve(root, 'checkpoints', `${id}-validation.json`);
-    for (const script of ['check:inventory','typecheck','test','test:browser','build']) {
+    // The final session must also validate the compiled site, including module Workers.
+    const scripts = ['check:inventory','typecheck','test','test:browser','build', ...(id==='VERIFICA' ? ['check:final'] : [])];
+    for (const script of scripts) {
       const startedAt=now();
       const result=spawnSync(process.execPath,[npm,'run',script],{ cwd:project, stdio:'inherit' });
       checks.push({ script, startedAt, finishedAt:now(), exitCode:result.status });

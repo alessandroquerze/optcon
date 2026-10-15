@@ -111,8 +111,8 @@ function home(): string {
 
 const nextCourse = source ? sources[(sources.indexOf(source)+1)%sources.length] : sources[0];
 required(document, '#app').innerHTML = `<a class="skip-link" href="#contenuto">Vai al contenuto</a>${sidebar()}
-  <div class="main-shell"><div class="topbar"><span><a href="./index.html">Quaderno</a>${source ? ` <span aria-hidden="true">/</span> ${html(source.shortTitle)}` : ' <span aria-hidden="true">/</span> Il percorso'}</span><span class="edition"><i></i>Edizione di studio · In costruzione</span></div>
-  <main id="contenuto" class="page-content">${source ? hero(source)+(source.id==='ottimizzazione'?laboratory():'')+outline(source)+sourceSection(source) : home()}
+  <div class="main-shell"><div class="topbar"><span><a href="./index.html">Quaderno</a>${source ? ` <span aria-hidden="true">/</span> ${html(source.shortTitle)}` : ' <span aria-hidden="true">/</span> Il percorso'}</span><span class="edition"><i></i>Edizione di studio · Appunti interattivi</span></div>
+  <main id="contenuto" class="page-content" tabindex="-1">${source ? hero(source)+(source.id==='ottimizzazione'?laboratory():'')+outline(source)+sourceSection(source) : home()}
   <footer class="page-footer"><span>OPTCON <small>Un concetto alla volta.</small></span><a href="./${nextCourse.id}.html">${source ? 'Continua con' : 'Inizia da'} ${html(nextCourse.shortTitle)} <span aria-hidden="true">→</span></a></footer></main></div>`;
 
 const handles = [...document.querySelectorAll<HTMLElement>('[data-demo]')].map(element=>observeDemo(element.dataset.demo!, element));

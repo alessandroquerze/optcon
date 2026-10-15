@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "VERIFICA",
+  "startedAt": "2026-10-15T18:28:55.871Z",
+  "passed": true,
+  "checks": [
+    {
+      "script": "check:inventory",
+      "startedAt": "2026-10-15T18:28:55.872Z",
+      "finishedAt": "2026-10-15T18:28:56.267Z",
+      "exitCode": 0
+    },
+    {
+      "script": "typecheck",
+      "startedAt": "2026-10-15T18:28:56.268Z",
+      "finishedAt": "2026-10-15T18:29:00.178Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test",
+      "startedAt": "2026-10-15T18:29:00.180Z",
+      "finishedAt": "2026-10-15T18:29:07.402Z",
+      "exitCode": 0
+    },
+    {
+      "script": "test:browser",
+      "startedAt": "2026-10-15T18:29:07.404Z",
+      "finishedAt": "2026-10-15T18:34:52.430Z",
+      "exitCode": 0
+    },
+    {
+      "script": "build",
+      "startedAt": "2026-10-15T18:34:52.432Z",
+      "finishedAt": "2026-10-15T18:35:17.484Z",
+      "exitCode": 0
+    },
+    {
+      "script": "check:final",
+      "startedAt": "2026-10-15T18:35:17.486Z",
+      "finishedAt": "2026-10-15T18:42:00.059Z",
+      "exitCode": 0
+    }
+  ],
+  "finishedAt": "2026-10-15T18:42:00.061Z",
+  "contractHashes": {
+    "web/content/schema.ts": "56e0447dbde546f5b9aea164197d656ad766fc2fdbe39b84f659a9b0cc5fb1b3",
+    "web/math/quadratic.ts": "07825a9ee139a5cc4d754acc22f1aeb2535ac02f24d327c827d32ab69300df59",
+    "web/ui/dom.ts": "a58b0e95cac0901f6964225f58616e72f84855bf2f442750416ec2eca02191e9",
+    "web/ui/formula.ts": "8587fabdeafd216092379b0ffa976d667955f6f83134eb6b2424bb470ecc5936",
+    "web/ui/controls.ts": "b4dd2b43c54fc82b9e06fcdbb495cc2409eb7726ce38ac96434cfd10fc2f7aec",
+    "web/ui/plot.ts": "24b635329df73cc7986eb5a0a8937d4d097f4fcabfd979220883dfda10abd5f0",
+    "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
+    "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
+  },
+  "baselineTag": "k2-v1",
+  "releaseTag": "verifica-v1",
+  "timebox": {
+    "startedAt": "2026-10-15T18:05:33.181Z",
+    "completedAt": "2026-10-15T18:42:00.065Z",
+    "elapsedMinutes": 36.45,
+    "reasoningSessions": 1,
+    "checkpointSavedBeforeMinute": 10
+  },
+  "coverage": {
+    "pdfPages": 137,
+    "theoreticalConcepts": 70,
+    "coverMetadata": 3,
+    "lessonSections": 64,
+    "lessonFormulas": 195,
+    "inventoryDemoIds": 68,
+    "pages": 3,
+    "sections": 64,
+    "labMounts": 66,
+    "uniqueMountedIds": 65,
+    "presets": 308,
+    "selectOptions": 169,
+    "numericEndpoints": 264,
+    "keyboard": 66,
+    "threeD": 38,
+    "mobile": 66,
+    "maxInitialReadyMs": 1950
+  },
+  "tests": {
+    "unitAndCoverage": 183,
+    "browser": {
+      "startTime": "2026-10-15T18:29:08.503Z",
+      "duration": 343894.595,
+      "expected": 95,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "compiledAuditPassed": true,
+    "compiledWorkerModules": [
+      "http://127.0.0.1:53448/quaderno/assets/solver.worker-Cu4XwRRZ.js",
+      "http://127.0.0.1:53448/quaderno/assets/solver.worker-EMk0rAV3.js"
+    ]
+  },
+  "freezeAudit": {
+    "compared": 77,
+    "unchanged": 77,
+    "changes": [],
+    "files": [
+      {
+        "path": "web/content/schema.ts",
+        "sha256": "56e0447dbde546f5b9aea164197d656ad766fc2fdbe39b84f659a9b0cc5fb1b3",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/quadratic.ts",
+        "sha256": "07825a9ee139a5cc4d754acc22f1aeb2535ac02f24d327c827d32ab69300df59",
+        "unchanged": true
+      },
+      {
+        "path": "web/ui/dom.ts",
+        "sha256": "a58b0e95cac0901f6964225f58616e72f84855bf2f442750416ec2eca02191e9",
+        "unchanged": true
+      },
+      {
+        "path": "web/ui/formula.ts",
+        "sha256": "8587fabdeafd216092379b0ffa976d667955f6f83134eb6b2424bb470ecc5936",
+        "unchanged": true
+      },
+      {
+        "path": "web/ui/controls.ts",
+        "sha256": "b4dd2b43c54fc82b9e06fcdbb495cc2409eb7726ce38ac96434cfd10fc2f7aec",
+        "unchanged": true
+      },
+      {
+        "path": "web/ui/plot.ts",
+        "sha256": "24b635329df73cc7986eb5a0a8937d4d097f4fcabfd979220883dfda10abd5f0",
+        "unchanged": true
+      },
+      {
+        "path": "web/ui/tokens.css",
+        "sha256": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
+        "unchanged": true
+      },
+      {
+        "path": "web/ui/styles.css",
+        "sha256": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0",
+        "unchanged": true
+      },
+      {
+        "path": "web/content/blocks/O1.ts",
+        "sha256": "8bec0da209058a32bd5f87fa24d084a3b783ceb2cf52c284184f9086c6b73c85",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/O1/foundations.ts",
+        "sha256": "f234e33a63c046d7ab3237b7040fba16c37046c422723aec08231ededf797391",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/O1/index.ts",
+        "sha256": "19602788e5076fa3adf0bfa30fcba67381958be0c51a3770e30a6f99e2c64738",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/O1/plots.ts",
+        "sha256": "7577c606187ea693c87de4849feb681453d795e01cd0cbaa2b2400b2e00e654a",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/O1/styles.css",
+        "sha256": "b12dba6406be40fdfff712113923b63b1b263f19fce667b1570ddacd39ee58ae",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/O1/foundations.test.ts",
+        "sha256": "9fef836e716ad4f741dc9ec81f13f5275f4e0d81f6c9f8dba52c9bf7e4e87470",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/O1/browser/O1.spec.ts",
+        "sha256": "dc81420be52e5a1f2c10aa07129a47d08d03ab282bd5fe280b98441e8ec67ed9",
+        "unchanged": true
+      },
+      {
+        "path": "web/content/blocks/O2.ts",
+        "sha256": "d6671d49a7243eb24a94d39b4a8626ad4539be7612b1326b00ff786e06ab2069",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/O2/methods.ts",
+        "sha256": "57431cec40e34feb45dc586fd29995e4f2bf25a7a43e6b5e2173684fc7ea3338",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/O2/index.ts",
+        "sha256": "06314c5be7d458ec6ba29dd3e2db398bdfdf99a7a030c855f2b7f51962da0cf5",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/O2/styles.css",
+        "sha256": "13dfbd125abeff9667985353276a139712b13270027ae27c0845e14da8aff757",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/O2/methods.test.ts",
+        "sha256": "244d93c70711bc67f1c4780e6feafaaa9c7b68ffa7b8dde3f12a48bbec5124a9",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/O2/browser/O2.spec.ts",
+        "sha256": "46a640635c3b1f45d9843370b685ca4031e4bde756162c5cacbac4f34c6f52d6",
+        "unchanged": true
+      },
+      {
+        "path": "web/content/blocks/O3.ts",
+        "sha256": "26c45b022f0024c5ebf001e3911f819b7c6993f5d739c211fb62a9cca91327eb",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/O3/solver.ts",
+        "sha256": "4cee15455a0e1cb87740cf6c25b1ba90cd64af581c2acf5933d6dda670028e68",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/O3/models.ts",
+        "sha256": "1faf79438533476631c3d59c13742bc9cc3c9f2e0b81decd5076e0e0e81b41f7",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/O3/index.ts",
+        "sha256": "976a19939d35124e80cdbae41b2a1e02d02842c5acd1ad242ed03e436bbe1d7e",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/O3/factory.ts",
+        "sha256": "55ae204ceffe504bd45be25fa7cf8a79d0ec2c38694f176cf859fde03913380d",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/O3/plots.ts",
+        "sha256": "9d247f6a1cdb14ad212bc8dcb7f9e73a93d72547f19b8a38bc8a78d1b925f354",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/O3/styles.css",
+        "sha256": "1d964fcbd038c869e8a7cea2fb6e3120d8c9c0327ceae16ec59b745b7e3e78f7",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/O3/solver.test.ts",
+        "sha256": "4945e8ff3c3d52baa5a1311a916b6fb9d40a082ef9ec8ab4ad2a8e418cc6ad58",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/O3/browser/O3.spec.ts",
+        "sha256": "2e721b121cc27aa88b9ebd7b419f037db21bde390f30df1e4fbac043618200ee",
+        "unchanged": true
+      },
+      {
+        "path": "web/content/blocks/I1.ts",
+        "sha256": "99d74fb8ece811e4ba18258f83efeeeed63efb7d994e889790941e9ee96d8971",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/I1/systems.ts",
+        "sha256": "5c16306d8ad90c60393fbe477b48c9143226258b9a7c8661d868470e2da44a40",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/I1/geometry.ts",
+        "sha256": "9c22bb1a85b78210881015d1712782888bf433009b5875b7434745a1b4f005ec",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I1/index.ts",
+        "sha256": "bdf2edb24a10e441c002aaec9f8478bfc261f841b307b72d766223d72af3db44",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I1/plots.ts",
+        "sha256": "75a680d08b3204f99d89f280e04bf935356a52ad34b6a7a592ec68c7d8d05e54",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I1/styles.css",
+        "sha256": "386770e4d6f9f2f801f666a8b33beeb90d057cb758b08bb5b3cda39ad8cf5721",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/I1/models.test.ts",
+        "sha256": "fb8fe2f1172d2632fcd36120e98b6ed20346181a9181fc4e6bcdf29100774d50",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/I1/browser/I1.spec.ts",
+        "sha256": "2517adda4c491decc139cb17ebd107f314f609c8f8061fb35b4e55930817da03",
+        "unchanged": true
+      },
+      {
+        "path": "web/content/blocks/I2.ts",
+        "sha256": "0ff72e4fc7abd5ce5598c3b8fef9151e4fe491e84c1d8a7c5204095088b27808",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/I2/scalar.ts",
+        "sha256": "25435ba207e95eb5d552f6ff506eb1a1807e15e268e70e37b9ed864095dfe7c3",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/I2/drone.ts",
+        "sha256": "42045c80054d5fbe1d0d17d9813f6ae20639c09067398ce6cfe0ffc1e1fe3213",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I2/index.ts",
+        "sha256": "851497a95ead039c875cdbaac195e5d71f00a8a126ab3e6240ceaf9c7495ffd5",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I2/drone-lab.ts",
+        "sha256": "6dfd80f29cea5df21ee0cfae722162e1157e62ff5d1abc00593232eb03ce6b4d",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I2/solver.worker.ts",
+        "sha256": "e52b140ee1627c9c5660f166debba060a7d8b0cbb1d2140528cc64338301265e",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I2/plots.ts",
+        "sha256": "fdfecf0686c9b835fe12df693ffe80050b75c41deeec8cd3eb0fb32511133aa8",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I2/styles.css",
+        "sha256": "28214f1de591c2ecf7db4aac8053a619242566213dc1de961e0d4e48bdc2dd1c",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/I2/models.test.ts",
+        "sha256": "11b9cb8bce7c5f654292d1c5ce4031420a0d376f8a859e7d27fbb0ba752d8215",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/I2/browser/I2.spec.ts",
+        "sha256": "1e52e9dc67cdd792b6ae4d8b44897afd7bc4ee17fb5a7aaaa3a643ec998bb62c",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/I2/production.mjs",
+        "sha256": "ee877d2485d4f0c1c161fa1b6d834ed8107403017296d356f651d8e0c2c248f5",
+        "unchanged": true
+      },
+      {
+        "path": "web/content/blocks/I3.ts",
+        "sha256": "b2af01920e5ec519e6d4c92b98833aff1b0ac3f770e8817e9d09072a02f5062d",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/I3/continuous.ts",
+        "sha256": "c04db57bfd1d3d1f749d8810ab04dfc4192b5695c0a5224d608218466459e404",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/I3/pendulum.ts",
+        "sha256": "72c6adb7db871c35c3ec3ca64412f9436c537742e1d545ef956b1165e12b31da",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I3/index.ts",
+        "sha256": "b30cc455215510a3e6eebfacbf3d35349d5f6a7e34bdf7e8ee13fb0a56e3e991",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I3/transfer-lab.ts",
+        "sha256": "e374a11981d635c57c6475c92fab2ccd0ab7cd1461d5f162ed7034cba25deaec",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I3/solver.worker.ts",
+        "sha256": "d8fb1d01375cb4f228e1cd43d0a6395813b03a477c567902ed08e656734ea262",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I3/plots.ts",
+        "sha256": "40e30e82dc7f4c7b8bf9aaa761c087aa7d3a7536fad8c9eb35f7caf98686de30",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/I3/styles.css",
+        "sha256": "eeea677a091d9d73f8168573588becd31037ab269b210c5b515283c1b2041851",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/I3/models.test.ts",
+        "sha256": "553123ef38993b9b591f21e2042ef3e7b395644613ab913074b8db39e8e4b7ab",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/I3/browser/I3.spec.ts",
+        "sha256": "1284b7446ed052d5cf57dbe81743aacbc88a9988506354b3fbb7f87e3d43d457",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/I3/production.mjs",
+        "sha256": "565145f5ec4171f13b4e5a2e4f12f1c0db01b5b7f20e11ff6014bed12f573cf8",
+        "unchanged": true
+      },
+      {
+        "path": "web/content/blocks/K1.ts",
+        "sha256": "bf752fa60f6b5ef65e66877f064faeef4b4b7453f71cf00d36ca73954a7c7daf",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/K1/trajectories.ts",
+        "sha256": "3068eee0911bfc913d99b5d2986dd7c46087f3c80e040ada6983236a5e5668cc",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/K1/index.ts",
+        "sha256": "4da656ac59cc99709bae25dcb4f493c8b23cd466e811426efb451d57c2937c2e",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/K1/plots.ts",
+        "sha256": "4c7c8d289f5a20c148a675ea06d2cbbf6b1eae6977889f91248489f54eca5a93",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/K1/styles.css",
+        "sha256": "4b741d4e81d14d57e854a285063ea30251aaff8a62f1a28522fac99638b2ae30",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/K1/models.test.ts",
+        "sha256": "855350f9105643639e16307ec262af18156aebd05a95a473266adf4de5d86eae",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/K1/browser/K1.spec.ts",
+        "sha256": "9a0c0a692de02ea5e445f6e73af3f7c7f64f83cb2c91232262c44be6914c4218",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/K1/production.mjs",
+        "sha256": "97110718604ea84908d2a7064b8acd27d61df290be499e6669dd6097168e8c3d",
+        "unchanged": true
+      },
+      {
+        "path": "web/content/blocks/K2.ts",
+        "sha256": "c902c0f064e5878116159e028f8408ffb93a43e1c1985eaaecb8fd0cda160064",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/K2/adjoint.ts",
+        "sha256": "a3ad09f754e618aa12a818f91e661822c8653ae6a2c2835b7b688069a5d55a7b",
+        "unchanged": true
+      },
+      {
+        "path": "web/math/K2/constrained.ts",
+        "sha256": "ff44aa2d6d483dd0edccdca97ef6d6dca415e3db6f149776b4c240f22f563b80",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/K2/index.ts",
+        "sha256": "2e9de76c0f28a6b84656e6563dd1f1e17b6a252bfc50a339c2a16e060e61c634",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/K2/plots.ts",
+        "sha256": "80ed171a2856c116e04e5a8122107c05ec3b009dd7ce98f74dc27777d4702abb",
+        "unchanged": true
+      },
+      {
+        "path": "web/demos/K2/styles.css",
+        "sha256": "7ba9ce3892a100f49be828a9f3a417929bcc401a3337a9385695d80a17211ccb",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/K2/models.test.ts",
+        "sha256": "908dab21c8dd5a1bfa08fce0eeaa35a1cc4219c8fece912b3ccd46860822dbfd",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/K2/browser/K2.spec.ts",
+        "sha256": "29465733c489ffd09cbd5046adc47364da1c9e10cd3bf4a48da3cec3d41a001b",
+        "unchanged": true
+      },
+      {
+        "path": "web/tests/K2/production.mjs",
+        "sha256": "6f36004fd52d8e4a0065804593a812d9a123418c612ca30c2bcefcca562e40a3",
+        "unchanged": true
+      }
+    ],
+    "historicalManifestHashExceptions": [
+      "web/tests/O1/browser/O1.spec.ts"
+    ],
+    "explanation": "The historical O1 browser hash predates its documented O2 selector correction. Current bytes equal k2-v1. No prior module was changed in VERIFICA."
+  },
+  "pdfs": [
+    {
+      "sourceId": "introduzione",
+      "pages": 36,
+      "sha256": "ae169f3492dc0915d0777d62e90184107d7017aee03b8620bbfe0aee9bd3a469"
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "pages": 81,
+      "sha256": "6c1dba877ca102f055845618f73205b71450b819e0cc09e149e1150017e458ea"
+    },
+    {
+      "sourceId": "kkt",
+      "pages": 20,
+      "sha256": "937db0d7a574f549eb1181f22207ccfa886ae6d79206720718692bfd6015bd97"
+    }
+  ],
+  "reports": {
+    "coverage": "checkpoints/VERIFICA-coverage.json",
+    "compiledBrowser": "checkpoints/VERIFICA-browser.json"
+  },
+  "initialAttempts": {
+    "skipFocus": {
+      "passed": false,
+      "reason": "Skip link scrolled without transferring keyboard focus; main tabindex=-1 fixes this, with regression on all four pages."
+    },
+    "preliminaryCompiledAudit": {
+      "summary": {
+        "pages": 3,
+        "sections": 64,
+        "labMounts": 66,
+        "uniqueMountedIds": 65,
+        "presets": 297,
+        "selectOptions": 149,
+        "numericEndpoints": 251,
+        "keyboard": 62,
+        "threeD": 36,
+        "mobile": 62,
+        "maxInitialReadyMs": 1030
+      },
+      "failures": [
+        {
+          "id": "drone-optimal-control",
+          "anchor": "i2-drone-costo",
+          "index": 17,
+          "route": "introduzione",
+          "message": "Unexplained lab failure: drone-optimal-control"
+        },
+        {
+          "id": "drone-constraints",
+          "anchor": "i2-drone-vincoli",
+          "index": 18,
+          "route": "introduzione",
+          "message": "Unexplained lab failure: drone-constraints"
+        },
+        {
+          "id": "merit-line-search",
+          "anchor": "o3-merito",
+          "index": 28,
+          "route": "ottimizzazione",
+          "message": "locator.click: Error: strict mode violation: locator('[data-demo=\"merit-line-search\"]').first().getByRole('button', { name: /Ripristina/ }) resolved to 2 elements:\n    1) <button type=\"button\" data-o3-preset=\"0\">Ripristina ammissibilità</button> aka getByRole('button', { name: 'Ripristina ammissibilità' })\n    2) <button type=\"button\" data-o3-reset=\"\">↺ Ripristina</button> aka locator('div:nth-child(12) > .o3-presets > button:nth-child(5)')\n\nCall log:\n\u001b[2m  - waiting for locator('[data-demo=\"merit-line-search\"]').first().getByRole('button', { name: /Ripristina/ })\u001b[22m\n"
+        },
+        {
+          "id": "k1-dynamics-residual",
+          "anchor": "k1-curve",
+          "index": 1,
+          "route": "kkt",
+          "message": "locator.dispatchEvent: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-demo=\"k1-dynamics-residual\"]').first().locator('input[type=\"number\"]:visible').nth(8)\u001b[22m\n"
+        }
+      ],
+      "resolution": "Only verifier selectors changed: allow explicit Worker live-status errors, select reset by attribute, and retain numeric input ID across visibility changes."
+    },
+    "firstRunner": {
+      "checks": [
+        {
+          "script": "check:inventory",
+          "startedAt": "2026-10-15T18:21:07.037Z",
+          "finishedAt": "2026-10-15T18:21:07.431Z",
+          "exitCode": 0
+        },
+        {
+          "script": "typecheck",
+          "startedAt": "2026-10-15T18:21:07.433Z",
+          "finishedAt": "2026-10-15T18:21:11.409Z",
+          "exitCode": 0
+        },
+        {
+          "script": "test",
+          "startedAt": "2026-10-15T18:21:11.411Z",
+          "finishedAt": "2026-10-15T18:21:18.418Z",
+          "exitCode": 0
+        },
+        {
+          "script": "test:browser",
+          "startedAt": "2026-10-15T18:21:18.420Z",
+          "finishedAt": "2026-10-15T18:27:11.083Z",
+          "exitCode": 1
+        }
+      ],
+      "browser": {
+        "startTime": "2026-10-15T18:21:19.524Z",
+        "duration": 351521.87999999995,
+        "expected": 94,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "reason": "First I2 navigation showed an empty page. Cause not established; no application file changed at that time."
+    },
+    "I2DiagnosticRepeats": {
+      "browser": {
+        "startTime": "2026-10-15T18:27:33.274Z",
+        "duration": 19103.355,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "traceDirectory": "artifacts/VERIFICA-I2-diagnostic-traces",
+      "applicationChanges": []
+    },
+    "finalRunner": {
+      "passed": true,
+      "browser": {
+        "startTime": "2026-10-15T18:29:08.503Z",
+        "duration": 343894.595,
+        "expected": 95,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "automaticRetries": 0
+    }
+  },
+  "artifactHashes": {
+    "web/main.ts": "5958c7149b4f7002722effd21ee4f0dff696237fddc8b9d6bd493c0ecccb3128",
+    "web/package.json": "2d7e0425b0f83f357b1b021e70e4a407e42839260ab6eaa620fb268446245d27",
+    "web/scripts/session.mjs": "d6cf7a5eee9e798efa21cd9f6b0462fed01b67df1a92279416141c469cf0a8fe",
+    "web/tests/VERIFICA/coverage.test.ts": "5c9c54cdd5586f07f147aab9234f14e7936f0c545ddd82b05b95564a149a2759",
+    "web/tests/VERIFICA/browser/final.spec.ts": "99f4c04cf50d2dd6846be3fb6f3bdc32fb69d6318e6f7f650432fc6403d4a984",
+    "web/tests/VERIFICA/production.mjs": "da76481ebb9af9871035e0180d98d83eaf6a4b85e1443678618eef5e2a54afbc"
+  },
+  "manualSourceChecks": [
+    {
+      "sourceId": "ottimizzazione",
+      "pages": [
+        36,
+        68,
+        75
+      ]
+    },
+    {
+      "sourceId": "introduzione",
+      "pages": [
+        26,
+        34,
+        36
+      ]
+    },
+    {
+      "sourceId": "kkt",
+      "pages": [
+        15,
+        20
+      ]
+    }
+  ],
+  "limitations": [
+    "Parameter endpoints are sampled for the first and last visible numeric control in every lab; existing model tests cover additional demanding combinations. This is not enumeration of the continuous parameter space.",
+    "Accessibility checks cover practical keyboard/focus, naming, MathML, textual values and responsive layout; no formal WCAG certification is claimed.",
+    "Timings are local headless-browser measurements, not a hardware-independent benchmark.",
+    "Nonlinear solver stationarity is not a certificate of global optimality."
+  ],
+  "remainingWork": [],
+  "nextSession": null
+}

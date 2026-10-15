@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "project": "OPTCON ? Quaderno interattivo",
+  "project": "OPTCON — Quaderno interattivo",
   "scope": "local",
   "timeboxMinutes": 90,
   "checkpointMinutes": 75,
@@ -718,23 +718,42 @@
         "K1",
         "K2"
       ],
-      "status": "pending",
-      "objective": "Verificare copertura integrale, formule, controlli, accessibilit?, prestazioni e build finale.",
+      "status": "completed",
+      "objective": "Verificare copertura integrale, formule, controlli, accessibilità, prestazioni e build finale.",
       "allowedPaths": [
         "web/** (targeted fixes)",
         "sources/inventory.json",
         "manifest.json",
-        "checkpoints/VERIFICA*"
+        "checkpoints/VERIFICA*",
+        "README.md (final availability and repeatable validation commands)",
+        "web/scripts/session.mjs (require compiled-site audit for VERIFICA only)",
+        "web/package.json (check:final command)"
       ],
       "requiredArtifacts": [
-        "checkpoints/VERIFICA.md"
+        "checkpoints/VERIFICA.md",
+        "web/tests/VERIFICA/coverage.test.ts",
+        "web/tests/VERIFICA/browser/final.spec.ts",
+        "web/tests/VERIFICA/production.mjs",
+        "checkpoints/VERIFICA-browser.json",
+        "checkpoints/VERIFICA-coverage.json"
       ],
       "acceptance": [
         "All assigned concepts covered, or explicit metadata-only rationale",
         "Figures recompute from parameters and agree with formulas",
         "No type errors; relevant analytic and browser checks pass",
         "Checkpoint records outcomes and remaining work"
-      ]
+      ],
+      "startedAt": "2026-10-15T18:05:33.181Z",
+      "completedAt": "2026-10-15T18:42:00.065Z",
+      "validationReport": "checkpoints/VERIFICA-validation.json",
+      "artifactHashes": {
+        "web/main.ts": "5958c7149b4f7002722effd21ee4f0dff696237fddc8b9d6bd493c0ecccb3128",
+        "web/package.json": "2d7e0425b0f83f357b1b021e70e4a407e42839260ab6eaa620fb268446245d27",
+        "web/scripts/session.mjs": "d6cf7a5eee9e798efa21cd9f6b0462fed01b67df1a92279416141c469cf0a8fe",
+        "web/tests/VERIFICA/coverage.test.ts": "5c9c54cdd5586f07f147aab9234f14e7936f0c545ddd82b05b95564a149a2759",
+        "web/tests/VERIFICA/browser/final.spec.ts": "99f4c04cf50d2dd6846be3fb6f3bdc32fb69d6318e6f7f650432fc6403d4a984",
+        "web/tests/VERIFICA/production.mjs": "da76481ebb9af9871035e0180d98d83eaf6a4b85e1443678618eef5e2a54afbc"
+      }
     }
   ],
   "baseContractHashes": {
@@ -747,5 +766,5 @@
     "web/ui/tokens.css": "061c6dcbd9caa1c144dfe252d8a69020b3e34193704505689d7d13d30362072c",
     "web/ui/styles.css": "7152323153de49ec97a32a920a285a59f6e31c53d179dfe45b884c9086a10fb0"
   },
-  "updatedAt": "2026-10-15T17:29:43.116Z"
+  "updatedAt": "2026-10-15T18:42:16.065726Z"
 }

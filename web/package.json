@@ -13,6 +13,7 @@
     "test": "vitest run",
     "test:browser": "playwright test",
     "check:inventory": "node scripts/check-inventory.mjs",
+    "check:final": "node tests/VERIFICA/production.mjs",
     "session": "node scripts/session.mjs"
   },
   "dependencies": {

@@ -1,0 +1,1754 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-10-15T18:35:18.276Z",
+  "passed": true,
+  "prefix": "/quaderno/",
+  "pages": [
+    {
+      "sourceId": "introduzione",
+      "duplicateIds": [],
+      "missingAnchors": [],
+      "sections": [
+        "i1-motivazioni",
+        "i1-sistemi-continui",
+        "i1-sistemi-discreti",
+        "i1-traiettorie",
+        "i1-linearizzazione",
+        "i1-obiettivi",
+        "i1-problema",
+        "i1-costo-scalare",
+        "i1-costo-pesato",
+        "i1-vincoli",
+        "i2-dinamica",
+        "i2-costi",
+        "i2-vincoli",
+        "i2-problema",
+        "i2-riferimento",
+        "i2-drone-modello",
+        "i2-drone-costo",
+        "i2-drone-vincoli",
+        "i3-continuo",
+        "i3-pendolo-modello",
+        "i3-pendolo-equilibri",
+        "i3-pendolo-riferimento",
+        "i3-pendolo-controllo"
+      ],
+      "pdfLinks": [
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=2",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=8",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=9",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=11",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=12",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=13",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=14",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=18",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=15",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=16",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=17",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=19",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=20",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=22",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=21",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=23",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=24",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=26",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=28",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=30",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=31",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=33",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=34",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=35",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=36"
+      ],
+      "labs": [
+        {
+          "id": "motivation-map",
+          "anchor": "i1-motivazioni",
+          "index": 0
+        },
+        {
+          "id": "continuous-system",
+          "anchor": "i1-sistemi-continui",
+          "index": 1
+        },
+        {
+          "id": "discrete-system",
+          "anchor": "i1-sistemi-discreti",
+          "index": 2
+        },
+        {
+          "id": "trajectory-equilibrium",
+          "anchor": "i1-traiettorie",
+          "index": 3
+        },
+        {
+          "id": "linearization",
+          "anchor": "i1-linearizzazione",
+          "index": 4
+        },
+        {
+          "id": "control-objectives",
+          "anchor": "i1-obiettivi",
+          "index": 5
+        },
+        {
+          "id": "optimization-geometry",
+          "anchor": "i1-problema",
+          "index": 6
+        },
+        {
+          "id": "scalar-cost",
+          "anchor": "i1-costo-scalare",
+          "index": 7
+        },
+        {
+          "id": "weighted-cost",
+          "anchor": "i1-costo-pesato",
+          "index": 8
+        },
+        {
+          "id": "semidefinite-cost",
+          "anchor": "i1-costo-pesato",
+          "index": 9
+        },
+        {
+          "id": "constraint-sets",
+          "anchor": "i1-vincoli",
+          "index": 10
+        },
+        {
+          "id": "dynamics-residual",
+          "anchor": "i2-dinamica",
+          "index": 11
+        },
+        {
+          "id": "trajectory-cost",
+          "anchor": "i2-costi",
+          "index": 12
+        },
+        {
+          "id": "path-boundary",
+          "anchor": "i2-vincoli",
+          "index": 13
+        },
+        {
+          "id": "discrete-control",
+          "anchor": "i2-problema",
+          "index": 14
+        },
+        {
+          "id": "reference-versus-trajectory",
+          "anchor": "i2-riferimento",
+          "index": 15
+        },
+        {
+          "id": "planar-drone",
+          "anchor": "i2-drone-modello",
+          "index": 16
+        },
+        {
+          "id": "drone-optimal-control",
+          "anchor": "i2-drone-costo",
+          "index": 17
+        },
+        {
+          "id": "drone-constraints",
+          "anchor": "i2-drone-vincoli",
+          "index": 18
+        },
+        {
+          "id": "continuous-versus-discrete",
+          "anchor": "i3-continuo",
+          "index": 19
+        },
+        {
+          "id": "pendulum",
+          "anchor": "i3-pendolo-modello",
+          "index": 20
+        },
+        {
+          "id": "pendulum-equilibrium",
+          "anchor": "i3-pendolo-equilibri",
+          "index": 21
+        },
+        {
+          "id": "pendulum-reference",
+          "anchor": "i3-pendolo-riferimento",
+          "index": 22
+        },
+        {
+          "id": "pendulum-optimal-control",
+          "anchor": "i3-pendolo-controllo",
+          "index": 23
+        }
+      ],
+      "formulaErrors": 0,
+      "incomplete": false
+    },
+    {
+      "sourceId": "ottimizzazione",
+      "duplicateIds": [],
+      "missingAnchors": [],
+      "sections": [
+        "o1-minimi",
+        "o1-derivate",
+        "o1-stazionarieta",
+        "o1-insiemi-convessi",
+        "o1-funzioni-convesse",
+        "o1-convessita-vincoli",
+        "o1-curvatura",
+        "o1-ottimalita-convessa",
+        "o1-programmi-quadratici",
+        "o2-discesa",
+        "o2-gradiente-newton",
+        "o2-newton-zeri",
+        "o2-modelli",
+        "o2-armijo",
+        "o2-convergenza",
+        "o2-ottimalita-vincolata",
+        "o2-proiezione",
+        "o2-gradiente-proiettato",
+        "o2-galleria",
+        "o2-barriere",
+        "o3-regolarita",
+        "o3-lagrangiana",
+        "o3-kkt",
+        "o3-curvatura",
+        "o3-qp",
+        "o3-newton",
+        "o3-sqp",
+        "o3-merito",
+        "o3-barriere",
+        "o3-tempo-iterazione"
+      ],
+      "pdfLinks": [
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf",
+        "./pdfs/OPTCON-RL_introduction_optimal_control_2026_09_14.pdf#page=16",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=23",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=2",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=6",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=8",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=10",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=11",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=12",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=14",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=21",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=26",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=32",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=34",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=35",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=38",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=41",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=47",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=49",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=50",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=53",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=54",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=55",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=58",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=59",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=64",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=66",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=69",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=74",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=75",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=78",
+        "./pdfs/OPTCON-RL_optimization_2026_09_14.pdf#page=79"
+      ],
+      "labs": [
+        {
+          "id": "weighted-cost",
+          "anchor": "laboratorio",
+          "index": 0
+        },
+        {
+          "id": "local-global-minima",
+          "anchor": "o1-minimi",
+          "index": 1
+        },
+        {
+          "id": "derivatives",
+          "anchor": "o1-derivate",
+          "index": 2
+        },
+        {
+          "id": "stationary-classification",
+          "anchor": "o1-stazionarieta",
+          "index": 3
+        },
+        {
+          "id": "convex-set",
+          "anchor": "o1-insiemi-convessi",
+          "index": 4
+        },
+        {
+          "id": "convex-function",
+          "anchor": "o1-funzioni-convesse",
+          "index": 5
+        },
+        {
+          "id": "constraint-convexity",
+          "anchor": "o1-convessita-vincoli",
+          "index": 6
+        },
+        {
+          "id": "quadratic-bounds",
+          "anchor": "o1-curvatura",
+          "index": 7
+        },
+        {
+          "id": "convex-optimality",
+          "anchor": "o1-ottimalita-convessa",
+          "index": 8
+        },
+        {
+          "id": "quadratic-program",
+          "anchor": "o1-programmi-quadratici",
+          "index": 9
+        },
+        {
+          "id": "descent-methods",
+          "anchor": "o2-discesa",
+          "index": 10
+        },
+        {
+          "id": "gradient-versus-newton",
+          "anchor": "o2-gradiente-newton",
+          "index": 11
+        },
+        {
+          "id": "newton-root",
+          "anchor": "o2-newton-zeri",
+          "index": 12
+        },
+        {
+          "id": "newton-model",
+          "anchor": "o2-modelli",
+          "index": 13
+        },
+        {
+          "id": "armijo",
+          "anchor": "o2-armijo",
+          "index": 14
+        },
+        {
+          "id": "convergence",
+          "anchor": "o2-convergenza",
+          "index": 15
+        },
+        {
+          "id": "feasible-directions",
+          "anchor": "o2-ottimalita-vincolata",
+          "index": 16
+        },
+        {
+          "id": "projection",
+          "anchor": "o2-proiezione",
+          "index": 17
+        },
+        {
+          "id": "projected-gradient",
+          "anchor": "o2-gradiente-proiettato",
+          "index": 18
+        },
+        {
+          "id": "function-gallery",
+          "anchor": "o2-galleria",
+          "index": 19
+        },
+        {
+          "id": "barrier",
+          "anchor": "o2-barriere",
+          "index": 20
+        },
+        {
+          "id": "active-constraints",
+          "anchor": "o3-regolarita",
+          "index": 21
+        },
+        {
+          "id": "lagrangian",
+          "anchor": "o3-lagrangiana",
+          "index": 22
+        },
+        {
+          "id": "kkt-geometry",
+          "anchor": "o3-kkt",
+          "index": 23
+        },
+        {
+          "id": "constrained-curvature",
+          "anchor": "o3-curvatura",
+          "index": 24
+        },
+        {
+          "id": "constrained-qp",
+          "anchor": "o3-qp",
+          "index": 25
+        },
+        {
+          "id": "constrained-newton",
+          "anchor": "o3-newton",
+          "index": 26
+        },
+        {
+          "id": "sqp",
+          "anchor": "o3-sqp",
+          "index": 27
+        },
+        {
+          "id": "merit-line-search",
+          "anchor": "o3-merito",
+          "index": 28
+        },
+        {
+          "id": "barrier-equalities",
+          "anchor": "o3-barriere",
+          "index": 29
+        },
+        {
+          "id": "time-iteration",
+          "anchor": "o3-tempo-iterazione",
+          "index": 30
+        }
+      ],
+      "formulaErrors": 0,
+      "incomplete": false
+    },
+    {
+      "sourceId": "kkt",
+      "duplicateIds": [],
+      "missingAnchors": [],
+      "sections": [
+        "k1-vettori",
+        "k1-curve",
+        "k1-varieta",
+        "k1-tangente",
+        "k1-controllo",
+        "k1-struttura",
+        "k1-kkt",
+        "k2-lagrangiana",
+        "k2-costati",
+        "k2-vincoli",
+        "k2-kkt"
+      ],
+      "pdfLinks": [
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=2",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=3",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=5",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=6",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=8",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=10",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=12",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=13",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=15",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=18",
+        "./pdfs/OPTCON-RL_optimality_conditions_KKT_2026_10_08.pdf#page=20"
+      ],
+      "labs": [
+        {
+          "id": "k1-state-input-stack",
+          "anchor": "k1-vettori",
+          "index": 0
+        },
+        {
+          "id": "k1-dynamics-residual",
+          "anchor": "k1-curve",
+          "index": 1
+        },
+        {
+          "id": "trajectory-manifold",
+          "anchor": "k1-varieta",
+          "index": 2
+        },
+        {
+          "id": "trajectory-tangent",
+          "anchor": "k1-tangente",
+          "index": 3
+        },
+        {
+          "id": "k1-unconstrained-control",
+          "anchor": "k1-controllo",
+          "index": 4
+        },
+        {
+          "id": "optimal-control-structure",
+          "anchor": "k1-struttura",
+          "index": 5
+        },
+        {
+          "id": "k1-kkt-geometry",
+          "anchor": "k1-kkt",
+          "index": 6
+        },
+        {
+          "id": "costate-structure",
+          "anchor": "k2-lagrangiana",
+          "index": 7
+        },
+        {
+          "id": "costates",
+          "anchor": "k2-costati",
+          "index": 8
+        },
+        {
+          "id": "constrained-optimal-control",
+          "anchor": "k2-vincoli",
+          "index": 9
+        },
+        {
+          "id": "optimal-control-kkt",
+          "anchor": "k2-kkt",
+          "index": 10
+        }
+      ],
+      "formulaErrors": 0,
+      "incomplete": false
+    }
+  ],
+  "labs": [
+    {
+      "id": "motivation-map",
+      "anchor": "i1-motivazioni",
+      "index": 0,
+      "route": "introduzione",
+      "presets": 6,
+      "selectOptions": 5,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 518,
+      "passed": true,
+      "totalMs": 5148
+    },
+    {
+      "id": "continuous-system",
+      "anchor": "i1-sistemi-continui",
+      "index": 1,
+      "route": "introduzione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 223,
+      "passed": true,
+      "totalMs": 2649
+    },
+    {
+      "id": "discrete-system",
+      "anchor": "i1-sistemi-discreti",
+      "index": 2,
+      "route": "introduzione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 317,
+      "passed": true,
+      "totalMs": 2585
+    },
+    {
+      "id": "trajectory-equilibrium",
+      "anchor": "i1-traiettorie",
+      "index": 3,
+      "route": "introduzione",
+      "presets": 5,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 319,
+      "passed": true,
+      "totalMs": 2821
+    },
+    {
+      "id": "linearization",
+      "anchor": "i1-linearizzazione",
+      "index": 4,
+      "route": "introduzione",
+      "presets": 5,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 324,
+      "passed": true,
+      "totalMs": 3579
+    },
+    {
+      "id": "control-objectives",
+      "anchor": "i1-obiettivi",
+      "index": 5,
+      "route": "introduzione",
+      "presets": 6,
+      "selectOptions": 5,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 409,
+      "passed": true,
+      "totalMs": 4121
+    },
+    {
+      "id": "optimization-geometry",
+      "anchor": "i1-problema",
+      "index": 6,
+      "route": "introduzione",
+      "presets": 5,
+      "selectOptions": 4,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 369,
+      "passed": true,
+      "totalMs": 3836
+    },
+    {
+      "id": "scalar-cost",
+      "anchor": "i1-costo-scalare",
+      "index": 7,
+      "route": "introduzione",
+      "presets": 3,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 402,
+      "passed": true,
+      "totalMs": 2589
+    },
+    {
+      "id": "weighted-cost",
+      "anchor": "i1-costo-pesato",
+      "index": 8,
+      "route": "introduzione",
+      "presets": 3,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 454,
+      "passed": true,
+      "totalMs": 3612
+    },
+    {
+      "id": "semidefinite-cost",
+      "anchor": "i1-costo-pesato",
+      "index": 9,
+      "route": "introduzione",
+      "presets": 3,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 190,
+      "passed": true,
+      "totalMs": 2854
+    },
+    {
+      "id": "constraint-sets",
+      "anchor": "i1-vincoli",
+      "index": 10,
+      "route": "introduzione",
+      "presets": 6,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 210,
+      "passed": true,
+      "totalMs": 3954
+    },
+    {
+      "id": "dynamics-residual",
+      "anchor": "i2-dinamica",
+      "index": 11,
+      "route": "introduzione",
+      "presets": 3,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 541,
+      "passed": true,
+      "totalMs": 2961
+    },
+    {
+      "id": "trajectory-cost",
+      "anchor": "i2-costi",
+      "index": 12,
+      "route": "introduzione",
+      "presets": 4,
+      "selectOptions": 3,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 670,
+      "passed": true,
+      "totalMs": 4537
+    },
+    {
+      "id": "path-boundary",
+      "anchor": "i2-vincoli",
+      "index": 13,
+      "route": "introduzione",
+      "presets": 5,
+      "selectOptions": 3,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 760,
+      "passed": true,
+      "totalMs": 5329
+    },
+    {
+      "id": "discrete-control",
+      "anchor": "i2-problema",
+      "index": 14,
+      "route": "introduzione",
+      "presets": 5,
+      "selectOptions": 3,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 633,
+      "passed": true,
+      "totalMs": 4645
+    },
+    {
+      "id": "reference-versus-trajectory",
+      "anchor": "i2-riferimento",
+      "index": 15,
+      "route": "introduzione",
+      "presets": 3,
+      "selectOptions": 3,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 697,
+      "passed": true,
+      "totalMs": 4113
+    },
+    {
+      "id": "planar-drone",
+      "anchor": "i2-drone-modello",
+      "index": 16,
+      "route": "introduzione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 703,
+      "passed": true,
+      "totalMs": 4547
+    },
+    {
+      "id": "drone-optimal-control",
+      "anchor": "i2-drone-costo",
+      "index": 17,
+      "route": "introduzione",
+      "presets": 9,
+      "selectOptions": 10,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 2,
+      "initialReadyMs": 870,
+      "passed": true,
+      "totalMs": 48960
+    },
+    {
+      "id": "drone-constraints",
+      "anchor": "i2-drone-vincoli",
+      "index": 18,
+      "route": "introduzione",
+      "presets": 9,
+      "selectOptions": 10,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 2,
+      "initialReadyMs": 327,
+      "passed": true,
+      "totalMs": 48210
+    },
+    {
+      "id": "continuous-versus-discrete",
+      "anchor": "i3-continuo",
+      "index": 19,
+      "route": "introduzione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 785,
+      "passed": true,
+      "totalMs": 4102
+    },
+    {
+      "id": "pendulum",
+      "anchor": "i3-pendolo-modello",
+      "index": 20,
+      "route": "introduzione",
+      "presets": 5,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 947,
+      "passed": true,
+      "totalMs": 5928
+    },
+    {
+      "id": "pendulum-equilibrium",
+      "anchor": "i3-pendolo-equilibri",
+      "index": 21,
+      "route": "introduzione",
+      "presets": 6,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 874,
+      "passed": true,
+      "totalMs": 5687
+    },
+    {
+      "id": "pendulum-reference",
+      "anchor": "i3-pendolo-riferimento",
+      "index": 22,
+      "route": "introduzione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 954,
+      "passed": true,
+      "totalMs": 5302
+    },
+    {
+      "id": "pendulum-optimal-control",
+      "anchor": "i3-pendolo-controllo",
+      "index": 23,
+      "route": "introduzione",
+      "presets": 9,
+      "selectOptions": 8,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 386,
+      "passed": true,
+      "totalMs": 32974
+    },
+    {
+      "id": "weighted-cost",
+      "anchor": "laboratorio",
+      "index": 0,
+      "route": "ottimizzazione",
+      "presets": 3,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 1950,
+      "passed": true,
+      "totalMs": 5033
+    },
+    {
+      "id": "local-global-minima",
+      "anchor": "o1-minimi",
+      "index": 1,
+      "route": "ottimizzazione",
+      "presets": 3,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 254,
+      "passed": true,
+      "totalMs": 2342
+    },
+    {
+      "id": "derivatives",
+      "anchor": "o1-derivate",
+      "index": 2,
+      "route": "ottimizzazione",
+      "presets": 0,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 283,
+      "passed": true,
+      "totalMs": 2131
+    },
+    {
+      "id": "stationary-classification",
+      "anchor": "o1-stazionarieta",
+      "index": 3,
+      "route": "ottimizzazione",
+      "presets": 5,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 277,
+      "passed": true,
+      "totalMs": 3062
+    },
+    {
+      "id": "convex-set",
+      "anchor": "o1-insiemi-convessi",
+      "index": 4,
+      "route": "ottimizzazione",
+      "presets": 3,
+      "selectOptions": 3,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 262,
+      "passed": true,
+      "totalMs": 2805
+    },
+    {
+      "id": "convex-function",
+      "anchor": "o1-funzioni-convesse",
+      "index": 5,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 3,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 372,
+      "passed": true,
+      "totalMs": 3009
+    },
+    {
+      "id": "constraint-convexity",
+      "anchor": "o1-convessita-vincoli",
+      "index": 6,
+      "route": "ottimizzazione",
+      "presets": 3,
+      "selectOptions": 3,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 166,
+      "passed": true,
+      "totalMs": 2714
+    },
+    {
+      "id": "quadratic-bounds",
+      "anchor": "o1-curvatura",
+      "index": 7,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 261,
+      "passed": true,
+      "totalMs": 2635
+    },
+    {
+      "id": "convex-optimality",
+      "anchor": "o1-ottimalita-convessa",
+      "index": 8,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 3,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 189,
+      "passed": true,
+      "totalMs": 3123
+    },
+    {
+      "id": "quadratic-program",
+      "anchor": "o1-programmi-quadratici",
+      "index": 9,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 197,
+      "passed": true,
+      "totalMs": 3004
+    },
+    {
+      "id": "descent-methods",
+      "anchor": "o2-discesa",
+      "index": 10,
+      "route": "ottimizzazione",
+      "presets": 6,
+      "selectOptions": 11,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 442,
+      "passed": true,
+      "totalMs": 6144
+    },
+    {
+      "id": "gradient-versus-newton",
+      "anchor": "o2-gradiente-newton",
+      "index": 11,
+      "route": "ottimizzazione",
+      "presets": 6,
+      "selectOptions": 11,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 529,
+      "passed": true,
+      "totalMs": 6468
+    },
+    {
+      "id": "newton-root",
+      "anchor": "o2-newton-zeri",
+      "index": 12,
+      "route": "ottimizzazione",
+      "presets": 3,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 521,
+      "passed": true,
+      "totalMs": 3422
+    },
+    {
+      "id": "newton-model",
+      "anchor": "o2-modelli",
+      "index": 13,
+      "route": "ottimizzazione",
+      "presets": 3,
+      "selectOptions": 4,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 529,
+      "passed": true,
+      "totalMs": 4358
+    },
+    {
+      "id": "armijo",
+      "anchor": "o2-armijo",
+      "index": 14,
+      "route": "ottimizzazione",
+      "presets": 3,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 557,
+      "passed": true,
+      "totalMs": 3013
+    },
+    {
+      "id": "convergence",
+      "anchor": "o2-convergenza",
+      "index": 15,
+      "route": "ottimizzazione",
+      "presets": 6,
+      "selectOptions": 11,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 612,
+      "passed": true,
+      "totalMs": 7072
+    },
+    {
+      "id": "feasible-directions",
+      "anchor": "o2-ottimalita-vincolata",
+      "index": 16,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 596,
+      "passed": true,
+      "totalMs": 3838
+    },
+    {
+      "id": "projection",
+      "anchor": "o2-proiezione",
+      "index": 17,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 624,
+      "passed": true,
+      "totalMs": 3873
+    },
+    {
+      "id": "projected-gradient",
+      "anchor": "o2-gradiente-proiettato",
+      "index": 18,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 4,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 657,
+      "passed": true,
+      "totalMs": 4733
+    },
+    {
+      "id": "function-gallery",
+      "anchor": "o2-galleria",
+      "index": 19,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 4,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 654,
+      "passed": true,
+      "totalMs": 4879
+    },
+    {
+      "id": "barrier",
+      "anchor": "o2-barriere",
+      "index": 20,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 303,
+      "passed": true,
+      "totalMs": 4372
+    },
+    {
+      "id": "active-constraints",
+      "anchor": "o3-regolarita",
+      "index": 21,
+      "route": "ottimizzazione",
+      "presets": 5,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 703,
+      "passed": true,
+      "totalMs": 4567
+    },
+    {
+      "id": "lagrangian",
+      "anchor": "o3-lagrangiana",
+      "index": 22,
+      "route": "ottimizzazione",
+      "presets": 5,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 845,
+      "passed": true,
+      "totalMs": 5059
+    },
+    {
+      "id": "kkt-geometry",
+      "anchor": "o3-kkt",
+      "index": 23,
+      "route": "ottimizzazione",
+      "presets": 5,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 794,
+      "passed": true,
+      "totalMs": 4920
+    },
+    {
+      "id": "constrained-curvature",
+      "anchor": "o3-curvatura",
+      "index": 24,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 754,
+      "passed": true,
+      "totalMs": 5139
+    },
+    {
+      "id": "constrained-qp",
+      "anchor": "o3-qp",
+      "index": 25,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 869,
+      "passed": true,
+      "totalMs": 5147
+    },
+    {
+      "id": "constrained-newton",
+      "anchor": "o3-newton",
+      "index": 26,
+      "route": "ottimizzazione",
+      "presets": 6,
+      "selectOptions": 10,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 878,
+      "passed": true,
+      "totalMs": 8180
+    },
+    {
+      "id": "sqp",
+      "anchor": "o3-sqp",
+      "index": 27,
+      "route": "ottimizzazione",
+      "presets": 6,
+      "selectOptions": 10,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 921,
+      "passed": true,
+      "totalMs": 8474
+    },
+    {
+      "id": "merit-line-search",
+      "anchor": "o3-merito",
+      "index": 28,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 973,
+      "passed": true,
+      "totalMs": 4766
+    },
+    {
+      "id": "barrier-equalities",
+      "anchor": "o3-barriere",
+      "index": 29,
+      "route": "ottimizzazione",
+      "presets": 5,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 978,
+      "passed": true,
+      "totalMs": 5787
+    },
+    {
+      "id": "time-iteration",
+      "anchor": "o3-tempo-iterazione",
+      "index": 30,
+      "route": "ottimizzazione",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 558,
+      "passed": true,
+      "totalMs": 5060
+    },
+    {
+      "id": "k1-state-input-stack",
+      "anchor": "k1-vettori",
+      "index": 0,
+      "route": "kkt",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 1035,
+      "passed": true,
+      "totalMs": 2991
+    },
+    {
+      "id": "k1-dynamics-residual",
+      "anchor": "k1-curve",
+      "index": 1,
+      "route": "kkt",
+      "presets": 5,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 194,
+      "passed": true,
+      "totalMs": 2321
+    },
+    {
+      "id": "trajectory-manifold",
+      "anchor": "k1-varieta",
+      "index": 2,
+      "route": "kkt",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 159,
+      "passed": true,
+      "totalMs": 2575
+    },
+    {
+      "id": "trajectory-tangent",
+      "anchor": "k1-tangente",
+      "index": 3,
+      "route": "kkt",
+      "presets": 4,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 482,
+      "passed": true,
+      "totalMs": 3506
+    },
+    {
+      "id": "k1-unconstrained-control",
+      "anchor": "k1-controllo",
+      "index": 4,
+      "route": "kkt",
+      "presets": 5,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 168,
+      "passed": true,
+      "totalMs": 3727
+    },
+    {
+      "id": "optimal-control-structure",
+      "anchor": "k1-struttura",
+      "index": 5,
+      "route": "kkt",
+      "presets": 5,
+      "selectOptions": 0,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 384,
+      "passed": true,
+      "totalMs": 3045
+    },
+    {
+      "id": "k1-kkt-geometry",
+      "anchor": "k1-kkt",
+      "index": 6,
+      "route": "kkt",
+      "presets": 5,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 188,
+      "passed": true,
+      "totalMs": 3567
+    },
+    {
+      "id": "costate-structure",
+      "anchor": "k2-lagrangiana",
+      "index": 7,
+      "route": "kkt",
+      "presets": 5,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": false,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 407,
+      "passed": true,
+      "totalMs": 3320
+    },
+    {
+      "id": "costates",
+      "anchor": "k2-costati",
+      "index": 8,
+      "route": "kkt",
+      "presets": 5,
+      "selectOptions": 2,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 619,
+      "passed": true,
+      "totalMs": 4147
+    },
+    {
+      "id": "constrained-optimal-control",
+      "anchor": "k2-vincoli",
+      "index": 9,
+      "route": "kkt",
+      "presets": 9,
+      "selectOptions": 8,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 530,
+      "passed": true,
+      "totalMs": 6755
+    },
+    {
+      "id": "optimal-control-kkt",
+      "anchor": "k2-kkt",
+      "index": 10,
+      "route": "kkt",
+      "presets": 9,
+      "selectOptions": 8,
+      "numericEndpoints": 4,
+      "keyboard": true,
+      "threeD": true,
+      "mobile": true,
+      "expectedParameterErrors": 0,
+      "initialReadyMs": 243,
+      "passed": true,
+      "totalMs": 6780
+    }
+  ],
+  "failures": [],
+  "externalRequests": [],
+  "httpErrors": [],
+  "pageErrors": [],
+  "workerScripts": [
+    "http://127.0.0.1:53448/quaderno/assets/solver.worker-Cu4XwRRZ.js",
+    "http://127.0.0.1:53448/quaderno/assets/solver.worker-EMk0rAV3.js"
+  ],
+  "assets": [
+    {
+      "filename": "factory-COsUdtZu.js",
+      "bytes": 12826,
+      "gzipBytes": 5258
+    },
+    {
+      "filename": "foundations-COwpIkFK.js",
+      "bytes": 8309,
+      "gzipBytes": 3621
+    },
+    {
+      "filename": "index-8AC1bULE.js",
+      "bytes": 34281,
+      "gzipBytes": 13341
+    },
+    {
+      "filename": "index-C1NamPoG.css",
+      "bytes": 1709,
+      "gzipBytes": 691
+    },
+    {
+      "filename": "index-Cb_Lcr7O.js",
+      "bytes": 16805,
+      "gzipBytes": 6529
+    },
+    {
+      "filename": "index-CDLO82Oq.js",
+      "bytes": 15193,
+      "gzipBytes": 6196
+    },
+    {
+      "filename": "index-CdYDpAt6.css",
+      "bytes": 908,
+      "gzipBytes": 455
+    },
+    {
+      "filename": "index-COVLwfhs.js",
+      "bytes": 25843,
+      "gzipBytes": 10195
+    },
+    {
+      "filename": "index-CsJioHk8.css",
+      "bytes": 907,
+      "gzipBytes": 436
+    },
+    {
+      "filename": "index-CzqavpAc.js",
+      "bytes": 39621,
+      "gzipBytes": 15247
+    },
+    {
+      "filename": "index-D1aW1utf.css",
+      "bytes": 1326,
+      "gzipBytes": 585
+    },
+    {
+      "filename": "index-DATSmhvR.js",
+      "bytes": 31713,
+      "gzipBytes": 12434
+    },
+    {
+      "filename": "index-DcD0rZj0.js",
+      "bytes": 35238,
+      "gzipBytes": 13467
+    },
+    {
+      "filename": "index-Deso78lg.css",
+      "bytes": 442,
+      "gzipBytes": 289
+    },
+    {
+      "filename": "index-DI4SX_Hw.js",
+      "bytes": 24917,
+      "gzipBytes": 9633
+    },
+    {
+      "filename": "katex-uLN8M5ZI.js",
+      "bytes": 261058,
+      "gzipBytes": 77494
+    },
+    {
+      "filename": "main-CsCQLSiH.css",
+      "bytes": 57635,
+      "gzipBytes": 14862
+    },
+    {
+      "filename": "main-D2abNVRN.js",
+      "bytes": 206798,
+      "gzipBytes": 63981
+    },
+    {
+      "filename": "methods-CZG_Een3.js",
+      "bytes": 9049,
+      "gzipBytes": 3849
+    },
+    {
+      "filename": "plot-CcgdDaPy.js",
+      "bytes": 2066,
+      "gzipBytes": 1048
+    },
+    {
+      "filename": "plotly-B20fKkf_.js",
+      "bytes": 4840903,
+      "gzipBytes": 1467844
+    },
+    {
+      "filename": "plotly.min-DJYGR8IL.js",
+      "bytes": 465,
+      "gzipBytes": 333
+    },
+    {
+      "filename": "plots-B7jNbYVh.js",
+      "bytes": 3380,
+      "gzipBytes": 1476
+    },
+    {
+      "filename": "plots-FahFkNet.js",
+      "bytes": 2119,
+      "gzipBytes": 1135
+    },
+    {
+      "filename": "plots-q_g1Ro4I.js",
+      "bytes": 9467,
+      "gzipBytes": 4303
+    },
+    {
+      "filename": "solver.worker-Cu4XwRRZ.js",
+      "bytes": 10963,
+      "gzipBytes": 4726
+    },
+    {
+      "filename": "solver.worker-EMk0rAV3.js",
+      "bytes": 10007,
+      "gzipBytes": 4401
+    },
+    {
+      "filename": "systems-Cu2Gwf0X.js",
+      "bytes": 5917,
+      "gzipBytes": 2630
+    },
+    {
+      "filename": "weighted-cost-I29D2GW9.js",
+      "bytes": 9017,
+      "gzipBytes": 3662
+    }
+  ],
+  "screenshots": [
+    "C:\\Users\\querz\\Desktop\\optcon\\artifacts\\VERIFICA-introduzione-mobile.png",
+    "C:\\Users\\querz\\Desktop\\optcon\\artifacts\\VERIFICA-ottimizzazione-mobile.png",
+    "C:\\Users\\querz\\Desktop\\optcon\\artifacts\\VERIFICA-kkt-mobile.png"
+  ],
+  "coldHome": {
+    "resources": [
+      "http://127.0.0.1:53448/quaderno/assets/katex-uLN8M5ZI.js",
+      "http://127.0.0.1:53448/quaderno/assets/main-CsCQLSiH.css",
+      "http://127.0.0.1:53448/quaderno/assets/main-D2abNVRN.js",
+      "http://127.0.0.1:53448/quaderno/favicon.svg"
+    ],
+    "domContentLoadedMs": 72,
+    "main": 1,
+    "lang": "it"
+  },
+  "summary": {
+    "pages": 3,
+    "sections": 64,
+    "labMounts": 66,
+    "uniqueMountedIds": 65,
+    "presets": 308,
+    "selectOptions": 169,
+    "numericEndpoints": 264,
+    "keyboard": 66,
+    "threeD": 38,
+    "mobile": 66,
+    "maxInitialReadyMs": 1950
+  },
+  "finishedAt": "2026-10-15T18:42:00.028Z"
+}
